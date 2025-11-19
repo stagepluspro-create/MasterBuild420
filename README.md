@@ -181,7 +181,7 @@ Both tiers include:
 
 18 migrations covering:
 - Users, teams, projects
-- Presets with sharing
+- Presets with sharing 
 - Team invitations
 - Power plans, DMX fixtures
 - SPL measurements
