@@ -8,7 +8,7 @@ import React, {
   ReactNode,
 } from "react";
 
-import type { User } from "@supabase/supabase-js";
+import type { User } from "createBrowserSupabase";
 import { createBrowserSupabase } from "@/lib/supabase-browser";
 
 type Profile = {
