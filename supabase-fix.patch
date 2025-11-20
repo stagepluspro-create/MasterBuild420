@@ -1,0 +1,246 @@
+diff --git a/lib/supabase.ts b/lib/supabase.ts
+deleted file mode 100644
+index 1234567..0000000
+--- a/lib/supabase.ts
++++ /dev/null
+@@ -1,60 +0,0 @@
+- // OLD FILE REMOVED — replaced by new architecture
+- // (Singleton + Proxy removed)
+- // (Client-only + server-only split added)
+diff --git a/lib/supabase-browser.ts b/lib/supabase-browser.ts
+new file mode 100644
+index 0000000..abcd123
+--- /dev/null
++++ b/lib/supabase-browser.ts
+@@ -0,0 +1,32 @@
++"use client";
++
++import { createClient } from "@supabase/supabase-js";
++
++export const createBrowserSupabase = () => {
++  return createClient(
++    process.env.NEXT_PUBLIC_SUPABASE_URL!,
++    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
++    {
++      auth: {
++        persistSession: true,
++        autoRefreshToken: true,
++        detectSessionInUrl: true,
++        flowType: "pkce",
++      },
++    }
++  );
++};
+
+diff --git a/lib/supabase-server.ts b/lib/supabase-server.ts
+new file mode 100644
+index 0000000..abcd223
+--- /dev/null
++++ b/lib/supabase-server.ts
+@@ -0,0 +1,18 @@
++import { cookies } from "next/headers";
++import { createServerClient } from "@supabase/auth-helpers-nextjs";
++
++export const createServerSupabase = () => {
++  return createServerClient(
++    process.env.NEXT_PUBLIC_SUPABASE_URL!,
++    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
++    { cookies }
++  );
++};
+
+diff --git a/middleware.ts b/middleware.ts
+new file mode 100644
+index 0000000..abcd333
+--- /dev/null
++++ b/middleware.ts
+@@ -0,0 +1,15 @@
++import { createMiddlewareClient } from "@supabase/auth-helpers-nextjs";
++import { NextResponse } from "next/server";
++
++export async function middleware(req) {
++  const res = NextResponse.next();
++  const supabase = createMiddlewareClient({ req, res });
++  await supabase.auth.getSession();
++  return res;
++}
+
+diff --git a/app/auth/callback/route.ts b/app/auth/callback/route.ts
+new file mode 100644
+index 0000000..abcd444
+--- /dev/null
++++ b/app/auth/callback/route.ts
+@@ -0,0 +1,23 @@
++import { NextResponse } from "next/server";
++import { createServerSupabase } from "@/lib/supabase-server";
++
++export async function GET(req: Request) {
++  const url = new URL(req.url);
++  const code = url.searchParams.get("code");
++
++  if (code) {
++    const supabase = createServerSupabase();
++    await supabase.auth.exchangeCodeForSession(code);
++  }
++
++  return NextResponse.redirect("/");
++}
+
+diff --git a/app/auth/signin/page.tsx b/app/auth/signin/page.tsx
+new file mode 100644
+index 0000000..abcd555
+--- /dev/null
++++ b/app/auth/signin/page.tsx
+@@ -0,0 +1,49 @@
++"use client";
++
++import { useState } from "react";
++import { createBrowserSupabase } from "@/lib/supabase-browser";
++
++export default function SignInPage() {
++  const supabase = createBrowserSupabase();
++  const [email, setEmail] = useState("");
++
++  const signIn = async () => {
++    await supabase.auth.signInWithOtp({
++      email,
++      options: {
++        emailRedirectTo: `${location.origin}/auth/callback`,
++      },
++    });
++    alert("Check your email for the login link.");
++  };
++
++  return (
++    <div className="p-6 space-y-4">
++      <h1 className="text-xl font-bold">Sign In</h1>
++      <input
++        className="border p-2 w-full"
++        type="email"
++        onChange={(e) => setEmail(e.target.value)}
++      />
++      <button onClick={signIn} className="bg-black text-white px-4 py-2">
++        Send Magic Link
++      </button>
++    </div>
++  );
++}
+
+diff --git a/app/auth/signup/page.tsx b/app/auth/signup/page.tsx
+new file mode 100644
+index 0000000..abcd666
+--- /dev/null
++++ b/app/auth/signup/page.tsx
+@@ -0,0 +1,48 @@
++"use client";
++
++import { useState } from "react";
++import { createBrowserSupabase } from "@/lib/supabase-browser";
++
++export default function SignUpPage() {
++  const supabase = createBrowserSupabase();
++  const [email, setEmail] = useState("");
++
++  const signUp = async () => {
++    await supabase.auth.signSignUp({
++      email,
++      options: { emailRedirectTo: `${location.origin}/auth/callback` },
++    });
++    alert("Check email to confirm your account!");
++  };
++
++  return (
++    <div className="p-6 space-y-4">
++      <h1 className="text-xl font-bold">Create Account</h1>
++      <input
++        className="border p-2 w-full"
++        type="email"
++        onChange={(e) => setEmail(e.target.value)}
++      />
++      <button onClick={signUp} className="bg-black text-white px-4 py-2">
++        Sign Up
++      </button>
++    </div>
++  );
++}
+
+diff --git a/app/auth/reset-password/page.tsx b/app/auth/reset-password/page.tsx
+new file mode 100644
+index 0000000..abcd777
+--- /dev/null
++++ b/app/auth/reset-password/page.tsx
+@@ -0,0 +1,40 @@
++"use client";
++
++import { useState } from "react";
++import { createBrowserSupabase } from "@/lib/supabase-browser";
++
++export default function ResetPasswordPage() {
++  const supabase = createBrowserSupabase();
++  const [email, setEmail] = useState("");
++
++  const sendReset = async () => {
++    await supabase.auth.resetPasswordForEmail(email, {
++      redirectTo: `${location.origin}/auth/update-password`,
++    });
++    alert("Check your email for a reset link.");
++  };
++
++  return (
++    <div className="p-6 space-y-4">
++      <h1>Reset Password</h1>
++      <input
++        className="border p-2 w-full"
++        type="email"
++        onChange={(e) => setEmail(e.target.value)}
++      />
++      <button onClick={sendReset}>Send Reset Link</button>
++    </div>
++  );
++}
+
+diff --git a/app/auth/update-password/page.tsx b/app/auth/update-password/page.tsx
+new file mode 100644
+index 0000000..abcd888
+--- /dev/null
++++ b/app/auth/update-password/page.tsx
+@@ -0,0 +1,38 @@
++"use client";
++
++import { useState } from "react";
++import { createBrowserSupabase } from "@/lib/supabase-browser";
++
++export default function UpdatePasswordPage() {
++  const supabase = createBrowserSupabase();
++  const [password, setPassword] = useState("");
++
++  const updatePassword = async () => {
++    await supabase.auth.updateUser({ password });
++    alert("Password updated.");
++  };
++
++  return (
++    <div className="p-6 space-y-4">
++      <h1>Update Password</h1>
++      <input
++        className="border p-2 w-full"
++        type="password"
++        onChange={(e) => setPassword(e.target.value)}
++      />
++      <button onClick={updatePassword}>Save</button>
++    </div>
++  );
++}
+
+diff --git a/.env.local.example b/.env.local.example
+new file mode 100644
+index 0000000..abcd999
+--- /dev/null
++++ b/.env.local.example
+@@ -0,0 +1,6 @@
++NEXT_PUBLIC_SUPABASE_URL=https://xxxx.supabase.co
++NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
++
++SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
++
++NEXT_PUBLIC_SITE_URL=http://localhost:3000
