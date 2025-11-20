@@ -24,7 +24,7 @@ Stage Tech Pro is a comprehensive SaaS platform designed for audio engineers, li
 - **Hosting:** Vercel
 - **Domain:** stagetechpro.online
 
-## 🚀 Quick Start
+## 🚀 Quick Start 
 
 ### Prerequisites
 
