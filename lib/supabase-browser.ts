@@ -1,6 +1,6 @@
 "use client";
 
-import { createClient } from "@supabase/supabase-js";
+import { createClient } from "@/lib/supabase-client";
 
 export const createBrowserSupabase = () => {
   return createClient(
