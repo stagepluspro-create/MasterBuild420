@@ -1,15 +1,25 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
 
 export function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const router = useRouter();
-  const { user, loading } = useAuth();
+  const { user, session } = useAuth();
 
-  // If still initializing auth — show nothing but avoid infinite loader
-  if (loading) {
+  // Internal flag: has Supabase finished FIRST auth check?
+  const [initialized, setInitialized] = useState(false);
+
+  useEffect(() => {
+    // Wait until auth-context has emitted the first session (null or not)
+    if (session !== undefined) {
+      setInitialized(true);
+    }
+  }, [session]);
+
+  // While waiting for Supabase to emit the first auth event
+  if (!initialized) {
     return (
       <div className="w-full min-h-[50vh] flex flex-col items-center justify-center text-gray-400">
         <div className="w-12 h-12 border-4 border-cyan-400/20 border-t-cyan-400 rounded-full animate-spin" />
@@ -18,16 +28,15 @@ export function ProtectedRoute({ children }: { children: React.ReactNode }) {
     );
   }
 
-  // If not logged in → redirect to login
+  // Once initialized: if user is not logged in → redirect
   useEffect(() => {
-    if (!loading && !user) {
+    if (initialized && !user) {
       router.replace("/login");
     }
-  }, [loading, user, router]);
+  }, [initialized, user, router]);
 
-  // If user is loading/redirecting, render nothing
+  // Block content rendering until redirect resolves
   if (!user) return null;
 
-  // User authenticated → render content
   return <>{children}</>;
 }
