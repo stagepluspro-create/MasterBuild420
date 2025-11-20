@@ -11,9 +11,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog";
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import Link from "next/link";
-import { ArrowLeft, CheckCircle2, Clock, CreditCard, Users, User, ArrowUpRight, ArrowDownRight, Calendar } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Clock, CreditCard, Users, User, Crown, Zap, Shield, Calendar, TrendingUp, AlertCircle, Info, Sparkles } from "lucide-react";
 
 interface SubscriptionChange {
   id: string;
@@ -30,8 +29,7 @@ function SubscriptionContent() {
   const [loading, setLoading] = useState(false);
   const [changes, setChanges] = useState<SubscriptionChange[]>([]);
   const [cancelDialogOpen, setCancelDialogOpen] = useState(false);
-  const [upgradeDialogOpen, setUpgradeDialogOpen] = useState(false);
-  const [downgradeDialogOpen, setDowngradeDialogOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState<"pro" | "team" | null>(null);
 
   useEffect(() => {
     loadSubscriptionChanges();
@@ -56,102 +54,6 @@ function SubscriptionContent() {
     }
   };
 
-  const handleUpgrade = async () => {
-    if (!user || !subscription) return;
-
-    try {
-      setLoading(true);
-
-      await supabase
-        .from("subscription_changes")
-        .insert({
-          user_id: user.id,
-          from_tier: subscription.tier,
-          to_tier: "team",
-          reason: "upgrade",
-        });
-
-      await dbService.updateSubscription(user.id, {
-        tier: "team",
-        seats: 30,
-      });
-
-      const { data: team, error: teamError } = await supabase
-        .from("teams")
-        .insert({
-          owner_user_id: user.id,
-          name: `${user.email}'s Team`,
-        })
-        .select()
-        .single();
-
-      if (teamError) throw teamError;
-
-      await supabase.from("team_members").insert({
-        team_id: team.id,
-        user_id: user.id,
-        role: "owner",
-        joined_at: new Date().toISOString(),
-      });
-
-      await dbService.createAuditLog({
-        user_id: user.id,
-        action: "subscription_upgraded",
-        meta: { from: subscription.tier, to: "team", team_id: team.id },
-      });
-
-      await refreshSubscription();
-      await loadSubscriptionChanges();
-      setUpgradeDialogOpen(false);
-
-      router.push(`/teams/${team.id}`);
-    } catch (error: any) {
-      console.error("Failed to upgrade:", error);
-      alert(error.message || "Failed to upgrade subscription");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleDowngrade = async () => {
-    if (!user || !subscription) return;
-
-    try {
-      setLoading(true);
-
-      await supabase
-        .from("subscription_changes")
-        .insert({
-          user_id: user.id,
-          from_tier: subscription.tier,
-          to_tier: "pro",
-          reason: "downgrade",
-        });
-
-      await dbService.updateSubscription(user.id, {
-        tier: "pro",
-        seats: 1,
-      });
-
-      await dbService.createAuditLog({
-        user_id: user.id,
-        action: "subscription_downgraded",
-        meta: { from: subscription.tier, to: "pro" },
-      });
-
-      await refreshSubscription();
-      await loadSubscriptionChanges();
-      setDowngradeDialogOpen(false);
-
-      alert("Subscription downgraded to Pro. Your team data will be retained but team features will be disabled.");
-    } catch (error: any) {
-      console.error("Failed to downgrade:", error);
-      alert(error.message || "Failed to downgrade subscription");
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const handleCancelSubscription = async () => {
     if (!user) return;
 
@@ -170,8 +72,6 @@ function SubscriptionContent() {
 
       await refreshSubscription();
       setCancelDialogOpen(false);
-
-      alert("Subscription canceled. You will retain access until the end of your billing period.");
     } catch (error: any) {
       console.error("Failed to cancel:", error);
       alert(error.message || "Failed to cancel subscription");
@@ -185,7 +85,7 @@ function SubscriptionContent() {
 
     if (isTrialActive) {
       return (
-        <Badge className="bg-cyan-500">
+        <Badge className="bg-gradient-to-r from-cyan-500 to-violet-500 text-white border-0">
           <Clock className="w-3 h-3 mr-1" />
           Trial - {trialDaysRemaining} days left
         </Badge>
@@ -195,7 +95,7 @@ function SubscriptionContent() {
     switch (subscription.status) {
       case "active":
         return (
-          <Badge className="bg-green-500">
+          <Badge className="bg-green-500 border-0">
             <CheckCircle2 className="w-3 h-3 mr-1" />
             Active
           </Badge>
@@ -203,154 +103,413 @@ function SubscriptionContent() {
       case "expired":
         return <Badge variant="destructive">Expired</Badge>;
       case "canceled":
-        return <Badge variant="outline">Canceled</Badge>;
+        return <Badge variant="outline" className="border-red-400/50 text-red-400">Canceled</Badge>;
       default:
         return <Badge variant="outline">{subscription.status}</Badge>;
     }
   };
 
-  const getTierIcon = (tier: string) => {
-    return tier === "team" ? <Users className="w-5 h-5" /> : <User className="w-5 h-5" />;
-  };
-
   if (!subscription) {
     return (
       <div className="min-h-screen pt-28 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-gray-400">Loading subscription...</p>
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="inline-block relative">
+            <div className="w-12 h-12 border-4 border-cyan-400/20 border-t-cyan-400 rounded-full animate-spin" />
+          </div>
+          <p className="text-gray-400 mt-4">Loading subscription...</p>
         </div>
       </div>
     );
   }
 
+  const currentTier = subscription.tier;
+  const isOnTrial = isTrialActive;
+
   return (
     <div className="min-h-screen pt-28 px-4 pb-12">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="mb-8">
-          <Link href="/profile" className="inline-flex items-center text-sm text-gray-400 hover:text-white mb-4">
+          <Link href="/profile" className="inline-flex items-center text-sm text-gray-400 hover:text-cyan-400 transition-colors mb-6">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Profile
           </Link>
-          <h1 className="text-4xl font-bold gradient-text mb-2">Subscription</h1>
-          <p className="text-gray-400">Manage your Stage Tech Pro subscription</p>
+          <div className="flex items-start justify-between">
+            <div>
+              <h1 className="text-5xl font-bold gradient-text mb-3">Your Subscription</h1>
+              <p className="text-xl text-gray-400">Manage your Stage Tech Pro membership and billing</p>
+            </div>
+            {getStatusBadge()}
+          </div>
+        </div>
+
+        {isTrialExpired && (
+          <div className="mb-8 p-6 glass-panel border-yellow-500/40 bg-yellow-500/5 rounded-xl">
+            <div className="flex items-start gap-4">
+              <div className="inline-flex p-3 rounded-lg bg-yellow-500/20">
+                <AlertCircle className="w-6 h-6 text-yellow-400" />
+              </div>
+              <div className="flex-1">
+                <h3 className="text-lg font-bold text-yellow-400 mb-2">Your Trial Has Ended</h3>
+                <p className="text-gray-300 mb-4">
+                  Subscribe now to continue accessing all 35+ professional tools, cloud sync, team collaboration, and more.
+                </p>
+                <p className="text-sm text-gray-400">
+                  Choose a plan below to unlock unlimited access to Stage Tech Pro.
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {isOnTrial && (
+          <div className="mb-8 p-6 glass-panel border-cyan-400/40 bg-cyan-500/5 rounded-xl">
+            <div className="flex items-start gap-4">
+              <div className="inline-flex p-3 rounded-lg bg-gradient-to-br from-cyan-500/20 to-violet-500/20">
+                <Sparkles className="w-6 h-6 text-cyan-400" />
+              </div>
+              <div className="flex-1">
+                <h3 className="text-lg font-bold text-cyan-400 mb-2">You're on a Free Trial</h3>
+                <p className="text-gray-300 mb-1">
+                  You have <strong className="text-white">{trialDaysRemaining} days</strong> remaining in your 7-day trial.
+                </p>
+                <p className="text-sm text-gray-400">
+                  Subscribe before {new Date(subscription.trial_end).toLocaleDateString()} to continue using all features without interruption.
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        <div className="mb-12">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-white mb-3">Choose Your Plan</h2>
+            <p className="text-gray-400 text-lg">Select the perfect plan for your production needs</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className={`glass-panel relative overflow-hidden transition-all ${
+              currentTier === "pro"
+                ? "border-cyan-400/60 shadow-[0_0_30px_rgba(0,232,255,0.2)]"
+                : "border-white/10 hover:border-cyan-400/40"
+            }`}>
+              {currentTier === "pro" && (
+                <div className="absolute top-0 right-0 px-4 py-1 bg-gradient-to-r from-cyan-500 to-violet-500 text-white text-xs font-bold rounded-bl-lg">
+                  CURRENT PLAN
+                </div>
+              )}
+              <CardHeader className="pb-4">
+                <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-cyan-500/20 to-violet-500/20 w-fit mb-4">
+                  <User className="w-8 h-8 text-cyan-400" />
+                </div>
+                <CardTitle className="text-3xl font-bold text-white mb-2">Pro</CardTitle>
+                <div className="flex items-baseline gap-2 mb-3">
+                  <span className="text-5xl font-bold gradient-text">$9.99</span>
+                  <span className="text-gray-400 text-lg">/month</span>
+                </div>
+                <CardDescription className="text-base text-gray-300">
+                  Perfect for individual professionals and freelancers
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="space-y-3">
+                  <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wide">What's Included</h4>
+                  {[
+                    { icon: CheckCircle2, text: "Access to all 35+ professional tools" },
+                    { icon: CheckCircle2, text: "Unlimited exports (PDF, CSV, JSON)" },
+                    { icon: CheckCircle2, text: "Cloud sync & preset management" },
+                    { icon: CheckCircle2, text: "PWA installable (works offline)" },
+                    { icon: CheckCircle2, text: "Regular tool updates & new features" },
+                    { icon: CheckCircle2, text: "Email support (24hr response)" },
+                    { icon: CheckCircle2, text: "1 user license" },
+                  ].map((feature, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <feature.icon className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-300">{feature.text}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <Separator className="bg-white/10" />
+
+                {currentTier === "pro" ? (
+                  <div className="space-y-3">
+                    <div className="p-4 bg-cyan-500/10 border border-cyan-400/30 rounded-lg">
+                      <div className="flex items-center gap-2 text-cyan-400 mb-2">
+                        <Info className="w-4 h-4" />
+                        <span className="text-sm font-semibold">Active Subscription</span>
+                      </div>
+                      <p className="text-sm text-gray-300">
+                        You're currently on the Pro plan. Need team features? Upgrade to Team below!
+                      </p>
+                    </div>
+                    {subscription.status !== "canceled" && (
+                      <Button
+                        variant="outline"
+                        className="w-full border-red-400/50 text-red-400 hover:bg-red-500/10"
+                        onClick={() => setCancelDialogOpen(true)}
+                      >
+                        Cancel Subscription
+                      </Button>
+                    )}
+                  </div>
+                ) : (
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: `
+                      <style>
+                        .pp-pro-btn {
+                          width: 100%;
+                          text-align: center;
+                          border: none;
+                          border-radius: 0.5rem;
+                          padding: 0.75rem 1.5rem;
+                          font-weight: bold;
+                          background: linear-gradient(135deg, #00E8FF 0%, #9B5CFF 100%);
+                          color: #ffffff;
+                          font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+                          font-size: 1rem;
+                          cursor: pointer;
+                          transition: all 0.2s;
+                        }
+                        .pp-pro-btn:hover {
+                          transform: translateY(-2px);
+                          box-shadow: 0 10px 25px rgba(0, 232, 255, 0.3);
+                        }
+                      </style>
+                      <form action="https://www.paypal.com/ncp/payment/BA5M2737P3VBE" method="post" target="_blank">
+                        <input class="pp-pro-btn" type="submit" value="Subscribe to Pro Plan" />
+                      </form>
+                      <p style="text-align:center;font-size:0.75rem;color:#9CA3AF;margin-top:0.75rem;">
+                        7-day free trial • No credit card required • Cancel anytime
+                      </p>
+                    `,
+                    }}
+                  />
+                )}
+              </CardContent>
+            </Card>
+
+            <Card className={`glass-panel relative overflow-hidden transition-all ${
+              currentTier === "team"
+                ? "border-violet-400/60 shadow-[0_0_30px_rgba(155,92,255,0.2)]"
+                : "border-white/10 hover:border-violet-400/40"
+            }`}>
+              <div className="absolute top-0 right-0 px-4 py-1 bg-gradient-to-r from-violet-500 to-pink-500 text-white text-xs font-bold rounded-bl-lg flex items-center gap-1">
+                <Crown className="w-3 h-3" />
+                {currentTier === "team" ? "CURRENT PLAN" : "MOST POPULAR"}
+              </div>
+              <CardHeader className="pb-4">
+                <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-violet-500/20 to-pink-500/20 w-fit mb-4">
+                  <Users className="w-8 h-8 text-violet-400" />
+                </div>
+                <CardTitle className="text-3xl font-bold text-white mb-2">Team</CardTitle>
+                <div className="flex items-baseline gap-2 mb-3">
+                  <span className="text-5xl font-bold bg-gradient-to-r from-violet-400 to-pink-400 bg-clip-text text-transparent">$99.99</span>
+                  <span className="text-gray-400 text-lg">/month</span>
+                </div>
+                <CardDescription className="text-base text-gray-300">
+                  Built for production teams and companies
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="space-y-3">
+                  <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wide">Everything in Pro, plus:</h4>
+                  {[
+                    { icon: Users, text: "Up to 30 team members", highlight: true },
+                    { icon: Shield, text: "Shared projects & preset libraries", highlight: true },
+                    { icon: TrendingUp, text: "Team activity tracking & analytics", highlight: true },
+                    { icon: Crown, text: "Advanced role & permission management", highlight: true },
+                    { icon: Zap, text: "Priority support & onboarding", highlight: true },
+                    { icon: CheckCircle2, text: "Dedicated account manager (10+ seats)" },
+                    { icon: CheckCircle2, text: "Custom team branding (coming soon)" },
+                  ].map((feature, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <feature.icon className={`w-5 h-5 ${feature.highlight ? "text-violet-400" : "text-cyan-400"} mt-0.5 flex-shrink-0`} />
+                      <span className={feature.highlight ? "text-white font-medium" : "text-gray-300"}>{feature.text}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <Separator className="bg-white/10" />
+
+                {currentTier === "team" ? (
+                  <div className="space-y-3">
+                    <div className="p-4 bg-violet-500/10 border border-violet-400/30 rounded-lg">
+                      <div className="flex items-center gap-2 text-violet-400 mb-2">
+                        <Crown className="w-4 h-4" />
+                        <span className="text-sm font-semibold">Active Team Plan</span>
+                      </div>
+                      <p className="text-sm text-gray-300 mb-3">
+                        You have access to all team features and can manage up to 30 members.
+                      </p>
+                      <Link href="/teams">
+                        <Button variant="outline" size="sm" className="w-full border-violet-400/50">
+                          Manage Team
+                        </Button>
+                      </Link>
+                    </div>
+                    {subscription.status !== "canceled" && (
+                      <Button
+                        variant="outline"
+                        className="w-full border-red-400/50 text-red-400 hover:bg-red-500/10"
+                        onClick={() => setCancelDialogOpen(true)}
+                      >
+                        Cancel Subscription
+                      </Button>
+                    )}
+                  </div>
+                ) : (
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: `
+                      <style>
+                        .pp-team-btn {
+                          width: 100%;
+                          text-align: center;
+                          border: none;
+                          border-radius: 0.5rem;
+                          padding: 0.75rem 1.5rem;
+                          font-weight: bold;
+                          background: linear-gradient(135deg, #9B5CFF 0%, #FF008C 100%);
+                          color: #ffffff;
+                          font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+                          font-size: 1rem;
+                          cursor: pointer;
+                          transition: all 0.2s;
+                        }
+                        .pp-team-btn:hover {
+                          transform: translateY(-2px);
+                          box-shadow: 0 10px 25px rgba(155, 92, 255, 0.3);
+                        }
+                      </style>
+                      <form action="https://www.paypal.com/ncp/payment/FEC47P2HBV9K6" method="post" target="_blank">
+                        <input class="pp-team-btn" type="submit" value="Subscribe to Team Plan" />
+                      </form>
+                      <p style="text-align:center;font-size:0.75rem;color:#9CA3AF;margin-top:0.75rem;">
+                        7-day free trial • No credit card required • Cancel anytime
+                      </p>
+                    `,
+                    }}
+                  />
+                )}
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-6 mb-12">
+          <Card className="glass-panel border-white/10">
+            <CardHeader>
+              <div className="inline-flex p-3 rounded-lg bg-cyan-500/10 w-fit mb-2">
+                <Shield className="w-5 h-5 text-cyan-400" />
+              </div>
+              <CardTitle className="text-lg">Secure Payments</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-gray-400">
+                All payments are processed securely through PayPal. Your financial information is never stored on our servers.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="glass-panel border-white/10">
+            <CardHeader>
+              <div className="inline-flex p-3 rounded-lg bg-violet-500/10 w-fit mb-2">
+                <Clock className="w-5 h-5 text-violet-400" />
+              </div>
+              <CardTitle className="text-lg">Cancel Anytime</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-gray-400">
+                No long-term contracts. Cancel your subscription anytime and keep access until the end of your billing period.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="glass-panel border-white/10">
+            <CardHeader>
+              <div className="inline-flex p-3 rounded-lg bg-pink-500/10 w-fit mb-2">
+                <Zap className="w-5 h-5 text-pink-400" />
+              </div>
+              <CardTitle className="text-lg">Instant Access</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-gray-400">
+                Start using all features immediately after subscribing. No waiting period or complex setup required.
+              </p>
+            </CardContent>
+          </Card>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2 space-y-6">
             <Card className="glass-panel border-white/10">
               <CardHeader>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex p-3 rounded-lg bg-gradient-to-br from-cyan-500/20 to-violet-500/20">
-                      {getTierIcon(subscription.tier)}
-                    </div>
-                    <div>
-                      <CardTitle className="text-2xl capitalize">{subscription.tier} Plan</CardTitle>
-                      <CardDescription>
-                        ${subscription.tier === "pro" ? "9.99" : "99.99"}/month
-                      </CardDescription>
+                <CardTitle>Current Subscription Details</CardTitle>
+                <CardDescription>Overview of your active plan</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="p-4 bg-white/5 rounded-lg border border-white/10">
+                    <div className="text-sm text-gray-400 mb-1">Plan Type</div>
+                    <div className="text-lg font-bold text-white capitalize flex items-center gap-2">
+                      {subscription.tier === "pro" ? <User className="w-5 h-5" /> : <Users className="w-5 h-5" />}
+                      {subscription.tier}
                     </div>
                   </div>
-                  {getStatusBadge()}
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div>
-                  <h3 className="text-sm font-semibold text-gray-400 mb-3">Plan Details</h3>
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-gray-400">Status</span>
-                      <span className="text-white capitalize">{subscription.status}</span>
+                  <div className="p-4 bg-white/5 rounded-lg border border-white/10">
+                    <div className="text-sm text-gray-400 mb-1">Status</div>
+                    <div className="text-lg font-bold capitalize">
+                      {getStatusBadge()}
                     </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-gray-400">Seats</span>
-                      <span className="text-white">{subscription.tier === "pro" ? "1" : `Up to ${subscription.seats || 30}`}</span>
+                  </div>
+                  <div className="p-4 bg-white/5 rounded-lg border border-white/10">
+                    <div className="text-sm text-gray-400 mb-1">Monthly Cost</div>
+                    <div className="text-lg font-bold text-white">
+                      ${subscription.tier === "pro" ? "9.99" : "99.99"}
                     </div>
-                    {isTrialActive && (
-                      <>
-                        <div className="flex items-center justify-between text-sm">
-                          <span className="text-gray-400">Trial Started</span>
-                          <span className="text-white">
-                            {new Date(subscription.trial_start).toLocaleDateString()}
-                          </span>
-                        </div>
-                        <div className="flex items-center justify-between text-sm">
-                          <span className="text-gray-400">Trial Ends</span>
-                          <span className="text-white">
-                            {new Date(subscription.trial_end).toLocaleDateString()}
-                          </span>
-                        </div>
-                      </>
-                    )}
-                    {subscription.paypal_transaction_id && (
-                      <div className="flex items-center justify-between text-sm">
-                        <span className="text-gray-400">Transaction ID</span>
-                        <span className="text-white font-mono text-xs">
-                          {subscription.paypal_transaction_id.slice(0, 16)}...
-                        </span>
-                      </div>
-                    )}
+                  </div>
+                  <div className="p-4 bg-white/5 rounded-lg border border-white/10">
+                    <div className="text-sm text-gray-400 mb-1">Team Seats</div>
+                    <div className="text-lg font-bold text-white">
+                      {subscription.tier === "pro" ? "1 user" : `Up to ${subscription.seats || 30} users`}
+                    </div>
                   </div>
                 </div>
 
-                {isTrialExpired && (
-                  <div className="p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-lg">
-                    <h4 className="text-sm font-semibold text-yellow-400 mb-2">Trial Expired</h4>
-                    <p className="text-sm text-gray-300 mb-3">
-                      Your trial has ended. Subscribe now to continue using all features.
-                    </p>
-                    <div className="flex gap-2">
-                      {subscription.tier === "pro" ? (
-                        <div
-                          dangerouslySetInnerHTML={{
-                            __html: `
-                            <style>.pp-BA5M2737P3VBE{text-align:center;border:none;border-radius:0.25rem;padding:0.5rem 1rem;height:2.25rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:0.875rem;cursor:pointer;}</style>
-                            <form action="https://www.paypal.com/ncp/payment/BA5M2737P3VBE" method="post" target="_blank" style="display:inline;">
-                              <input class="pp-BA5M2737P3VBE" type="submit" value="Subscribe to Pro" />
-                            </form>
-                          `,
-                          }}
-                        />
-                      ) : (
-                        <div
-                          dangerouslySetInnerHTML={{
-                            __html: `
-                            <style>.pp-FEC47P2HBV9K6{text-align:center;border:none;border-radius:0.25rem;padding:0.5rem 1rem;height:2.25rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:0.875rem;cursor:pointer;}</style>
-                            <form action="https://www.paypal.com/ncp/payment/FEC47P2HBV9K6" method="post" target="_blank" style="display:inline;">
-                              <input class="pp-FEC47P2HBV9K6" type="submit" value="Subscribe to Team" />
-                            </form>
-                          `,
-                          }}
-                        />
-                      )}
+                {isTrialActive && (
+                  <div className="p-4 bg-cyan-500/10 border border-cyan-400/30 rounded-lg">
+                    <div className="flex items-center gap-2 text-cyan-400 mb-2">
+                      <Clock className="w-4 h-4" />
+                      <span className="text-sm font-semibold">Free Trial Period</span>
+                    </div>
+                    <div className="grid sm:grid-cols-2 gap-3 text-sm">
+                      <div>
+                        <span className="text-gray-400">Started:</span>
+                        <span className="text-white ml-2">{new Date(subscription.trial_start).toLocaleDateString()}</span>
+                      </div>
+                      <div>
+                        <span className="text-gray-400">Ends:</span>
+                        <span className="text-white ml-2">{new Date(subscription.trial_end).toLocaleDateString()}</span>
+                      </div>
                     </div>
                   </div>
                 )}
 
-                <Separator />
-
-                <div>
-                  <h3 className="text-sm font-semibold text-gray-400 mb-3">Subscription Actions</h3>
-                  <div className="flex flex-wrap gap-3">
-                    {subscription.tier === "pro" && (
-                      <Button onClick={() => setUpgradeDialogOpen(true)} variant="outline">
-                        <ArrowUpRight className="mr-2 h-4 w-4" />
-                        Upgrade to Team
-                      </Button>
-                    )}
-                    {subscription.tier === "team" && (
-                      <Button onClick={() => setDowngradeDialogOpen(true)} variant="outline">
-                        <ArrowDownRight className="mr-2 h-4 w-4" />
-                        Downgrade to Pro
-                      </Button>
-                    )}
-                    {subscription.status !== "canceled" && (
-                      <Button onClick={() => setCancelDialogOpen(true)} variant="outline" className="text-red-400 border-red-400/50 hover:bg-red-500/10">
-                        Cancel Subscription
-                      </Button>
-                    )}
+                {subscription.paypal_transaction_id && (
+                  <div className="p-4 bg-white/5 rounded-lg border border-white/10">
+                    <div className="flex items-center gap-2 text-gray-400 mb-2">
+                      <CreditCard className="w-4 h-4" />
+                      <span className="text-sm font-semibold">Payment Information</span>
+                    </div>
+                    <div className="text-sm">
+                      <span className="text-gray-400">Transaction ID:</span>
+                      <code className="ml-2 text-xs text-cyan-400 font-mono">
+                        {subscription.paypal_transaction_id.slice(0, 24)}...
+                      </code>
+                    </div>
                   </div>
-                </div>
+                )}
               </CardContent>
             </Card>
 
@@ -365,7 +524,7 @@ function SubscriptionContent() {
                     {changes.map((change) => (
                       <div
                         key={change.id}
-                        className="flex items-center justify-between p-3 bg-white/5 rounded-lg border border-white/10"
+                        className="flex items-center justify-between p-4 bg-white/5 rounded-lg border border-white/10 hover:border-cyan-400/30 transition-colors"
                       >
                         <div className="flex items-center gap-3">
                           <div className="inline-flex p-2 rounded-lg bg-gradient-to-br from-cyan-500/20 to-violet-500/20">
@@ -383,8 +542,8 @@ function SubscriptionContent() {
                           </div>
                         </div>
                         {change.paypal_transaction_id && (
-                          <Badge variant="outline" className="text-xs">
-                            <CreditCard className="w-3 h-3 mr-1" />
+                          <Badge variant="outline" className="text-xs border-green-400/50 text-green-400">
+                            <CheckCircle2 className="w-3 h-3 mr-1" />
                             Paid
                           </Badge>
                         )}
@@ -397,42 +556,10 @@ function SubscriptionContent() {
           </div>
 
           <div className="space-y-6">
-            {subscription.tier === "pro" && (
-              <Card className="glass-panel border-cyan-400/40 shadow-[0_0_20px_rgba(0,232,255,0.15)]">
-                <CardHeader>
-                  <div className="inline-flex p-3 rounded-lg bg-gradient-to-br from-cyan-500/20 to-violet-500/20 mb-3">
-                    <Users className="w-6 h-6 text-cyan-400" />
-                  </div>
-                  <CardTitle>Upgrade to Team</CardTitle>
-                  <CardDescription className="text-lg font-semibold text-white">
-                    $99.99/month
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 mb-4">
-                    {[
-                      "Up to 30 team members",
-                      "Shared projects & presets",
-                      "Team activity tracking",
-                      "Member role management",
-                      "Priority support & training",
-                    ].map((feature, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm">
-                        <CheckCircle2 className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-300">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button onClick={() => setUpgradeDialogOpen(true)} className="w-full">
-                    Upgrade Now
-                  </Button>
-                </CardContent>
-              </Card>
-            )}
-
             <Card className="glass-panel border-white/10">
               <CardHeader>
                 <CardTitle className="text-lg">Need Help?</CardTitle>
+                <CardDescription>We're here to assist you</CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
                 <Link href="/contact">
@@ -445,20 +572,62 @@ function SubscriptionContent() {
                     View FAQ
                   </Button>
                 </Link>
+                <Link href="/about">
+                  <Button variant="outline" className="w-full">
+                    About Stage Tech Pro
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            <Card className="glass-panel border-cyan-400/30 bg-cyan-500/5">
+              <CardHeader>
+                <div className="inline-flex p-3 rounded-lg bg-cyan-500/20 w-fit mb-2">
+                  <Info className="w-5 h-5 text-cyan-400" />
+                </div>
+                <CardTitle className="text-lg">Billing Information</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3 text-sm text-gray-300">
+                <p>
+                  <strong className="text-white">Billing Cycle:</strong> Monthly, charged on the same day each month
+                </p>
+                <p>
+                  <strong className="text-white">Payment Method:</strong> PayPal (credit card, debit card, or PayPal balance)
+                </p>
+                <p>
+                  <strong className="text-white">Refund Policy:</strong> Pro-rated refunds available within 30 days
+                </p>
+                <Separator className="bg-white/10" />
+                <p className="text-xs text-gray-400">
+                  All subscriptions automatically renew. Cancel anytime from this page.
+                </p>
               </CardContent>
             </Card>
           </div>
         </div>
 
         <AlertDialog open={cancelDialogOpen} onOpenChange={setCancelDialogOpen}>
-          <AlertDialogContent>
+          <AlertDialogContent className="glass-panel border-white/10">
             <AlertDialogHeader>
               <AlertDialogTitle>Cancel Subscription</AlertDialogTitle>
-              <AlertDialogDescription>
-                Are you sure you want to cancel your subscription? You will retain access until the end of your billing period,
-                but will lose access to all features after that.
+              <AlertDialogDescription className="text-gray-300">
+                Are you sure you want to cancel your subscription? Here's what will happen:
               </AlertDialogDescription>
             </AlertDialogHeader>
+            <div className="space-y-3 py-4">
+              <div className="flex items-start gap-3 text-sm">
+                <CheckCircle2 className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                <span className="text-gray-300">You'll keep access until the end of your billing period</span>
+              </div>
+              <div className="flex items-start gap-3 text-sm">
+                <CheckCircle2 className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                <span className="text-gray-300">Your data and presets will be preserved</span>
+              </div>
+              <div className="flex items-start gap-3 text-sm">
+                <AlertCircle className="w-5 h-5 text-yellow-400 mt-0.5 flex-shrink-0" />
+                <span className="text-gray-300">You can reactivate anytime by subscribing again</span>
+              </div>
+            </div>
             <AlertDialogFooter>
               <AlertDialogCancel>Keep Subscription</AlertDialogCancel>
               <AlertDialogAction
@@ -466,87 +635,11 @@ function SubscriptionContent() {
                 className="bg-red-500 hover:bg-red-600"
                 disabled={loading}
               >
-                {loading ? "Canceling..." : "Cancel Subscription"}
+                {loading ? "Canceling..." : "Yes, Cancel"}
               </AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>
         </AlertDialog>
-
-        <Dialog open={upgradeDialogOpen} onOpenChange={setUpgradeDialogOpen}>
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle>Upgrade to Team</DialogTitle>
-              <DialogDescription>
-                Unlock team collaboration features and invite up to 30 members
-              </DialogDescription>
-            </DialogHeader>
-            <div className="py-4 space-y-4">
-              <div className="p-4 bg-cyan-500/10 border border-cyan-500/20 rounded-lg">
-                <h4 className="text-sm font-semibold text-cyan-300 mb-2">What happens next?</h4>
-                <ul className="text-sm text-gray-300 space-y-1">
-                  <li>• Your plan will be upgraded to Team ($99.99/month)</li>
-                  <li>• A new team will be automatically created for you</li>
-                  <li>• You can invite up to 30 team members</li>
-                  <li>• All your existing projects and presets will be preserved</li>
-                </ul>
-              </div>
-              <p className="text-sm text-gray-400">
-                You will be redirected to PayPal to complete the payment. After successful payment,
-                your team will be ready to use.
-              </p>
-            </div>
-            <DialogFooter>
-              <Button variant="outline" onClick={() => setUpgradeDialogOpen(false)}>
-                Cancel
-              </Button>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: `
-                  <style>.pp-upgrade-btn{text-align:center;border:none;border-radius:0.25rem;padding:0.5rem 1.5rem;height:2.5rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:0.875rem;cursor:pointer;}</style>
-                  <form action="https://www.paypal.com/ncp/payment/FEC47P2HBV9K6" method="post" target="_blank" style="display:inline;">
-                    <input class="pp-upgrade-btn" type="submit" value="Continue to PayPal" />
-                  </form>
-                `,
-                }}
-              />
-            </DialogFooter>
-          </DialogContent>
-        </Dialog>
-
-        <Dialog open={downgradeDialogOpen} onOpenChange={setDowngradeDialogOpen}>
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle>Downgrade to Pro</DialogTitle>
-              <DialogDescription>
-                Switch to individual plan and reduce costs
-              </DialogDescription>
-            </DialogHeader>
-            <div className="py-4 space-y-4">
-              <div className="p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-lg">
-                <h4 className="text-sm font-semibold text-yellow-400 mb-2">Important Notice</h4>
-                <ul className="text-sm text-gray-300 space-y-1">
-                  <li>• Your plan will change to Pro ($9.99/month)</li>
-                  <li>• Team features will be disabled</li>
-                  <li>• Your team data will be retained but inaccessible</li>
-                  <li>• Team members will lose access to shared resources</li>
-                  <li>• You can upgrade back to Team at any time</li>
-                </ul>
-              </div>
-            </div>
-            <DialogFooter>
-              <Button variant="outline" onClick={() => setDowngradeDialogOpen(false)}>
-                Cancel
-              </Button>
-              <Button
-                onClick={handleDowngrade}
-                disabled={loading}
-                className="bg-yellow-500 hover:bg-yellow-600 text-black"
-              >
-                {loading ? "Processing..." : "Confirm Downgrade"}
-              </Button>
-            </DialogFooter>
-          </DialogContent>
-        </Dialog>
       </div>
     </div>
   );
