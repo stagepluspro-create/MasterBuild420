@@ -5,7 +5,9 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { supabase } from "@/lib/supabase";
+import { createClient } from "@/lib/supabase-browser"
+
+const supabase = createClient();
 import { deltaE, xyToRGB, hexToXY } from "@/lib/color-science";
 import { Search } from "lucide-react";
 

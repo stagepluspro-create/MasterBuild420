@@ -43,7 +43,9 @@ import {
 import { SPLAudioEngine, SPLMeasurement, WeightingType, ResponseMode } from "./spl-audio-engine";
 import { ComplianceCalculator } from "./compliance-calculator";
 import { useAuth } from "@/lib/auth-context";
-import { supabase } from "@/lib/supabase";
+import { createClient } from "@/lib/supabase-browser"
+
+const supabase = createClient();
 
 const WEIGHTING_OPTIONS: { value: WeightingType; label: string; description: string }[] = [
   { value: "A", label: "A-Weighting", description: "Human hearing response" },

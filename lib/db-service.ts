@@ -1,4 +1,6 @@
-import { supabase } from "./supabase";
+import { createClient } from "@/lib/supabase-browser";
+
+const supabase = createClient();
 
 const MAX_RETRIES = 3;
 const RETRY_DELAY = 1000;

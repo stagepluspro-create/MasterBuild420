@@ -7,9 +7,8 @@ import React, {
   useState,
   ReactNode,
 } from "react";
-
-import type { User } from "createBrowserSupabase";
-import { createBrowserSupabase } from "@/lib/supabase-browser";
+import { createClient } from "@/lib/supabase-browser";
+import type { User } from "@supabase/supabase-js";
 
 type Profile = {
   id: string;
@@ -18,11 +17,27 @@ type Profile = {
   avatar_url?: string | null;
 };
 
+type Subscription = {
+  id: string;
+  user_id: string;
+  tier: "pro" | "team";
+  status: "active" | "trial" | "expired" | "canceled";
+  seats: number;
+  trial_start: string;
+  trial_end: string;
+  paypal_transaction_id?: string | null;
+};
+
 type AuthContextType = {
   user: User | null;
   profile: Profile | null;
+  subscription: Subscription | null;
   loading: boolean;
   signOut: () => Promise<void>;
+  refreshSubscription: () => Promise<void>;
+  isTrialActive: boolean;
+  isTrialExpired: boolean;
+  trialDaysRemaining: number;
 };
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -30,14 +45,39 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
+  const [subscription, setSubscription] = useState<Subscription | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const supabase = createBrowserSupabase();
+  const supabase = createClient();
+
+  const loadProfile = async (userId: string) => {
+    const { data } = await supabase
+      .from("profiles")
+      .select("*")
+      .eq("id", userId)
+      .maybeSingle();
+    return data;
+  };
+
+  const loadSubscription = async (userId: string) => {
+    const { data } = await supabase
+      .from("subscriptions")
+      .select("*")
+      .eq("user_id", userId)
+      .maybeSingle();
+    return data;
+  };
+
+  const refreshSubscription = async () => {
+    if (!user) return;
+    const sub = await loadSubscription(user.id);
+    setSubscription(sub);
+  };
 
   useEffect(() => {
     let mounted = true;
 
-    async function load() {
+    async function initialize() {
       const { data } = await supabase.auth.getUser();
       const currentUser = data?.user ?? null;
 
@@ -46,19 +86,21 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setUser(currentUser);
 
       if (currentUser) {
-        const { data: profileData } = await supabase
-          .from("profiles")
-          .select("*")
-          .eq("id", currentUser.id)
-          .single();
+        const [profileData, subData] = await Promise.all([
+          loadProfile(currentUser.id),
+          loadSubscription(currentUser.id),
+        ]);
 
-        setProfile(profileData ?? null);
+        if (mounted) {
+          setProfile(profileData);
+          setSubscription(subData);
+        }
       }
 
       setLoading(false);
     }
 
-    load();
+    initialize();
 
     const { data: listener } = supabase.auth.onAuthStateChange(
       async (_event, session) => {
@@ -66,14 +108,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setUser(nextUser);
 
         if (nextUser) {
-          const { data } = await supabase
-            .from("profiles")
-            .select("*")
-            .eq("id", nextUser.id)
-            .single();
-          setProfile(data ?? null);
+          const [profileData, subData] = await Promise.all([
+            loadProfile(nextUser.id),
+            loadSubscription(nextUser.id),
+          ]);
+          setProfile(profileData);
+          setSubscription(subData);
         } else {
           setProfile(null);
+          setSubscription(null);
         }
       }
     );
@@ -88,10 +131,41 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     await supabase.auth.signOut();
     setUser(null);
     setProfile(null);
+    setSubscription(null);
   };
 
+  const isTrialActive =
+    subscription?.status === "trial" &&
+    new Date(subscription.trial_end) > new Date();
+
+  const isTrialExpired =
+    subscription?.status === "trial" &&
+    new Date(subscription.trial_end) <= new Date();
+
+  const trialDaysRemaining = subscription?.trial_end
+    ? Math.max(
+        0,
+        Math.ceil(
+          (new Date(subscription.trial_end).getTime() - Date.now()) /
+            (1000 * 60 * 60 * 24)
+        )
+      )
+    : 0;
+
   return (
-    <AuthContext.Provider value={{ user, profile, loading, signOut }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        profile,
+        subscription,
+        loading,
+        signOut,
+        refreshSubscription,
+        isTrialActive,
+        isTrialExpired,
+        trialDaysRemaining,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );
@@ -99,6 +173,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
 export function useAuth() {
   const ctx = useContext(AuthContext);
-  if (!ctx) throw new Error("useAuth must be inside AuthProvider");
+  if (!ctx) throw new Error("useAuth must be used inside AuthProvider");
   return ctx;
 }

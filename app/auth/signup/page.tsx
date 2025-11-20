@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { createBrowserSupabase } from "@/lib/supabase-browser";
+import { createClient } from "@/lib/supabase-browser";
 
 export default function SignUpPage() {
-  const supabase = getBrowserSupabase();
+  const supabase = createClient();
   const [email, setEmail] = useState("");
 
   const signUp = async () => {

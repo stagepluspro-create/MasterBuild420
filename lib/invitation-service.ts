@@ -1,5 +1,7 @@
-import { supabase } from "./supabase";
+import { createClient } from "@/lib/supabase-browser";
 import emailjs from "@emailjs/browser";
+
+const supabase = createClient();
 
 export interface InvitationData {
   teamId: string;

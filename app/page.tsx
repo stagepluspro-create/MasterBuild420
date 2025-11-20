@@ -4,7 +4,9 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
 import { dbService } from "@/lib/db-service";
-import { supabase } from "@/lib/supabase";
+import { createClient } from "@/lib/supabase-browser"
+
+const supabase = createClient();
 import { ProtectedRoute } from "@/components/auth/protected-route";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";

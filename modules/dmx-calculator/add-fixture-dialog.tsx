@@ -1,7 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { supabase } from "@/lib/supabase";
+import { createClient } from "@/lib/supabase-browser"
+
+const supabase = createClient();
 import { dmxService, DMXUniverse } from "@/lib/dmx-service";
 import { dmxCalculations } from "@/lib/dmx-calculations";
 import { Button } from "@/components/ui/button";

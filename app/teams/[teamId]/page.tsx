@@ -6,7 +6,9 @@ import { useAuth } from "@/lib/auth-context";
 import { teamService } from "@/lib/team-service";
 import { dbService } from "@/lib/db-service";
 import { invitationService } from "@/lib/invitation-service";
-import { supabase } from "@/lib/supabase";
+import { createClient } from "@/lib/supabase-browser"
+
+const supabase = createClient();
 import { ProtectedRoute } from "@/components/auth/protected-route";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";

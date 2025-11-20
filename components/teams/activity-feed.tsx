@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Activity, Download, Filter, Calendar, User, FileText } from "lucide-react";
-import { supabase } from "@/lib/supabase";
+import { createClient } from "@/lib/supabase-browser";
 import { ActivityFeedItem } from "@/lib/team-service";
 
 interface ActivityFeedProps {
@@ -35,6 +35,8 @@ export function ActivityFeed({ teamId, initialActivities, onExport }: ActivityFe
   const [hasMore, setHasMore] = useState(true);
   const [offset, setOffset] = useState(0);
   const LIMIT = 20;
+
+  const supabase = createClient();
 
   // Real-time subscription
   useEffect(() => {
