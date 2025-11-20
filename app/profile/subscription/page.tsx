@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { createClient } from "@/utils/supabase/client";
+import { createBrowserClient } from "@/lib/supabase-browser";
 import { BillingSubscription } from "@/components/teams/billing-subscription";
 
 export default function SubscriptionPage() {
