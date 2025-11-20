@@ -28,10 +28,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.variable} ${outfit.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${outfit.variable} font-sans antialiased flex flex-col min-h-screen`}>
         <AuthProvider>
           <Nav />
-          {children}
+          <main className="flex-1">
+            {children}
+          </main>
           <Footer />
           <ClientToaster />
         </AuthProvider>
