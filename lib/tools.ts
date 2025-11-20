@@ -30,6 +30,26 @@ export const tools: ToolConfig[] = [
   { id: "secure-logins", name: "Secure Logins", category: "universals", status: "coming_soon", description: "Store credentials safely.", icon: "Shield", path: "/tools/secure-logins", features: [], helpText: "" },
   { id: "tone-generator", name: "Tone Generator", category: "audio", status: "available", description: "Professional signal generator with waveforms, noise, and sweep functions.", icon: "Waveform", path: "/tools/tone-generator", features: ["Sine, Square, Triangle, Sawtooth waveforms", "White and Pink noise", "Frequency sweep (linear/log)", "Burst mode", "Real-time waveform visualization", "Channel routing (L/R/Stereo)", "Safety features and auto-stop"], helpText: "Generate test tones for calibration, system alignment, and troubleshooting. Includes safety warnings and volume limiting." },
   { id: "signal-tester", name: "Signal Path Tester", category: "audio", status: "available", description: "Cable continuity testing with pass/fail tracking and notes.", icon: "Cable", path: "/tools/signal-tester", features: [], helpText: "Test signal paths and log results for troubleshooting." },
+  {
+    id: "spectrum-analyzer",
+    name: "Spectrum Analyzer",
+    category: "audio",
+    status: "available",
+    description: "Real-time audio frequency analysis with FFT spectrum, RMS metering, and waterfall spectrogram.",
+    icon: "BarChart3",
+    path: "/tools/spectrum-analyzer",
+    features: [
+      "Real-time FFT frequency spectrum display",
+      "Configurable FFT size (512-8192 bins)",
+      "Adjustable smoothing for stable visualization",
+      "Fast and slow RMS level meters",
+      "Scrolling waterfall spectrogram",
+      "Color-coded frequency display",
+      "Live microphone input processing",
+      "GPU-accelerated canvas rendering"
+    ],
+    helpText: "Professional audio analysis tool for troubleshooting, system tuning, and frequency monitoring. View real-time spectrum, RMS levels, and time-frequency waterfall display."
+  },
   { id: "rf-coordination", name: "RF Coordination", category: "audio", status: "available", description: "Wireless frequency planning with interference detection.", icon: "Radio", path: "/tools/rf-coordination", features: [], helpText: "Plan RF spectrum and avoid frequency conflicts." },
   { id: "playback", name: "Playback", category: "audio", status: "available", description: "Audio cue soundboard with master controls.", icon: "PlayCircle", path: "/tools/playback", features: [], helpText: "Trigger audio cues for shows and presentations." },
   {
