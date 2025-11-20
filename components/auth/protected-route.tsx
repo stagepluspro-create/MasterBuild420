@@ -8,18 +8,29 @@ export function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const { user, loading } = useAuth();
 
-  // While loading, show nothing (no spinner to avoid re-renders)
-  if (loading) return null;
+  // While loading auth, show a lightweight placeholder (NOT null)
+  if (loading) {
+    return (
+      <div className="w-full h-[50vh] flex items-center justify-center text-gray-400">
+        Checking authentication…
+      </div>
+    );
+  }
 
   useEffect(() => {
-    // Redirect ONLY after loading finishes
     if (!loading && !user) {
       router.replace("/login");
     }
   }, [loading, user, router]);
 
-  // Do NOT render until redirect decision is complete
-  if (!user) return null;
+  // If no user yet, hide the content but DO NOT return null
+  if (!user) {
+    return (
+      <div className="w-full h-[50vh] flex items-center justify-center text-gray-400">
+        Redirecting…
+      </div>
+    );
+  }
 
   return <>{children}</>;
 }
