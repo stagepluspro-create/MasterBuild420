@@ -11,8 +11,7 @@ export default function ResetPasswordPage() {
     await supabase.auth.resetPasswordForEmail(email, {
       redirectTo: `${location.origin}/auth/update-password`,
     });
-
-    alert("Check email for reset link.");
+    alert("Check your email for reset link.");
   };
 
   return (
@@ -21,10 +20,9 @@ export default function ResetPasswordPage() {
       <input
         className="border p-2"
         type="email"
-        placeholder="Your email"
         onChange={(e) => setEmail(e.target.value)}
       />
-      <button onClick={sendReset}>Send Reset Link</button>
+      <button onClick={sendReset}>Send Reset Email</button>
     </div>
   );
 }
