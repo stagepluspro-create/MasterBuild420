@@ -2,12 +2,11 @@
 
 import { createPagesBrowserClient } from "@supabase/auth-helpers-nextjs";
 
-// NEW name (what the subscription page uses)
-export function createBrowserClient() {
-  return createPagesBrowserClient();
-}
+let browserClient: ReturnType<typeof createPagesBrowserClient> | null = null;
 
-// OLD name (what all your auth pages still use)
-export function createBrowserSupabase() {
-  return createPagesBrowserClient();
+export function getBrowserSupabase() {
+  if (!browserClient) {
+    browserClient = createPagesBrowserClient();
+  }
+  return browserClient;
 }
