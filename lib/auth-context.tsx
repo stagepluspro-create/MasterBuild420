@@ -32,7 +32,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(true);
 
-  // fresh client per component, safe for browser
   const supabase = createBrowserSupabase();
 
   useEffect(() => {
