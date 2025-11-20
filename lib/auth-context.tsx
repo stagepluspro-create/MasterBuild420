@@ -4,6 +4,7 @@ import { createContext, useContext, useEffect, useState, ReactNode } from "react
 import { User, Session, AuthChangeEvent } from "@supabase/supabase-js";
 import { supabase } from "./supabase";
 
+// ---------- Interfaces ----------
 interface Profile {
   id: string;
   email: string;
@@ -36,9 +37,11 @@ interface AuthContextType {
   subscription: Subscription | null;
   session: Session | null;
   loading: boolean;
+
   signOut: () => Promise<void>;
   refreshProfile: () => Promise<void>;
   refreshSubscription: () => Promise<void>;
+
   isSubscriptionActive: boolean;
   isTrialActive: boolean;
   isTrialExpired: boolean;
@@ -47,134 +50,84 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
+// =========================
+//     Auth Provider
+// =========================
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
+  const [session, setSession] = useState<Session | null>(null);
+
   const [profile, setProfile] = useState<Profile | null>(null);
   const [subscription, setSubscription] = useState<Subscription | null>(null);
-  const [session, setSession] = useState<Session | null>(null);
+
   const [loading, setLoading] = useState(true);
 
-  const fetchProfile = async (userId: string, retries = 3): Promise<void> => {
-    try {
-      const { data, error } = await supabase
-        .from("profiles")
-        .select("*")
-        .eq("id", userId)
-        .maybeSingle();
+  // ---------- DB Loaders ----------
+  async function fetchProfile(userId: string) {
+    const { data, error } = await supabase
+      .from("profiles")
+      .select("*")
+      .eq("id", userId)
+      .maybeSingle();
 
-      if (error) {
-        console.error("Error fetching profile:", error);
-        if (retries > 0) {
-          await new Promise(resolve => setTimeout(resolve, 1000));
-          return fetchProfile(userId, retries - 1);
-        }
-        return;
-      }
+    if (!error && data) setProfile(data);
+  }
 
-      if (data) {
-        setProfile(data);
-      }
-    } catch (err) {
-      console.error("Exception fetching profile:", err);
-      if (retries > 0) {
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        return fetchProfile(userId, retries - 1);
-      }
-    }
-  };
+  async function fetchSubscription(userId: string) {
+    const { data, error } = await supabase
+      .from("subscriptions")
+      .select("*")
+      .eq("user_id", userId)
+      .maybeSingle();
 
-  const fetchSubscription = async (userId: string, retries = 3): Promise<void> => {
-    try {
-      const { data, error } = await supabase
-        .from("subscriptions")
-        .select("*")
-        .eq("user_id", userId)
-        .maybeSingle();
-
-      if (error) {
-        console.error("Error fetching subscription:", error);
-        if (retries > 0) {
-          await new Promise(resolve => setTimeout(resolve, 1000));
-          return fetchSubscription(userId, retries - 1);
-        }
-        return;
-      }
-
-      if (data) {
-        setSubscription(data);
-      }
-    } catch (err) {
-      console.error("Exception fetching subscription:", err);
-      if (retries > 0) {
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        return fetchSubscription(userId, retries - 1);
-      }
-    }
-  };
+    if (!error && data) setSubscription(data);
+  }
 
   const refreshProfile = async () => {
-    if (user) {
-      await fetchProfile(user.id);
-    }
+    if (user) await fetchProfile(user.id);
   };
 
   const refreshSubscription = async () => {
-    if (user) {
-      await fetchSubscription(user.id);
-    }
+    if (user) await fetchSubscription(user.id);
   };
 
+  // =========================
+  //        Initialization
+  // =========================
   useEffect(() => {
-    let mounted = true;
+    let active = true;
 
-    // Failsafe: ensure loading state resolves even if something goes wrong
-    const loadingTimeout = setTimeout(() => {
-      if (mounted && loading) {
-        console.warn("Auth initialization timeout - forcing loading to false");
-        setLoading(false);
+    const init = async () => {
+      // 1) Immediately load current auth session WITHOUT blocking UI
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
+
+      if (!active) return;
+
+      setSession(session);
+      setUser(session?.user ?? null);
+
+      // 2) If user exists, load profile + subscription
+      if (session?.user) {
+        await Promise.all([
+          fetchProfile(session.user.id),
+          fetchSubscription(session.user.id),
+        ]);
       }
-    }, 10000); // 10 second timeout
 
-    const initializeAuth = async () => {
-      try {
-        const { data: { session }, error } = await supabase.auth.getSession();
-
-        if (!mounted) return;
-
-        if (error) {
-          console.error("Error getting session:", error);
-          setLoading(false);
-          return;
-        }
-
-        setSession(session);
-        setUser(session?.user ?? null);
-
-        if (session?.user) {
-          await Promise.all([
-            fetchProfile(session.user.id),
-            fetchSubscription(session.user.id)
-          ]);
-        }
-
-        if (mounted) {
-          setLoading(false);
-        }
-      } catch (error) {
-        console.error("Exception initializing auth:", error);
-        if (mounted) {
-          setLoading(false);
-        }
-      }
+      // 3) Loading finished — no timeout needed
+      if (active) setLoading(false);
     };
 
-    initializeAuth();
+    init();
 
+    // 4) Listen for future auth changes (login, logout, refresh)
     const {
       data: { subscription: authListener },
     } = supabase.auth.onAuthStateChange(
-      async (event: AuthChangeEvent, session: Session | null) => {
-        if (!mounted) return;
+      async (_event: AuthChangeEvent, session: Session | null) => {
+        if (!active) return;
 
         setSession(session);
         setUser(session?.user ?? null);
@@ -182,37 +135,27 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         if (session?.user) {
           await Promise.all([
             fetchProfile(session.user.id),
-            fetchSubscription(session.user.id)
+            fetchSubscription(session.user.id),
           ]);
         } else {
           setProfile(null);
           setSubscription(null);
         }
 
-        if (mounted) {
-          setLoading(false);
-        }
+        setLoading(false);
       }
     );
 
     return () => {
-      mounted = false;
-      clearTimeout(loadingTimeout);
+      active = false;
       authListener.unsubscribe();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const signOut = async () => {
-    await supabase.auth.signOut();
-    setUser(null);
-    setProfile(null);
-    setSubscription(null);
-    setSession(null);
-  };
-
+  // ---------- Trial/Status Helpers ----------
   const isSubscriptionActive =
-    subscription?.status === "active" || subscription?.status === "trial";
+    subscription?.status === "active" ||
+    subscription?.status === "trial";
 
   const isTrialActive =
     subscription?.status === "trial" &&
@@ -226,11 +169,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     ? Math.max(
         0,
         Math.ceil(
-          (new Date(subscription.trial_end).getTime() - new Date().getTime()) /
+          (new Date(subscription.trial_end).getTime() - Date.now()) /
             (1000 * 60 * 60 * 24)
         )
       )
     : 0;
+
+  // ---------- Sign Out ----------
+  const signOut = async () => {
+    await supabase.auth.signOut();
+    setUser(null);
+    setSession(null);
+    setProfile(null);
+    setSubscription(null);
+  };
 
   return (
     <AuthContext.Provider
@@ -254,10 +206,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   );
 }
 
+// Hook
 export function useAuth() {
-  const context = useContext(AuthContext);
-  if (context === undefined) {
-    throw new Error("useAuth must be used within an AuthProvider");
-  }
-  return context;
+  const ctx = useContext(AuthContext);
+  if (!ctx) throw new Error("useAuth must be used inside AuthProvider");
+  return ctx;
 }
