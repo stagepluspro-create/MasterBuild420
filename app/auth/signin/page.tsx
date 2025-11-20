@@ -9,14 +9,15 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Mail, ArrowLeft, Sparkles, CheckCircle2 } from "lucide-react";
+import { Mail, ArrowLeft, Lock, CheckCircle2, Eye, EyeOff } from "lucide-react";
 
 export default function SignInPage() {
   const router = useRouter();
   const supabase = createClient();
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
 
   const handleSignIn = async (e: React.FormEvent) => {
@@ -32,86 +33,37 @@ export default function SignInPage() {
       return;
     }
 
+    if (!password) {
+      setError("Please enter your password");
+      return;
+    }
+
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters");
+      return;
+    }
+
     try {
       setLoading(true);
       setError("");
 
-      const { error: signInError } = await supabase.auth.signInWithOtp({
+      const { data, error: signInError } = await supabase.auth.signInWithPassword({
         email,
-        options: {
-          emailRedirectTo: `${window.location.origin}/auth/callback?next=/dashboard`,
-        },
+        password,
       });
 
       if (signInError) throw signInError;
 
-      setSent(true);
+      if (data.user) {
+        router.push("/dashboard");
+      }
     } catch (err: any) {
       console.error("Sign in error:", err);
-      setError(err.message || "Failed to send magic link. Please try again.");
+      setError(err.message || "Invalid email or password. Please try again.");
     } finally {
       setLoading(false);
     }
   };
-
-  if (sent) {
-    return (
-      <div className="min-h-screen flex items-center justify-center px-4 py-12">
-        <div className="w-full max-w-md">
-          <div className="mb-6 text-center">
-            <Link
-              href="/"
-              className="inline-flex items-center text-sm text-gray-400 hover:text-cyan-400 transition-colors"
-            >
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to home
-            </Link>
-          </div>
-
-          <Card className="glass-panel border-cyan-400/30 bg-cyan-500/5">
-            <CardHeader className="text-center pb-4">
-              <div className="mx-auto w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500/20 to-violet-500/20 flex items-center justify-center mb-4">
-                <CheckCircle2 className="w-8 h-8 text-cyan-400" />
-              </div>
-              <CardTitle className="text-2xl">Check Your Email</CardTitle>
-              <CardDescription className="text-base text-gray-300 mt-2">
-                We've sent a magic link to <strong className="text-white">{email}</strong>
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4 text-center">
-              <div className="p-4 bg-white/5 rounded-lg border border-white/10">
-                <p className="text-sm text-gray-300 mb-3">
-                  Click the link in your email to sign in. The link will expire in 1 hour.
-                </p>
-                <div className="flex items-start gap-2 text-xs text-gray-400 text-left">
-                  <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 text-cyan-400" />
-                  <span>If you don't see the email, check your spam folder</span>
-                </div>
-              </div>
-            </CardContent>
-            <CardFooter className="flex-col space-y-3">
-              <Button
-                variant="outline"
-                className="w-full"
-                onClick={() => {
-                  setSent(false);
-                  setEmail("");
-                }}
-              >
-                Use a different email
-              </Button>
-              <p className="text-xs text-center text-gray-400">
-                Don't have an account?{" "}
-                <Link href="/auth/signup" className="text-cyan-400 hover:underline">
-                  Sign up
-                </Link>
-              </p>
-            </CardFooter>
-          </Card>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-12">
@@ -129,7 +81,7 @@ export default function SignInPage() {
         <Card className="glass-panel">
           <CardHeader className="text-center pb-6">
             <div className="mx-auto w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500/20 to-violet-500/20 flex items-center justify-center mb-4">
-              <Sparkles className="w-8 h-8 text-cyan-400" />
+              <Lock className="w-8 h-8 text-cyan-400" />
             </div>
             <CardTitle className="text-3xl font-bold gradient-text mb-2">Welcome Back</CardTitle>
             <CardDescription className="text-base text-gray-300">
@@ -162,10 +114,43 @@ export default function SignInPage() {
                     autoFocus
                   />
                 </div>
-                <p className="text-xs text-gray-400 flex items-center gap-1.5">
-                  <Sparkles className="w-3 h-3 text-cyan-400" />
-                  We'll send you a magic link for password-free sign in
-                </p>
+              </div>
+
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="password" className="text-sm font-medium text-gray-200">
+                    Password
+                  </Label>
+                  <Link
+                    href="/auth/reset-password"
+                    className="text-xs text-cyan-400 hover:underline"
+                  >
+                    Forgot password?
+                  </Link>
+                </div>
+                <div className="relative">
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+                  <Input
+                    id="password"
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Enter your password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    disabled={loading}
+                    className="pl-10 pr-10 bg-white/5 border-white/10 focus:border-cyan-400/50 focus:ring-cyan-400/20"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-300"
+                  >
+                    {showPassword ? (
+                      <EyeOff className="h-4 w-4" />
+                    ) : (
+                      <Eye className="h-4 w-4" />
+                    )}
+                  </button>
+                </div>
               </div>
             </CardContent>
 
@@ -178,12 +163,12 @@ export default function SignInPage() {
                 {loading ? (
                   <>
                     <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2" />
-                    Sending magic link...
+                    Signing in...
                   </>
                 ) : (
                   <>
-                    <Mail className="mr-2 h-4 w-4" />
-                    Send Magic Link
+                    <Lock className="mr-2 h-4 w-4" />
+                    Sign In
                   </>
                 )}
               </Button>
