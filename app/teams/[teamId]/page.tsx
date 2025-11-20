@@ -87,59 +87,97 @@ function TeamDashboardContent({ params }: { params: { teamId: string } }) {
     try {
       setLoading(true);
 
-      // Load team details
-      const teamData = await teamService.getTeamDetails(params.teamId);
-      setTeam(teamData);
-
-      // Load members
-      const membersData = await teamService.getTeamMembers(params.teamId);
-      setMembers(membersData);
-
-      // Load projects
-      const projectsData = await dbService.getTeamProjects(params.teamId);
-      setProjects(projectsData);
-
-      // Load activity
-      const activityData = await teamService.getActivityFeed(params.teamId, { limit: 20 });
-      setActivity(activityData);
-
-      // Load security settings
-      const securityData = await teamService.getSecuritySettings(params.teamId);
-      setSecuritySettings(securityData);
-
-      // Load integrations
-      const integrationsData = await teamService.getTeamIntegrations(params.teamId);
-      setIntegrations(integrationsData);
-
-      // Load API keys
-      const teamKeysData = await teamService.getTeamAPIKeys(params.teamId);
-      setTeamAPIKeys(teamKeysData);
-
-      if (user) {
-        const userKeysData = await teamService.getUserAPIKeys(user.id, params.teamId);
-        setUserAPIKeys(userKeysData);
+      // Load team details safely
+      try {
+        const teamData = await teamService.getTeamDetails(params.teamId);
+        setTeam(teamData);
+      } catch (err) {
+        console.error("Failed to load team:", err);
+        throw err;
       }
 
-      // Calculate stats
-      const activeMembers = membersData.filter((m) => m.joined_at && m.status === "active").length;
-      const recentActivity = activityData.filter(
-        (a) => new Date(a.created_at).getTime() > Date.now() - 7 * 24 * 60 * 60 * 1000
-      );
-      const lastActivity = activityData.length > 0 ? activityData[0].created_at : null;
+      // Load members safely
+      try {
+        const membersData = await teamService.getTeamMembers(params.teamId);
+        setMembers(membersData);
 
-      setStats({
-        activeMembers,
-        totalProjects: projectsData.length,
-        recentActivityCount: recentActivity.length,
-        lastActivity,
-      });
+        // Calculate basic stats
+        const activeMembers = membersData.filter((m) => m.joined_at && m.status === "active").length;
+        setStats((prev) => ({ ...prev, activeMembers }));
+      } catch (err) {
+        console.error("Failed to load members:", err);
+        setMembers([]);
+      }
+
+      // Load projects safely
+      try {
+        const projectsData = await dbService.getTeamProjects(params.teamId);
+        setProjects(projectsData);
+        setStats((prev) => ({ ...prev, totalProjects: projectsData.length }));
+      } catch (err) {
+        console.error("Failed to load projects:", err);
+        setProjects([]);
+      }
+
+      // Load activity safely (non-blocking)
+      try {
+        const activityData = await teamService.getActivityFeed(params.teamId, { limit: 20 });
+        setActivity(activityData);
+
+        const recentActivity = activityData.filter(
+          (a) => new Date(a.created_at).getTime() > Date.now() - 7 * 24 * 60 * 60 * 1000
+        );
+        const lastActivity = activityData.length > 0 ? activityData[0].created_at : null;
+
+        setStats((prev) => ({
+          ...prev,
+          recentActivityCount: recentActivity.length,
+          lastActivity,
+        }));
+      } catch (err) {
+        console.error("Failed to load activity (non-critical):", err);
+        setActivity([]);
+      }
+
+      // Load security settings safely (non-blocking)
+      try {
+        const securityData = await teamService.getSecuritySettings(params.teamId);
+        setSecuritySettings(securityData);
+      } catch (err) {
+        console.error("Failed to load security settings (non-critical):", err);
+        setSecuritySettings(null);
+      }
+
+      // Load integrations safely (non-blocking)
+      try {
+        const integrationsData = await teamService.getTeamIntegrations(params.teamId);
+        setIntegrations(integrationsData);
+      } catch (err) {
+        console.error("Failed to load integrations (non-critical):", err);
+        setIntegrations([]);
+      }
+
+      // Load API keys safely (non-blocking)
+      try {
+        const teamKeysData = await teamService.getTeamAPIKeys(params.teamId);
+        setTeamAPIKeys(teamKeysData);
+
+        if (user) {
+          const userKeysData = await teamService.getUserAPIKeys(user.id, params.teamId);
+          setUserAPIKeys(userKeysData);
+        }
+      } catch (err) {
+        console.error("Failed to load API keys (non-critical):", err);
+        setTeamAPIKeys([]);
+        setUserAPIKeys([]);
+      }
     } catch (error: any) {
       console.error("Failed to load team data:", error);
 
       let errorMessage = "Failed to load team data. Please refresh the page.";
 
       if (error.code === "42501") {
-        errorMessage = "You don&apos;t have permission to view this team.";
+        errorMessage = "You don't have permission to view this team.";
       } else if (error.message?.includes("not found")) {
         errorMessage = "Team not found. It may have been deleted.";
       } else if (error.message?.includes("network") || error.message?.includes("fetch")) {
