@@ -1,7 +1,0 @@
-name: Env Sync
-on: workflow_dispatch
-jobs:
-  sync:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Add VERCEL_TOKEN to GitHub secrets before enabling sync"
