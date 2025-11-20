@@ -1,8 +1,15 @@
 "use client";
 
-import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
-import type { User } from '@supabase/supabase-js';
-import { getBrowserSupabase } from './supabase-client';
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  ReactNode,
+} from "react";
+
+import type { User } from "@supabase/supabase-js";
+import { createBrowserSupabase } from "@/lib/supabase-browser";
 
 type Profile = {
   id: string;
@@ -25,42 +32,56 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const supabase = getBrowserSupabase();
+  // fresh client per component, safe for browser
+  const supabase = createBrowserSupabase();
 
   useEffect(() => {
     let mounted = true;
 
-    async function init() {
-      const { data: { user: currentUser }} = await supabase.auth.getUser();
+    async function load() {
+      const { data } = await supabase.auth.getUser();
+      const currentUser = data?.user ?? null;
 
       if (!mounted) return;
 
-      setUser(currentUser ?? null);
+      setUser(currentUser);
 
       if (currentUser) {
-        const { data } = await supabase.from('profiles').select('*').eq('id', currentUser.id).single();
-        setProfile(data ?? null);
+        const { data: profileData } = await supabase
+          .from("profiles")
+          .select("*")
+          .eq("id", currentUser.id)
+          .single();
+
+        setProfile(profileData ?? null);
       }
 
       setLoading(false);
     }
 
-    init();
+    load();
 
-    const { subscription } = supabase.auth.onAuthStateChange(async (_event, session) => {
-      const nextUser = session?.user ?? null;
-      setUser(nextUser);
-      if (nextUser) {
-        const { data } = await supabase.from('profiles').select('*').eq('id', nextUser.id).single();
-        setProfile(data ?? null);
-      } else {
-        setProfile(null);
+    const { data: listener } = supabase.auth.onAuthStateChange(
+      async (_event, session) => {
+        const nextUser = session?.user ?? null;
+        setUser(nextUser);
+
+        if (nextUser) {
+          const { data } = await supabase
+            .from("profiles")
+            .select("*")
+            .eq("id", nextUser.id)
+            .single();
+          setProfile(data ?? null);
+        } else {
+          setProfile(null);
+        }
       }
-    });
+    );
 
     return () => {
       mounted = false;
-      if (subscription) supabase.auth.removeSubscription(subscription);
+      listener.subscription.unsubscribe();
     };
   }, []);
 
@@ -79,6 +100,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
 export function useAuth() {
   const ctx = useContext(AuthContext);
-  if (!ctx) throw new Error('useAuth must be inside AuthProvider');
+  if (!ctx) throw new Error("useAuth must be inside AuthProvider");
   return ctx;
 }
