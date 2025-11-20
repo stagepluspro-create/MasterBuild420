@@ -1,40 +1,17 @@
-import { createClient, SupabaseClient } from '@supabase/supabase-js';
+// lib/supabase.ts
+"use client";
 
-let supabaseInstance: SupabaseClient | null = null;
+import { createClient } from "@supabase/supabase-js";
 
-function getSupabaseClient(): SupabaseClient {
-  if (supabaseInstance) {
-    return supabaseInstance;
-  }
-
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-  if (!supabaseUrl || !supabaseAnonKey) {
-    throw new Error('Missing Supabase environment variables');
-  }
-
-  supabaseInstance = createClient(supabaseUrl, supabaseAnonKey, {
+export const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+  {
     auth: {
-      persistSession: typeof window !== 'undefined',
+      persistSession: true,
       autoRefreshToken: true,
       detectSessionInUrl: true,
-      flowType: 'pkce',
-      storage: typeof window !== 'undefined' ? window.localStorage : undefined,
-      storageKey: 'stagetechpro-auth-token',
+      flowType: "pkce",
     },
-    db: { schema: 'public' },
-    global: {
-      headers: { 'x-application-name': 'stagetechpro' }
-    }
-  });
-
-  return supabaseInstance;
-}
-
-export const supabase = new Proxy({} as SupabaseClient, {
-  get: (_, prop) => {
-    const client = getSupabaseClient();
-    return (client as any)[prop];
   }
-});
+);
