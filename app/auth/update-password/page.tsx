@@ -8,12 +8,8 @@ export default function UpdatePasswordPage() {
   const [password, setPassword] = useState("");
 
   const updatePassword = async () => {
-    const { error } = await supabase.auth.updateUser({
-      password,
-    });
-
-    if (error) alert(error.message);
-    else alert("Password updated!");
+    await supabase.auth.updateUser({ password });
+    alert("Password updated.");
   };
 
   return (
@@ -21,9 +17,8 @@ export default function UpdatePasswordPage() {
       <h1>Update Password</h1>
       <input
         type="password"
-        placeholder="New Password"
-        onChange={(e) => setPassword(e.target.value)}
         className="border p-2"
+        onChange={(e) => setPassword(e.target.value)}
       />
       <button onClick={updatePassword}>Save</button>
     </div>
