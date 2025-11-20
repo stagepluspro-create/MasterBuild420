@@ -1,3 +1,7 @@
+// ==========================================
+//  Audio Engine - Improved & Stable Version
+// ==========================================
+
 export type WaveformType = "sine" | "square" | "triangle" | "sawtooth" | "white" | "pink";
 export type ChannelMode = "stereo" | "left" | "right";
 export type SweepCurve = "linear" | "logarithmic";
@@ -23,17 +27,27 @@ export class AudioEngine {
   private panNode: StereoPannerNode | null = null;
   private analyser: AnalyserNode | null = null;
   private noiseSource: AudioBufferSourceNode | null = null;
+
   private isNoiseMode: boolean = false;
   private sweepInterval: number | null = null;
   private burstInterval: number | null = null;
 
+  // ------------------------------------------
+  // Initialize AudioContext
+  // ------------------------------------------
   initialize(): AudioContext {
     if (!this.audioContext) {
       this.audioContext = new AudioContext();
     }
+    if (this.audioContext.state === "suspended") {
+      this.audioContext.resume();
+    }
     return this.audioContext;
   }
 
+  // ------------------------------------------
+  // Create White/Pink Noise Buffer
+  // ------------------------------------------
   private createNoiseBuffer(type: "white" | "pink"): AudioBuffer {
     if (!this.audioContext) throw new Error("AudioContext not initialized");
 
@@ -55,8 +69,7 @@ export class AudioEngine {
         b3 = 0.86650 * b3 + white * 0.3104856;
         b4 = 0.55000 * b4 + white * 0.5329522;
         b5 = -0.7616 * b5 - white * 0.0168980;
-        output[i] = b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362;
-        output[i] *= 0.11;
+        output[i] = (b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362) * 0.11;
         b6 = white * 0.115926;
       }
     }
@@ -64,33 +77,33 @@ export class AudioEngine {
     return buffer;
   }
 
-  startTone(config: ToneConfig, maxVolume: number = 1.0): void {
+  // ------------------------------------------
+  // Start Tone (normal)
+  // ------------------------------------------
+  startTone(
+    config: ToneConfig,
+    maxVolume: number = 1.0,
+    durationMs: number | null = null
+  ): void {
     this.stop();
 
     const ctx = this.initialize();
+
     this.gainNode = ctx.createGain();
     this.panNode = ctx.createStereoPanner();
     this.analyser = ctx.createAnalyser();
 
-    this.analyser.fftSize = 2048;
-    this.analyser.smoothingTimeConstant = 0.8;
-
+    // Gain ramp to avoid pops
     const targetVolume = Math.min(config.volume, maxVolume);
     this.gainNode.gain.setValueAtTime(0, ctx.currentTime);
-    this.gainNode.gain.linearRampToValueAtTime(targetVolume, ctx.currentTime + 0.2);
+    this.gainNode.gain.linearRampToValueAtTime(targetVolume, ctx.currentTime + 0.15);
 
-    switch (config.channel) {
-      case "left":
-        this.panNode.pan.value = -1;
-        break;
-      case "right":
-        this.panNode.pan.value = 1;
-        break;
-      case "stereo":
-        this.panNode.pan.value = 0;
-        break;
-    }
+    // Channels
+    this.panNode.pan.value =
+      config.channel === "left" ? -1 :
+      config.channel === "right" ? 1 : 0;
 
+    // Oscillator or Noise
     if (config.waveform === "white" || config.waveform === "pink") {
       this.isNoiseMode = true;
       const buffer = this.createNoiseBuffer(config.waveform);
@@ -98,32 +111,43 @@ export class AudioEngine {
       this.noiseSource.buffer = buffer;
       this.noiseSource.loop = true;
       this.noiseSource.connect(this.gainNode);
+      this.noiseSource.start();
     } else {
       this.isNoiseMode = false;
       this.oscillator = ctx.createOscillator();
       this.oscillator.type = config.waveform;
       this.oscillator.frequency.setValueAtTime(config.frequency, ctx.currentTime);
       this.oscillator.connect(this.gainNode);
+      this.oscillator.start();
     }
 
     this.gainNode.connect(this.panNode);
     this.panNode.connect(this.analyser);
     this.analyser.connect(ctx.destination);
 
-    if (this.isNoiseMode && this.noiseSource) {
-      this.noiseSource.start();
-    } else if (this.oscillator) {
-      this.oscillator.start();
+    // Auto-stop handler
+    if (durationMs && durationMs > 0) {
+      setTimeout(() => {
+        this.stop();
+      }, durationMs);
     }
   }
 
-  startSweep(config: ToneConfig, sweepConfig: SweepConfig, maxVolume: number = 1.0): void {
+  // ------------------------------------------
+  // Start Frequency Sweep
+  // ------------------------------------------
+  startSweep(
+    config: ToneConfig,
+    sweepConfig: SweepConfig,
+    maxVolume: number = 1.0
+  ) {
     this.startTone(config, maxVolume);
 
     if (!this.audioContext || !this.oscillator || this.isNoiseMode) return;
 
     const { startFreq, endFreq, duration, curve } = sweepConfig;
-    const steps = 100;
+
+    const steps = 200;
     const stepDuration = (duration * 1000) / steps;
     let currentStep = 0;
 
@@ -134,45 +158,47 @@ export class AudioEngine {
       }
 
       currentStep++;
-      const progress = currentStep / steps;
+      const t = currentStep / steps;
 
-      let frequency: number;
-      if (curve === "logarithmic") {
-        const logStart = Math.log(startFreq);
-        const logEnd = Math.log(endFreq);
-        frequency = Math.exp(logStart + (logEnd - logStart) * progress);
-      } else {
-        frequency = startFreq + (endFreq - startFreq) * progress;
-      }
+      let nextFreq =
+        curve === "logarithmic"
+          ? Math.exp(Math.log(startFreq) + t * (Math.log(endFreq) - Math.log(startFreq)))
+          : startFreq + t * (endFreq - startFreq);
 
-      this.oscillator.frequency.setValueAtTime(frequency, this.audioContext.currentTime);
+      this.oscillator.frequency.setValueAtTime(nextFreq, this.audioContext.currentTime);
 
-      if (currentStep >= steps) {
-        this.stopSweep();
-      }
+      if (currentStep >= steps) this.stopSweep();
     }, stepDuration);
   }
 
-  stopSweep(): void {
+  stopSweep() {
     if (this.sweepInterval) {
       clearInterval(this.sweepInterval);
       this.sweepInterval = null;
     }
   }
 
-  startBurst(config: ToneConfig, onDuration: number, offDuration: number, maxVolume: number = 1.0): void {
+  // ------------------------------------------
+  // Burst Mode
+  // ------------------------------------------
+  startBurst(
+    config: ToneConfig,
+    onDuration: number,
+    offDuration: number,
+    maxVolume: number = 1.0
+  ): void {
     this.stopBurst();
 
-    let isOn = false;
+    let playing = false;
 
     const toggle = () => {
-      if (isOn) {
+      if (playing) {
         this.cleanupAudioNodes();
-        isOn = false;
+        playing = false;
         this.burstInterval = window.setTimeout(toggle, offDuration);
       } else {
         this.startTone(config, maxVolume);
-        isOn = true;
+        playing = true;
         this.burstInterval = window.setTimeout(toggle, onDuration);
       }
     };
@@ -180,63 +206,64 @@ export class AudioEngine {
     toggle();
   }
 
-  stopBurst(): void {
+  stopBurst() {
     if (this.burstInterval) {
       clearTimeout(this.burstInterval);
       this.burstInterval = null;
     }
   }
 
-  setFrequency(frequency: number): void {
-    if (this.oscillator && this.audioContext && !this.isNoiseMode) {
-      this.oscillator.frequency.setValueAtTime(frequency, this.audioContext.currentTime);
+  // ------------------------------------------
+  // Live Adjustments
+  // ------------------------------------------
+  setFrequency(freq: number): void {
+    if (this.oscillator && !this.isNoiseMode && this.audioContext) {
+      this.oscillator.frequency.setValueAtTime(freq, this.audioContext.currentTime);
     }
   }
 
   setVolume(volume: number, maxVolume: number = 1.0): void {
     if (this.gainNode && this.audioContext) {
-      const targetVolume = Math.min(volume, maxVolume);
-      this.gainNode.gain.setValueAtTime(targetVolume, this.audioContext.currentTime);
+      const target = Math.min(volume, maxVolume);
+      this.gainNode.gain.setValueAtTime(target, this.audioContext.currentTime);
     }
   }
 
+  // ------------------------------------------
+  // Analyser Data
+  // ------------------------------------------
   getAnalyserData(): Uint8Array | null {
     if (!this.analyser) return null;
-    const dataArray = new Uint8Array(this.analyser.frequencyBinCount);
-    this.analyser.getByteTimeDomainData(dataArray);
-    return dataArray;
+    const data = new Uint8Array(this.analyser.frequencyBinCount);
+    this.analyser.getByteTimeDomainData(data);
+    return data;
   }
 
   getCurrentFrequency(): number {
-    if (this.oscillator && !this.isNoiseMode) {
-      return this.oscillator.frequency.value;
-    }
-    return 0;
+    return this.oscillator && !this.isNoiseMode ? this.oscillator.frequency.value : 0;
   }
 
+  // ------------------------------------------
+  // Cleanup
+  // ------------------------------------------
   private cleanupAudioNodes(): void {
     if (this.gainNode && this.audioContext) {
-      this.gainNode.gain.linearRampToValueAtTime(0, this.audioContext.currentTime + 0.1);
+      this.gainNode.gain.linearRampToValueAtTime(
+        0,
+        this.audioContext.currentTime + 0.1
+      );
     }
 
     setTimeout(() => {
       if (this.oscillator) {
-        try {
-          this.oscillator.stop();
-          this.oscillator.disconnect();
-        } catch (e) {
-          // Already stopped
-        }
+        try { this.oscillator.stop(); } catch {}
+        this.oscillator.disconnect();
         this.oscillator = null;
       }
 
       if (this.noiseSource) {
-        try {
-          this.noiseSource.stop();
-          this.noiseSource.disconnect();
-        } catch (e) {
-          // Already stopped
-        }
+        try { this.noiseSource.stop(); } catch {}
+        this.noiseSource.disconnect();
         this.noiseSource = null;
       }
 
@@ -254,7 +281,7 @@ export class AudioEngine {
         this.analyser.disconnect();
         this.analyser = null;
       }
-    }, 150);
+    }, 120);
   }
 
   stop(): void {
