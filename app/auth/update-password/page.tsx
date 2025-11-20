@@ -4,7 +4,7 @@ import { useState } from "react";
 import { createBrowserSupabase } from "@/lib/supabase-browser";
 
 export default function UpdatePasswordPage() {
-  const supabase = createBrowserSupabase();
+  const supabase = getBrowserSupabase();
   const [password, setPassword] = useState("");
 
   const updatePassword = async () => {
