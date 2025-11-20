@@ -11,7 +11,7 @@ import { Table, TableBody, TableCell, TableRow, TableHead } from "@/components/u
 import { Trash2, Plus, Download, Printer, Save } from "lucide-react";
 
 // Callsheet Builder - ToolShell compatible React component
-// Safe for Bolt.new and Vercel (client-side only)
+// Safe for production deployment (client-side only)
 // Uses localStorage for presets and ToolShell getCurrentState/onLoad for integration
 
 const SAMPLE_BG = "/mnt/data/Screenshot 2025-11-20 204756.png"; // developer-supplied path; your build will map this to an URL

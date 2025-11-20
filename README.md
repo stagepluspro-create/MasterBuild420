@@ -21,7 +21,7 @@ Stage Tech Pro is a comprehensive SaaS platform designed for audio engineers, li
 - **Styling:** Tailwind CSS 3.4, Shadcn/UI, Framer Motion
 - **Backend:** Supabase (PostgreSQL + Auth + Storage)
 - **Payments:** PayPal Hosted Buttons
-- **Hosting:** Bolt Hosting + Bolt CDN
+- **Hosting:** Vercel
 - **Domain:** stagetechpro.online
 
 ## 🚀 Quick Start
@@ -203,12 +203,12 @@ Both tiers include:
 - [x] SEO files (robots.txt, sitemap.xml)
 - [x] Security audit passed (0 vulnerabilities)
 
-### Deploy to Bolt Hosting
+### Deploy to Vercel
 
 ```bash
 npm run build
-# Upload .next/ and public/ to Bolt CDN
-# Configure environment variables in Bolt Dashboard
+# Deploy via Vercel CLI or GitHub integration
+# Configure environment variables in Vercel Dashboard
 # Point domain: stagetechpro.online
 ```
 
