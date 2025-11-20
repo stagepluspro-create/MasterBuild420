@@ -1,44 +1,33 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
 
 export function ProtectedRoute({ children }: { children: React.ReactNode }) {
-  const { user, loading } = useAuth();
   const router = useRouter();
-  const pathname = usePathname();
-  const [isRedirecting, setIsRedirecting] = useState(false);
+  const { user, loading } = useAuth();
 
-  useEffect(() => {
-    if (!loading && !user && !isRedirecting) {
-      setIsRedirecting(true);
-      const returnUrl = encodeURIComponent(pathname || "/dashboard");
-      router.push(`/auth/signin?returnUrl=${returnUrl}`);
-    }
-  }, [user, loading, router, pathname, isRedirecting]);
-
+  // If still initializing auth — show nothing but avoid infinite loader
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#050510] via-[#0B0C1A] to-[#121227]">
-        <div className="text-center">
-          <div className="inline-block h-12 w-12 animate-spin rounded-full border-4 border-solid border-cyan-500 border-r-transparent"></div>
-          <p className="mt-4 text-gray-300 font-medium">Loading your workspace...</p>
-        </div>
+      <div className="w-full min-h-[50vh] flex flex-col items-center justify-center text-gray-400">
+        <div className="w-12 h-12 border-4 border-cyan-400/20 border-t-cyan-400 rounded-full animate-spin" />
+        <p className="mt-4">Checking authentication…</p>
       </div>
     );
   }
 
-  if (!user || isRedirecting) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#050510] via-[#0B0C1A] to-[#121227]">
-        <div className="text-center">
-          <div className="inline-block h-12 w-12 animate-spin rounded-full border-4 border-solid border-cyan-500 border-r-transparent"></div>
-          <p className="mt-4 text-gray-300 font-medium">Redirecting to sign in...</p>
-        </div>
-      </div>
-    );
-  }
+  // If not logged in → redirect to login
+  useEffect(() => {
+    if (!loading && !user) {
+      router.replace("/login");
+    }
+  }, [loading, user, router]);
 
+  // If user is loading/redirecting, render nothing
+  if (!user) return null;
+
+  // User authenticated → render content
   return <>{children}</>;
 }
