@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ToolShell } from "@/components/tools/tool-shell";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -14,7 +14,7 @@ import {
   Music, Mic, Speaker, Monitor, Lightbulb, Box, User
 } from "lucide-react";
 
-interface Prop {
+interface PropItem {
   id: string;
   type: string;
   category: string;
@@ -32,7 +32,7 @@ interface StageSetup {
   name: string;
   width: number;
   height: number;
-  props: Prop[];
+  props: PropItem[];
   gridSize: number;
   snapToGrid: boolean;
   layers: { [key: string]: boolean };
@@ -117,6 +117,7 @@ const GRID_SIZES = [0.25, 0.5, 1];
 
 export default function StagePlot() {
   const canvasRef = useRef<HTMLDivElement>(null);
+
   const [setup, setSetup] = useState<StageSetup>({
     name: "New Stage Plot",
     width: 10,
@@ -135,6 +136,12 @@ export default function StagePlot() {
     },
   });
 
+  // keep a ref of the latest setup for mouse events (avoids stale closures)
+  const setupRef = useRef<StageSetup>(setup);
+  useEffect(() => {
+    setupRef.current = setup;
+  }, [setup]);
+
   const [selectedProp, setSelectedProp] = useState<string | null>(null);
   const [dragging, setDragging] = useState<string | null>(null);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
@@ -145,8 +152,28 @@ export default function StagePlot() {
 
   const pixelsPerMeter = 40 * zoom;
 
+  // centralised history + state updater
+  const updateSetup = (newSetup: StageSetup, replaceHistory = false) => {
+    if (replaceHistory) {
+      // replace current history (used for loading a preset)
+      setHistory([newSetup]);
+      setHistoryIndex(0);
+      setSetup(newSetup);
+      return;
+    }
+
+    setHistory((prev) => {
+      const sliced = prev.slice(0, historyIndex + 1);
+      const next = [...sliced, newSetup];
+      setHistoryIndex(next.length - 1);
+      return next;
+    });
+
+    setSetup(newSetup);
+  };
+
   const addPropToStage = (item: any, category: string) => {
-    const newProp: Prop = {
+    const newProp: PropItem = {
       id: `prop-${Date.now()}-${Math.random()}`,
       type: item.type,
       category,
@@ -160,61 +187,50 @@ export default function StagePlot() {
       color: item.color,
     };
 
-    updateSetup({ ...setup, props: [...setup.props, newProp] });
-  };
-
-  const updateSetup = (newSetup: StageSetup) => {
-    const newHistory = history.slice(0, historyIndex + 1);
-    newHistory.push(newSetup);
-    setHistory(newHistory);
-    setHistoryIndex(newHistory.length - 1);
-    setSetup(newSetup);
+    updateSetup({ ...setupRef.current, props: [...setupRef.current.props, newProp] });
   };
 
   const undo = () => {
     if (historyIndex > 0) {
-      setHistoryIndex(historyIndex - 1);
-      setSetup(history[historyIndex - 1]);
+      const newIndex = historyIndex - 1;
+      setHistoryIndex(newIndex);
+      setSetup(history[newIndex]);
     }
   };
 
   const redo = () => {
     if (historyIndex < history.length - 1) {
-      setHistoryIndex(historyIndex + 1);
-      setSetup(history[historyIndex + 1]);
+      const newIndex = historyIndex + 1;
+      setHistoryIndex(newIndex);
+      setSetup(history[newIndex]);
     }
   };
 
   const deleteProp = (id: string) => {
-    updateSetup({
-      ...setup,
-      props: setup.props.filter((p) => p.id !== id),
-    });
+    updateSetup({ ...setupRef.current, props: setupRef.current.props.filter((p) => p.id !== id) });
     setSelectedProp(null);
   };
 
-  const updateProp = (id: string, updates: Partial<Prop>) => {
-    setSetup({
-      ...setup,
-      props: setup.props.map((p) => (p.id === id ? { ...p, ...updates } : p)),
-    });
+  const updateProp = (id: string, updates: Partial<PropItem>) => {
+    const newProps = setupRef.current.props.map((p) => (p.id === id ? { ...p, ...updates } : p));
+    updateSetup({ ...setupRef.current, props: newProps });
   };
 
   const duplicateProp = (id: string) => {
-    const prop = setup.props.find((p) => p.id === id);
+    const prop = setupRef.current.props.find((p) => p.id === id);
     if (!prop) return;
 
-    const newProp = {
+    const newProp: PropItem = {
       ...prop,
       id: `prop-${Date.now()}-${Math.random()}`,
-      x: prop.x + 1,
-      y: prop.y + 1,
+      x: Math.min(setupRef.current.width - prop.width, prop.x + 1),
+      y: Math.min(setupRef.current.height - prop.height, prop.y + 1),
     };
 
-    updateSetup({ ...setup, props: [...setup.props, newProp] });
+    updateSetup({ ...setupRef.current, props: [...setupRef.current.props, newProp] });
   };
 
-  const handlePropMouseDown = (e: React.MouseEvent, prop: Prop) => {
+  const handlePropMouseDown = (e: React.MouseEvent, prop: PropItem) => {
     e.stopPropagation();
     setSelectedProp(prop.id);
     setDragging(prop.id);
@@ -227,6 +243,7 @@ export default function StagePlot() {
     }
   };
 
+  // While dragging we update local state for smooth UI, but we do NOT push history on every move.
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!dragging || !canvasRef.current) return;
 
@@ -234,36 +251,41 @@ export default function StagePlot() {
     const x = (e.clientX - rect.left) / pixelsPerMeter - dragOffset.x;
     const y = (e.clientY - rect.top) / pixelsPerMeter - dragOffset.y;
 
-    const prop = setup.props.find((p) => p.id === dragging);
+    const prop = setupRef.current.props.find((p) => p.id === dragging);
     if (!prop) return;
 
-    let newX = Math.max(0, Math.min(setup.width - prop.width, x));
-    let newY = Math.max(0, Math.min(setup.height - prop.height, y));
+    let newX = Math.max(0, Math.min(setupRef.current.width - prop.width, x));
+    let newY = Math.max(0, Math.min(setupRef.current.height - prop.height, y));
 
-    if (setup.snapToGrid) {
-      newX = Math.round(newX / setup.gridSize) * setup.gridSize;
-      newY = Math.round(newY / setup.gridSize) * setup.gridSize;
+    if (setupRef.current.snapToGrid) {
+      newX = Math.round(newX / setupRef.current.gridSize) * setupRef.current.gridSize;
+      newY = Math.round(newY / setupRef.current.gridSize) * setupRef.current.gridSize;
     }
 
-    setSetup({
-      ...setup,
-      props: setup.props.map((p) =>
-        p.id === dragging ? { ...p, x: newX, y: newY } : p
-      ),
+    // update visual state only
+    setSetup((prev) => {
+      const updated = {
+        ...prev,
+        props: prev.props.map((p) => (p.id === dragging ? { ...p, x: newX, y: newY } : p)),
+      };
+      setupRef.current = updated; // keep ref in sync
+      return updated;
     });
   };
 
+  // On mouse up we commit one history entry with the final position
   const handleMouseUp = () => {
     if (dragging) {
-      updateSetup(setup);
+      // commit final state to history
+      updateSetup(setupRef.current);
       setDragging(null);
     }
   };
 
   const exportAsJSON = () => {
-    const dataStr = JSON.stringify(setup, null, 2);
+    const dataStr = JSON.stringify(setupRef.current, null, 2);
     const dataUri = `data:application/json;charset=utf-8,${encodeURIComponent(dataStr)}`;
-    const exportFileDefaultName = `${setup.name.replace(/\s+/g, '_')}.json`;
+    const exportFileDefaultName = `${setupRef.current.name.replace(/\s+/g, '_')}.json`;
 
     const linkElement = document.createElement("a");
     linkElement.setAttribute("href", dataUri);
@@ -271,16 +293,16 @@ export default function StagePlot() {
     linkElement.click();
   };
 
-  const getCurrentState = () => setup;
+  const getCurrentState = () => setupRef.current;
+
   const handleLoadPreset = (data: any) => {
-    if (data.props) {
-      setSetup(data);
-      setHistory([data]);
-      setHistoryIndex(0);
+    if (data && data.props) {
+      // replace history entirely so Load acts like a fresh file
+      updateSetup(data, true);
     }
   };
 
-  const selectedPropData = setup.props.find((p) => p.id === selectedProp);
+  const selectedPropData = setup.props.find((p) => p.id === selectedProp) || null;
 
   return (
     <ToolShell
@@ -293,7 +315,7 @@ export default function StagePlot() {
         <div className="flex items-center justify-between flex-wrap gap-3">
           <Input
             value={setup.name}
-            onChange={(e) => setSetup({ ...setup, name: e.target.value })}
+            onChange={(e) => updateSetup({ ...setupRef.current, name: e.target.value })}
             className="max-w-xs"
             placeholder="Stage Plot Name"
           />
@@ -332,7 +354,7 @@ export default function StagePlot() {
                     <h4 className="font-semibold text-xs">{category.category}</h4>
                   </div>
                   <div className="space-y-1">
-                    {category.items.map((item) => (
+                    {category.items.map((item: any) => (
                       <Button
                         key={item.type}
                         size="sm"
@@ -357,7 +379,7 @@ export default function StagePlot() {
                   value={`${setup.width}x${setup.height}`}
                   onValueChange={(v) => {
                     const preset = STAGE_PRESETS.find((p) => `${p.width}x${p.height}` === v);
-                    if (preset) setSetup({ ...setup, width: preset.width, height: preset.height });
+                    if (preset) updateSetup({ ...setupRef.current, width: preset.width, height: preset.height });
                   }}
                 >
                   <SelectTrigger className="w-48">
@@ -374,7 +396,7 @@ export default function StagePlot() {
 
                 <Select
                   value={setup.gridSize.toString()}
-                  onValueChange={(v) => setSetup({ ...setup, gridSize: parseFloat(v) })}
+                  onValueChange={(v) => updateSetup({ ...setupRef.current, gridSize: parseFloat(v) })}
                 >
                   <SelectTrigger className="w-24">
                     <SelectValue />
@@ -392,7 +414,7 @@ export default function StagePlot() {
                   <input
                     type="checkbox"
                     checked={setup.snapToGrid}
-                    onChange={(e) => setSetup({ ...setup, snapToGrid: e.target.checked })}
+                    onChange={(e) => updateSetup({ ...setupRef.current, snapToGrid: e.target.checked })}
                     className="rounded"
                   />
                   <span className="text-xs">Snap</span>
@@ -406,9 +428,9 @@ export default function StagePlot() {
                     variant={setup.layers[layer] ? "default" : "outline"}
                     className="cursor-pointer text-xs"
                     onClick={() =>
-                      setSetup({
-                        ...setup,
-                        layers: { ...setup.layers, [layer]: !setup.layers[layer] },
+                      updateSetup({
+                        ...setupRef.current,
+                        layers: { ...setupRef.current.layers, [layer]: !setupRef.current.layers[layer] },
                       })
                     }
                   >
