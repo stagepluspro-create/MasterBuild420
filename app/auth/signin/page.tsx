@@ -4,7 +4,7 @@ import { useState } from "react";
 import { createBrowserSupabase } from "@/lib/supabase-browser";
 
 export default function SignInPage() {
-  const supabase = createBrowserSupabase();
+ const supabase = getBrowserSupabase();
   const [email, setEmail] = useState("");
 
   const signIn = async () => {
