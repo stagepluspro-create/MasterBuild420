@@ -1,41 +1,53 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getServerSupabase } from './lib/supabase-server';
 
-export async function middleware(req: NextRequest) {
+export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
-  if (pathname.startsWith('/_next') || pathname.startsWith('/api') || pathname.startsWith('/static') || pathname === '/favicon.ico') {
+  // Public pages
+  const publicRoutes = [
+    '/',
+    '/auth',
+    '/auth/signin',
+    '/auth/signup',
+    '/auth/reset-password',
+    '/auth/update-password',
+    '/paypal',
+    '/paypal/success',
+  ];
+
+  const isPublic = publicRoutes.some(route =>
+    pathname.startsWith(route)
+  );
+
+  // Don’t block API or static
+  if (
+    pathname.startsWith('/api') ||
+    pathname.startsWith('/_next') ||
+    pathname.startsWith('/static') ||
+    pathname.startsWith('/favicon.ico')
+  ) {
     return NextResponse.next();
   }
 
-  const publicRoutes = ['/', '/auth/signin', '/auth/signup', '/auth/reset-password', '/paypal/success'];
-  if (publicRoutes.some(p => pathname.startsWith(p))) {
+  // Allow public pages without checking auth
+  if (isPublic) {
     return NextResponse.next();
   }
 
-  try {
-    const supabase = getServerSupabase();
+  // You can adjust cookie names later
+  const accessToken =
+    req.cookies.get('sb-access-token')?.value ||
+    req.cookies.get('sb:token')?.value;
 
-    const token = req.cookies.get('sb-access-token')?.value || req.cookies.get('sb:token')?.value;
-    if (!token) {
-      const url = req.nextUrl.clone();
-      url.pathname = '/auth/signin';
-      url.searchParams.set('from', pathname);
-      return NextResponse.redirect(url);
-    }
-
-    const { data, error } = await supabase.auth.getUser(token);
-    if (error || !data?.user) {
-      const url = req.nextUrl.clone();
-      url.pathname = '/auth/signin';
-      url.searchParams.set('from', pathname);
-      return NextResponse.redirect(url);
-    }
-
-    return NextResponse.next();
-  } catch (_e) {
-    return NextResponse.next();
+  // If user not logged in → redirect to sign in
+  if (!accessToken) {
+    const loginUrl = req.nextUrl.clone();
+    loginUrl.pathname = '/auth/signin';
+    loginUrl.searchParams.set('from', pathname);
+    return NextResponse.redirect(loginUrl);
   }
+
+  return NextResponse.next();
 }
 
 export const config = {
