@@ -1,18 +1,7 @@
 "use client";
 
-import { createClient } from "@/lib/supabase-client";
+import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
 
-export const createBrowserSupabase = () => {
-  return createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      auth: {
-        persistSession: true,
-        autoRefreshToken: true,
-        detectSessionInUrl: true,
-        flowType: "pkce",
-      },
-    }
-  );
-};
+export function createBrowserSupabase() {
+  return createBrowserSupabaseClient();
+}
