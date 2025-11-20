@@ -4,7 +4,7 @@ import { useState } from "react";
 import { createBrowserSupabase } from "@/lib/supabase-browser";
 
 export default function ResetPasswordPage() {
-  const supabase = createBrowserSupabase();
+ const supabase = getBrowserSupabase();
   const [email, setEmail] = useState("");
 
   const sendReset = async () => {
