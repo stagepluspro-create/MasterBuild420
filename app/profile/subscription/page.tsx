@@ -5,7 +5,7 @@ import { createBrowserClient } from "@/lib/supabase-browser";
 import { BillingSubscription } from "@/components/teams/billing-subscription";
 
 export default function SubscriptionPage() {
-  const supabase = createClient();
+  const supabase = createBrowserClient();
   const [loading, setLoading] = useState(true);
   const [subscription, setSubscription] = useState<any>(null);
   const [memberCount, setMemberCount] = useState(0);
