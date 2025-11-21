@@ -216,4 +216,18 @@ export default function ConsoleRemotes() {
               {/* Modal Buttons */}
               <div className="flex gap-2 pt-2">
                 <Button className="w-full" onClick={launch}>
-                  <ExternalLink className="w-4 h
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  Launch Remote
+                </Button>
+                <Button variant="outline" onClick={checkStatus}>
+                  <Wifi className="w-4 h-4 mr-2" />
+                  Test
+                </Button>
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
+      </div>
+    </ToolShell>
+  );
+}

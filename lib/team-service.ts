@@ -218,7 +218,7 @@ export const teamService = {
   async getTeamMembers(teamId: string, options?: { limit?: number; offset?: number; search?: string }) {
     let query = supabase
       .from("team_members")
-      .select("*, profile:profiles!team_members_user_id_fkey(id, email, full_name, avatar_url)")
+      .select("*, profiles(id, email, full_name, avatar_url)")
       .eq("team_id", teamId)
       .order("joined_at", { ascending: false });
 
