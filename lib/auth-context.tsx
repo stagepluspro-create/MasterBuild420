@@ -1,3 +1,22 @@
+/**
+ * Authentication Context Provider
+ *
+ * This provides user authentication state throughout the application.
+ * It uses Supabase Auth and listens for auth state changes.
+ *
+ * Usage:
+ *   Wrap your app with <AuthProvider> in app/layout.tsx
+ *   Then use the useAuth() hook in any component:
+ *
+ *   const { user, profile, subscription, signOut } = useAuth()
+ *
+ * Features:
+ *   - Automatically loads user profile from Supabase
+ *   - Loads subscription data
+ *   - Provides trial status helpers
+ *   - Handles sign out
+ *   - Listens for auth changes in real-time
+ */
 "use client";
 
 import React, {

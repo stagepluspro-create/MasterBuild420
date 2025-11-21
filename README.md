@@ -24,51 +24,75 @@ Stage Tech Pro is a comprehensive SaaS platform designed for audio engineers, li
 - **Hosting:** Vercel
 - **Domain:** stagetechpro.online
 
-## 🚀 Quick Start 
+## 🚀 Quick Start
 
 ### Prerequisites
 
-- Node.js 18+ and npm 9+
-- Supabase account
-- EmailJS account (for invitations)
+- **Node.js 18+** and **npm 9+**
+- **Supabase account** (free tier works)
+- **EmailJS account** (optional, for team invitations only)
 
 ### Installation
 
-1. Clone the repository:
+1. **Clone the repository:**
 ```bash
 git clone https://github.com/stagepluspro-create/MasterBuild420.git
 cd MasterBuild420
 ```
 
-2. Install dependencies:
+2. **Install dependencies:**
 ```bash
 npm install
 ```
 
-3. Configure environment variables:
+3. **Configure environment variables:**
 ```bash
-cp .env.example .env
+cp .env.example .env.local
 ```
 
-Edit `.env` with your credentials:
-- `NEXT_PUBLIC_SUPABASE_URL`
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-- `NEXT_PUBLIC_EMAILJS_SERVICE_ID`
-- `NEXT_PUBLIC_EMAILJS_INVITATION_TEMPLATE_ID`
-- `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`
-
-4. Run database migrations:
+Edit `.env.local` with your Supabase credentials:
 ```bash
-# Migrations are in /supabase/migrations/
-# Apply via Supabase Dashboard or CLI
+# Get these from: https://app.supabase.com/project/_/settings/api
+NEXT_PUBLIC_SUPABASE_URL=https://xxxxx.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key-here
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key-here
+
+# Your site URL
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+
+# Optional (for team invitations)
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id_here
+NEXT_PUBLIC_EMAILJS_INVITATION_TEMPLATE_ID=your_template_id_here
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key_here
 ```
 
-5. Start development server:
+4. **Set up Supabase database:**
+
+   a. Create a new Supabase project at https://app.supabase.com
+
+   b. Apply all migrations from `/supabase/migrations/` in order:
+      - Use Supabase SQL Editor
+      - Or use Supabase CLI: `supabase db push`
+
+   c. Verify tables exist:
+      - `profiles`
+      - `subscriptions`
+      - `teams`
+      - `projects`
+      - `presets`
+      - And 20+ more (see migrations folder)
+
+5. **Start development server:**
 ```bash
 npm run dev
 ```
 
 Visit `http://localhost:3000`
+
+**First Time Setup:**
+- Navigate to `/auth/signup` to create an account
+- A profile and trial subscription will be auto-created
+- You'll be redirected to `/dashboard`
 
 ## 📦 Build Commands
 
@@ -145,11 +169,24 @@ npm run clean-port  # Kill stale Next.js processes
 
 ## 🔐 Authentication & Security
 
-- **Supabase Auth** with email/password + Google OAuth
-- **Row-Level Security (RLS)** on all tables
-- **PKCE flow** for secure token exchange
-- **Environment variables** never exposed to client
-- **API keys** properly gitignored
+### How Auth Works
+
+**StageTechPro uses Supabase Auth exclusively** - no Bolt DB, no custom backend.
+
+1. **Sign Up/Sign In:** Users authenticate via Supabase email/password
+2. **Session Management:** Handled by `@supabase/ssr` with cookie-based sessions
+3. **Middleware Protection:** `middleware.ts` protects `/profile`, `/teams`, `/dashboard`, `/tools`
+4. **Client State:** `AuthProvider` (lib/auth-context.tsx) provides user, profile, subscription
+5. **Server Queries:** Server components use `lib/supabase-server.ts` for database access
+
+### Security Features
+
+- ✅ **Row-Level Security (RLS)** enforced on ALL tables
+- ✅ **Secure session cookies** managed by Next.js middleware
+- ✅ **Environment variables** properly separated (public vs private)
+- ✅ **No service role key** exposed to client
+- ✅ **CSRF protection** via Supabase PKCE flow
+- ✅ **No deprecated auth helpers** - uses latest `@supabase/ssr`
 
 ## 🎨 Design System — Dark Fusion Neon
 
@@ -188,29 +225,110 @@ Both tiers include:
 - Patch lists with channels
 - Comprehensive RLS policies
 
-## 🌐 Deployment
+## 🌐 Deployment to Vercel
+
+### Pre-Deployment Checklist
+
+1. **✅ Verify build succeeds locally:**
+```bash
+npm run build
+npm run lint
+npm run typecheck
+```
+
+2. **✅ Confirm environment variables are set:**
+   - Check `.env.local` has all required values
+   - Never commit `.env.local` to git!
+
+3. **✅ Apply all Supabase migrations:**
+   - Run all SQL files in `/supabase/migrations/` in order
+   - Verify all tables exist in Supabase Dashboard
+
+### Deploy Steps
+
+#### Option 1: Vercel GitHub Integration (Recommended)
+
+1. Push code to GitHub:
+```bash
+git add .
+git commit -m "Production ready"
+git push origin main
+```
+
+2. Connect repository to Vercel:
+   - Go to https://vercel.com/new
+   - Import your GitHub repository
+   - Vercel auto-detects Next.js configuration
+
+3. Configure Environment Variables in Vercel Dashboard:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - `SUPABASE_SERVICE_ROLE_KEY`
+   - `NEXT_PUBLIC_SITE_URL` (e.g., https://stagetechpro.online)
+   - Optional: EmailJS variables for team invitations
+
+4. Deploy:
+   - Click "Deploy"
+   - Wait for build to complete
+   - Vercel provides preview URL
+
+5. Configure Custom Domain:
+   - Add `stagetechpro.online` in Vercel Domains settings
+   - Update DNS records with your registrar
+   - Wait for SSL certificate to provision (automatic)
+
+#### Option 2: Vercel CLI
+
+```bash
+npm install -g vercel
+vercel login
+vercel --prod
+```
+
+### Post-Deployment
+
+1. **Test authentication:**
+   - Sign up at `/auth/signup`
+   - Verify profile creation
+   - Check subscription trial starts
+
+2. **Verify tools work:**
+   - Test DMX Calculator
+   - Test SPL Meter
+   - Check data persistence
+
+3. **Monitor errors:**
+   - Check Vercel logs for any issues
+   - Watch Supabase Dashboard for query errors
+
+### Environment Variables Reference
+
+**Required:**
+- `NEXT_PUBLIC_SUPABASE_URL` - Your Supabase project URL
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY` - Supabase anon/public key
+- `SUPABASE_SERVICE_ROLE_KEY` - Supabase service role (server-only!)
+- `NEXT_PUBLIC_SITE_URL` - Your deployed URL
+
+**Optional:**
+- `NEXT_PUBLIC_EMAILJS_SERVICE_ID` - For team invitations
+- `NEXT_PUBLIC_EMAILJS_INVITATION_TEMPLATE_ID` - EmailJS template
+- `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY` - EmailJS public key
 
 ### Production Checklist
 
-- [x] All TypeScript errors resolved
-- [x] All ESLint warnings fixed
-- [x] Production build succeeds (65 pages)
-- [x] Environment variables configured
-- [x] Database migrations applied
-- [x] PWA manifest and icons ready
-- [x] Error boundaries implemented
-- [x] Loading states configured
-- [x] SEO files (robots.txt, sitemap.xml)
-- [x] Security audit passed (0 vulnerabilities)
-
-### Deploy to Vercel
-
-```bash
-npm run build
-# Deploy via Vercel CLI or GitHub integration
-# Configure environment variables in Vercel Dashboard
-# Point domain: stagetechpro.online
-```
+- ✅ All TypeScript errors resolved
+- ✅ All ESLint warnings fixed
+- ✅ Production build succeeds (77 pages)
+- ✅ Environment variables configured in Vercel
+- ✅ Database migrations applied to Supabase
+- ✅ RLS policies enabled on all tables
+- ✅ PWA manifest and icons ready
+- ✅ Error boundaries implemented
+- ✅ Loading states configured
+- ✅ SEO files (robots.txt, sitemap.xml) in place
+- ✅ Custom domain configured with SSL
+- ✅ No Bolt DB dependencies
+- ✅ Using `@supabase/ssr` (not deprecated helpers)
 
 ## 🤝 Contributing
 

@@ -1,3 +1,19 @@
+/**
+ * Supabase Server Client
+ *
+ * This creates a Supabase client for use in SERVER COMPONENTS and ROUTE HANDLERS.
+ *
+ * Usage in Server Components:
+ *   import { createClient } from '@/lib/supabase-server'
+ *   const supabase = await createClient()
+ *   const { data } = await supabase.from('table').select()
+ *
+ * Usage in Route Handlers:
+ *   import { createClient } from '@/lib/supabase-server'
+ *   const supabase = await createClient()
+ *
+ * NOTE: For client components, use lib/supabase-browser.ts instead!
+ */
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 
@@ -16,14 +32,18 @@ export async function createClient() {
           try {
             cookieStore.set({ name, value, ...options })
           } catch (error) {
-            // Server component
+            // The `set` method was called from a Server Component.
+            // This can be ignored if you have middleware refreshing
+            // user sessions.
           }
         },
         remove(name: string, options: CookieOptions) {
           try {
             cookieStore.set({ name, value: '', ...options })
           } catch (error) {
-            // Server component
+            // The `remove` method was called from a Server Component.
+            // This can be ignored if you have middleware refreshing
+            // user sessions.
           }
         },
       },

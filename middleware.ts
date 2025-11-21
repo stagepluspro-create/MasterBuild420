@@ -54,7 +54,24 @@ export async function middleware(request: NextRequest) {
     }
   )
 
-  await supabase.auth.getUser()
+  const { data: { user }, error } = await supabase.auth.getUser()
+
+  const isAuthPage = request.nextUrl.pathname.startsWith('/auth')
+  const isProtectedRoute =
+    request.nextUrl.pathname.startsWith('/profile') ||
+    request.nextUrl.pathname.startsWith('/teams') ||
+    request.nextUrl.pathname.startsWith('/dashboard') ||
+    (request.nextUrl.pathname.startsWith('/tools') && !request.nextUrl.pathname.includes('/tools/'))
+
+  if (!user && isProtectedRoute) {
+    const redirectUrl = new URL('/auth/signin', request.url)
+    redirectUrl.searchParams.set('redirect', request.nextUrl.pathname)
+    return NextResponse.redirect(redirectUrl)
+  }
+
+  if (user && isAuthPage && request.nextUrl.pathname !== '/auth/callback') {
+    return NextResponse.redirect(new URL('/dashboard', request.url))
+  }
 
   return response
 }
