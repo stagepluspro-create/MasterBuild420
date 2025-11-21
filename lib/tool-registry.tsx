@@ -138,6 +138,11 @@ const HazeSimulator = dynamic(() => import("@/modules/haze-simulator/index"), {
   loading: () => <div className="text-center p-8 text-gray-400">Loading tool...</div>
 });
 
+const ConsoleTranslator = dynamic(() => import("@/modules/console-translator/index"), {
+  ssr: false,
+  loading: () => <div className="text-center p-8 text-gray-400">Loading tool...</div>
+});
+
 const toolRegistry: Record<string, ComponentType> = {
   "dmx-calculator": DMXCalculator,
   "power-calculator": PowerCalculator,
@@ -166,6 +171,7 @@ const toolRegistry: Record<string, ComponentType> = {
   "nd-exposure": NDExposure,
   "callsheet-builder": CallsheetBuilder,
   "haze-simulator": HazeSimulator,
+  "console-translator": ConsoleTranslator,
 };
 
 export function getToolComponent(toolId: string): ComponentType | null {

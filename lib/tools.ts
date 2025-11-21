@@ -163,6 +163,28 @@ export const tools: ToolConfig[] = [
       "Save and share venue configurations"
     ],
     helpText: "Predict haze behavior in your venue before the show. Model airflow, HVAC systems, and machine placement to achieve optimal beam visibility while maintaining safety."
+  },
+  {
+    id: "console-translator",
+    name: "Multi-Console Translator",
+    category: "lighting",
+    status: "available",
+    description: "Convert showfiles between lighting console formats with intelligent fixture mapping, address allocation, and validation.",
+    icon: "ArrowLeftRight",
+    path: "/tools/console-translator",
+    features: [
+      "Parse grandMA2, Hog4, ETC Eos, Avolites showfiles",
+      "Intelligent fixture mapping with confidence scores",
+      "Automatic DMX address allocation with conflict detection",
+      "Channel mapping between different fixture modes",
+      "Dry-run validation with detailed conflict reports",
+      "Export to multiple console formats",
+      "Save and reuse mapping profiles",
+      "Preserve cues, palettes, and patch data",
+      "Universe optimization and packing",
+      "Manual override for custom mappings"
+    ],
+    helpText: "Convert shows between different console platforms. Save hundreds of hours re-programming when switching consoles. Intelligent mapping ensures maximum attribute preservation with minimal manual editing."
   }
 ];
 
