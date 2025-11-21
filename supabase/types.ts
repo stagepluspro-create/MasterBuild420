@@ -987,6 +987,346 @@ export interface Database {
           updated_at?: string | null
         }
       }
+      equipment_favorites: {
+        Row: {
+          id: string
+          user_id: string
+          equipment_type: string
+          equipment_id: string
+          created_at: string | null
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          equipment_type: string
+          equipment_id: string
+          created_at?: string | null
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          equipment_type?: string
+          equipment_id?: string
+          created_at?: string | null
+        }
+      }
+      haze_venues: {
+        Row: {
+          id: string
+          user_id: string
+          team_id: string | null
+          project_id: string | null
+          name: string
+          description: string | null
+          width_m: number
+          length_m: number
+          height_m: number
+          grid_resolution: number
+          obstacles: Json | null
+          temperature_c: number | null
+          is_template: boolean | null
+          created_at: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          team_id?: string | null
+          project_id?: string | null
+          name: string
+          description?: string | null
+          width_m?: number
+          length_m?: number
+          height_m?: number
+          grid_resolution?: number
+          obstacles?: Json | null
+          temperature_c?: number | null
+          is_template?: boolean | null
+          created_at?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          team_id?: string | null
+          project_id?: string | null
+          name?: string
+          description?: string | null
+          width_m?: number
+          length_m?: number
+          height_m?: number
+          grid_resolution?: number
+          obstacles?: Json | null
+          temperature_c?: number | null
+          is_template?: boolean | null
+          created_at?: string | null
+          updated_at?: string | null
+        }
+      }
+      haze_machines: {
+        Row: {
+          id: string
+          venue_id: string
+          name: string
+          machine_type: string
+          output_cfm: number
+          position_x: number
+          position_y: number
+          position_z: number
+          enabled: boolean | null
+          created_at: string | null
+        }
+        Insert: {
+          id?: string
+          venue_id: string
+          name: string
+          machine_type: string
+          output_cfm?: number
+          position_x?: number
+          position_y?: number
+          position_z?: number
+          enabled?: boolean | null
+          created_at?: string | null
+        }
+        Update: {
+          id?: string
+          venue_id?: string
+          name?: string
+          machine_type?: string
+          output_cfm?: number
+          position_x?: number
+          position_y?: number
+          position_z?: number
+          enabled?: boolean | null
+          created_at?: string | null
+        }
+      }
+      haze_hvac_vents: {
+        Row: {
+          id: string
+          venue_id: string
+          name: string
+          vent_type: string
+          airflow_cfm: number
+          position_x: number
+          position_y: number
+          position_z: number
+          enabled: boolean | null
+          created_at: string | null
+        }
+        Insert: {
+          id?: string
+          venue_id: string
+          name: string
+          vent_type: string
+          airflow_cfm?: number
+          position_x?: number
+          position_y?: number
+          position_z?: number
+          enabled?: boolean | null
+          created_at?: string | null
+        }
+        Update: {
+          id?: string
+          venue_id?: string
+          name?: string
+          vent_type?: string
+          airflow_cfm?: number
+          position_x?: number
+          position_y?: number
+          position_z?: number
+          enabled?: boolean | null
+          created_at?: string | null
+        }
+      }
+      haze_fixtures: {
+        Row: {
+          id: string
+          venue_id: string
+          name: string
+          fixture_type: string
+          beam_angle: number
+          intensity: number
+          position_x: number
+          position_y: number
+          position_z: number
+          rotation_x: number | null
+          rotation_y: number | null
+          rotation_z: number | null
+          enabled: boolean | null
+          created_at: string | null
+        }
+        Insert: {
+          id?: string
+          venue_id: string
+          name: string
+          fixture_type: string
+          beam_angle?: number
+          intensity?: number
+          position_x?: number
+          position_y?: number
+          position_z?: number
+          rotation_x?: number | null
+          rotation_y?: number | null
+          rotation_z?: number | null
+          enabled?: boolean | null
+          created_at?: string | null
+        }
+        Update: {
+          id?: string
+          venue_id?: string
+          name?: string
+          fixture_type?: string
+          beam_angle?: number
+          intensity?: number
+          position_x?: number
+          position_y?: number
+          position_z?: number
+          rotation_x?: number | null
+          rotation_y?: number | null
+          rotation_z?: number | null
+          enabled?: boolean | null
+          created_at?: string | null
+        }
+      }
+      haze_simulations: {
+        Row: {
+          id: string
+          venue_id: string
+          user_id: string
+          name: string
+          simulation_params: Json
+          results: Json
+          time_to_fill_sec: number | null
+          time_to_clear_sec: number | null
+          coverage_score: number | null
+          uniformity_score: number | null
+          safety_warnings: Json | null
+          optimal_placement: Json | null
+          created_at: string | null
+        }
+        Insert: {
+          id?: string
+          venue_id: string
+          user_id: string
+          name: string
+          simulation_params: Json
+          results: Json
+          time_to_fill_sec?: number | null
+          time_to_clear_sec?: number | null
+          coverage_score?: number | null
+          uniformity_score?: number | null
+          safety_warnings?: Json | null
+          optimal_placement?: Json | null
+          created_at?: string | null
+        }
+        Update: {
+          id?: string
+          venue_id?: string
+          user_id?: string
+          name?: string
+          simulation_params?: Json
+          results?: Json
+          time_to_fill_sec?: number | null
+          time_to_clear_sec?: number | null
+          coverage_score?: number | null
+          uniformity_score?: number | null
+          safety_warnings?: Json | null
+          optimal_placement?: Json | null
+          created_at?: string | null
+        }
+      }
+      console_show_files: {
+        Row: {
+          id: string
+          user_id: string
+          team_id: string | null
+          project_id: string | null
+          original_filename: string
+          file_path: string
+          file_size: number | null
+          source_console: string
+          parsed_data: Json | null
+          status: string | null
+          error_message: string | null
+          created_at: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          team_id?: string | null
+          project_id?: string | null
+          original_filename: string
+          file_path: string
+          file_size?: number | null
+          source_console: string
+          parsed_data?: Json | null
+          status?: string | null
+          error_message?: string | null
+          created_at?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          team_id?: string | null
+          project_id?: string | null
+          original_filename?: string
+          file_path?: string
+          file_size?: number | null
+          source_console?: string
+          parsed_data?: Json | null
+          status?: string | null
+          error_message?: string | null
+          created_at?: string | null
+          updated_at?: string | null
+        }
+      }
+      console_translations: {
+        Row: {
+          id: string
+          user_id: string
+          source_file_id: string
+          target_console: string
+          translated_data: Json
+          mapping_report: Json | null
+          conflicts: Json | null
+          warnings: Json | null
+          status: string | null
+          error_message: string | null
+          created_at: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          source_file_id: string
+          target_console: string
+          translated_data: Json
+          mapping_report?: Json | null
+          conflicts?: Json | null
+          warnings?: Json | null
+          status?: string | null
+          error_message?: string | null
+          created_at?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          source_file_id?: string
+          target_console?: string
+          translated_data?: Json
+          mapping_report?: Json | null
+          conflicts?: Json | null
+          warnings?: Json | null
+          status?: string | null
+          error_message?: string | null
+          created_at?: string | null
+          updated_at?: string | null
+        }
+      }
     }
     Views: {
       [_ in never]: never
