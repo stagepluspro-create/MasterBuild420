@@ -141,7 +141,29 @@ export const tools: ToolConfig[] = [
   { id: "show-timer", name: "Show Timer", category: "nice-to-have", status: "coming_soon", description: "Countdown/timecode.", icon: "Timer", path: "/tools/show-timer", features: [], helpText: "" },
   { id: "cueing", name: "Cueing Assistant", category: "nice-to-have", status: "coming_soon", description: "Simple cue playback.", icon: "Music2", path: "/tools/cueing", features: [], helpText: "" },
   { id: "intercom-companion", name: "Intercom Companion", category: "nice-to-have", status: "coming_soon", description: "Unity / Clear-Com link.", icon: "Headphones", path: "/tools/intercom-companion", features: [], helpText: "" },
-  { id: "file-convert", name: "File Converter", category: "nice-to-have", status: "coming_soon", description: "Last-minute video fixes.", icon: "FileCog", path: "/tools/file-convert", features: [], helpText: "" }
+  { id: "file-convert", name: "File Converter", category: "nice-to-have", status: "coming_soon", description: "Last-minute video fixes.", icon: "FileCog", path: "/tools/file-convert", features: [], helpText: "" },
+  {
+    id: "haze-simulator",
+    name: "Haze & Atmosphere Simulator",
+    category: "lighting",
+    status: "available",
+    description: "Real-time 3D simulation of haze and fog dispersion in venues with airflow, HVAC, and beam visibility analysis.",
+    icon: "Cloud",
+    path: "/tools/haze-simulator",
+    features: [
+      "3D volumetric haze simulation with cellular automata physics",
+      "HVAC vent modeling with CFM-based airflow",
+      "Haze machine placement with output control",
+      "Light fixture beam visibility calculations",
+      "Real-time coverage and uniformity metrics",
+      "Time-to-fill and time-to-clear predictions",
+      "Safety warnings for ventilation and CO₂",
+      "Optimal machine placement suggestions",
+      "Configurable physics parameters",
+      "Save and share venue configurations"
+    ],
+    helpText: "Predict haze behavior in your venue before the show. Model airflow, HVAC systems, and machine placement to achieve optimal beam visibility while maintaining safety."
+  }
 ];
 
 export function getToolById(id: string) {

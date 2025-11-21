@@ -133,6 +133,11 @@ const CallsheetBuilder = dynamic(() => import("@/modules/callsheet-builder/index
   loading: () => <div className="text-center p-8 text-gray-400">Loading tool...</div>
 });
 
+const HazeSimulator = dynamic(() => import("@/modules/haze-simulator/index"), {
+  ssr: false,
+  loading: () => <div className="text-center p-8 text-gray-400">Loading tool...</div>
+});
+
 const toolRegistry: Record<string, ComponentType> = {
   "dmx-calculator": DMXCalculator,
   "power-calculator": PowerCalculator,
@@ -160,6 +165,7 @@ const toolRegistry: Record<string, ComponentType> = {
   "teleprompter": Teleprompter,
   "nd-exposure": NDExposure,
   "callsheet-builder": CallsheetBuilder,
+  "haze-simulator": HazeSimulator,
 };
 
 export function getToolComponent(toolId: string): ComponentType | null {
