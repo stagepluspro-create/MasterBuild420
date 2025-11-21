@@ -1,3 +1,4 @@
+/**
  * Supabase Browser Client
  *
  * This creates a Supabase client for use in CLIENT COMPONENTS ONLY.
