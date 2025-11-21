@@ -76,28 +76,48 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     let mounted = true;
+    let timeoutId: NodeJS.Timeout;
 
     async function initialize() {
-      const { data } = await supabase.auth.getUser();
-      const currentUser = data?.user ?? null;
+      try {
+        timeoutId = setTimeout(() => {
+          if (mounted && loading) {
+            console.warn("Auth initialization timeout - setting loading to false");
+            setLoading(false);
+          }
+        }, 10000);
 
-      if (!mounted) return;
+        const { data, error } = await supabase.auth.getUser();
 
-      setUser(currentUser);
+        if (error) {
+          console.error("Auth error:", error);
+        }
 
-      if (currentUser) {
-        const [profileData, subData] = await Promise.all([
-          loadProfile(currentUser.id),
-          loadSubscription(currentUser.id),
-        ]);
+        const currentUser = data?.user ?? null;
 
+        if (!mounted) return;
+
+        setUser(currentUser);
+
+        if (currentUser) {
+          const [profileData, subData] = await Promise.all([
+            loadProfile(currentUser.id),
+            loadSubscription(currentUser.id),
+          ]);
+
+          if (mounted) {
+            setProfile(profileData);
+            setSubscription(subData);
+          }
+        }
+      } catch (error) {
+        console.error("Auth initialization error:", error);
+      } finally {
         if (mounted) {
-          setProfile(profileData);
-          setSubscription(subData);
+          clearTimeout(timeoutId);
+          setLoading(false);
         }
       }
-
-      setLoading(false);
     }
 
     initialize();
@@ -123,6 +143,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     return () => {
       mounted = false;
+      clearTimeout(timeoutId);
       listener.subscription.unsubscribe();
     };
   }, []);

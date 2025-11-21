@@ -72,25 +72,51 @@ export default function TaskTracker() {
   }, [user]);
 
   const loadData = async () => {
-    if (!user) return;
+    if (!user) {
+      setLoading(false);
+      return;
+    }
 
     try {
-      const { data: projectsData } = await supabase
+      const { data: projectsData, error: projectsError } = await supabase
         .from("projects")
         .select("id, name")
-        .or(`owner_user_id.eq.${user.id},team_id.in.(select team_id from team_members where user_id=${user.id})`);
+        .eq("owner_user_id", user.id);
+
+      if (projectsError) {
+        console.error("Projects query error:", projectsError);
+        toast({
+          title: "Error",
+          description: "Failed to load projects",
+          variant: "destructive",
+        });
+      }
 
       setProjects(projectsData || []);
 
-      const { data: tasksData } = await supabase
+      const { data: tasksData, error: tasksError } = await supabase
         .from("tasks")
         .select("*, assigned_to_profile:profiles!tasks_assigned_to_fkey(full_name, email)")
         .or(`created_by.eq.${user.id},assigned_to.eq.${user.id}`)
         .order("created_at", { ascending: false });
 
+      if (tasksError) {
+        console.error("Tasks query error:", tasksError);
+        toast({
+          title: "Error",
+          description: "Failed to load tasks. Please try again.",
+          variant: "destructive",
+        });
+      }
+
       setTasks(tasksData || []);
-    } catch (error) {
+    } catch (error: any) {
       console.error("Failed to load data:", error);
+      toast({
+        title: "Error",
+        description: error.message || "An unexpected error occurred",
+        variant: "destructive",
+      });
     } finally {
       setLoading(false);
     }

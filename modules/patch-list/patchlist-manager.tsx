@@ -46,7 +46,10 @@ export function PatchlistManager({ onSelect }: PatchlistManagerProps) {
   }, [user]);
 
   const loadPatchlists = async () => {
-    if (!user) return;
+    if (!user) {
+      setLoading(false);
+      return;
+    }
 
     try {
       setLoading(true);
@@ -56,9 +59,10 @@ export function PatchlistManager({ onSelect }: PatchlistManagerProps) {
       console.error("Failed to load patchlists:", error);
       toast({
         title: "Error",
-        description: "Failed to load patchlists",
+        description: error.message || "Failed to load patchlists. Please try again.",
         variant: "destructive",
       });
+      setPatchlists([]);
     } finally {
       setLoading(false);
     }
@@ -111,7 +115,8 @@ export function PatchlistManager({ onSelect }: PatchlistManagerProps) {
   };
 
   const createTemplateChannels = async (patchlistId: string, template: string) => {
-    const templates: { [key: string]: any[] } = {
+    try {
+      const templates: { [key: string]: any[] } = {
       "rock-band": [
         { category: "Vocals", channels: [
           { name: "Lead Vocal", type: "SM58" },
@@ -192,8 +197,12 @@ export function PatchlistManager({ onSelect }: PatchlistManagerProps) {
       }
     }
 
-    if (allChannels.length > 0) {
-      await patchlistService.bulkCreateChannels(allChannels);
+      if (allChannels.length > 0) {
+        await patchlistService.bulkCreateChannels(allChannels);
+      }
+    } catch (error: any) {
+      console.error("Template creation error:", error);
+      throw new Error(`Failed to create template: ${error.message}`);
     }
   };
 

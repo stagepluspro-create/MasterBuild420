@@ -40,13 +40,14 @@ export function PatchManager({ userId, onSelect }: PatchManagerProps) {
       setLoading(true);
       const data = await dmxService.getPatches(userId);
       setPatches(data);
-    } catch (error) {
+    } catch (error: any) {
       console.error("Failed to load patches:", error);
       toast({
         title: "Error",
-        description: "Failed to load patches",
+        description: error.message || "Failed to load patches. Please try again.",
         variant: "destructive",
       });
+      setPatches([]);
     } finally {
       setLoading(false);
     }
