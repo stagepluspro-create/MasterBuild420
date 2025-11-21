@@ -4,7 +4,7 @@ import { Inter, Outfit } from 'next/font/google';
 import { Nav } from '@/components/layout/nav';
 import { Footer } from '@/components/layout/footer';
 import { AuthProvider } from '@/lib/auth-context';
-import { ClientToaster } from '@/components/ui/client-toaster';
+import { Toaster } from '@/components/ui/sonner';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' });
@@ -35,7 +35,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
-          <ClientToaster />
+          <Toaster />
         </AuthProvider>
       </body>
     </html>
