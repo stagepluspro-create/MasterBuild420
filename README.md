@@ -2,7 +2,7 @@
 
 A next-generation, all-in-one web platform for live production professionals, providing 35+ specialized tools for audio, lighting, video, planning, networking, and utility workflows.
 
-## 🎯 Overview
+## 🎯 Overview 
 
 Stage Tech Pro is a comprehensive SaaS platform designed for audio engineers, lighting designers, video operators, stage managers, and production technicians. It consolidates industry-standard calculations, planning tools, and workflow utilities into a single, unified dashboard.
 
