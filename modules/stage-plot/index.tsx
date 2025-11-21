@@ -293,6 +293,156 @@ export default function StagePlot() {
     linkElement.click();
   };
 
+  const exportAsPDF = () => {
+    // Create a temporary container for the stage plot
+    const printContainer = document.createElement('div');
+    printContainer.style.position = 'fixed';
+    printContainer.style.top = '0';
+    printContainer.style.left = '0';
+    printContainer.style.width = '100%';
+    printContainer.style.height = '100%';
+    printContainer.style.backgroundColor = '#ffffff';
+    printContainer.style.zIndex = '10000';
+    printContainer.style.padding = '40px';
+    printContainer.style.display = 'flex';
+    printContainer.style.flexDirection = 'column';
+    printContainer.style.alignItems = 'center';
+
+    // Add title
+    const title = document.createElement('h1');
+    title.textContent = setup.name;
+    title.style.fontSize = '24px';
+    title.style.fontWeight = 'bold';
+    title.style.marginBottom = '10px';
+    title.style.color = '#000000';
+    printContainer.appendChild(title);
+
+    // Add stage dimensions
+    const dimensions = document.createElement('p');
+    dimensions.textContent = `Stage Size: ${setup.width}m × ${setup.height}m`;
+    dimensions.style.fontSize = '14px';
+    dimensions.style.marginBottom = '20px';
+    dimensions.style.color = '#666666';
+    printContainer.appendChild(dimensions);
+
+    // Create the stage plot canvas
+    const stageContainer = document.createElement('div');
+    stageContainer.style.position = 'relative';
+    stageContainer.style.width = `${setup.width * 50}px`;
+    stageContainer.style.height = `${setup.height * 50}px`;
+    stageContainer.style.border = '2px solid #00D9FF';
+    stageContainer.style.backgroundColor = '#f5f5f5';
+    stageContainer.style.backgroundImage = `
+      repeating-linear-gradient(0deg, rgba(0,0,0,0.05) 0px, rgba(0,0,0,0.05) 1px, transparent 1px, transparent ${50 * setup.gridSize}px),
+      repeating-linear-gradient(90deg, rgba(0,0,0,0.05) 0px, rgba(0,0,0,0.05) 1px, transparent 1px, transparent ${50 * setup.gridSize}px)
+    `;
+    stageContainer.style.backgroundSize = `${50 * setup.gridSize}px ${50 * setup.gridSize}px`;
+
+    // Add all props to the stage
+    setup.props
+      .filter((prop) => setup.layers[prop.category])
+      .forEach((prop) => {
+        const propElement = document.createElement('div');
+        propElement.style.position = 'absolute';
+        propElement.style.left = `${prop.x * 50}px`;
+        propElement.style.top = `${prop.y * 50}px`;
+        propElement.style.width = `${prop.width * 50}px`;
+        propElement.style.height = `${prop.height * 50}px`;
+        propElement.style.backgroundColor = prop.color;
+        propElement.style.border = '2px solid rgba(0,0,0,0.3)';
+        propElement.style.borderRadius = '4px';
+        propElement.style.display = 'flex';
+        propElement.style.alignItems = 'center';
+        propElement.style.justifyContent = 'center';
+        propElement.style.fontSize = '11px';
+        propElement.style.fontWeight = 'bold';
+        propElement.style.color = '#000000';
+        propElement.style.padding = '4px';
+        propElement.style.textAlign = 'center';
+        propElement.style.overflow = 'hidden';
+        propElement.style.transform = `rotate(${prop.rotation}deg)`;
+        propElement.textContent = prop.label;
+        stageContainer.appendChild(propElement);
+      });
+
+    printContainer.appendChild(stageContainer);
+
+    // Add legend if there are props
+    if (setup.props.length > 0) {
+      const legend = document.createElement('div');
+      legend.style.marginTop = '20px';
+      legend.style.width = '100%';
+      legend.style.maxWidth = `${setup.width * 50}px`;
+
+      const legendTitle = document.createElement('h3');
+      legendTitle.textContent = 'Equipment List';
+      legendTitle.style.fontSize = '16px';
+      legendTitle.style.fontWeight = 'bold';
+      legendTitle.style.marginBottom = '10px';
+      legendTitle.style.color = '#000000';
+      legend.appendChild(legendTitle);
+
+      const propsList = document.createElement('ul');
+      propsList.style.listStyle = 'none';
+      propsList.style.padding = '0';
+      propsList.style.display = 'grid';
+      propsList.style.gridTemplateColumns = 'repeat(auto-fill, minmax(200px, 1fr))';
+      propsList.style.gap = '8px';
+
+      setup.props.forEach((prop) => {
+        const listItem = document.createElement('li');
+        listItem.style.display = 'flex';
+        listItem.style.alignItems = 'center';
+        listItem.style.gap = '8px';
+        listItem.style.fontSize = '12px';
+        listItem.style.color = '#333333';
+
+        const colorBox = document.createElement('span');
+        colorBox.style.width = '16px';
+        colorBox.style.height = '16px';
+        colorBox.style.backgroundColor = prop.color;
+        colorBox.style.border = '1px solid #000';
+        colorBox.style.borderRadius = '2px';
+        colorBox.style.flexShrink = '0';
+
+        const text = document.createElement('span');
+        text.textContent = `${prop.label}${prop.notes ? ` - ${prop.notes}` : ''}`;
+
+        listItem.appendChild(colorBox);
+        listItem.appendChild(text);
+        propsList.appendChild(listItem);
+      });
+
+      legend.appendChild(propsList);
+      printContainer.appendChild(legend);
+    }
+
+    // Add footer
+    const footer = document.createElement('p');
+    footer.textContent = `Generated by Stage Tech Pro - ${new Date().toLocaleDateString()}`;
+    footer.style.marginTop = '20px';
+    footer.style.fontSize = '10px';
+    footer.style.color = '#999999';
+    printContainer.appendChild(footer);
+
+    // Temporarily add to document
+    document.body.appendChild(printContainer);
+
+    // Hide all other content
+    const originalContents = document.body.innerHTML;
+    const printContent = printContainer.innerHTML;
+    document.body.innerHTML = printContent;
+
+    // Trigger print
+    window.print();
+
+    // Restore original content
+    document.body.innerHTML = originalContents;
+
+    // Reload the page to restore React state
+    window.location.reload();
+  };
+
   const getCurrentState = () => setupRef.current;
 
   const handleLoadPreset = (data: any) => {
@@ -594,7 +744,7 @@ export default function StagePlot() {
               <Button className="w-full" onClick={() => { exportAsJSON(); setShowExportDialog(false); }}>
                 Export as JSON
               </Button>
-              <Button className="w-full" variant="outline" onClick={() => { window.print(); setShowExportDialog(false); }}>
+              <Button className="w-full" variant="outline" onClick={() => { exportAsPDF(); setShowExportDialog(false); }}>
                 Print / Save as PDF
               </Button>
             </div>
