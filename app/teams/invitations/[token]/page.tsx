@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { useAuth } from "@/components/auth-provider";
+import { useAuth } from "@/lib/auth-context";
 import { invitationService } from "@/lib/invitation-service";
 import { toast } from "sonner";
 import { Users, CheckCircle, XCircle, Loader2, AlertCircle } from "lucide-react";
