@@ -56,20 +56,24 @@ export async function middleware(request: NextRequest) {
 
   const { data: { user }, error } = await supabase.auth.getUser()
 
-  const isAuthPage = request.nextUrl.pathname.startsWith('/auth')
+  const pathname = request.nextUrl.pathname
+  const isAuthPage = pathname.startsWith('/auth')
+
+  // Only protect specific routes
   const isProtectedRoute =
-    request.nextUrl.pathname.startsWith('/profile') ||
-    request.nextUrl.pathname.startsWith('/teams') ||
-    request.nextUrl.pathname.startsWith('/dashboard') ||
-    request.nextUrl.pathname.startsWith('/tools')
+    pathname.startsWith('/profile') ||
+    pathname.startsWith('/teams') ||
+    pathname.startsWith('/dashboard') ||
+    pathname === '/paypal' ||
+    pathname.startsWith('/paypal/success')
 
   if (!user && isProtectedRoute) {
     const redirectUrl = new URL('/auth/signin', request.url)
-    redirectUrl.searchParams.set('redirect', request.nextUrl.pathname)
+    redirectUrl.searchParams.set('redirect', pathname)
     return NextResponse.redirect(redirectUrl)
   }
 
-  if (user && isAuthPage && request.nextUrl.pathname !== '/auth/callback') {
+  if (user && isAuthPage && pathname !== '/auth/callback') {
     return NextResponse.redirect(new URL('/dashboard', request.url))
   }
 
