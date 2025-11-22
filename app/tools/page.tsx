@@ -131,43 +131,43 @@ export default function ToolsPage() {
           {filteredTools.map((tool) => {
             const Icon = CATEGORY_ICONS[tool.category];
             return (
-              <Link key={tool.id} href={`/tools/${tool.slug}`}>
-                <Card className={`glass-panel border transition-all hover:border-cyan-400/50 h-full group cursor-pointer ${CATEGORY_COLORS[tool.category]}`}>
-                  <CardHeader>
-                    <div className="flex items-start justify-between mb-3">
-                      <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[tool.category]} group-hover:scale-110 transition-transform`}>
-                        <Icon className="w-6 h-6" />
-                      </div>
-                      <div className="flex gap-2">
-                        {tool.isPro && (
-                          <Badge variant="outline" className="border-violet-400/50 text-violet-400 text-xs">
-                            <Crown className="w-3 h-3 mr-1" />
-                            Pro
-                          </Badge>
-                        )}
-                        {tool.requiresAuth && (
-                          <Badge variant="outline" className="border-orange-400/50 text-orange-400 text-xs">
-                            <Lock className="w-3 h-3 mr-1" />
-                            Login
-                          </Badge>
-                        )}
-                      </div>
+              <Card key={tool.id} className={`glass-panel border transition-all hover:border-cyan-400/50 h-full ${CATEGORY_COLORS[tool.category]}`}>
+                <CardHeader>
+                  <div className="flex items-start justify-between mb-3">
+                    <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${CATEGORY_COLORS[tool.category]}`}>
+                      <Icon className="w-6 h-6" />
                     </div>
-                    <CardTitle className="text-xl group-hover:text-cyan-400 transition-colors">
-                      {tool.name}
-                    </CardTitle>
-                    <CardDescription className="text-sm">
-                      {tool.shortDescription}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Button variant="ghost" size="sm" className="w-full group-hover:bg-white/10">
-                      View Details
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    <Badge variant="outline" className="border-cyan-400/50 text-cyan-400 text-xs flex items-center gap-1">
+                      <Lock className="w-3 h-3" />
+                      Trial Required
+                    </Badge>
+                  </div>
+                  <CardTitle className="text-xl">
+                    {tool.name}
+                  </CardTitle>
+                  <CardDescription className="text-sm min-h-[40px]">
+                    {tool.shortDescription}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  {tool.features.length > 0 && (
+                    <ul className="text-xs text-gray-400 space-y-1">
+                      {tool.features.slice(0, 3).map((feature, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <span className="text-cyan-400 mt-0.5">•</span>
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  <Link href="/auth/signup">
+                    <Button size="sm" className="w-full bg-gradient-to-r from-cyan-500 to-violet-500 hover:from-cyan-600 hover:to-violet-600">
+                      <Lock className="w-3 h-3 mr-2" />
+                      Sign Up to Access
                     </Button>
-                  </CardContent>
-                </Card>
-              </Link>
+                  </Link>
+                </CardContent>
+              </Card>
             );
           })}
         </div>
