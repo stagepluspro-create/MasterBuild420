@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase-browser";
 
-const supabase = createClient();
+// Create client inside functions to avoid SSR issues
+const getSupabase = () => createClient();
 
 // =====================================================
 // TYPES AND INTERFACES
@@ -120,7 +121,7 @@ export interface ActivityFeedItem {
 export const teamService = {
   // Get team details with member count
   async getTeamDetails(teamId: string) {
-    const { data: team, error: teamError } = await supabase
+    const { data: team, error: teamError } = await getSupabase()
       .from("teams")
       .select("*")
       .eq("id", teamId)
@@ -129,7 +130,7 @@ export const teamService = {
     if (teamError) throw teamError;
     if (!team) throw new Error("Team not found");
 
-    const { count } = await supabase
+    const { count } = await getSupabase()
       .from("team_members")
       .select("*", { count: "exact", head: true })
       .eq("team_id", teamId)
@@ -153,7 +154,7 @@ export const teamService = {
       settings?: Record<string, any>;
     }
   ) {
-    const { data: team, error } = await supabase
+    const { data: team, error } = await getSupabase()
       .from("teams")
       .update(data)
       .eq("id", teamId)
@@ -166,7 +167,7 @@ export const teamService = {
 
   // Archive team
   async archiveTeam(teamId: string) {
-    const { error } = await supabase
+    const { error } = await getSupabase()
       .from("teams")
       .update({ archived: true })
       .eq("id", teamId);
@@ -176,14 +177,14 @@ export const teamService = {
 
   // Delete team
   async deleteTeam(teamId: string) {
-    const { error } = await supabase.from("teams").delete().eq("id", teamId);
+    const { error } = await getSupabase().from("teams").delete().eq("id", teamId);
 
     if (error) throw error;
   },
 
   // Transfer team ownership
   async transferOwnership(teamId: string, newOwnerId: string) {
-    const { error: teamError } = await supabase
+    const { error: teamError } = await getSupabase()
       .from("teams")
       .update({ owner_user_id: newOwnerId })
       .eq("id", teamId);
@@ -191,7 +192,7 @@ export const teamService = {
     if (teamError) throw teamError;
 
     // Update old owner to admin
-    const { error: oldOwnerError } = await supabase
+    const { error: oldOwnerError } = await getSupabase()
       .from("team_members")
       .update({ role: "admin" })
       .eq("team_id", teamId)
@@ -201,7 +202,7 @@ export const teamService = {
     if (oldOwnerError) throw oldOwnerError;
 
     // Update new owner role
-    const { error: newOwnerError } = await supabase
+    const { error: newOwnerError } = await getSupabase()
       .from("team_members")
       .update({ role: "owner" })
       .eq("team_id", teamId)
@@ -216,7 +217,7 @@ export const teamService = {
 
   // Get all team members with pagination
   async getTeamMembers(teamId: string, options?: { limit?: number; offset?: number; search?: string }) {
-    let query = supabase
+    let query = getSupabase()
       .from("team_members")
       .select("*, profiles(id, email, full_name, avatar_url)")
       .eq("team_id", teamId)
@@ -244,7 +245,7 @@ export const teamService = {
 
   // Get member by ID
   async getMember(memberId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("team_members")
       .select("*, profile:profiles!team_members_user_id_fkey(id, email, full_name, avatar_url)")
       .eq("id", memberId)
@@ -256,7 +257,7 @@ export const teamService = {
 
   // Update member role
   async updateMemberRole(memberId: string, role: "owner" | "admin" | "member" | "viewer") {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("team_members")
       .update({ role })
       .eq("id", memberId)
@@ -269,7 +270,7 @@ export const teamService = {
 
   // Update member permissions
   async updateMemberPermissions(memberId: string, permissions: Record<string, boolean>) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("team_members")
       .update({ permissions })
       .eq("id", memberId)
@@ -282,7 +283,7 @@ export const teamService = {
 
   // Suspend member
   async suspendMember(memberId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("team_members")
       .update({ status: "suspended" })
       .eq("id", memberId)
@@ -295,7 +296,7 @@ export const teamService = {
 
   // Reactivate member
   async reactivateMember(memberId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("team_members")
       .update({ status: "active" })
       .eq("id", memberId)
@@ -308,14 +309,14 @@ export const teamService = {
 
   // Remove member
   async removeMember(memberId: string) {
-    const { error } = await supabase.from("team_members").delete().eq("id", memberId);
+    const { error } = await getSupabase().from("team_members").delete().eq("id", memberId);
 
     if (error) throw error;
   },
 
   // Resend invitation
   async resendInvitation(memberId: string) {
-    const { data: member, error } = await supabase
+    const { data: member, error } = await getSupabase()
       .from("team_members")
       .select("*")
       .eq("id", memberId)
@@ -331,7 +332,7 @@ export const teamService = {
     const expiresAt = new Date();
     expiresAt.setDate(expiresAt.getDate() + 7);
 
-    const { error: updateError } = await supabase
+    const { error: updateError } = await getSupabase()
       .from("team_members")
       .update({
         invitation_token: invitationToken,
@@ -346,7 +347,7 @@ export const teamService = {
 
   // Get pending invitations
   async getPendingInvitations(teamId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("team_members")
       .select("*")
       .eq("team_id", teamId)
@@ -364,7 +365,7 @@ export const teamService = {
 
   // Get team roles
   async getTeamRoles(teamId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("team_roles")
       .select("*")
       .eq("team_id", teamId)
@@ -376,7 +377,7 @@ export const teamService = {
 
   // Create custom role
   async createRole(teamId: string, name: string, description: string, permissions: Record<string, boolean>) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("team_roles")
       .insert({
         team_id: teamId,
@@ -394,7 +395,7 @@ export const teamService = {
 
   // Update role
   async updateRole(roleId: string, data: { name?: string; description?: string; permissions?: Record<string, boolean> }) {
-    const { data: role, error } = await supabase
+    const { data: role, error } = await getSupabase()
       .from("team_roles")
       .update(data)
       .eq("id", roleId)
@@ -407,14 +408,14 @@ export const teamService = {
 
   // Delete role
   async deleteRole(roleId: string) {
-    const { error } = await supabase.from("team_roles").delete().eq("id", roleId).eq("is_system", false);
+    const { error } = await getSupabase().from("team_roles").delete().eq("id", roleId).eq("is_system", false);
 
     if (error) throw error;
   },
 
   // Check user permission
   async hasPermission(teamId: string, userId: string, permission: string): Promise<boolean> {
-    const { data, error } = await supabase.rpc("has_team_permission", {
+    const { data, error } = await getSupabase().rpc("has_team_permission", {
       p_team_id: teamId,
       p_user_id: userId,
       p_permission: permission,
@@ -430,7 +431,7 @@ export const teamService = {
 
   // Get tool access for user
   async getUserToolAccess(teamId: string, userId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("team_tool_access")
       .select("*")
       .eq("team_id", teamId)
@@ -442,7 +443,7 @@ export const teamService = {
 
   // Get all tool access for team
   async getTeamToolAccess(teamId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("team_tool_access")
       .select("*, profile:profiles!team_tool_access_user_id_fkey(full_name, email)")
       .eq("team_id", teamId)
@@ -454,7 +455,7 @@ export const teamService = {
 
   // Grant tool access to user
   async grantToolAccess(teamId: string, userId: string, toolId: string, grantedBy: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("team_tool_access")
       .upsert(
         {
@@ -478,7 +479,7 @@ export const teamService = {
 
   // Revoke tool access from user
   async revokeToolAccess(teamId: string, userId: string, toolId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("team_tool_access")
       .update({ enabled: false })
       .eq("team_id", teamId)
@@ -493,7 +494,7 @@ export const teamService = {
 
   // Check if user can access tool
   async canAccessTool(teamId: string, userId: string, toolId: string): Promise<boolean> {
-    const { data, error } = await supabase.rpc("can_access_tool", {
+    const { data, error } = await getSupabase().rpc("can_access_tool", {
       p_team_id: teamId,
       p_user_id: userId,
       p_tool_id: toolId,
@@ -509,7 +510,7 @@ export const teamService = {
 
   // Get team API keys
   async getTeamAPIKeys(teamId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("team_api_keys")
       .select("id, team_id, name, key_prefix, created_by, last_used_at, expires_at, revoked, created_at")
       .eq("team_id", teamId)
@@ -533,7 +534,7 @@ export const teamService = {
       expiresAt = expiryDate.toISOString();
     }
 
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("team_api_keys")
       .insert({
         team_id: teamId,
@@ -556,7 +557,7 @@ export const teamService = {
 
   // Revoke team API key
   async revokeTeamAPIKey(keyId: string, revokedBy: string) {
-    const { error } = await supabase
+    const { error } = await getSupabase()
       .from("team_api_keys")
       .update({
         revoked: true,
@@ -570,7 +571,7 @@ export const teamService = {
 
   // Get user API keys
   async getUserAPIKeys(userId: string, teamId?: string) {
-    let query = supabase
+    let query = getSupabase()
       .from("user_api_keys")
       .select("id, user_id, team_id, name, key_prefix, last_used_at, expires_at, revoked, created_at")
       .eq("user_id", userId)
@@ -600,7 +601,7 @@ export const teamService = {
       expiresAt = expiryDate.toISOString();
     }
 
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("user_api_keys")
       .insert({
         user_id: userId,
@@ -623,7 +624,7 @@ export const teamService = {
 
   // Revoke user API key
   async revokeUserAPIKey(keyId: string) {
-    const { error } = await supabase
+    const { error } = await getSupabase()
       .from("user_api_keys")
       .update({
         revoked: true,
@@ -640,7 +641,7 @@ export const teamService = {
 
   // Get team integrations
   async getTeamIntegrations(teamId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("team_integrations")
       .select("*")
       .eq("team_id", teamId)
@@ -658,7 +659,7 @@ export const teamService = {
     config: Record<string, any>,
     createdBy: string
   ) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("team_integrations")
       .insert({
         team_id: teamId,
@@ -677,7 +678,7 @@ export const teamService = {
 
   // Update integration
   async updateIntegration(integrationId: string, data: { config?: Record<string, any>; status?: string }) {
-    const { data: integration, error } = await supabase
+    const { data: integration, error } = await getSupabase()
       .from("team_integrations")
       .update(data)
       .eq("id", integrationId)
@@ -690,7 +691,7 @@ export const teamService = {
 
   // Delete integration
   async deleteIntegration(integrationId: string) {
-    const { error } = await supabase.from("team_integrations").delete().eq("id", integrationId);
+    const { error } = await getSupabase().from("team_integrations").delete().eq("id", integrationId);
 
     if (error) throw error;
   },
@@ -701,7 +702,7 @@ export const teamService = {
 
   // Get security settings
   async getSecuritySettings(teamId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("team_security_settings")
       .select("*")
       .eq("team_id", teamId)
@@ -722,7 +723,7 @@ export const teamService = {
       require_password_change_days?: number;
     }
   ) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("team_security_settings")
       .upsert(
         {
@@ -757,7 +758,7 @@ export const teamService = {
       endDate?: string;
     }
   ) {
-    let query = supabase
+    let query = getSupabase()
       .from("activity_feed")
       .select("*, user:profiles!activity_feed_user_id_fkey(full_name, email, avatar_url), project:projects(name)")
       .eq("team_id", teamId)
@@ -807,7 +808,7 @@ export const teamService = {
     project_id?: string;
     metadata?: Record<string, any>;
   }) {
-    const { error } = await supabase.from("activity_feed").insert(data);
+    const { error } = await getSupabase().from("activity_feed").insert(data);
 
     if (error) throw error;
   },

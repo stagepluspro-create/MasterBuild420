@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase-browser";
 
-const supabase = createClient();
+// Create client inside functions to avoid SSR issues
+const getSupabase = () => createClient();
 
 const MAX_RETRIES = 3;
 const RETRY_DELAY = 1000;
@@ -71,7 +72,7 @@ export interface CreateAuditLogData {
 export const dbService = {
   async createProfile(data: CreateProfileData) {
     return retryOperation(async () => {
-      const { data: profile, error } = await supabase
+      const { data: profile, error } = await getSupabase()
         .from("profiles")
         .insert(data)
         .select()
@@ -84,7 +85,7 @@ export const dbService = {
 
   async createSubscription(data: CreateSubscriptionData) {
     return retryOperation(async () => {
-      const { data: subscription, error } = await supabase
+      const { data: subscription, error } = await getSupabase()
         .from("subscriptions")
         .insert(data)
         .select()
@@ -96,7 +97,7 @@ export const dbService = {
   },
 
   async updateProfile(userId: string, data: UpdateProfileData) {
-    const { data: profile, error } = await supabase
+    const { data: profile, error } = await getSupabase()
       .from("profiles")
       .update(data)
       .eq("id", userId)
@@ -137,7 +138,7 @@ export const dbService = {
   },
 
   async getPresetsByToolId(userId: string, toolId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("presets")
       .select("*")
       .eq("user_id", userId)
@@ -163,7 +164,7 @@ export const dbService = {
     }
 
     return retryOperation(async () => {
-      const { data: preset, error } = await supabase
+      const { data: preset, error } = await getSupabase()
         .from("presets")
         .insert({
           user_id: data.user_id,
@@ -193,7 +194,7 @@ export const dbService = {
     presetId: string,
     data: { name?: string; payload?: any }
   ) {
-    const { data: preset, error } = await supabase
+    const { data: preset, error } = await getSupabase()
       .from("presets")
       .update(data)
       .eq("id", presetId)
@@ -205,7 +206,7 @@ export const dbService = {
   },
 
   async deletePreset(presetId: string) {
-    const { error } = await supabase
+    const { error } = await getSupabase()
       .from("presets")
       .delete()
       .eq("id", presetId);
@@ -214,7 +215,7 @@ export const dbService = {
   },
 
   async createProject(data: CreateProjectData) {
-    const { data: project, error } = await supabase
+    const { data: project, error } = await getSupabase()
       .from("projects")
       .insert(data)
       .select()
@@ -225,7 +226,7 @@ export const dbService = {
   },
 
   async getProjects(userId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("projects")
       .select("*")
       .eq("owner_user_id", userId)
@@ -236,7 +237,7 @@ export const dbService = {
   },
 
   async createInterestRequest(data: CreateInterestRequestData) {
-    const { data: request, error } = await supabase
+    const { data: request, error } = await getSupabase()
       .from("interest_requests")
       .insert(data)
       .select()
@@ -247,7 +248,7 @@ export const dbService = {
   },
 
   async hasRequestedTool(userId: string, toolId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("interest_requests")
       .select("id")
       .eq("user_id", userId)
@@ -259,13 +260,13 @@ export const dbService = {
   },
 
   async createAuditLog(data: CreateAuditLogData) {
-    const { error } = await supabase.from("audit_log").insert(data);
+    const { error } = await getSupabase().from("audit_log").insert(data);
 
     if (error) throw error;
   },
 
   async getRecentTools(userId: string, limit: number = 5) {
-    const { data, error} = await supabase
+    const { data, error} = await getSupabase()
       .from("audit_log")
       .select("tool_id, created_at")
       .eq("user_id", userId)
@@ -279,7 +280,7 @@ export const dbService = {
   },
 
   async getTeamProjects(teamId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("projects")
       .select("*")
       .eq("team_id", teamId)
@@ -290,7 +291,7 @@ export const dbService = {
   },
 
   async createTask(data: any) {
-    const { data: task, error } = await supabase
+    const { data: task, error } = await getSupabase()
       .from("tasks")
       .insert(data)
       .select()
@@ -301,7 +302,7 @@ export const dbService = {
   },
 
   async getProjectTasks(projectId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("tasks")
       .select("*, assigned_to_profile:profiles!tasks_assigned_to_fkey(full_name, email)")
       .eq("project_id", projectId)
@@ -312,7 +313,7 @@ export const dbService = {
   },
 
   async updateTask(taskId: string, updates: any) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("tasks")
       .update(updates)
       .eq("id", taskId)
@@ -324,7 +325,7 @@ export const dbService = {
   },
 
   async getActivityFeed(teamId: string, limit: number = 20) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("activity_feed")
       .select("*, user:profiles(full_name, email), project:projects(name)")
       .eq("team_id", teamId)
@@ -336,7 +337,7 @@ export const dbService = {
   },
 
   async createActivity(data: any) {
-    const { error } = await supabase
+    const { error } = await getSupabase()
       .from("activity_feed")
       .insert(data);
 
@@ -344,7 +345,7 @@ export const dbService = {
   },
 
   async getTeamMembers(teamId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("team_members")
       .select("*, profile:profiles(id, email, full_name, avatar_url)")
       .eq("team_id", teamId)
@@ -355,7 +356,7 @@ export const dbService = {
   },
 
   async getTeamById(teamId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("teams")
       .select("*")
       .eq("id", teamId)
@@ -386,7 +387,7 @@ export const dbService = {
     }
 
     // Check if email is already invited or is a member
-    const { data: existing } = await supabase
+    const { data: existing } = await getSupabase()
       .from("team_members")
       .select("id, user_id, invitation_email")
       .eq("team_id", data.team_id)
@@ -406,7 +407,7 @@ export const dbService = {
     const expiresAt = new Date();
     expiresAt.setDate(expiresAt.getDate() + 7); // 7 days expiration
 
-    const { data: member, error } = await supabase
+    const { data: member, error } = await getSupabase()
       .from("team_members")
       .insert({
         team_id: data.team_id,
@@ -434,7 +435,7 @@ export const dbService = {
   },
 
   async removeTeamMember(teamMemberId: string) {
-    const { error } = await supabase
+    const { error } = await getSupabase()
       .from("team_members")
       .delete()
       .eq("id", teamMemberId);
@@ -443,7 +444,7 @@ export const dbService = {
   },
 
   async updateTeamMemberRole(teamMemberId: string, role: "owner" | "admin" | "member") {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("team_members")
       .update({ role })
       .eq("id", teamMemberId)
@@ -455,7 +456,7 @@ export const dbService = {
   },
 
   async getUserSubscription(userId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("subscriptions")
       .select("*")
       .eq("user_id", userId)
@@ -466,7 +467,7 @@ export const dbService = {
   },
 
   async getTeamMemberCount(teamId: string) {
-    const { count, error } = await supabase
+    const { count, error } = await getSupabase()
       .from("team_members")
       .select("*", { count: "exact", head: true })
       .eq("team_id", teamId)
@@ -477,7 +478,7 @@ export const dbService = {
   },
 
   async sharePreset(presetId: string, userId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("presets")
       .update({
         shared_with_team: true,
@@ -493,7 +494,7 @@ export const dbService = {
   },
 
   async unsharePreset(presetId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("presets")
       .update({
         shared_with_team: false,
@@ -509,7 +510,7 @@ export const dbService = {
   },
 
   async getTeamPresets(teamId: string, toolId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("presets")
       .select("*, user:profiles(full_name, email), project:projects(team_id)")
       .eq("tool_id", toolId)
@@ -522,7 +523,7 @@ export const dbService = {
   },
 
   async getPresetWithPermissions(presetId: string, userId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("presets")
       .select("*, project:projects(team_id)")
       .eq("id", presetId)
@@ -534,7 +535,7 @@ export const dbService = {
     const canManage = data.user_id === userId;
 
     if (data.shared_with_team && data.project?.team_id) {
-      const { data: membership } = await supabase
+      const { data: membership } = await getSupabase()
         .from("team_members")
         .select("role")
         .eq("team_id", data.project.team_id)
@@ -567,7 +568,7 @@ export const dbService = {
     paypal_transaction_id?: string | null;
   }) {
     return retryOperation(async () => {
-      const { data: change, error } = await supabase
+      const { data: change, error } = await getSupabase()
         .from("subscription_changes")
         .insert({
           user_id: data.user_id,

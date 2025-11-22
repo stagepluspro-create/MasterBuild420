@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase-browser";
 
-const supabase = createClient();
+// Create client inside functions to avoid SSR issues
+const getSupabase = () => createClient();
 
 export interface Patchlist {
   id: string;
@@ -79,7 +80,7 @@ export interface MonitorMix {
 
 export const patchlistService = {
   async createPatchlist(data: Partial<Patchlist>) {
-    const { data: patchlist, error } = await supabase
+    const { data: patchlist, error } = await getSupabase()
       .from("patchlists")
       .insert(data)
       .select()
@@ -90,7 +91,7 @@ export const patchlistService = {
   },
 
   async getPatchlists(userId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("patchlists")
       .select("*")
       .eq("user_id", userId)
@@ -101,7 +102,7 @@ export const patchlistService = {
   },
 
   async getPatchlist(patchlistId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("patchlists")
       .select("*")
       .eq("id", patchlistId)
@@ -112,7 +113,7 @@ export const patchlistService = {
   },
 
   async updatePatchlist(patchlistId: string, updates: Partial<Patchlist>) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("patchlists")
       .update({ ...updates, updated_at: new Date().toISOString() })
       .eq("id", patchlistId)
@@ -124,7 +125,7 @@ export const patchlistService = {
   },
 
   async deletePatchlist(patchlistId: string) {
-    const { error } = await supabase
+    const { error } = await getSupabase()
       .from("patchlists")
       .delete()
       .eq("id", patchlistId);
@@ -133,7 +134,7 @@ export const patchlistService = {
   },
 
   async getChannels(patchlistId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("patchlist_channels")
       .select("*")
       .eq("patchlist_id", patchlistId)
@@ -144,7 +145,7 @@ export const patchlistService = {
   },
 
   async createChannel(data: Partial<PatchlistChannel>) {
-    const { data: channel, error } = await supabase
+    const { data: channel, error } = await getSupabase()
       .from("patchlist_channels")
       .insert(data)
       .select()
@@ -155,7 +156,7 @@ export const patchlistService = {
   },
 
   async updateChannel(channelId: string, updates: Partial<PatchlistChannel>) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("patchlist_channels")
       .update({ ...updates, updated_at: new Date().toISOString() })
       .eq("id", channelId)
@@ -167,7 +168,7 @@ export const patchlistService = {
   },
 
   async deleteChannel(channelId: string) {
-    const { error } = await supabase
+    const { error } = await getSupabase()
       .from("patchlist_channels")
       .delete()
       .eq("id", channelId);
@@ -176,7 +177,7 @@ export const patchlistService = {
   },
 
   async bulkCreateChannels(channels: Partial<PatchlistChannel>[]) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("patchlist_channels")
       .insert(channels)
       .select();
@@ -186,7 +187,7 @@ export const patchlistService = {
   },
 
   async bulkDeleteChannels(channelIds: string[]) {
-    const { error } = await supabase
+    const { error } = await getSupabase()
       .from("patchlist_channels")
       .delete()
       .in("id", channelIds);
@@ -195,7 +196,7 @@ export const patchlistService = {
   },
 
   async getCategories(patchlistId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("patchlist_categories")
       .select("*")
       .eq("patchlist_id", patchlistId)
@@ -206,7 +207,7 @@ export const patchlistService = {
   },
 
   async createCategory(data: Partial<PatchlistCategory>) {
-    const { data: category, error } = await supabase
+    const { data: category, error } = await getSupabase()
       .from("patchlist_categories")
       .insert(data)
       .select()
@@ -217,7 +218,7 @@ export const patchlistService = {
   },
 
   async updateCategory(categoryId: string, updates: Partial<PatchlistCategory>) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("patchlist_categories")
       .update(updates)
       .eq("id", categoryId)
@@ -229,7 +230,7 @@ export const patchlistService = {
   },
 
   async deleteCategory(categoryId: string) {
-    const { error } = await supabase
+    const { error } = await getSupabase()
       .from("patchlist_categories")
       .delete()
       .eq("id", categoryId);
@@ -238,7 +239,7 @@ export const patchlistService = {
   },
 
   async getConsolePresets() {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("console_presets")
       .select("*")
       .eq("is_public", true)
@@ -249,7 +250,7 @@ export const patchlistService = {
   },
 
   async getMonitorMixes(patchlistId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("monitor_mixes")
       .select("*")
       .eq("patchlist_id", patchlistId)
@@ -260,7 +261,7 @@ export const patchlistService = {
   },
 
   async createMonitorMix(data: Partial<MonitorMix>) {
-    const { data: mix, error } = await supabase
+    const { data: mix, error } = await getSupabase()
       .from("monitor_mixes")
       .insert(data)
       .select()
@@ -271,7 +272,7 @@ export const patchlistService = {
   },
 
   async updateMonitorMix(mixId: string, updates: Partial<MonitorMix>) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("monitor_mixes")
       .update({ ...updates, updated_at: new Date().toISOString() })
       .eq("id", mixId)
@@ -283,7 +284,7 @@ export const patchlistService = {
   },
 
   async deleteMonitorMix(mixId: string) {
-    const { error } = await supabase
+    const { error } = await getSupabase()
       .from("monitor_mixes")
       .delete()
       .eq("id", mixId);
@@ -302,7 +303,7 @@ export const patchlistService = {
       categories,
     };
 
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("patchlist_versions")
       .insert({
         patchlist_id: patchlistId,
@@ -319,7 +320,7 @@ export const patchlistService = {
   },
 
   async getVersions(patchlistId: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("patchlist_versions")
       .select("*")
       .eq("patchlist_id", patchlistId)

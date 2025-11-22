@@ -298,7 +298,17 @@ export default function HazeSimulator() {
     setFixtures([...fixtures, newFixture]);
   };
 
-  const getCurrentState = () => ({ venue, machines, vents, fixtures, physics });
+  const getCurrentState = () => ({
+    venueName,
+    venueWidth,
+    venueLength,
+    venueHeight,
+    machines,
+    vents,
+    fixtures,
+    obstacles,
+    simParams
+  });
   const handleLoadPreset = () => {};
 
   return (

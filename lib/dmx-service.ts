@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase-browser";
 
-const supabase = createClient();
+// Create client inside functions to avoid SSR issues
+const getSupabase = () => createClient();
 
 export interface DMXPatch {
   id: string;
@@ -83,7 +84,7 @@ export const dmxService = {
     venue?: string;
     project_id?: string;
   }): Promise<DMXPatch> {
-    const { data: patch, error } = await supabase
+    const { data: patch, error } = await getSupabase()
       .from("dmx_patches")
       .insert(data)
       .select()
@@ -91,7 +92,7 @@ export const dmxService = {
 
     if (error) throw error;
 
-    await supabase.from("dmx_universes").insert({
+    await getSupabase().from("dmx_universes").insert({
       patch_id: patch.id,
       universe_number: 1,
       name: "Universe 1",
@@ -102,7 +103,7 @@ export const dmxService = {
   },
 
   async getPatches(userId: string): Promise<DMXPatch[]> {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("dmx_patches")
       .select("*")
       .eq("user_id", userId)
@@ -113,7 +114,7 @@ export const dmxService = {
   },
 
   async getPatchById(patchId: string): Promise<DMXPatch | null> {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("dmx_patches")
       .select("*")
       .eq("id", patchId)
@@ -127,7 +128,7 @@ export const dmxService = {
     patchId: string,
     updates: Partial<DMXPatch>
   ): Promise<DMXPatch> {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("dmx_patches")
       .update(updates)
       .eq("id", patchId)
@@ -139,7 +140,7 @@ export const dmxService = {
   },
 
   async deletePatch(patchId: string): Promise<void> {
-    const { error } = await supabase
+    const { error } = await getSupabase()
       .from("dmx_patches")
       .delete()
       .eq("id", patchId);
@@ -148,7 +149,7 @@ export const dmxService = {
   },
 
   async getUniverses(patchId: string): Promise<DMXUniverse[]> {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("dmx_universes")
       .select("*")
       .eq("patch_id", patchId)
@@ -164,7 +165,7 @@ export const dmxService = {
     name?: string;
     protocol?: "DMX512" | "Art-Net" | "sACN";
   }): Promise<DMXUniverse> {
-    const { data: universe, error } = await supabase
+    const { data: universe, error } = await getSupabase()
       .from("dmx_universes")
       .insert(data)
       .select()
@@ -178,7 +179,7 @@ export const dmxService = {
     universeId: string,
     updates: Partial<DMXUniverse>
   ): Promise<DMXUniverse> {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("dmx_universes")
       .update(updates)
       .eq("id", universeId)
@@ -190,7 +191,7 @@ export const dmxService = {
   },
 
   async deleteUniverse(universeId: string): Promise<void> {
-    const { error } = await supabase
+    const { error } = await getSupabase()
       .from("dmx_universes")
       .delete()
       .eq("id", universeId);
@@ -199,7 +200,7 @@ export const dmxService = {
   },
 
   async getFixtures(patchId: string): Promise<DMXFixture[]> {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("dmx_fixtures")
       .select("*")
       .eq("patch_id", patchId)
@@ -214,7 +215,7 @@ export const dmxService = {
     patchId: string,
     universeNumber: number
   ): Promise<DMXFixture[]> {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("dmx_fixtures")
       .select("*")
       .eq("patch_id", patchId)
@@ -226,7 +227,7 @@ export const dmxService = {
   },
 
   async createFixture(data: Omit<DMXFixture, "id" | "created_at" | "updated_at">): Promise<DMXFixture> {
-    const { data: fixture, error } = await supabase
+    const { data: fixture, error } = await getSupabase()
       .from("dmx_fixtures")
       .insert(data)
       .select()
@@ -237,7 +238,7 @@ export const dmxService = {
   },
 
   async createFixtures(fixtures: Omit<DMXFixture, "id" | "created_at" | "updated_at">[]): Promise<DMXFixture[]> {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("dmx_fixtures")
       .insert(fixtures)
       .select();
@@ -250,7 +251,7 @@ export const dmxService = {
     fixtureId: string,
     updates: Partial<DMXFixture>
   ): Promise<DMXFixture> {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("dmx_fixtures")
       .update(updates)
       .eq("id", fixtureId)
@@ -262,7 +263,7 @@ export const dmxService = {
   },
 
   async deleteFixture(fixtureId: string): Promise<void> {
-    const { error } = await supabase
+    const { error } = await getSupabase()
       .from("dmx_fixtures")
       .delete()
       .eq("id", fixtureId);
@@ -271,7 +272,7 @@ export const dmxService = {
   },
 
   async deleteFixtures(fixtureIds: string[]): Promise<void> {
-    const { error } = await supabase
+    const { error } = await getSupabase()
       .from("dmx_fixtures")
       .delete()
       .in("id", fixtureIds);
@@ -286,7 +287,7 @@ export const dmxService = {
     endAddress: number,
     excludeFixtureId?: string
   ): Promise<AddressOverlap[]> {
-    const { data, error } = await supabase.rpc("check_dmx_address_overlap", {
+    const { data, error } = await getSupabase().rpc("check_dmx_address_overlap", {
       p_patch_id: patchId,
       p_universe: universe,
       p_start_address: startAddress,
@@ -302,7 +303,7 @@ export const dmxService = {
     patchId: string,
     universeNumber: number
   ): Promise<UniverseUsage> {
-    const { data, error } = await supabase.rpc("get_universe_usage", {
+    const { data, error } = await getSupabase().rpc("get_universe_usage", {
       p_patch_id: patchId,
       p_universe_number: universeNumber,
     });
@@ -318,7 +319,7 @@ export const dmxService = {
   },
 
   async getGroups(userId: string): Promise<DMXGroup[]> {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("dmx_groups")
       .select("*")
       .eq("user_id", userId)
@@ -334,7 +335,7 @@ export const dmxService = {
     color?: string;
     description?: string;
   }): Promise<DMXGroup> {
-    const { data: group, error } = await supabase
+    const { data: group, error } = await getSupabase()
       .from("dmx_groups")
       .insert(data)
       .select()
@@ -348,7 +349,7 @@ export const dmxService = {
     groupId: string,
     updates: Partial<DMXGroup>
   ): Promise<DMXGroup> {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("dmx_groups")
       .update(updates)
       .eq("id", groupId)
@@ -360,7 +361,7 @@ export const dmxService = {
   },
 
   async deleteGroup(groupId: string): Promise<void> {
-    const { error } = await supabase
+    const { error } = await getSupabase()
       .from("dmx_groups")
       .delete()
       .eq("id", groupId);
@@ -377,7 +378,7 @@ export const dmxService = {
     const fixtures = await this.getFixtures(patchId);
     const universes = await this.getUniverses(patchId);
 
-    const { error } = await supabase.from("dmx_patch_versions").insert({
+    const { error } = await getSupabase().from("dmx_patch_versions").insert({
       patch_id: patchId,
       version_number: patch?.version || 1,
       user_id: userId,

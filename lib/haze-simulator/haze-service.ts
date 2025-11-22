@@ -1,7 +1,8 @@
 import { createClient } from "@/lib/supabase-browser";
 import type { VenueConfig, HazeMachine, HVACVent, LightFixture, SimulationResult } from './types';
 
-const supabase = createClient();
+// Create client inside functions to avoid SSR issues
+const getSupabase = () => createClient();
 
 export interface DBVenue {
   id: string;
@@ -39,7 +40,7 @@ export interface DBSimulation {
 
 export const hazeService = {
   async createVenue(venue: Partial<DBVenue>): Promise<DBVenue> {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from('haze_venues')
       .insert(venue)
       .select()
@@ -50,7 +51,7 @@ export const hazeService = {
   },
 
   async getVenues(userId: string): Promise<DBVenue[]> {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from('haze_venues')
       .select('*')
       .eq('user_id', userId)
@@ -61,7 +62,7 @@ export const hazeService = {
   },
 
   async getVenue(venueId: string): Promise<DBVenue | null> {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from('haze_venues')
       .select('*')
       .eq('id', venueId)
@@ -72,7 +73,7 @@ export const hazeService = {
   },
 
   async updateVenue(venueId: string, updates: Partial<DBVenue>): Promise<DBVenue> {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from('haze_venues')
       .update({ ...updates, updated_at: new Date().toISOString() })
       .eq('id', venueId)
@@ -84,7 +85,7 @@ export const hazeService = {
   },
 
   async deleteVenue(venueId: string): Promise<void> {
-    const { error } = await supabase
+    const { error } = await getSupabase()
       .from('haze_venues')
       .delete()
       .eq('id', venueId);
@@ -93,7 +94,7 @@ export const hazeService = {
   },
 
   async getMachines(venueId: string): Promise<any[]> {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from('haze_machines')
       .select('*')
       .eq('venue_id', venueId);
@@ -103,7 +104,7 @@ export const hazeService = {
   },
 
   async createMachine(machine: any): Promise<any> {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from('haze_machines')
       .insert(machine)
       .select()
@@ -114,7 +115,7 @@ export const hazeService = {
   },
 
   async updateMachine(machineId: string, updates: any): Promise<any> {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from('haze_machines')
       .update(updates)
       .eq('id', machineId)
@@ -126,7 +127,7 @@ export const hazeService = {
   },
 
   async deleteMachine(machineId: string): Promise<void> {
-    const { error } = await supabase
+    const { error } = await getSupabase()
       .from('haze_machines')
       .delete()
       .eq('id', machineId);
@@ -135,7 +136,7 @@ export const hazeService = {
   },
 
   async getVents(venueId: string): Promise<any[]> {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from('haze_hvac_vents')
       .select('*')
       .eq('venue_id', venueId);
@@ -145,7 +146,7 @@ export const hazeService = {
   },
 
   async createVent(vent: any): Promise<any> {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from('haze_hvac_vents')
       .insert(vent)
       .select()
@@ -156,7 +157,7 @@ export const hazeService = {
   },
 
   async updateVent(ventId: string, updates: any): Promise<any> {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from('haze_hvac_vents')
       .update(updates)
       .eq('id', ventId)
@@ -168,7 +169,7 @@ export const hazeService = {
   },
 
   async deleteVent(ventId: string): Promise<void> {
-    const { error } = await supabase
+    const { error } = await getSupabase()
       .from('haze_hvac_vents')
       .delete()
       .eq('id', ventId);
@@ -177,7 +178,7 @@ export const hazeService = {
   },
 
   async getFixtures(venueId: string): Promise<any[]> {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from('haze_fixtures')
       .select('*')
       .eq('venue_id', venueId);
@@ -187,7 +188,7 @@ export const hazeService = {
   },
 
   async createFixture(fixture: any): Promise<any> {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from('haze_fixtures')
       .insert(fixture)
       .select()
@@ -198,7 +199,7 @@ export const hazeService = {
   },
 
   async updateFixture(fixtureId: string, updates: any): Promise<any> {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from('haze_fixtures')
       .update(updates)
       .eq('id', fixtureId)
@@ -210,7 +211,7 @@ export const hazeService = {
   },
 
   async deleteFixture(fixtureId: string): Promise<void> {
-    const { error } = await supabase
+    const { error } = await getSupabase()
       .from('haze_fixtures')
       .delete()
       .eq('id', fixtureId);
@@ -219,7 +220,7 @@ export const hazeService = {
   },
 
   async saveSimulation(simulation: Partial<DBSimulation>): Promise<DBSimulation> {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from('haze_simulations')
       .insert(simulation)
       .select()
@@ -230,7 +231,7 @@ export const hazeService = {
   },
 
   async getSimulations(venueId: string): Promise<DBSimulation[]> {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from('haze_simulations')
       .select('*')
       .eq('venue_id', venueId)

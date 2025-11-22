@@ -1,7 +1,8 @@
 import { createClient } from "@/lib/supabase-browser";
 import emailjs from "@emailjs/browser";
 
-const supabase = createClient();
+// Create client inside functions to avoid SSR issues
+const getSupabase = () => createClient();
 
 export interface InvitationData {
   teamId: string;
@@ -18,7 +19,7 @@ export const invitationService = {
     const expiresAt = new Date();
     expiresAt.setDate(expiresAt.getDate() + 7);
 
-    const { error } = await supabase.from("team_members").insert({
+    const { error } = await getSupabase().from("team_members").insert({
       team_id: data.teamId,
       user_id: null,
       invitation_email: data.email,
@@ -59,7 +60,7 @@ export const invitationService = {
   },
 
   async getInvitationByToken(token: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("team_members")
       .select("*, team:teams(id, name, owner_user_id)")
       .eq("invitation_token", token)
@@ -85,7 +86,7 @@ export const invitationService = {
   async acceptInvitation(token: string, userId: string) {
     const invitation = await this.getInvitationByToken(token);
 
-    const { error } = await supabase
+    const { error } = await getSupabase()
       .from("team_members")
       .update({
         user_id: userId,
@@ -101,7 +102,7 @@ export const invitationService = {
   },
 
   async getPendingInvitationsForUser(email: string) {
-    const { data, error } = await supabase
+    const { data, error } = await getSupabase()
       .from("team_members")
       .select("*, team:teams(id, name, owner_user_id)")
       .eq("invitation_email", email)
@@ -114,7 +115,7 @@ export const invitationService = {
   },
 
   async declineInvitation(token: string) {
-    const { error } = await supabase
+    const { error } = await getSupabase()
       .from("team_members")
       .delete()
       .eq("invitation_token", token);
