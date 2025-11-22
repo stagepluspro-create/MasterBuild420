@@ -155,10 +155,15 @@ export default function ConsoleTranslator() {
     setActiveTab('upload');
   };
 
+  const getCurrentState = () => ({ sourceVendor, targetVendor, uploadedFile: uploadedFile?.name });
+  const handleLoadPreset = () => {};
+
   return (
     <ToolShell
-      title="Multi-Console Translator"
-      description="Convert showfiles between lighting console formats with intelligent fixture mapping and validation"
+      toolId="console-translator"
+      toolName="Multi-Console Translator"
+      getCurrentState={getCurrentState}
+      onLoad={handleLoadPreset}
     >
       <div className="space-y-6">
         <Tabs value={activeTab} onValueChange={setActiveTab}>

@@ -18,7 +18,15 @@ import { ExternalLink, Link, Wifi, CheckCircle, XCircle } from "lucide-react";
 // ------------------------------
 // Console Definitions
 // ------------------------------
-const CONSOLE_REMOTES = [
+type ConsoleConfig = {
+  name: string;
+  description: string;
+  url: string;
+  theme: string;
+  icon: string;
+};
+
+const CONSOLE_REMOTES: ConsoleConfig[] = [
   {
     name: "GrandMA3 onPC",
     description: "Remote access for MA Lighting consoles",
@@ -71,19 +79,19 @@ export default function ConsoleRemotes() {
   const handleLoadPreset = () => {}
 
   const [ipModalOpen, setIpModalOpen] = useState(false);
-  const [selectedConsole, setSelectedConsole] = useState(null);
+  const [selectedConsole, setSelectedConsole] = useState<ConsoleConfig | null>(null);
   const [ipInput, setIpInput] = useState("");
-  const [pingStatus, setPingStatus] = useState(null); // null | "online" | "offline"
-  const ipFieldRef = useRef();
+  const [pingStatus, setPingStatus] = useState<"online" | "offline" | null>(null);
+  const ipFieldRef = useRef<HTMLInputElement>(null);
 
   // Auto-focus modal input
   useEffect(() => {
     if (ipModalOpen && ipFieldRef.current) {
-      setTimeout(() => ipFieldRef.current.focus(), 50);
+      setTimeout(() => ipFieldRef.current?.focus(), 50);
     }
   }, [ipModalOpen]);
 
-  const openIpModal = (consoleConfig) => {
+  const openIpModal = (consoleConfig: ConsoleConfig) => {
     setSelectedConsole(consoleConfig);
     const lastIp = localStorage.getItem(`console-ip-${consoleConfig.name}`) || "";
     setIpInput(lastIp);

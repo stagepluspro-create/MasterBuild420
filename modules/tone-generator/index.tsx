@@ -129,10 +129,10 @@ export default function ToneGenerator() {
 
   const updateVisualizer = useCallback(() => {
     if (isPlaying) {
-      const data = engineRef.current.getAnalyserData();
-      const freq = engineRef.current.getCurrentFrequency();
-      setAnalyserData(data);
-      setCurrentFrequency(freq);
+      // const data = engineRef.current.getAnalyserData();
+      // const freq = engineRef.current.getCurrentFrequency();
+      // setAnalyserData(data);
+      // setCurrentFrequency(freq);
       visualizerUpdateRef.current = requestAnimationFrame(updateVisualizer);
     }
   }, [isPlaying]);

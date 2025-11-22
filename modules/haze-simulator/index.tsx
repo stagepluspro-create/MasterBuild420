@@ -298,10 +298,15 @@ export default function HazeSimulator() {
     setFixtures([...fixtures, newFixture]);
   };
 
+  const getCurrentState = () => ({ venue, machines, vents, fixtures, physics });
+  const handleLoadPreset = () => {};
+
   return (
     <ToolShell
-      title="Haze & Atmosphere Simulator"
-      description="Simulate and analyze haze/fog dispersion in venues with real-time 3D visualization"
+      toolId="haze-simulator"
+      toolName="Haze & Atmosphere Simulator"
+      getCurrentState={getCurrentState}
+      onLoad={handleLoadPreset}
     >
       <div className="space-y-6">
         <Card className="p-6">
