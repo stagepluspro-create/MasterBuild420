@@ -14,27 +14,6 @@ export interface InvitationData {
 }
 
 export const invitationService = {
-  async createInvitation(data: InvitationData): Promise<string> {
-    const invitationToken = crypto.randomUUID();
-    const expiresAt = new Date();
-    expiresAt.setDate(expiresAt.getDate() + 7);
-
-    const { error } = await getSupabase().from("team_members").insert({
-      team_id: data.teamId,
-      user_id: null,
-      invitation_email: data.email,
-      role: data.role,
-      invited_by: data.invitedBy,
-      invited_at: new Date().toISOString(),
-      invitation_token: invitationToken,
-      invitation_expires_at: expiresAt.toISOString(),
-    });
-
-    if (error) throw error;
-
-    return invitationToken;
-  },
-
   async sendInvitationEmail(data: InvitationData, token: string): Promise<void> {
     const invitationLink = `${window.location.origin}/teams/invitations/${token}`;
 
