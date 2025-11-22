@@ -61,7 +61,7 @@ export async function middleware(request: NextRequest) {
     request.nextUrl.pathname.startsWith('/profile') ||
     request.nextUrl.pathname.startsWith('/teams') ||
     request.nextUrl.pathname.startsWith('/dashboard') ||
-    (request.nextUrl.pathname.startsWith('/tools') && !request.nextUrl.pathname.includes('/tools/'))
+    request.nextUrl.pathname.startsWith('/tools')
 
   if (!user && isProtectedRoute) {
     const redirectUrl = new URL('/auth/signin', request.url)
