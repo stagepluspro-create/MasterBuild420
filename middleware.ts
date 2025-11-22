@@ -59,11 +59,12 @@ export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
   const isAuthPage = pathname.startsWith('/auth')
 
-  // Only protect specific routes
+  // Protect authenticated routes
   const isProtectedRoute =
     pathname.startsWith('/profile') ||
     pathname.startsWith('/teams') ||
     pathname.startsWith('/dashboard') ||
+    pathname.startsWith('/tools/') ||  // Protect all individual tool pages
     pathname === '/paypal' ||
     pathname.startsWith('/paypal/success')
 
