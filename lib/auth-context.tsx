@@ -87,24 +87,48 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return data;
   };
 
+  const ensureSubscription = async (userId: string) => {
+    // Try to load existing subscription
+    let sub = await loadSubscription(userId);
+
+    // If no subscription exists, create one via API
+    if (!sub) {
+      try {
+        const response = await fetch('/api/auth/ensure-subscription', {
+          method: 'POST',
+        });
+
+        if (response.ok) {
+          const result = await response.json();
+          sub = result.subscription;
+        }
+      } catch (error) {
+        console.error('Failed to auto-create subscription:', error);
+      }
+    }
+
+    return sub;
+  };
+
   const refreshSubscription = async () => {
     if (!user) return;
-    const sub = await loadSubscription(user.id);
+    const sub = await ensureSubscription(user.id);
     setSubscription(sub);
   };
 
   useEffect(() => {
     let mounted = true;
-    let timeoutId: NodeJS.Timeout;
+    let timeoutId: NodeJS.Timeout | undefined;
 
     async function initialize() {
       try {
+        // Set a more generous timeout (30 seconds)
         timeoutId = setTimeout(() => {
           if (mounted && loading) {
-            console.warn("Auth initialization timeout - setting loading to false");
+            console.warn("Auth initialization timeout after 30s - setting loading to false");
             setLoading(false);
           }
-        }, 10000);
+        }, 30000);
 
         const { data, error } = await supabase.auth.getUser();
 
@@ -121,7 +145,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         if (currentUser) {
           const [profileData, subData] = await Promise.all([
             loadProfile(currentUser.id),
-            loadSubscription(currentUser.id),
+            ensureSubscription(currentUser.id),
           ]);
 
           if (mounted) {
@@ -133,7 +157,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         console.error("Auth initialization error:", error);
       } finally {
         if (mounted) {
-          clearTimeout(timeoutId);
+          if (timeoutId) clearTimeout(timeoutId);
           setLoading(false);
         }
       }
@@ -149,7 +173,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         if (nextUser) {
           const [profileData, subData] = await Promise.all([
             loadProfile(nextUser.id),
-            loadSubscription(nextUser.id),
+            ensureSubscription(nextUser.id),
           ]);
           setProfile(profileData);
           setSubscription(subData);
@@ -162,7 +186,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     return () => {
       mounted = false;
-      clearTimeout(timeoutId);
+      if (timeoutId) clearTimeout(timeoutId);
       listener.subscription.unsubscribe();
     };
   }, []);

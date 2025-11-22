@@ -113,18 +113,27 @@ export const dbService = {
       status?: "trial" | "active" | "expired" | "canceled";
       tier?: "pro" | "team";
       paypal_transaction_id?: string;
+      paypal_subscription_id?: string;
       seats?: number;
     }
   ) {
-    const { data: subscription, error } = await supabase
-      .from("subscriptions")
-      .update(data)
-      .eq("user_id", userId)
-      .select()
-      .single();
+    // Call the API route instead of directly updating Supabase
+    // This ensures proper authentication and server-side validation
+    const response = await fetch('/api/subscriptions/update', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
 
-    if (error) throw error;
-    return subscription;
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.error || 'Failed to update subscription');
+    }
+
+    const result = await response.json();
+    return result.subscription;
   },
 
   async getPresetsByToolId(userId: string, toolId: string) {

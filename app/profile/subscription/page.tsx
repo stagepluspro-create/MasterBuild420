@@ -70,6 +70,8 @@ function SubscriptionContent() {
   } = useAuth();
 
   const [loading, setLoading] = useState(false);
+  const [creatingPro, setCreatingPro] = useState(false);
+  const [creatingTeam, setCreatingTeam] = useState(false);
   const [changes, setChanges] = useState<SubscriptionChange[]>([]);
   const [cancelDialogOpen, setCancelDialogOpen] = useState(false);
 
@@ -98,6 +100,36 @@ function SubscriptionContent() {
       setChanges(data || []);
     } catch (error) {
       console.error("Failed to load subscription changes:", error);
+    }
+  };
+
+  const handleSubscribe = async (tier: 'pro' | 'team') => {
+    const setLoadingState = tier === 'pro' ? setCreatingPro : setCreatingTeam;
+
+    try {
+      setLoadingState(true);
+
+      const response = await fetch('/api/paypal/create-subscription', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ tier }),
+      });
+
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.error || 'Failed to create subscription');
+      }
+
+      const data = await response.json();
+
+      // Redirect to PayPal for approval
+      window.location.href = data.approveLink;
+    } catch (error: any) {
+      console.error('Failed to create subscription:', error);
+      alert(error.message || 'Failed to start subscription process');
+      setLoadingState(false);
     }
   };
 
@@ -345,29 +377,18 @@ function SubscriptionContent() {
                     )}
                   </div>
                 ) : (
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: `
-                        <style>
-                          .pp-pro-btn {
-                            width: 100%;
-                            padding: 0.75rem 1.5rem;
-                            font-weight: bold;
-                            border-radius: 0.5rem;
-                            background: linear-gradient(135deg,#00E8FF,#9B5CFF);
-                            color: white;
-                            cursor: pointer;
-                          }
-                        </style>
-                        <form action="https://www.paypal.com/ncp/payment/BA5M2737P3VBE" method="post" target="_blank">
-                          <input class="pp-pro-btn" type="submit" value="Subscribe to Pro Plan"/>
-                        </form>
-                        <p style="text-align:center;font-size:0.75rem;color:#9CA3AF;margin-top:0.75rem;">
-                          7-day free trial • Cancel anytime
-                        </p>
-                      `,
-                    }}
-                  />
+                  <div className="space-y-3">
+                    <Button
+                      onClick={() => handleSubscribe('pro')}
+                      disabled={creatingPro}
+                      className="w-full py-6 text-lg font-bold bg-gradient-to-r from-cyan-500 to-violet-500 hover:from-cyan-600 hover:to-violet-600 text-white border-0"
+                    >
+                      {creatingPro ? 'Processing...' : 'Subscribe to Pro Plan'}
+                    </Button>
+                    <p className="text-center text-xs text-gray-400">
+                      7-day free trial • Cancel anytime
+                    </p>
+                  </div>
                 )}
               </CardContent>
             </Card>
@@ -464,29 +485,18 @@ function SubscriptionContent() {
                     )}
                   </div>
                 ) : (
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: `
-                        <style>
-                          .pp-team-btn {
-                            width:100%;
-                            padding:0.75rem 1.5rem;
-                            font-weight: bold;
-                            border-radius: 0.5rem;
-                            background: linear-gradient(135deg,#9B5CFF,#FF008C);
-                            color:white;
-                            cursor:pointer;
-                          }
-                        </style>
-                        <form action="https://www.paypal.com/ncp/payment/FEC47P2HBV9K6" method="post" target="_blank">
-                          <input class="pp-team-btn" type="submit" value="Subscribe to Team Plan"/>
-                        </form>
-                        <p style="text-align:center;font-size:0.75rem;color:#9CA3AF;margin-top:0.75rem;">
-                          7-day free trial • Cancel anytime
-                        </p>
-                      `,
-                    }}
-                  />
+                  <div className="space-y-3">
+                    <Button
+                      onClick={() => handleSubscribe('team')}
+                      disabled={creatingTeam}
+                      className="w-full py-6 text-lg font-bold bg-gradient-to-r from-violet-500 to-pink-500 hover:from-violet-600 hover:to-pink-600 text-white border-0"
+                    >
+                      {creatingTeam ? 'Processing...' : 'Subscribe to Team Plan'}
+                    </Button>
+                    <p className="text-center text-xs text-gray-400">
+                      7-day free trial • Cancel anytime
+                    </p>
+                  </div>
                 )}
               </CardContent>
             </Card>
