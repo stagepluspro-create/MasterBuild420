@@ -558,4 +558,32 @@ export const dbService = {
       canView: canManage,
     };
   },
+
+  async createSubscriptionChange(data: {
+    user_id: string;
+    from_tier: string | null;
+    to_tier: string;
+    reason: string;
+    paypal_transaction_id?: string | null;
+  }) {
+    return retryOperation(async () => {
+      const { data: change, error } = await supabase
+        .from("subscription_changes")
+        .insert({
+          user_id: data.user_id,
+          from_tier: data.from_tier,
+          to_tier: data.to_tier,
+          reason: data.reason,
+          paypal_transaction_id: data.paypal_transaction_id || null,
+        })
+        .select()
+        .single();
+
+      if (error) {
+        console.error("Error creating subscription change:", error);
+        throw error;
+      }
+      return change;
+    });
+  },
 };

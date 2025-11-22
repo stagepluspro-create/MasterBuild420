@@ -4,9 +4,12 @@ import { useEffect, useState, Suspense, useCallback } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
 import { dbService } from "@/lib/db-service";
+import { createClient } from "@/lib/supabase-browser";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2 } from "lucide-react";
+
+const supabase = createClient();
 
 function PayPalSuccessContent() {
   const router = useRouter();
@@ -24,9 +27,26 @@ function PayPalSuccessContent() {
 
       const tier = searchParams.get("tier") as "pro" | "team" || "pro";
 
+      // Get current subscription to track change
+      const { data: currentSub } = await supabase
+        .from("subscriptions")
+        .select("tier")
+        .eq("user_id", user.id)
+        .maybeSingle();
+
+      // Update subscription
       await dbService.updateSubscription(user.id, {
         status: "active",
         tier: tier,
+        paypal_transaction_id: transactionId,
+      });
+
+      // Create subscription change record
+      await dbService.createSubscriptionChange({
+        user_id: user.id,
+        from_tier: currentSub?.tier || null,
+        to_tier: tier,
+        reason: "paypal_payment",
         paypal_transaction_id: transactionId,
       });
 
