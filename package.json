@@ -7,8 +7,7 @@
     "npm": ">=9.0.0"
   },
   "scripts": {
-    "predev": "pkill -9 -f next-server 2>/dev/null || pkill -9 -f 'node.*next dev' 2>/dev/null || true",
-    "dev": "next dev -H 0.0.0.0 -p 5000",
+    "dev": "NEXT_TELEMETRY_DISABLED=1 next dev -H 0.0.0.0 -p 5000",
     "build": "next build",
     "start": "next start -H 0.0.0.0 -p 5000",
     "lint": "next lint",

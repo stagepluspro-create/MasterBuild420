@@ -8,6 +8,11 @@ const nextConfig = {
   // Use SWC minification (default in Next.js 14)
   swcMinify: true,
 
+  // Allow all dev origins for Replit proxy environment
+  experimental: {
+    allowedDevOrigins: ['*.replit.dev', '*.repl.co'],
+  },
+
   // Allow all hosts for Replit proxy environment
   async headers() {
     return [
