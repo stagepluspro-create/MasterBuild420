@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase-browser";
 import { Button } from "@/components/ui/button";
@@ -13,6 +13,15 @@ import { Mail, ArrowLeft, Lock, CheckCircle2, Eye, EyeOff } from "lucide-react";
 
 export default function SignInPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const redirect = searchParams.get("redirect");
+  
+  // Sanitize redirect to prevent open redirect attacks - only allow same-origin relative paths
+  let redirectUrl = "/dashboard";
+  if (redirect && typeof redirect === "string" && redirect.startsWith("/") && !redirect.startsWith("//")) {
+    redirectUrl = redirect;
+  }
+  
   const supabase = createClient();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -55,7 +64,7 @@ export default function SignInPage() {
       if (signInError) throw signInError;
 
       if (data.user) {
-        router.push("/dashboard");
+        router.push(redirectUrl);
       }
     } catch (err: any) {
       console.error("Sign in error:", err);

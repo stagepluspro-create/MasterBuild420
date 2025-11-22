@@ -41,7 +41,7 @@ export const invitationService = {
   async getInvitationByToken(token: string) {
     const { data, error } = await getSupabase()
       .from("team_members")
-      .select("*, team:teams(id, name, owner_user_id)")
+      .select("*, team:teams(id, name, owner_user_id), invited_by_profile:profiles!team_members_invited_by_fkey(full_name, email)")
       .eq("invitation_token", token)
       .maybeSingle();
 
