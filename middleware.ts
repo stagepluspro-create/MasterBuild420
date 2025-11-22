@@ -59,19 +59,42 @@ export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
   const isAuthPage = pathname.startsWith('/auth')
 
-  // Protect authenticated routes
-  const isProtectedRoute =
+  // Routes that require authentication only (no subscription check)
+  const isAuthOnlyRoute =
     pathname.startsWith('/profile') ||
     pathname.startsWith('/teams') ||
-    pathname.startsWith('/dashboard') ||
-    pathname.startsWith('/tools/') ||  // Protect all individual tool pages
     pathname === '/paypal' ||
     pathname.startsWith('/paypal/success')
 
-  if (!user && isProtectedRoute) {
+  // Routes that require active subscription or trial
+  const requiresSubscription =
+    pathname.startsWith('/dashboard') ||
+    pathname.startsWith('/tools/')
+
+  // Check authentication first
+  if (!user && (isAuthOnlyRoute || requiresSubscription)) {
     const redirectUrl = new URL('/auth/signin', request.url)
     redirectUrl.searchParams.set('redirect', pathname)
     return NextResponse.redirect(redirectUrl)
+  }
+
+  // Check subscription status for protected tool routes
+  if (user && requiresSubscription) {
+    const { data: subscription } = await supabase
+      .from('subscriptions')
+      .select('*')
+      .eq('user_id', user.id)
+      .maybeSingle()
+
+    const hasActiveSubscription =
+      subscription?.status === 'active' ||
+      (subscription?.status === 'trial' && new Date(subscription.trial_end) > new Date())
+
+    if (!hasActiveSubscription) {
+      // Redirect to pricing page if subscription is inactive/expired
+      const redirectUrl = new URL('/#pricing', request.url)
+      return NextResponse.redirect(redirectUrl)
+    }
   }
 
   if (user && isAuthPage && pathname !== '/auth/callback') {

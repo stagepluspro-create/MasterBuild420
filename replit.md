@@ -80,6 +80,14 @@ The workflow "Start application" is configured to run the dev server automatical
 - Configured deployment settings for autoscale
 - Set up environment variables for Supabase integration
 
+### Security & Business Model Implementation
+- **Locked all tools behind authentication** - `/tools/*` routes now require login
+- **Enforced subscription/trial validation** - Middleware checks both authentication AND active subscription/trial status
+- **Created marketing tools page** - `/tools` shows all tools with "Sign Up to Access" CTAs and feature previews
+- **Preserved authenticated dashboard** - `/dashboard` provides tool access for subscribed users
+- **Trial enforcement** - Users get 7-day free trial, must upgrade after expiration to continue accessing tools
+- **Proper redirect flow** - Unauthenticated access redirects to signup, expired trials redirect to pricing
+
 ## User Preferences
 None documented yet.
 
