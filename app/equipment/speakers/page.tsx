@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import { useAuth } from '@/lib/auth-context';
 import { EquipmentService, Speaker } from '@/lib/equipment-service';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -17,37 +18,84 @@ import {
 } from '@/components/ui/select';
 
 export default function SpeakersBrowserPage() {
+  const { user } = useAuth();
   const [speakers, setSpeakers] = useState<Speaker[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedManufacturer, setSelectedManufacturer] = useState('');
   const [selectedType, setSelectedType] = useState('');
   const [manufacturers, setManufacturers] = useState<string[]>([]);
   const [types, setTypes] = useState<string[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    setManufacturers(EquipmentService.getManufacturers('speakers'));
-    setTypes(EquipmentService.getTypes('speakers'));
-    loadSpeakers();
+    try {
+      setManufacturers(EquipmentService.getManufacturers('speakers'));
+      setTypes(EquipmentService.getTypes('speakers'));
+      setLoading(false);
+    } catch (err: any) {
+      console.error('Failed to load equipment metadata:', err);
+      setError(err.message || 'Failed to load equipment data');
+      setLoading(false);
+    }
   }, []);
 
-  useEffect(() => {
-    loadSpeakers();
+  const loadSpeakers = useCallback(() => {
+    try {
+      const results = EquipmentService.searchEquipment('speakers', {
+        query: searchQuery,
+        manufacturer: selectedManufacturer || undefined,
+        type: selectedType || undefined,
+      });
+      setSpeakers(results as Speaker[]);
+      setError(null);
+    } catch (err: any) {
+      console.error('Failed to search speakers:', err);
+      setError(err.message || 'Failed to search equipment');
+      setSpeakers([]);
+    }
   }, [searchQuery, selectedManufacturer, selectedType]);
 
-  const loadSpeakers = () => {
-    const results = EquipmentService.searchEquipment('speakers', {
-      query: searchQuery,
-      manufacturer: selectedManufacturer || undefined,
-      type: selectedType || undefined,
-    });
-    setSpeakers(results as Speaker[]);
-  };
+  useEffect(() => {
+    loadSpeakers();
+  }, [loadSpeakers]);
 
   const clearFilters = () => {
     setSearchQuery('');
     setSelectedManufacturer('');
     setSelectedType('');
   };
+
+  if (loading) {
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <div className="flex items-center justify-center min-h-[400px]">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#00E8FF] mx-auto mb-4"></div>
+            <p className="text-white/60">Loading speakers...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <div className="flex items-center justify-center min-h-[400px]">
+          <div className="text-center">
+            <p className="text-red-400 mb-4">{error}</p>
+            <button
+              onClick={() => window.location.reload()}
+              className="text-[#00E8FF] hover:underline"
+            >
+              Try again
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container mx-auto px-4 py-8">

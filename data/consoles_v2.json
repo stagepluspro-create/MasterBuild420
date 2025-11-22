@@ -1,1301 +1,2101 @@
 [
   {
     "id": "con_001",
+    "manufacturer": "Avid",
     "model": "Avid Ion",
-    "brand": "Avid",
-    "inputs": 64,
-    "outputs": 16,
-    "buses": 8,
-    "network": "Waves",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "64 in / 16 out",
+    "faders": "32",
+    "bus_count": "8",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_002",
+    "manufacturer": "Behringer",
     "model": "Behringer CL3",
-    "brand": "Behringer",
-    "inputs": 64,
-    "outputs": 64,
-    "buses": 32,
-    "network": "None",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "64 in / 64 out",
+    "faders": "32",
+    "bus_count": "32",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_003",
+    "manufacturer": "Digico",
     "model": "Digico X32-1",
-    "brand": "Digico",
-    "inputs": 96,
-    "outputs": 8,
-    "buses": 32,
-    "network": "MADI",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "96 in / 8 out",
+    "faders": "32",
+    "bus_count": "32",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_004",
+    "manufacturer": "Avid",
     "model": "Avid CL5",
-    "brand": "Avid",
-    "inputs": 96,
-    "outputs": 64,
-    "buses": 12,
-    "network": "MADI",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "96 in / 64 out",
+    "faders": "32",
+    "bus_count": "12",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_005",
+    "manufacturer": "grandMA",
     "model": "grandMA MA2",
-    "brand": "grandMA",
-    "inputs": 48,
-    "outputs": 8,
-    "buses": 32,
-    "network": "DVS",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "48 in / 8 out",
+    "faders": "32",
+    "bus_count": "32",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_006",
+    "manufacturer": "Allen & Heath",
     "model": "Allen & Heath MA2-1",
-    "brand": "Allen & Heath",
-    "inputs": 32,
-    "outputs": 96,
-    "buses": 48,
-    "network": "AES50",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "32 in / 96 out",
+    "faders": "32",
+    "bus_count": "48",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_007",
+    "manufacturer": "Digico",
     "model": "Digico CL3",
-    "brand": "Digico",
-    "inputs": 96,
-    "outputs": 32,
-    "buses": 12,
-    "network": "DVS",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "96 in / 32 out",
+    "faders": "32",
+    "bus_count": "12",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_008",
+    "manufacturer": "Hog",
     "model": "Hog dLive-S5000",
-    "brand": "Hog",
-    "inputs": 160,
-    "outputs": 16,
-    "buses": 12,
-    "network": "AES50",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "160 in / 16 out",
+    "faders": "32",
+    "bus_count": "12",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_009",
+    "manufacturer": "Allen & Heath",
     "model": "Allen & Heath MA3",
-    "brand": "Allen & Heath",
-    "inputs": 48,
-    "outputs": 8,
-    "buses": 12,
-    "network": "AES50",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "48 in / 8 out",
+    "faders": "32",
+    "bus_count": "12",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_010",
+    "manufacturer": "ETC",
     "model": "ETC CL3",
-    "brand": "ETC",
-    "inputs": 96,
-    "outputs": 8,
-    "buses": 12,
-    "network": "Waves",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "96 in / 8 out",
+    "faders": "32",
+    "bus_count": "12",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_011",
+    "manufacturer": "Digico",
     "model": "Digico QU-32-2",
-    "brand": "Digico",
-    "inputs": 128,
-    "outputs": 32,
-    "buses": 32,
-    "network": "MADI",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "128 in / 32 out",
+    "faders": "32",
+    "bus_count": "32",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_012",
+    "manufacturer": "SSL",
     "model": "SSL Hog4",
-    "brand": "SSL",
-    "inputs": 128,
-    "outputs": 48,
-    "buses": 48,
-    "network": "Waves",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "128 in / 48 out",
+    "faders": "32",
+    "bus_count": "48",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_013",
+    "manufacturer": "ETC",
     "model": "ETC MA2-1",
-    "brand": "ETC",
-    "inputs": 32,
-    "outputs": 16,
-    "buses": 16,
-    "network": "DVS",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "32 in / 16 out",
+    "faders": "32",
+    "bus_count": "16",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_014",
+    "manufacturer": "Midas",
     "model": "Midas Hog4PC",
-    "brand": "Midas",
-    "inputs": 96,
-    "outputs": 32,
-    "buses": 32,
-    "network": "Waves",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "96 in / 32 out",
+    "faders": "32",
+    "bus_count": "32",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_015",
+    "manufacturer": "Allen & Heath",
     "model": "Allen & Heath dLive-S5000",
-    "brand": "Allen & Heath",
-    "inputs": 160,
-    "outputs": 8,
-    "buses": 64,
-    "network": "MADI",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "160 in / 8 out",
+    "faders": "32",
+    "bus_count": "64",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_016",
+    "manufacturer": "Behringer",
     "model": "Behringer Hog4",
-    "brand": "Behringer",
-    "inputs": 32,
-    "outputs": 16,
-    "buses": 16,
-    "network": "None",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "32 in / 16 out",
+    "faders": "32",
+    "bus_count": "16",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_017",
+    "manufacturer": "Avid",
     "model": "Avid PM10",
-    "brand": "Avid",
-    "inputs": 128,
-    "outputs": 16,
-    "buses": 24,
-    "network": "Waves",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "128 in / 16 out",
+    "faders": "32",
+    "bus_count": "24",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_018",
+    "manufacturer": "SSL",
     "model": "SSL PM10",
-    "brand": "SSL",
-    "inputs": 32,
-    "outputs": 16,
-    "buses": 64,
-    "network": "DVS",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "32 in / 16 out",
+    "faders": "32",
+    "bus_count": "64",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_019",
+    "manufacturer": "Midas",
     "model": "Midas Hog4",
-    "brand": "Midas",
-    "inputs": 32,
-    "outputs": 32,
-    "buses": 8,
-    "network": "AES50",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "32 in / 32 out",
+    "faders": "32",
+    "bus_count": "8",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_020",
+    "manufacturer": "ETC",
     "model": "ETC CL3",
-    "brand": "ETC",
-    "inputs": 48,
-    "outputs": 8,
-    "buses": 64,
-    "network": "Dante",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "48 in / 8 out",
+    "faders": "32",
+    "bus_count": "64",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_021",
+    "manufacturer": "Allen & Heath",
     "model": "Allen & Heath S6L-24",
-    "brand": "Allen & Heath",
-    "inputs": 48,
-    "outputs": 16,
-    "buses": 16,
-    "network": "MADI",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "48 in / 16 out",
+    "faders": "32",
+    "bus_count": "16",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_022",
+    "manufacturer": "grandMA",
     "model": "grandMA S6L-24",
-    "brand": "grandMA",
-    "inputs": 16,
-    "outputs": 24,
-    "buses": 8,
-    "network": "AES50",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "16 in / 24 out",
+    "faders": "32",
+    "bus_count": "8",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_023",
+    "manufacturer": "Avid",
     "model": "Avid CL5",
-    "brand": "Avid",
-    "inputs": 48,
-    "outputs": 24,
-    "buses": 8,
-    "network": "AVB",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "48 in / 24 out",
+    "faders": "32",
+    "bus_count": "8",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_024",
+    "manufacturer": "grandMA",
     "model": "grandMA MA3",
-    "brand": "grandMA",
-    "inputs": 96,
-    "outputs": 16,
-    "buses": 16,
-    "network": "MADI",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "96 in / 16 out",
+    "faders": "32",
+    "bus_count": "16",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_025",
+    "manufacturer": "Behringer",
     "model": "Behringer MA2",
-    "brand": "Behringer",
-    "inputs": 64,
-    "outputs": 32,
-    "buses": 16,
-    "network": "AES50",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "64 in / 32 out",
+    "faders": "32",
+    "bus_count": "16",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_026",
+    "manufacturer": "Hog",
     "model": "Hog MA2",
-    "brand": "Hog",
-    "inputs": 192,
-    "outputs": 96,
-    "buses": 64,
-    "network": "AVB",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "192 in / 96 out",
+    "faders": "32",
+    "bus_count": "64",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_027",
+    "manufacturer": "Yamaha",
     "model": "Yamaha PM10-9",
-    "brand": "Yamaha",
-    "inputs": 96,
-    "outputs": 16,
-    "buses": 48,
-    "network": "AES50",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "96 in / 16 out",
+    "faders": "32",
+    "bus_count": "48",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_028",
+    "manufacturer": "Behringer",
     "model": "Behringer CL3",
-    "brand": "Behringer",
-    "inputs": 24,
-    "outputs": 16,
-    "buses": 48,
-    "network": "Waves",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "24 in / 16 out",
+    "faders": "32",
+    "bus_count": "48",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_029",
+    "manufacturer": "Hog",
     "model": "Hog MA3",
-    "brand": "Hog",
-    "inputs": 48,
-    "outputs": 16,
-    "buses": 48,
-    "network": "MADI",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "48 in / 16 out",
+    "faders": "32",
+    "bus_count": "48",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_030",
+    "manufacturer": "Hog",
     "model": "Hog S6L-24",
-    "brand": "Hog",
-    "inputs": 64,
-    "outputs": 64,
-    "buses": 24,
-    "network": "None",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "64 in / 64 out",
+    "faders": "32",
+    "bus_count": "24",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_031",
+    "manufacturer": "Soundcraft",
     "model": "Soundcraft PM10",
-    "brand": "Soundcraft",
-    "inputs": 32,
-    "outputs": 16,
-    "buses": 24,
-    "network": "DVS",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "32 in / 16 out",
+    "faders": "32",
+    "bus_count": "24",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_032",
+    "manufacturer": "Avid",
     "model": "Avid S6L-24-6",
-    "brand": "Avid",
-    "inputs": 160,
-    "outputs": 64,
-    "buses": 48,
-    "network": "Dante",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "160 in / 64 out",
+    "faders": "32",
+    "bus_count": "48",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_033",
+    "manufacturer": "Hog",
     "model": "Hog dLive-S5000",
-    "brand": "Hog",
-    "inputs": 192,
-    "outputs": 96,
-    "buses": 8,
-    "network": "AVB",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "192 in / 96 out",
+    "faders": "32",
+    "bus_count": "8",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_034",
+    "manufacturer": "Avid",
     "model": "Avid PM10-5",
-    "brand": "Avid",
-    "inputs": 16,
-    "outputs": 48,
-    "buses": 8,
-    "network": "None",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "16 in / 48 out",
+    "faders": "32",
+    "bus_count": "8",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_035",
+    "manufacturer": "Avolites",
     "model": "Avolites PM10-8",
-    "brand": "Avolites",
-    "inputs": 192,
-    "outputs": 96,
-    "buses": 32,
-    "network": "Dante",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "192 in / 96 out",
+    "faders": "32",
+    "bus_count": "32",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_036",
+    "manufacturer": "Digico",
     "model": "Digico S6L-24",
-    "brand": "Digico",
-    "inputs": 128,
-    "outputs": 32,
-    "buses": 32,
-    "network": "AES50",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "128 in / 32 out",
+    "faders": "32",
+    "bus_count": "32",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_037",
+    "manufacturer": "ETC",
     "model": "ETC MA3",
-    "brand": "ETC",
-    "inputs": 48,
-    "outputs": 48,
-    "buses": 48,
-    "network": "Dante",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "48 in / 48 out",
+    "faders": "32",
+    "bus_count": "48",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_038",
+    "manufacturer": "Digico",
     "model": "Digico S6L-24",
-    "brand": "Digico",
-    "inputs": 192,
-    "outputs": 24,
-    "buses": 16,
-    "network": "None",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "192 in / 24 out",
+    "faders": "32",
+    "bus_count": "16",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_039",
+    "manufacturer": "Avid",
     "model": "Avid PM10",
-    "brand": "Avid",
-    "inputs": 24,
-    "outputs": 16,
-    "buses": 12,
-    "network": "Dante",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "24 in / 16 out",
+    "faders": "32",
+    "bus_count": "12",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_040",
+    "manufacturer": "Avolites",
     "model": "Avolites Ion",
-    "brand": "Avolites",
-    "inputs": 32,
-    "outputs": 24,
-    "buses": 12,
-    "network": "AES50",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "32 in / 24 out",
+    "faders": "32",
+    "bus_count": "12",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_041",
+    "manufacturer": "Midas",
     "model": "Midas Hog4PC-4",
-    "brand": "Midas",
-    "inputs": 192,
-    "outputs": 8,
-    "buses": 8,
-    "network": "Waves",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "192 in / 8 out",
+    "faders": "32",
+    "bus_count": "8",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_042",
+    "manufacturer": "Midas",
     "model": "Midas X32-6",
-    "brand": "Midas",
-    "inputs": 24,
-    "outputs": 64,
-    "buses": 32,
-    "network": "AES50",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "24 in / 64 out",
+    "faders": "32",
+    "bus_count": "32",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_043",
+    "manufacturer": "ETC",
     "model": "ETC CL3-5",
-    "brand": "ETC",
-    "inputs": 96,
-    "outputs": 8,
-    "buses": 48,
-    "network": "None",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "96 in / 8 out",
+    "faders": "32",
+    "bus_count": "48",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_044",
+    "manufacturer": "Yamaha",
     "model": "Yamaha Hog4PC",
-    "brand": "Yamaha",
-    "inputs": 64,
-    "outputs": 16,
-    "buses": 16,
-    "network": "Dante",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "64 in / 16 out",
+    "faders": "32",
+    "bus_count": "16",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_045",
+    "manufacturer": "Midas",
     "model": "Midas X32",
-    "brand": "Midas",
-    "inputs": 128,
-    "outputs": 64,
-    "buses": 16,
-    "network": "None",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "128 in / 64 out",
+    "faders": "32",
+    "bus_count": "16",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_046",
+    "manufacturer": "Midas",
     "model": "Midas X32",
-    "brand": "Midas",
-    "inputs": 160,
-    "outputs": 16,
-    "buses": 16,
-    "network": "AES50",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "160 in / 16 out",
+    "faders": "32",
+    "bus_count": "16",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_047",
+    "manufacturer": "Behringer",
     "model": "Behringer QU-32-7",
-    "brand": "Behringer",
-    "inputs": 32,
-    "outputs": 32,
-    "buses": 12,
-    "network": "Waves",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "32 in / 32 out",
+    "faders": "32",
+    "bus_count": "12",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_048",
+    "manufacturer": "Allen & Heath",
     "model": "Allen & Heath CL5",
-    "brand": "Allen & Heath",
-    "inputs": 160,
-    "outputs": 8,
-    "buses": 24,
-    "network": "AVB",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "160 in / 8 out",
+    "faders": "32",
+    "bus_count": "24",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_049",
+    "manufacturer": "ETC",
     "model": "ETC Hog4",
-    "brand": "ETC",
-    "inputs": 160,
-    "outputs": 64,
-    "buses": 12,
-    "network": "Waves",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "160 in / 64 out",
+    "faders": "32",
+    "bus_count": "12",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_050",
+    "manufacturer": "grandMA",
     "model": "grandMA Ion",
-    "brand": "grandMA",
-    "inputs": 32,
-    "outputs": 96,
-    "buses": 24,
-    "network": "Waves",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "32 in / 96 out",
+    "faders": "32",
+    "bus_count": "24",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_051",
+    "manufacturer": "Avolites",
     "model": "Avolites MA2",
-    "brand": "Avolites",
-    "inputs": 128,
-    "outputs": 16,
-    "buses": 24,
-    "network": "Waves",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "128 in / 16 out",
+    "faders": "32",
+    "bus_count": "24",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_052",
+    "manufacturer": "Hog",
     "model": "Hog PM10",
-    "brand": "Hog",
-    "inputs": 16,
-    "outputs": 48,
-    "buses": 8,
-    "network": "MADI",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "16 in / 48 out",
+    "faders": "32",
+    "bus_count": "8",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_053",
+    "manufacturer": "grandMA",
     "model": "grandMA MA2-1",
-    "brand": "grandMA",
-    "inputs": 32,
-    "outputs": 16,
-    "buses": 64,
-    "network": "Dante",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "32 in / 16 out",
+    "faders": "32",
+    "bus_count": "64",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_054",
+    "manufacturer": "ETC",
     "model": "ETC QU-32",
-    "brand": "ETC",
-    "inputs": 16,
-    "outputs": 96,
-    "buses": 8,
-    "network": "DVS",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "16 in / 96 out",
+    "faders": "32",
+    "bus_count": "8",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_055",
+    "manufacturer": "Yamaha",
     "model": "Yamaha PM10",
-    "brand": "Yamaha",
-    "inputs": 32,
-    "outputs": 32,
-    "buses": 64,
-    "network": "DVS",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "32 in / 32 out",
+    "faders": "32",
+    "bus_count": "64",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_056",
+    "manufacturer": "ETC",
     "model": "ETC Ion",
-    "brand": "ETC",
-    "inputs": 32,
-    "outputs": 16,
-    "buses": 8,
-    "network": "DVS",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "32 in / 16 out",
+    "faders": "32",
+    "bus_count": "8",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_057",
+    "manufacturer": "Avid",
     "model": "Avid QU-32",
-    "brand": "Avid",
-    "inputs": 16,
-    "outputs": 96,
-    "buses": 8,
-    "network": "Dante",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "16 in / 96 out",
+    "faders": "32",
+    "bus_count": "8",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_058",
+    "manufacturer": "Avid",
     "model": "Avid MA2",
-    "brand": "Avid",
-    "inputs": 128,
-    "outputs": 16,
-    "buses": 8,
-    "network": "AVB",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "128 in / 16 out",
+    "faders": "32",
+    "bus_count": "8",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_059",
+    "manufacturer": "Avolites",
     "model": "Avolites CL3",
-    "brand": "Avolites",
-    "inputs": 96,
-    "outputs": 64,
-    "buses": 16,
-    "network": "AVB",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "96 in / 64 out",
+    "faders": "32",
+    "bus_count": "16",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_060",
+    "manufacturer": "Allen & Heath",
     "model": "Allen & Heath QU-32-2",
-    "brand": "Allen & Heath",
-    "inputs": 160,
-    "outputs": 16,
-    "buses": 8,
-    "network": "AVB",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "160 in / 16 out",
+    "faders": "32",
+    "bus_count": "8",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_061",
+    "manufacturer": "Avid",
     "model": "Avid CL5",
-    "brand": "Avid",
-    "inputs": 96,
-    "outputs": 8,
-    "buses": 16,
-    "network": "Dante",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "96 in / 8 out",
+    "faders": "32",
+    "bus_count": "16",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_062",
+    "manufacturer": "Behringer",
     "model": "Behringer Hog4",
-    "brand": "Behringer",
-    "inputs": 192,
-    "outputs": 24,
-    "buses": 32,
-    "network": "AVB",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "192 in / 24 out",
+    "faders": "32",
+    "bus_count": "32",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_063",
+    "manufacturer": "Allen & Heath",
     "model": "Allen & Heath Hog4-5",
-    "brand": "Allen & Heath",
-    "inputs": 64,
-    "outputs": 24,
-    "buses": 8,
-    "network": "AES50",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "64 in / 24 out",
+    "faders": "32",
+    "bus_count": "8",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_064",
+    "manufacturer": "Midas",
     "model": "Midas CL5-2",
-    "brand": "Midas",
-    "inputs": 16,
-    "outputs": 96,
-    "buses": 12,
-    "network": "None",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "16 in / 96 out",
+    "faders": "32",
+    "bus_count": "12",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_065",
+    "manufacturer": "ETC",
     "model": "ETC CL5",
-    "brand": "ETC",
-    "inputs": 160,
-    "outputs": 64,
-    "buses": 64,
-    "network": "None",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "160 in / 64 out",
+    "faders": "32",
+    "bus_count": "64",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_066",
+    "manufacturer": "Hog",
     "model": "Hog MA2",
-    "brand": "Hog",
-    "inputs": 64,
-    "outputs": 16,
-    "buses": 8,
-    "network": "AES50",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "64 in / 16 out",
+    "faders": "32",
+    "bus_count": "8",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_067",
+    "manufacturer": "ETC",
     "model": "ETC CL3",
-    "brand": "ETC",
-    "inputs": 160,
-    "outputs": 32,
-    "buses": 24,
-    "network": "Waves",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "160 in / 32 out",
+    "faders": "32",
+    "bus_count": "24",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_068",
+    "manufacturer": "Behringer",
     "model": "Behringer QU-32",
-    "brand": "Behringer",
-    "inputs": 48,
-    "outputs": 32,
-    "buses": 24,
-    "network": "DVS",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "48 in / 32 out",
+    "faders": "32",
+    "bus_count": "24",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_069",
+    "manufacturer": "Soundcraft",
     "model": "Soundcraft S6L-24",
-    "brand": "Soundcraft",
-    "inputs": 192,
-    "outputs": 96,
-    "buses": 12,
-    "network": "MADI",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "192 in / 96 out",
+    "faders": "32",
+    "bus_count": "12",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_070",
+    "manufacturer": "Behringer",
     "model": "Behringer PM10",
-    "brand": "Behringer",
-    "inputs": 48,
-    "outputs": 64,
-    "buses": 8,
-    "network": "AVB",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "48 in / 64 out",
+    "faders": "32",
+    "bus_count": "8",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_071",
+    "manufacturer": "grandMA",
     "model": "grandMA Hog4PC-1",
-    "brand": "grandMA",
-    "inputs": 96,
-    "outputs": 48,
-    "buses": 24,
-    "network": "AVB",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "96 in / 48 out",
+    "faders": "32",
+    "bus_count": "24",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_072",
+    "manufacturer": "grandMA",
     "model": "grandMA CL5",
-    "brand": "grandMA",
-    "inputs": 32,
-    "outputs": 24,
-    "buses": 24,
-    "network": "AVB",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "32 in / 24 out",
+    "faders": "32",
+    "bus_count": "24",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_073",
+    "manufacturer": "Allen & Heath",
     "model": "Allen & Heath Hog4PC",
-    "brand": "Allen & Heath",
-    "inputs": 48,
-    "outputs": 8,
-    "buses": 48,
-    "network": "AVB",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "48 in / 8 out",
+    "faders": "32",
+    "bus_count": "48",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_074",
+    "manufacturer": "SSL",
     "model": "SSL PM10",
-    "brand": "SSL",
-    "inputs": 16,
-    "outputs": 64,
-    "buses": 24,
-    "network": "AES50",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "16 in / 64 out",
+    "faders": "32",
+    "bus_count": "24",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_075",
+    "manufacturer": "SSL",
     "model": "SSL MA2",
-    "brand": "SSL",
-    "inputs": 24,
-    "outputs": 32,
-    "buses": 64,
-    "network": "DVS",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "24 in / 32 out",
+    "faders": "32",
+    "bus_count": "64",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_076",
+    "manufacturer": "grandMA",
     "model": "grandMA Hog4",
-    "brand": "grandMA",
-    "inputs": 24,
-    "outputs": 16,
-    "buses": 8,
-    "network": "Dante",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "24 in / 16 out",
+    "faders": "32",
+    "bus_count": "8",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_077",
+    "manufacturer": "Allen & Heath",
     "model": "Allen & Heath Hog4",
-    "brand": "Allen & Heath",
-    "inputs": 160,
-    "outputs": 64,
-    "buses": 12,
-    "network": "Waves",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "160 in / 64 out",
+    "faders": "32",
+    "bus_count": "12",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_078",
+    "manufacturer": "SSL",
     "model": "SSL Ion",
-    "brand": "SSL",
-    "inputs": 96,
-    "outputs": 32,
-    "buses": 64,
-    "network": "Waves",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "96 in / 32 out",
+    "faders": "32",
+    "bus_count": "64",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_079",
+    "manufacturer": "grandMA",
     "model": "grandMA Ion",
-    "brand": "grandMA",
-    "inputs": 16,
-    "outputs": 64,
-    "buses": 8,
-    "network": "DVS",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "16 in / 64 out",
+    "faders": "32",
+    "bus_count": "8",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_080",
+    "manufacturer": "Soundcraft",
     "model": "Soundcraft Hog4",
-    "brand": "Soundcraft",
-    "inputs": 128,
-    "outputs": 64,
-    "buses": 24,
-    "network": "DVS",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "128 in / 64 out",
+    "faders": "32",
+    "bus_count": "24",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_081",
+    "manufacturer": "Avid",
     "model": "Avid X32",
-    "brand": "Avid",
-    "inputs": 48,
-    "outputs": 32,
-    "buses": 12,
-    "network": "AES50",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "48 in / 32 out",
+    "faders": "32",
+    "bus_count": "12",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_082",
+    "manufacturer": "Soundcraft",
     "model": "Soundcraft CL3-3",
-    "brand": "Soundcraft",
-    "inputs": 48,
-    "outputs": 32,
-    "buses": 32,
-    "network": "Dante",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "48 in / 32 out",
+    "faders": "32",
+    "bus_count": "32",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_083",
+    "manufacturer": "Allen & Heath",
     "model": "Allen & Heath Hog4-9",
-    "brand": "Allen & Heath",
-    "inputs": 24,
-    "outputs": 96,
-    "buses": 48,
-    "network": "MADI",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "24 in / 96 out",
+    "faders": "32",
+    "bus_count": "48",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_084",
+    "manufacturer": "Yamaha",
     "model": "Yamaha QU-32",
-    "brand": "Yamaha",
-    "inputs": 128,
-    "outputs": 16,
-    "buses": 8,
-    "network": "None",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "128 in / 16 out",
+    "faders": "32",
+    "bus_count": "8",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_085",
+    "manufacturer": "Midas",
     "model": "Midas CL3",
-    "brand": "Midas",
-    "inputs": 24,
-    "outputs": 8,
-    "buses": 8,
-    "network": "AES50",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "24 in / 8 out",
+    "faders": "32",
+    "bus_count": "8",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_086",
+    "manufacturer": "Yamaha",
     "model": "Yamaha MA3",
-    "brand": "Yamaha",
-    "inputs": 32,
-    "outputs": 48,
-    "buses": 8,
-    "network": "Dante",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "32 in / 48 out",
+    "faders": "32",
+    "bus_count": "8",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_087",
+    "manufacturer": "Behringer",
     "model": "Behringer MA3",
-    "brand": "Behringer",
-    "inputs": 64,
-    "outputs": 16,
-    "buses": 32,
-    "network": "AVB",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "64 in / 16 out",
+    "faders": "32",
+    "bus_count": "32",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_088",
+    "manufacturer": "grandMA",
     "model": "grandMA Hog4PC",
-    "brand": "grandMA",
-    "inputs": 16,
-    "outputs": 48,
-    "buses": 64,
-    "network": "MADI",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "16 in / 48 out",
+    "faders": "32",
+    "bus_count": "64",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_089",
+    "manufacturer": "grandMA",
     "model": "grandMA CL5",
-    "brand": "grandMA",
-    "inputs": 64,
-    "outputs": 8,
-    "buses": 16,
-    "network": "None",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "64 in / 8 out",
+    "faders": "32",
+    "bus_count": "16",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_090",
+    "manufacturer": "Allen & Heath",
     "model": "Allen & Heath S6L-24",
-    "brand": "Allen & Heath",
-    "inputs": 128,
-    "outputs": 64,
-    "buses": 16,
-    "network": "AVB",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "128 in / 64 out",
+    "faders": "32",
+    "bus_count": "16",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_091",
+    "manufacturer": "Midas",
     "model": "Midas MA2",
-    "brand": "Midas",
-    "inputs": 192,
-    "outputs": 8,
-    "buses": 32,
-    "network": "None",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "192 in / 8 out",
+    "faders": "32",
+    "bus_count": "32",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_092",
+    "manufacturer": "grandMA",
     "model": "grandMA X32",
-    "brand": "grandMA",
-    "inputs": 160,
-    "outputs": 48,
-    "buses": 64,
-    "network": "None",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "160 in / 48 out",
+    "faders": "32",
+    "bus_count": "64",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_093",
+    "manufacturer": "Avid",
     "model": "Avid Hog4",
-    "brand": "Avid",
-    "inputs": 160,
-    "outputs": 8,
-    "buses": 48,
-    "network": "Dante",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "160 in / 8 out",
+    "faders": "32",
+    "bus_count": "48",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_094",
+    "manufacturer": "Avolites",
     "model": "Avolites Hog4PC-3",
-    "brand": "Avolites",
-    "inputs": 32,
-    "outputs": 48,
-    "buses": 32,
-    "network": "Waves",
-    "sample_rates": [
-      "44.1kHz"
+    "type": "Digital",
+    "channels": "32 in / 48 out",
+    "faders": "32",
+    "bus_count": "32",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_095",
+    "manufacturer": "Midas",
     "model": "Midas S6L-24-6",
-    "brand": "Midas",
-    "inputs": 160,
-    "outputs": 96,
-    "buses": 12,
-    "network": "AES50",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "160 in / 96 out",
+    "faders": "32",
+    "bus_count": "12",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_096",
+    "manufacturer": "Yamaha",
     "model": "Yamaha X32-7",
-    "brand": "Yamaha",
-    "inputs": 16,
-    "outputs": 64,
-    "buses": 64,
-    "network": "Waves",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "16 in / 64 out",
+    "faders": "32",
+    "bus_count": "64",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_097",
+    "manufacturer": "Avolites",
     "model": "Avolites Hog4PC-2",
-    "brand": "Avolites",
-    "inputs": 32,
-    "outputs": 48,
-    "buses": 48,
-    "network": "MADI",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "32 in / 48 out",
+    "faders": "32",
+    "bus_count": "48",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_098",
+    "manufacturer": "grandMA",
     "model": "grandMA Hog4",
-    "brand": "grandMA",
-    "inputs": 64,
-    "outputs": 48,
-    "buses": 64,
-    "network": "None",
-    "sample_rates": [
-      "48kHz"
+    "type": "Digital",
+    "channels": "64 in / 48 out",
+    "faders": "32",
+    "bus_count": "64",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_099",
+    "manufacturer": "Digico",
     "model": "Digico MA2",
-    "brand": "Digico",
-    "inputs": 32,
-    "outputs": 24,
-    "buses": 12,
-    "network": "Dante",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "32 in / 24 out",
+    "faders": "32",
+    "bus_count": "12",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   },
   {
     "id": "con_100",
+    "manufacturer": "Behringer",
     "model": "Behringer CL5",
-    "brand": "Behringer",
-    "inputs": 24,
-    "outputs": 16,
-    "buses": 48,
-    "network": "None",
-    "sample_rates": [
-      "96kHz"
+    "type": "Digital",
+    "channels": "24 in / 16 out",
+    "faders": "32",
+    "bus_count": "48",
+    "effects": "Built-in DSP",
+    "connectivity": [
+      "Ethernet",
+      "USB"
+    ],
+    "dimensions": "800 x 600 x 150 mm",
+    "weight": "15 kg",
+    "applications": [
+      "Live Sound",
+      "Studio"
     ],
     "notes": ""
   }

@@ -1,0 +1,8502 @@
+[
+  {
+    "id": "mic_0001",
+    "model": "Electro-Voice SM57",
+    "brand": "Electro-Voice",
+    "type": "Ribbon",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 134,
+    "self_noise_dB": 7.4,
+    "applications": [
+      "Drums",
+      "Choir",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "20-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0002",
+    "model": "Shure SM57",
+    "brand": "Shure",
+    "type": "Lavalier",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 121,
+    "self_noise_dB": 11.6,
+    "applications": [
+      "Bass",
+      "Field",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "60-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0003",
+    "model": "Blue DPA 4017",
+    "brand": "Blue",
+    "type": "Boundary",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 137,
+    "self_noise_dB": 7.6,
+    "applications": [
+      "Drums",
+      "Broadcast",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "40-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0004",
+    "model": "Shanling TLM103-6",
+    "brand": "Shanling",
+    "type": "Shotgun",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 154,
+    "self_noise_dB": 7.2,
+    "applications": [
+      "Room",
+      "Orchestra",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "50-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0005",
+    "model": "Sony SM57",
+    "brand": "Sony",
+    "type": "Condenser",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 125,
+    "self_noise_dB": 14.6,
+    "applications": [
+      "Orchestra",
+      "Field",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "20-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0006",
+    "model": "Rode TLM103",
+    "brand": "Rode",
+    "type": "Ribbon",
+    "pattern": "Multi",
+    "max_SPL_dB": 124,
+    "self_noise_dB": 12.1,
+    "applications": [
+      "Bass",
+      "Guitar",
+      "Field"
+    ],
+    "frequency_response_Hz": "30-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0007",
+    "model": "Audio-Technica M50X-72",
+    "brand": "Audio-Technica",
+    "type": "Condenser",
+    "pattern": "Multi",
+    "max_SPL_dB": 140,
+    "self_noise_dB": 14.4,
+    "applications": [
+      "Vocals",
+      "Podcast",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "20-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0008",
+    "model": "Sennheiser e845-73",
+    "brand": "Sennheiser",
+    "type": "Shotgun",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 133,
+    "self_noise_dB": 12.6,
+    "applications": [
+      "Guitar",
+      "Orchestra",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "50-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0009",
+    "model": "Sony NT1",
+    "brand": "Sony",
+    "type": "Shotgun",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 147,
+    "self_noise_dB": 15.0,
+    "applications": [
+      "Bass",
+      "Guitar",
+      "Room"
+    ],
+    "frequency_response_Hz": "50-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0010",
+    "model": "Sennheiser DPA 4017",
+    "brand": "Sennheiser",
+    "type": "Dynamic",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 160,
+    "self_noise_dB": null,
+    "applications": [
+      "Choir",
+      "Drums",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "30-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0011",
+    "model": "DPA KSM44",
+    "brand": "DPA",
+    "type": "Lavalier",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 127,
+    "self_noise_dB": 12.8,
+    "applications": [
+      "Dialogue",
+      "Podcast",
+      "Drums"
+    ],
+    "frequency_response_Hz": "60-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0012",
+    "model": "Beyerdynamic e935",
+    "brand": "Beyerdynamic",
+    "type": "Shotgun",
+    "pattern": "Multi",
+    "max_SPL_dB": 136,
+    "self_noise_dB": 15.7,
+    "applications": [
+      "Drums",
+      "Orchestra",
+      "Room"
+    ],
+    "frequency_response_Hz": "30-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0013",
+    "model": "Neumann TLM103-70",
+    "brand": "Neumann",
+    "type": "Lavalier",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 158,
+    "self_noise_dB": 9.2,
+    "applications": [
+      "Podcast",
+      "Orchestra",
+      "Bass"
+    ],
+    "frequency_response_Hz": "20-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0014",
+    "model": "AKG M50X",
+    "brand": "AKG",
+    "type": "Dynamic",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 151,
+    "self_noise_dB": null,
+    "applications": [
+      "Guitar",
+      "Dialogue",
+      "Field"
+    ],
+    "frequency_response_Hz": "20-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0015",
+    "model": "Audio-Technica NT1-55",
+    "brand": "Audio-Technica",
+    "type": "Condenser",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 132,
+    "self_noise_dB": 13.1,
+    "applications": [
+      "Field",
+      "Room",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "50-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0016",
+    "model": "AKG e845",
+    "brand": "AKG",
+    "type": "Dynamic",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 155,
+    "self_noise_dB": null,
+    "applications": [
+      "Bass",
+      "Vocals",
+      "Drums"
+    ],
+    "frequency_response_Hz": "30-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0017",
+    "model": "AKG SM57-43",
+    "brand": "AKG",
+    "type": "Dynamic",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 135,
+    "self_noise_dB": null,
+    "applications": [
+      "Bass",
+      "Room",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "40-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0018",
+    "model": "AKG DPA 4017",
+    "brand": "AKG",
+    "type": "Boundary",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 126,
+    "self_noise_dB": 7.0,
+    "applications": [
+      "Broadcast",
+      "Dialogue",
+      "Field"
+    ],
+    "frequency_response_Hz": "50-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0019",
+    "model": "Electro-Voice NTG3-13",
+    "brand": "Electro-Voice",
+    "type": "Dynamic",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 141,
+    "self_noise_dB": null,
+    "applications": [
+      "Bass",
+      "Dialogue",
+      "Room"
+    ],
+    "frequency_response_Hz": "20-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0020",
+    "model": "Neumann C414 XLII",
+    "brand": "Neumann",
+    "type": "Boundary",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 124,
+    "self_noise_dB": 10.4,
+    "applications": [
+      "Vocals",
+      "Room",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "60-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0021",
+    "model": "Blue M160",
+    "brand": "Blue",
+    "type": "Boundary",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 150,
+    "self_noise_dB": 8.1,
+    "applications": [
+      "Guitar",
+      "Broadcast",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "50-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0022",
+    "model": "Audio-Technica M50X-59",
+    "brand": "Audio-Technica",
+    "type": "Ribbon",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 155,
+    "self_noise_dB": 12.6,
+    "applications": [
+      "Bass",
+      "Orchestra",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "50-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0023",
+    "model": "DPA 4011",
+    "brand": "DPA",
+    "type": "Shotgun",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 123,
+    "self_noise_dB": 6.5,
+    "applications": [
+      "Room",
+      "Guitar",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "50-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0024",
+    "model": "Shanling e935",
+    "brand": "Shanling",
+    "type": "Dynamic",
+    "pattern": "Multi",
+    "max_SPL_dB": 135,
+    "self_noise_dB": null,
+    "applications": [
+      "Choir",
+      "Bass",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "50-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0025",
+    "model": "Beyerdynamic NTG3",
+    "brand": "Beyerdynamic",
+    "type": "Lavalier",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 136,
+    "self_noise_dB": 8.0,
+    "applications": [
+      "Orchestra",
+      "Broadcast",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "40-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0026",
+    "model": "Telefunken TLM103-10",
+    "brand": "Telefunken",
+    "type": "Dynamic",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 159,
+    "self_noise_dB": null,
+    "applications": [
+      "Drums",
+      "Room",
+      "Bass"
+    ],
+    "frequency_response_Hz": "60-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0027",
+    "model": "Neumann M50X",
+    "brand": "Neumann",
+    "type": "Dynamic",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 143,
+    "self_noise_dB": null,
+    "applications": [
+      "Field",
+      "Room",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "40-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0028",
+    "model": "Electro-Voice M160",
+    "brand": "Electro-Voice",
+    "type": "Shotgun",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 128,
+    "self_noise_dB": 8.6,
+    "applications": [
+      "Guitar",
+      "Orchestra",
+      "Choir"
+    ],
+    "frequency_response_Hz": "20-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0029",
+    "model": "Sony TLM103",
+    "brand": "Sony",
+    "type": "Shotgun",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 152,
+    "self_noise_dB": 10.9,
+    "applications": [
+      "Dialogue",
+      "Broadcast",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "20-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0030",
+    "model": "Shure TLM103-82",
+    "brand": "Shure",
+    "type": "Ribbon",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 148,
+    "self_noise_dB": 11.5,
+    "applications": [
+      "Vocals",
+      "Drums",
+      "Choir"
+    ],
+    "frequency_response_Hz": "50-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0031",
+    "model": "Coles SM58-75",
+    "brand": "Coles",
+    "type": "Lavalier",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 147,
+    "self_noise_dB": 7.3,
+    "applications": [
+      "Vocals",
+      "Podcast",
+      "Bass"
+    ],
+    "frequency_response_Hz": "40-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0032",
+    "model": "Electro-Voice SM57",
+    "brand": "Electro-Voice",
+    "type": "Lavalier",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 159,
+    "self_noise_dB": 13.5,
+    "applications": [
+      "Guitar",
+      "Broadcast",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "30-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0033",
+    "model": "Sony M50X",
+    "brand": "Sony",
+    "type": "Boundary",
+    "pattern": "Multi",
+    "max_SPL_dB": 135,
+    "self_noise_dB": 8.7,
+    "applications": [
+      "Vocals",
+      "Field",
+      "Bass"
+    ],
+    "frequency_response_Hz": "20-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0034",
+    "model": "Shanling M50X",
+    "brand": "Shanling",
+    "type": "Ribbon",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 134,
+    "self_noise_dB": 6.2,
+    "applications": [
+      "Podcast",
+      "Orchestra",
+      "Drums"
+    ],
+    "frequency_response_Hz": "30-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0035",
+    "model": "Rode NTG3",
+    "brand": "Rode",
+    "type": "Shotgun",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 141,
+    "self_noise_dB": 15.4,
+    "applications": [
+      "Guitar",
+      "Choir",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "20-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0036",
+    "model": "Sennheiser NT5",
+    "brand": "Sennheiser",
+    "type": "Shotgun",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 147,
+    "self_noise_dB": 12.1,
+    "applications": [
+      "Broadcast",
+      "Choir",
+      "Bass"
+    ],
+    "frequency_response_Hz": "60-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0037",
+    "model": "Shure 4011",
+    "brand": "Shure",
+    "type": "Lavalier",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 132,
+    "self_noise_dB": 9.6,
+    "applications": [
+      "Choir",
+      "Podcast",
+      "Drums"
+    ],
+    "frequency_response_Hz": "20-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0038",
+    "model": "Coles U87-42",
+    "brand": "Coles",
+    "type": "Boundary",
+    "pattern": "Multi",
+    "max_SPL_dB": 138,
+    "self_noise_dB": 11.5,
+    "applications": [
+      "Dialogue",
+      "Broadcast",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "30-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0039",
+    "model": "Beyerdynamic NT1-39",
+    "brand": "Beyerdynamic",
+    "type": "Ribbon",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 147,
+    "self_noise_dB": 13.9,
+    "applications": [
+      "Field",
+      "Dialogue",
+      "Choir"
+    ],
+    "frequency_response_Hz": "60-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0040",
+    "model": "Coles KSM44-95",
+    "brand": "Coles",
+    "type": "Condenser",
+    "pattern": "Multi",
+    "max_SPL_dB": 125,
+    "self_noise_dB": 8.8,
+    "applications": [
+      "Drums",
+      "Bass",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "60-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0041",
+    "model": "Blue e845",
+    "brand": "Blue",
+    "type": "Dynamic",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 150,
+    "self_noise_dB": null,
+    "applications": [
+      "Field",
+      "Broadcast",
+      "Bass"
+    ],
+    "frequency_response_Hz": "60-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0042",
+    "model": "Telefunken C414 XLII",
+    "brand": "Telefunken",
+    "type": "Shotgun",
+    "pattern": "Multi",
+    "max_SPL_dB": 120,
+    "self_noise_dB": 14.9,
+    "applications": [
+      "Bass",
+      "Guitar",
+      "Room"
+    ],
+    "frequency_response_Hz": "20-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0043",
+    "model": "Shure NT1",
+    "brand": "Shure",
+    "type": "Dynamic",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 128,
+    "self_noise_dB": null,
+    "applications": [
+      "Room",
+      "Choir",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "50-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0044",
+    "model": "DPA M160-65",
+    "brand": "DPA",
+    "type": "Boundary",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 148,
+    "self_noise_dB": 15.0,
+    "applications": [
+      "Orchestra",
+      "Bass",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "50-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0045",
+    "model": "Electro-Voice e845",
+    "brand": "Electro-Voice",
+    "type": "Dynamic",
+    "pattern": "Multi",
+    "max_SPL_dB": 138,
+    "self_noise_dB": null,
+    "applications": [
+      "Podcast",
+      "Dialogue",
+      "Room"
+    ],
+    "frequency_response_Hz": "30-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0046",
+    "model": "Neumann e935",
+    "brand": "Neumann",
+    "type": "Shotgun",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 133,
+    "self_noise_dB": 6.6,
+    "applications": [
+      "Room",
+      "Field",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "50-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0047",
+    "model": "AKG M160",
+    "brand": "AKG",
+    "type": "Lavalier",
+    "pattern": "Multi",
+    "max_SPL_dB": 121,
+    "self_noise_dB": 14.6,
+    "applications": [
+      "Field",
+      "Vocals",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "60-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0048",
+    "model": "Blue C414 XLII-54",
+    "brand": "Blue",
+    "type": "Lavalier",
+    "pattern": "Multi",
+    "max_SPL_dB": 154,
+    "self_noise_dB": 14.0,
+    "applications": [
+      "Bass",
+      "Orchestra",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "30-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0049",
+    "model": "Shure C414 XLII",
+    "brand": "Shure",
+    "type": "Shotgun",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 130,
+    "self_noise_dB": 14.4,
+    "applications": [
+      "Room",
+      "Vocals",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "30-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0050",
+    "model": "Sennheiser NTG3",
+    "brand": "Sennheiser",
+    "type": "Boundary",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 123,
+    "self_noise_dB": 8.6,
+    "applications": [
+      "Field",
+      "Podcast",
+      "Choir"
+    ],
+    "frequency_response_Hz": "40-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0051",
+    "model": "Audio-Technica DPA 4017-54",
+    "brand": "Audio-Technica",
+    "type": "Ribbon",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 150,
+    "self_noise_dB": 6.2,
+    "applications": [
+      "Podcast",
+      "Bass",
+      "Drums"
+    ],
+    "frequency_response_Hz": "60-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0052",
+    "model": "Blue SM58-26",
+    "brand": "Blue",
+    "type": "Dynamic",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 129,
+    "self_noise_dB": null,
+    "applications": [
+      "Field",
+      "Drums",
+      "Bass"
+    ],
+    "frequency_response_Hz": "30-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0053",
+    "model": "Sony U87-22",
+    "brand": "Sony",
+    "type": "Lavalier",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 127,
+    "self_noise_dB": 13.8,
+    "applications": [
+      "Drums",
+      "Choir",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "30-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0054",
+    "model": "DPA NTG3-49",
+    "brand": "DPA",
+    "type": "Boundary",
+    "pattern": "Multi",
+    "max_SPL_dB": 132,
+    "self_noise_dB": 6.8,
+    "applications": [
+      "Orchestra",
+      "Choir",
+      "Drums"
+    ],
+    "frequency_response_Hz": "30-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0055",
+    "model": "Rode NT1",
+    "brand": "Rode",
+    "type": "Ribbon",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 152,
+    "self_noise_dB": 12.5,
+    "applications": [
+      "Field",
+      "Drums",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "20-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0056",
+    "model": "Electro-Voice M50X-91",
+    "brand": "Electro-Voice",
+    "type": "Condenser",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 131,
+    "self_noise_dB": 13.3,
+    "applications": [
+      "Room",
+      "Field",
+      "Choir"
+    ],
+    "frequency_response_Hz": "40-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0057",
+    "model": "Shanling 4011",
+    "brand": "Shanling",
+    "type": "Ribbon",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 125,
+    "self_noise_dB": 8.8,
+    "applications": [
+      "Field",
+      "Choir",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "50-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0058",
+    "model": "Shure KSM44-24",
+    "brand": "Shure",
+    "type": "Boundary",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 142,
+    "self_noise_dB": 14.0,
+    "applications": [
+      "Choir",
+      "Orchestra",
+      "Room"
+    ],
+    "frequency_response_Hz": "40-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0059",
+    "model": "Coles e845",
+    "brand": "Coles",
+    "type": "Shotgun",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 151,
+    "self_noise_dB": 11.6,
+    "applications": [
+      "Dialogue",
+      "Field",
+      "Choir"
+    ],
+    "frequency_response_Hz": "30-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0060",
+    "model": "Sennheiser U87",
+    "brand": "Sennheiser",
+    "type": "Shotgun",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 139,
+    "self_noise_dB": 12.6,
+    "applications": [
+      "Room",
+      "Dialogue",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "40-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0061",
+    "model": "Sony NT1",
+    "brand": "Sony",
+    "type": "Shotgun",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 137,
+    "self_noise_dB": 9.1,
+    "applications": [
+      "Bass",
+      "Podcast",
+      "Drums"
+    ],
+    "frequency_response_Hz": "30-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0062",
+    "model": "AKG e845-36",
+    "brand": "AKG",
+    "type": "Shotgun",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 153,
+    "self_noise_dB": 12.0,
+    "applications": [
+      "Orchestra",
+      "Bass",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "20-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0063",
+    "model": "Audio-Technica SM58-17",
+    "brand": "Audio-Technica",
+    "type": "Ribbon",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 123,
+    "self_noise_dB": 11.5,
+    "applications": [
+      "Drums",
+      "Vocals",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "30-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0064",
+    "model": "Telefunken KSM44",
+    "brand": "Telefunken",
+    "type": "Dynamic",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 150,
+    "self_noise_dB": null,
+    "applications": [
+      "Broadcast",
+      "Field",
+      "Drums"
+    ],
+    "frequency_response_Hz": "20-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0065",
+    "model": "Neumann e935-39",
+    "brand": "Neumann",
+    "type": "Dynamic",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 127,
+    "self_noise_dB": null,
+    "applications": [
+      "Choir",
+      "Dialogue",
+      "Bass"
+    ],
+    "frequency_response_Hz": "60-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0066",
+    "model": "Telefunken M50X",
+    "brand": "Telefunken",
+    "type": "Lavalier",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 139,
+    "self_noise_dB": 11.7,
+    "applications": [
+      "Drums",
+      "Bass",
+      "Choir"
+    ],
+    "frequency_response_Hz": "20-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0067",
+    "model": "Electro-Voice SM57",
+    "brand": "Electro-Voice",
+    "type": "Condenser",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 124,
+    "self_noise_dB": 7.6,
+    "applications": [
+      "Choir",
+      "Field",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "50-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0068",
+    "model": "AKG U87-90",
+    "brand": "AKG",
+    "type": "Boundary",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 134,
+    "self_noise_dB": 15.2,
+    "applications": [
+      "Broadcast",
+      "Drums",
+      "Room"
+    ],
+    "frequency_response_Hz": "60-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0069",
+    "model": "Electro-Voice e935-19",
+    "brand": "Electro-Voice",
+    "type": "Dynamic",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 130,
+    "self_noise_dB": null,
+    "applications": [
+      "Choir",
+      "Orchestra",
+      "Field"
+    ],
+    "frequency_response_Hz": "40-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0070",
+    "model": "Telefunken 4011",
+    "brand": "Telefunken",
+    "type": "Boundary",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 152,
+    "self_noise_dB": 11.4,
+    "applications": [
+      "Choir",
+      "Vocals",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "50-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0071",
+    "model": "DPA U87",
+    "brand": "DPA",
+    "type": "Condenser",
+    "pattern": "Multi",
+    "max_SPL_dB": 156,
+    "self_noise_dB": 11.9,
+    "applications": [
+      "Choir",
+      "Vocals",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "20-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0072",
+    "model": "Coles NTG3",
+    "brand": "Coles",
+    "type": "Ribbon",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 157,
+    "self_noise_dB": 10.4,
+    "applications": [
+      "Field",
+      "Podcast",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "50-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0073",
+    "model": "Rode NTG3",
+    "brand": "Rode",
+    "type": "Condenser",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 146,
+    "self_noise_dB": 12.9,
+    "applications": [
+      "Room",
+      "Vocals",
+      "Field"
+    ],
+    "frequency_response_Hz": "40-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0074",
+    "model": "Rode U87",
+    "brand": "Rode",
+    "type": "Boundary",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 120,
+    "self_noise_dB": 12.6,
+    "applications": [
+      "Broadcast",
+      "Vocals",
+      "Bass"
+    ],
+    "frequency_response_Hz": "60-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0075",
+    "model": "DPA DPA 4017",
+    "brand": "DPA",
+    "type": "Boundary",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 133,
+    "self_noise_dB": 8.7,
+    "applications": [
+      "Field",
+      "Dialogue",
+      "Drums"
+    ],
+    "frequency_response_Hz": "30-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0076",
+    "model": "Electro-Voice NT5-91",
+    "brand": "Electro-Voice",
+    "type": "Condenser",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 155,
+    "self_noise_dB": 6.1,
+    "applications": [
+      "Bass",
+      "Drums",
+      "Field"
+    ],
+    "frequency_response_Hz": "50-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0077",
+    "model": "Electro-Voice M160",
+    "brand": "Electro-Voice",
+    "type": "Shotgun",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 152,
+    "self_noise_dB": 13.1,
+    "applications": [
+      "Field",
+      "Bass",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "50-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0078",
+    "model": "Beyerdynamic e845-66",
+    "brand": "Beyerdynamic",
+    "type": "Shotgun",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 124,
+    "self_noise_dB": 8.8,
+    "applications": [
+      "Room",
+      "Orchestra",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "50-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0079",
+    "model": "Sony U87-75",
+    "brand": "Sony",
+    "type": "Shotgun",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 129,
+    "self_noise_dB": 10.5,
+    "applications": [
+      "Podcast",
+      "Room",
+      "Choir"
+    ],
+    "frequency_response_Hz": "50-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0080",
+    "model": "Telefunken M50X",
+    "brand": "Telefunken",
+    "type": "Condenser",
+    "pattern": "Multi",
+    "max_SPL_dB": 135,
+    "self_noise_dB": 11.7,
+    "applications": [
+      "Vocals",
+      "Podcast",
+      "Field"
+    ],
+    "frequency_response_Hz": "30-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0081",
+    "model": "Beyerdynamic NTG3-84",
+    "brand": "Beyerdynamic",
+    "type": "Condenser",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 122,
+    "self_noise_dB": 7.3,
+    "applications": [
+      "Drums",
+      "Field",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "60-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0082",
+    "model": "Shure 4011",
+    "brand": "Shure",
+    "type": "Shotgun",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 124,
+    "self_noise_dB": 10.7,
+    "applications": [
+      "Choir",
+      "Broadcast",
+      "Drums"
+    ],
+    "frequency_response_Hz": "40-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0083",
+    "model": "Shanling NTG3-49",
+    "brand": "Shanling",
+    "type": "Ribbon",
+    "pattern": "Multi",
+    "max_SPL_dB": 151,
+    "self_noise_dB": 14.7,
+    "applications": [
+      "Drums",
+      "Bass",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "20-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0084",
+    "model": "Sony SM57",
+    "brand": "Sony",
+    "type": "Dynamic",
+    "pattern": "Multi",
+    "max_SPL_dB": 126,
+    "self_noise_dB": null,
+    "applications": [
+      "Orchestra",
+      "Vocals",
+      "Choir"
+    ],
+    "frequency_response_Hz": "50-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0085",
+    "model": "Blue SM58",
+    "brand": "Blue",
+    "type": "Ribbon",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 129,
+    "self_noise_dB": 8.4,
+    "applications": [
+      "Dialogue",
+      "Guitar",
+      "Choir"
+    ],
+    "frequency_response_Hz": "50-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0086",
+    "model": "Sennheiser NT5-80",
+    "brand": "Sennheiser",
+    "type": "Shotgun",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 151,
+    "self_noise_dB": 15.1,
+    "applications": [
+      "Field",
+      "Orchestra",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "30-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0087",
+    "model": "Electro-Voice SM58-60",
+    "brand": "Electro-Voice",
+    "type": "Ribbon",
+    "pattern": "Multi",
+    "max_SPL_dB": 154,
+    "self_noise_dB": 7.6,
+    "applications": [
+      "Choir",
+      "Orchestra",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "50-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0088",
+    "model": "Telefunken M160",
+    "brand": "Telefunken",
+    "type": "Boundary",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 126,
+    "self_noise_dB": 8.4,
+    "applications": [
+      "Choir",
+      "Orchestra",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "60-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0089",
+    "model": "Shanling NTG3",
+    "brand": "Shanling",
+    "type": "Dynamic",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 123,
+    "self_noise_dB": null,
+    "applications": [
+      "Orchestra",
+      "Bass",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "60-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0090",
+    "model": "Electro-Voice e845-87",
+    "brand": "Electro-Voice",
+    "type": "Shotgun",
+    "pattern": "Multi",
+    "max_SPL_dB": 128,
+    "self_noise_dB": 12.3,
+    "applications": [
+      "Field",
+      "Vocals",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "20-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0091",
+    "model": "Sennheiser M50X",
+    "brand": "Sennheiser",
+    "type": "Shotgun",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 131,
+    "self_noise_dB": 8.0,
+    "applications": [
+      "Room",
+      "Dialogue",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "60-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0092",
+    "model": "Audio-Technica M50X-62",
+    "brand": "Audio-Technica",
+    "type": "Ribbon",
+    "pattern": "Multi",
+    "max_SPL_dB": 141,
+    "self_noise_dB": 14.0,
+    "applications": [
+      "Guitar",
+      "Bass",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "50-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0093",
+    "model": "Sennheiser DPA 4017",
+    "brand": "Sennheiser",
+    "type": "Ribbon",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 127,
+    "self_noise_dB": 10.5,
+    "applications": [
+      "Broadcast",
+      "Podcast",
+      "Drums"
+    ],
+    "frequency_response_Hz": "40-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0094",
+    "model": "Telefunken SM58-72",
+    "brand": "Telefunken",
+    "type": "Ribbon",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 134,
+    "self_noise_dB": 12.5,
+    "applications": [
+      "Dialogue",
+      "Broadcast",
+      "Drums"
+    ],
+    "frequency_response_Hz": "50-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0095",
+    "model": "Shure SM58",
+    "brand": "Shure",
+    "type": "Boundary",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 126,
+    "self_noise_dB": 8.3,
+    "applications": [
+      "Broadcast",
+      "Field",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "60-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0096",
+    "model": "DPA 4011-54",
+    "brand": "DPA",
+    "type": "Shotgun",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 151,
+    "self_noise_dB": 12.2,
+    "applications": [
+      "Podcast",
+      "Bass",
+      "Field"
+    ],
+    "frequency_response_Hz": "40-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0097",
+    "model": "AKG M160",
+    "brand": "AKG",
+    "type": "Shotgun",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 154,
+    "self_noise_dB": 15.0,
+    "applications": [
+      "Broadcast",
+      "Orchestra",
+      "Bass"
+    ],
+    "frequency_response_Hz": "40-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0098",
+    "model": "Shanling M160",
+    "brand": "Shanling",
+    "type": "Shotgun",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 160,
+    "self_noise_dB": 12.0,
+    "applications": [
+      "Podcast",
+      "Bass",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "20-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0099",
+    "model": "Sennheiser M160-27",
+    "brand": "Sennheiser",
+    "type": "Lavalier",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 134,
+    "self_noise_dB": 9.3,
+    "applications": [
+      "Vocals",
+      "Orchestra",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "30-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0100",
+    "model": "Coles U87-15",
+    "brand": "Coles",
+    "type": "Shotgun",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 128,
+    "self_noise_dB": 6.1,
+    "applications": [
+      "Podcast",
+      "Vocals",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "30-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0101",
+    "model": "Shure e935-68",
+    "brand": "Shure",
+    "type": "Dynamic",
+    "pattern": "Multi",
+    "max_SPL_dB": 124,
+    "self_noise_dB": null,
+    "applications": [
+      "Podcast",
+      "Room",
+      "Drums"
+    ],
+    "frequency_response_Hz": "50-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0102",
+    "model": "Coles e845-6",
+    "brand": "Coles",
+    "type": "Shotgun",
+    "pattern": "Multi",
+    "max_SPL_dB": 153,
+    "self_noise_dB": 9.0,
+    "applications": [
+      "Field",
+      "Broadcast",
+      "Choir"
+    ],
+    "frequency_response_Hz": "20-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0103",
+    "model": "Telefunken 4011-10",
+    "brand": "Telefunken",
+    "type": "Dynamic",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 158,
+    "self_noise_dB": null,
+    "applications": [
+      "Guitar",
+      "Orchestra",
+      "Room"
+    ],
+    "frequency_response_Hz": "30-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0104",
+    "model": "Beyerdynamic NT5",
+    "brand": "Beyerdynamic",
+    "type": "Boundary",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 158,
+    "self_noise_dB": 10.3,
+    "applications": [
+      "Bass",
+      "Broadcast",
+      "Field"
+    ],
+    "frequency_response_Hz": "20-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0105",
+    "model": "Beyerdynamic TLM103-52",
+    "brand": "Beyerdynamic",
+    "type": "Boundary",
+    "pattern": "Multi",
+    "max_SPL_dB": 126,
+    "self_noise_dB": 9.1,
+    "applications": [
+      "Podcast",
+      "Guitar",
+      "Field"
+    ],
+    "frequency_response_Hz": "40-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0106",
+    "model": "Sennheiser M160",
+    "brand": "Sennheiser",
+    "type": "Boundary",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 143,
+    "self_noise_dB": 14.1,
+    "applications": [
+      "Choir",
+      "Room",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "60-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0107",
+    "model": "Electro-Voice SM57",
+    "brand": "Electro-Voice",
+    "type": "Shotgun",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 123,
+    "self_noise_dB": 15.7,
+    "applications": [
+      "Podcast",
+      "Drums",
+      "Room"
+    ],
+    "frequency_response_Hz": "60-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0108",
+    "model": "Neumann NTG3",
+    "brand": "Neumann",
+    "type": "Dynamic",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 155,
+    "self_noise_dB": null,
+    "applications": [
+      "Orchestra",
+      "Choir",
+      "Bass"
+    ],
+    "frequency_response_Hz": "40-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0109",
+    "model": "Shanling NT1-80",
+    "brand": "Shanling",
+    "type": "Lavalier",
+    "pattern": "Multi",
+    "max_SPL_dB": 155,
+    "self_noise_dB": 6.3,
+    "applications": [
+      "Guitar",
+      "Orchestra",
+      "Choir"
+    ],
+    "frequency_response_Hz": "40-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0110",
+    "model": "Rode SM58",
+    "brand": "Rode",
+    "type": "Condenser",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 145,
+    "self_noise_dB": 6.7,
+    "applications": [
+      "Room",
+      "Bass",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "20-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0111",
+    "model": "Telefunken TLM103",
+    "brand": "Telefunken",
+    "type": "Ribbon",
+    "pattern": "Multi",
+    "max_SPL_dB": 140,
+    "self_noise_dB": 13.8,
+    "applications": [
+      "Drums",
+      "Vocals",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "60-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0112",
+    "model": "Blue NT5",
+    "brand": "Blue",
+    "type": "Dynamic",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 148,
+    "self_noise_dB": null,
+    "applications": [
+      "Choir",
+      "Field",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "50-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0113",
+    "model": "AKG DPA 4017",
+    "brand": "AKG",
+    "type": "Ribbon",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 127,
+    "self_noise_dB": 8.8,
+    "applications": [
+      "Room",
+      "Orchestra",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "60-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0114",
+    "model": "Beyerdynamic NT5",
+    "brand": "Beyerdynamic",
+    "type": "Condenser",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 133,
+    "self_noise_dB": 13.7,
+    "applications": [
+      "Podcast",
+      "Drums",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "40-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0115",
+    "model": "Sony C414 XLII",
+    "brand": "Sony",
+    "type": "Boundary",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 134,
+    "self_noise_dB": 11.0,
+    "applications": [
+      "Broadcast",
+      "Vocals",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "40-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0116",
+    "model": "Telefunken M50X",
+    "brand": "Telefunken",
+    "type": "Ribbon",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 147,
+    "self_noise_dB": 11.7,
+    "applications": [
+      "Drums",
+      "Broadcast",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "50-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0117",
+    "model": "Neumann DPA 4017-59",
+    "brand": "Neumann",
+    "type": "Shotgun",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 125,
+    "self_noise_dB": 10.4,
+    "applications": [
+      "Broadcast",
+      "Choir",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "20-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0118",
+    "model": "Beyerdynamic M160",
+    "brand": "Beyerdynamic",
+    "type": "Ribbon",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 141,
+    "self_noise_dB": 13.8,
+    "applications": [
+      "Dialogue",
+      "Drums",
+      "Room"
+    ],
+    "frequency_response_Hz": "20-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0119",
+    "model": "Blue TLM103",
+    "brand": "Blue",
+    "type": "Shotgun",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 135,
+    "self_noise_dB": 7.0,
+    "applications": [
+      "Guitar",
+      "Choir",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "40-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0120",
+    "model": "Neumann DPA 4017-60",
+    "brand": "Neumann",
+    "type": "Lavalier",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 148,
+    "self_noise_dB": 12.8,
+    "applications": [
+      "Podcast",
+      "Dialogue",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "60-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0121",
+    "model": "Sennheiser KSM44",
+    "brand": "Sennheiser",
+    "type": "Ribbon",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 157,
+    "self_noise_dB": 6.6,
+    "applications": [
+      "Orchestra",
+      "Field",
+      "Choir"
+    ],
+    "frequency_response_Hz": "60-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0122",
+    "model": "Shure TLM103-10",
+    "brand": "Shure",
+    "type": "Shotgun",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 159,
+    "self_noise_dB": 11.9,
+    "applications": [
+      "Choir",
+      "Room",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "50-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0123",
+    "model": "Blue NT5-42",
+    "brand": "Blue",
+    "type": "Lavalier",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 152,
+    "self_noise_dB": 7.5,
+    "applications": [
+      "Drums",
+      "Podcast",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "20-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0124",
+    "model": "Shure e845-57",
+    "brand": "Shure",
+    "type": "Lavalier",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 159,
+    "self_noise_dB": 7.6,
+    "applications": [
+      "Broadcast",
+      "Dialogue",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "40-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0125",
+    "model": "Blue NTG3-9",
+    "brand": "Blue",
+    "type": "Ribbon",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 155,
+    "self_noise_dB": 12.8,
+    "applications": [
+      "Dialogue",
+      "Choir",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "40-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0126",
+    "model": "Sennheiser NT5-45",
+    "brand": "Sennheiser",
+    "type": "Ribbon",
+    "pattern": "Multi",
+    "max_SPL_dB": 145,
+    "self_noise_dB": 7.3,
+    "applications": [
+      "Room",
+      "Broadcast",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "20-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0127",
+    "model": "Electro-Voice 4011-95",
+    "brand": "Electro-Voice",
+    "type": "Shotgun",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 125,
+    "self_noise_dB": 12.5,
+    "applications": [
+      "Podcast",
+      "Vocals",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "50-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0128",
+    "model": "Neumann e845",
+    "brand": "Neumann",
+    "type": "Boundary",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 134,
+    "self_noise_dB": 16.0,
+    "applications": [
+      "Orchestra",
+      "Drums",
+      "Room"
+    ],
+    "frequency_response_Hz": "30-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0129",
+    "model": "Electro-Voice TLM103-80",
+    "brand": "Electro-Voice",
+    "type": "Condenser",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 144,
+    "self_noise_dB": 7.5,
+    "applications": [
+      "Guitar",
+      "Field",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "30-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0130",
+    "model": "Rode NTG3-57",
+    "brand": "Rode",
+    "type": "Lavalier",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 148,
+    "self_noise_dB": 8.3,
+    "applications": [
+      "Field",
+      "Bass",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "30-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0131",
+    "model": "Telefunken DPA 4017",
+    "brand": "Telefunken",
+    "type": "Boundary",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 153,
+    "self_noise_dB": 10.2,
+    "applications": [
+      "Choir",
+      "Guitar",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "30-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0132",
+    "model": "Electro-Voice KSM44-71",
+    "brand": "Electro-Voice",
+    "type": "Dynamic",
+    "pattern": "Multi",
+    "max_SPL_dB": 153,
+    "self_noise_dB": null,
+    "applications": [
+      "Drums",
+      "Guitar",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "20-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0133",
+    "model": "Coles e935-12",
+    "brand": "Coles",
+    "type": "Condenser",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 142,
+    "self_noise_dB": 15.3,
+    "applications": [
+      "Broadcast",
+      "Room",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "50-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0134",
+    "model": "Beyerdynamic SM57",
+    "brand": "Beyerdynamic",
+    "type": "Dynamic",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 126,
+    "self_noise_dB": null,
+    "applications": [
+      "Guitar",
+      "Vocals",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "40-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0135",
+    "model": "Sony M160",
+    "brand": "Sony",
+    "type": "Shotgun",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 148,
+    "self_noise_dB": 12.2,
+    "applications": [
+      "Orchestra",
+      "Bass",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "20-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0136",
+    "model": "Sennheiser DPA 4017",
+    "brand": "Sennheiser",
+    "type": "Ribbon",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 123,
+    "self_noise_dB": 8.4,
+    "applications": [
+      "Drums",
+      "Dialogue",
+      "Field"
+    ],
+    "frequency_response_Hz": "60-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0137",
+    "model": "Electro-Voice NT1",
+    "brand": "Electro-Voice",
+    "type": "Shotgun",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 138,
+    "self_noise_dB": 10.3,
+    "applications": [
+      "Bass",
+      "Choir",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "60-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0138",
+    "model": "Electro-Voice NTG3",
+    "brand": "Electro-Voice",
+    "type": "Ribbon",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 153,
+    "self_noise_dB": 11.4,
+    "applications": [
+      "Vocals",
+      "Broadcast",
+      "Field"
+    ],
+    "frequency_response_Hz": "60-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0139",
+    "model": "Electro-Voice C414 XLII-33",
+    "brand": "Electro-Voice",
+    "type": "Shotgun",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 142,
+    "self_noise_dB": 13.9,
+    "applications": [
+      "Dialogue",
+      "Drums",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "40-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0140",
+    "model": "Shure TLM103",
+    "brand": "Shure",
+    "type": "Shotgun",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 149,
+    "self_noise_dB": 15.8,
+    "applications": [
+      "Guitar",
+      "Drums",
+      "Field"
+    ],
+    "frequency_response_Hz": "50-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0141",
+    "model": "Audio-Technica e845",
+    "brand": "Audio-Technica",
+    "type": "Condenser",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 140,
+    "self_noise_dB": 15.3,
+    "applications": [
+      "Room",
+      "Field",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "60-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0142",
+    "model": "Blue NTG3",
+    "brand": "Blue",
+    "type": "Ribbon",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 141,
+    "self_noise_dB": 8.7,
+    "applications": [
+      "Broadcast",
+      "Field",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "40-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0143",
+    "model": "Neumann KSM44-48",
+    "brand": "Neumann",
+    "type": "Lavalier",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 125,
+    "self_noise_dB": 13.3,
+    "applications": [
+      "Choir",
+      "Guitar",
+      "Room"
+    ],
+    "frequency_response_Hz": "20-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0144",
+    "model": "Rode SM57",
+    "brand": "Rode",
+    "type": "Shotgun",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 139,
+    "self_noise_dB": 10.5,
+    "applications": [
+      "Field",
+      "Podcast",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "50-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0145",
+    "model": "Sony M160-79",
+    "brand": "Sony",
+    "type": "Boundary",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 160,
+    "self_noise_dB": 15.8,
+    "applications": [
+      "Dialogue",
+      "Broadcast",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "20-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0146",
+    "model": "Shure e935-87",
+    "brand": "Shure",
+    "type": "Boundary",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 128,
+    "self_noise_dB": 6.7,
+    "applications": [
+      "Broadcast",
+      "Choir",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "40-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0147",
+    "model": "Electro-Voice KSM44-48",
+    "brand": "Electro-Voice",
+    "type": "Boundary",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 156,
+    "self_noise_dB": 7.4,
+    "applications": [
+      "Podcast",
+      "Orchestra",
+      "Bass"
+    ],
+    "frequency_response_Hz": "40-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0148",
+    "model": "Shure 4011",
+    "brand": "Shure",
+    "type": "Lavalier",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 155,
+    "self_noise_dB": 7.2,
+    "applications": [
+      "Bass",
+      "Choir",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "40-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0149",
+    "model": "AKG SM57",
+    "brand": "AKG",
+    "type": "Dynamic",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 131,
+    "self_noise_dB": null,
+    "applications": [
+      "Dialogue",
+      "Podcast",
+      "Choir"
+    ],
+    "frequency_response_Hz": "50-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0150",
+    "model": "Coles NT1",
+    "brand": "Coles",
+    "type": "Ribbon",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 160,
+    "self_noise_dB": 7.7,
+    "applications": [
+      "Bass",
+      "Drums",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "40-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0151",
+    "model": "AKG DPA 4017",
+    "brand": "AKG",
+    "type": "Ribbon",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 156,
+    "self_noise_dB": 9.7,
+    "applications": [
+      "Choir",
+      "Drums",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "60-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0152",
+    "model": "Beyerdynamic 4011-68",
+    "brand": "Beyerdynamic",
+    "type": "Boundary",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 156,
+    "self_noise_dB": 6.7,
+    "applications": [
+      "Field",
+      "Dialogue",
+      "Room"
+    ],
+    "frequency_response_Hz": "40-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0153",
+    "model": "Neumann M50X-71",
+    "brand": "Neumann",
+    "type": "Shotgun",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 131,
+    "self_noise_dB": 13.7,
+    "applications": [
+      "Room",
+      "Vocals",
+      "Drums"
+    ],
+    "frequency_response_Hz": "30-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0154",
+    "model": "Audio-Technica e935",
+    "brand": "Audio-Technica",
+    "type": "Shotgun",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 142,
+    "self_noise_dB": 15.5,
+    "applications": [
+      "Drums",
+      "Orchestra",
+      "Bass"
+    ],
+    "frequency_response_Hz": "60-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0155",
+    "model": "Neumann NTG3",
+    "brand": "Neumann",
+    "type": "Lavalier",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 152,
+    "self_noise_dB": 12.4,
+    "applications": [
+      "Guitar",
+      "Dialogue",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "60-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0156",
+    "model": "Shanling M160",
+    "brand": "Shanling",
+    "type": "Dynamic",
+    "pattern": "Multi",
+    "max_SPL_dB": 156,
+    "self_noise_dB": null,
+    "applications": [
+      "Choir",
+      "Broadcast",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "40-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0157",
+    "model": "Electro-Voice NT1",
+    "brand": "Electro-Voice",
+    "type": "Ribbon",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 135,
+    "self_noise_dB": 14.0,
+    "applications": [
+      "Field",
+      "Drums",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "50-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0158",
+    "model": "Telefunken C414 XLII",
+    "brand": "Telefunken",
+    "type": "Condenser",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 158,
+    "self_noise_dB": 7.4,
+    "applications": [
+      "Broadcast",
+      "Guitar",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "40-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0159",
+    "model": "Rode e845",
+    "brand": "Rode",
+    "type": "Ribbon",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 135,
+    "self_noise_dB": 7.4,
+    "applications": [
+      "Broadcast",
+      "Choir",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "20-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0160",
+    "model": "Shanling M50X",
+    "brand": "Shanling",
+    "type": "Ribbon",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 140,
+    "self_noise_dB": 7.9,
+    "applications": [
+      "Room",
+      "Field",
+      "Choir"
+    ],
+    "frequency_response_Hz": "30-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0161",
+    "model": "Telefunken SM58",
+    "brand": "Telefunken",
+    "type": "Boundary",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 149,
+    "self_noise_dB": 15.7,
+    "applications": [
+      "Podcast",
+      "Vocals",
+      "Choir"
+    ],
+    "frequency_response_Hz": "30-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0162",
+    "model": "Telefunken NT5-84",
+    "brand": "Telefunken",
+    "type": "Shotgun",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 138,
+    "self_noise_dB": 11.4,
+    "applications": [
+      "Guitar",
+      "Orchestra",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "20-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0163",
+    "model": "Rode SM58",
+    "brand": "Rode",
+    "type": "Lavalier",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 132,
+    "self_noise_dB": 9.6,
+    "applications": [
+      "Broadcast",
+      "Room",
+      "Field"
+    ],
+    "frequency_response_Hz": "40-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0164",
+    "model": "Shanling NT5-16",
+    "brand": "Shanling",
+    "type": "Condenser",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 145,
+    "self_noise_dB": 9.7,
+    "applications": [
+      "Podcast",
+      "Guitar",
+      "Bass"
+    ],
+    "frequency_response_Hz": "40-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0165",
+    "model": "Coles SM58",
+    "brand": "Coles",
+    "type": "Condenser",
+    "pattern": "Multi",
+    "max_SPL_dB": 141,
+    "self_noise_dB": 14.0,
+    "applications": [
+      "Guitar",
+      "Choir",
+      "Room"
+    ],
+    "frequency_response_Hz": "60-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0166",
+    "model": "Rode M50X-21",
+    "brand": "Rode",
+    "type": "Boundary",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 139,
+    "self_noise_dB": 11.9,
+    "applications": [
+      "Room",
+      "Field",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "60-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0167",
+    "model": "Shanling SM58",
+    "brand": "Shanling",
+    "type": "Shotgun",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 146,
+    "self_noise_dB": 11.8,
+    "applications": [
+      "Field",
+      "Orchestra",
+      "Bass"
+    ],
+    "frequency_response_Hz": "20-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0168",
+    "model": "DPA KSM44",
+    "brand": "DPA",
+    "type": "Shotgun",
+    "pattern": "Multi",
+    "max_SPL_dB": 159,
+    "self_noise_dB": 13.7,
+    "applications": [
+      "Dialogue",
+      "Bass",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "50-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0169",
+    "model": "AKG SM58",
+    "brand": "AKG",
+    "type": "Boundary",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 146,
+    "self_noise_dB": 12.9,
+    "applications": [
+      "Choir",
+      "Field",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "50-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0170",
+    "model": "Coles e845",
+    "brand": "Coles",
+    "type": "Shotgun",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 153,
+    "self_noise_dB": 9.8,
+    "applications": [
+      "Room",
+      "Podcast",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "30-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0171",
+    "model": "Electro-Voice DPA 4017-88",
+    "brand": "Electro-Voice",
+    "type": "Shotgun",
+    "pattern": "Multi",
+    "max_SPL_dB": 136,
+    "self_noise_dB": 12.1,
+    "applications": [
+      "Orchestra",
+      "Room",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "30-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0172",
+    "model": "Audio-Technica DPA 4017",
+    "brand": "Audio-Technica",
+    "type": "Condenser",
+    "pattern": "Multi",
+    "max_SPL_dB": 151,
+    "self_noise_dB": 9.2,
+    "applications": [
+      "Orchestra",
+      "Dialogue",
+      "Drums"
+    ],
+    "frequency_response_Hz": "40-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0173",
+    "model": "Beyerdynamic M160",
+    "brand": "Beyerdynamic",
+    "type": "Condenser",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 122,
+    "self_noise_dB": 8.9,
+    "applications": [
+      "Field",
+      "Orchestra",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "20-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0174",
+    "model": "AKG M160",
+    "brand": "AKG",
+    "type": "Lavalier",
+    "pattern": "Multi",
+    "max_SPL_dB": 137,
+    "self_noise_dB": 7.4,
+    "applications": [
+      "Bass",
+      "Dialogue",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "60-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0175",
+    "model": "Electro-Voice e845",
+    "brand": "Electro-Voice",
+    "type": "Boundary",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 150,
+    "self_noise_dB": 7.0,
+    "applications": [
+      "Room",
+      "Guitar",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "30-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0176",
+    "model": "Telefunken NTG3",
+    "brand": "Telefunken",
+    "type": "Ribbon",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 138,
+    "self_noise_dB": 12.5,
+    "applications": [
+      "Bass",
+      "Room",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "20-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0177",
+    "model": "Beyerdynamic M50X-5",
+    "brand": "Beyerdynamic",
+    "type": "Boundary",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 131,
+    "self_noise_dB": 15.4,
+    "applications": [
+      "Vocals",
+      "Orchestra",
+      "Drums"
+    ],
+    "frequency_response_Hz": "40-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0178",
+    "model": "Audio-Technica KSM44-70",
+    "brand": "Audio-Technica",
+    "type": "Lavalier",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 128,
+    "self_noise_dB": 14.5,
+    "applications": [
+      "Bass",
+      "Drums",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "50-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0179",
+    "model": "Sony KSM44-92",
+    "brand": "Sony",
+    "type": "Condenser",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 141,
+    "self_noise_dB": 13.9,
+    "applications": [
+      "Guitar",
+      "Choir",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "60-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0180",
+    "model": "Coles TLM103",
+    "brand": "Coles",
+    "type": "Shotgun",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 131,
+    "self_noise_dB": 15.8,
+    "applications": [
+      "Bass",
+      "Vocals",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "50-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0181",
+    "model": "AKG KSM44-43",
+    "brand": "AKG",
+    "type": "Ribbon",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 156,
+    "self_noise_dB": 6.1,
+    "applications": [
+      "Vocals",
+      "Drums",
+      "Field"
+    ],
+    "frequency_response_Hz": "40-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0182",
+    "model": "Neumann C414 XLII-91",
+    "brand": "Neumann",
+    "type": "Ribbon",
+    "pattern": "Multi",
+    "max_SPL_dB": 127,
+    "self_noise_dB": 12.4,
+    "applications": [
+      "Choir",
+      "Bass",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "40-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0183",
+    "model": "Telefunken e935",
+    "brand": "Telefunken",
+    "type": "Lavalier",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 146,
+    "self_noise_dB": 13.0,
+    "applications": [
+      "Dialogue",
+      "Bass",
+      "Choir"
+    ],
+    "frequency_response_Hz": "50-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0184",
+    "model": "Coles KSM44",
+    "brand": "Coles",
+    "type": "Ribbon",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 156,
+    "self_noise_dB": 7.1,
+    "applications": [
+      "Bass",
+      "Choir",
+      "Room"
+    ],
+    "frequency_response_Hz": "60-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0185",
+    "model": "Neumann TLM103-57",
+    "brand": "Neumann",
+    "type": "Dynamic",
+    "pattern": "Multi",
+    "max_SPL_dB": 133,
+    "self_noise_dB": null,
+    "applications": [
+      "Drums",
+      "Room",
+      "Field"
+    ],
+    "frequency_response_Hz": "60-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0186",
+    "model": "Telefunken e935",
+    "brand": "Telefunken",
+    "type": "Boundary",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 123,
+    "self_noise_dB": 11.6,
+    "applications": [
+      "Broadcast",
+      "Orchestra",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "40-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0187",
+    "model": "DPA SM57",
+    "brand": "DPA",
+    "type": "Ribbon",
+    "pattern": "Multi",
+    "max_SPL_dB": 124,
+    "self_noise_dB": 11.4,
+    "applications": [
+      "Field",
+      "Vocals",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "20-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0188",
+    "model": "Neumann DPA 4017",
+    "brand": "Neumann",
+    "type": "Shotgun",
+    "pattern": "Multi",
+    "max_SPL_dB": 146,
+    "self_noise_dB": 9.7,
+    "applications": [
+      "Broadcast",
+      "Dialogue",
+      "Drums"
+    ],
+    "frequency_response_Hz": "50-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0189",
+    "model": "Electro-Voice M160",
+    "brand": "Electro-Voice",
+    "type": "Condenser",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 145,
+    "self_noise_dB": 11.3,
+    "applications": [
+      "Vocals",
+      "Orchestra",
+      "Field"
+    ],
+    "frequency_response_Hz": "30-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0190",
+    "model": "Coles C414 XLII-32",
+    "brand": "Coles",
+    "type": "Boundary",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 129,
+    "self_noise_dB": 8.8,
+    "applications": [
+      "Dialogue",
+      "Broadcast",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "20-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0191",
+    "model": "AKG SM57",
+    "brand": "AKG",
+    "type": "Dynamic",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 158,
+    "self_noise_dB": null,
+    "applications": [
+      "Vocals",
+      "Broadcast",
+      "Field"
+    ],
+    "frequency_response_Hz": "20-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0192",
+    "model": "Coles e845-8",
+    "brand": "Coles",
+    "type": "Condenser",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 138,
+    "self_noise_dB": 8.3,
+    "applications": [
+      "Choir",
+      "Dialogue",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "60-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0193",
+    "model": "Audio-Technica M50X",
+    "brand": "Audio-Technica",
+    "type": "Shotgun",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 134,
+    "self_noise_dB": 10.1,
+    "applications": [
+      "Room",
+      "Choir",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "40-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0194",
+    "model": "Coles KSM44",
+    "brand": "Coles",
+    "type": "Ribbon",
+    "pattern": "Multi",
+    "max_SPL_dB": 144,
+    "self_noise_dB": 13.9,
+    "applications": [
+      "Broadcast",
+      "Guitar",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "40-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0195",
+    "model": "Neumann DPA 4017",
+    "brand": "Neumann",
+    "type": "Condenser",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 139,
+    "self_noise_dB": 14.6,
+    "applications": [
+      "Vocals",
+      "Room",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "30-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0196",
+    "model": "Coles NT1",
+    "brand": "Coles",
+    "type": "Condenser",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 133,
+    "self_noise_dB": 9.3,
+    "applications": [
+      "Podcast",
+      "Drums",
+      "Room"
+    ],
+    "frequency_response_Hz": "20-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0197",
+    "model": "Shure U87",
+    "brand": "Shure",
+    "type": "Lavalier",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 122,
+    "self_noise_dB": 14.7,
+    "applications": [
+      "Dialogue",
+      "Room",
+      "Bass"
+    ],
+    "frequency_response_Hz": "30-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0198",
+    "model": "AKG M160-39",
+    "brand": "AKG",
+    "type": "Dynamic",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 132,
+    "self_noise_dB": null,
+    "applications": [
+      "Bass",
+      "Choir",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "20-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0199",
+    "model": "AKG NT1",
+    "brand": "AKG",
+    "type": "Ribbon",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 149,
+    "self_noise_dB": 11.3,
+    "applications": [
+      "Orchestra",
+      "Podcast",
+      "Room"
+    ],
+    "frequency_response_Hz": "40-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0200",
+    "model": "Telefunken SM57-93",
+    "brand": "Telefunken",
+    "type": "Boundary",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 133,
+    "self_noise_dB": 9.7,
+    "applications": [
+      "Choir",
+      "Bass",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "50-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0201",
+    "model": "Audio-Technica NT1-75",
+    "brand": "Audio-Technica",
+    "type": "Shotgun",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 138,
+    "self_noise_dB": 7.5,
+    "applications": [
+      "Broadcast",
+      "Choir",
+      "Bass"
+    ],
+    "frequency_response_Hz": "40-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0202",
+    "model": "Coles NTG3-44",
+    "brand": "Coles",
+    "type": "Ribbon",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 151,
+    "self_noise_dB": 10.6,
+    "applications": [
+      "Guitar",
+      "Room",
+      "Field"
+    ],
+    "frequency_response_Hz": "40-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0203",
+    "model": "Coles NTG3-68",
+    "brand": "Coles",
+    "type": "Dynamic",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 123,
+    "self_noise_dB": null,
+    "applications": [
+      "Guitar",
+      "Bass",
+      "Drums"
+    ],
+    "frequency_response_Hz": "20-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0204",
+    "model": "Shure e845",
+    "brand": "Shure",
+    "type": "Ribbon",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 159,
+    "self_noise_dB": 12.4,
+    "applications": [
+      "Dialogue",
+      "Field",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "60-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0205",
+    "model": "Coles NT1",
+    "brand": "Coles",
+    "type": "Dynamic",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 137,
+    "self_noise_dB": null,
+    "applications": [
+      "Vocals",
+      "Room",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "60-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0206",
+    "model": "Sennheiser M50X",
+    "brand": "Sennheiser",
+    "type": "Condenser",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 132,
+    "self_noise_dB": 12.2,
+    "applications": [
+      "Orchestra",
+      "Broadcast",
+      "Drums"
+    ],
+    "frequency_response_Hz": "40-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0207",
+    "model": "Beyerdynamic KSM44",
+    "brand": "Beyerdynamic",
+    "type": "Shotgun",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 139,
+    "self_noise_dB": 12.8,
+    "applications": [
+      "Drums",
+      "Broadcast",
+      "Choir"
+    ],
+    "frequency_response_Hz": "20-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0208",
+    "model": "Coles KSM44",
+    "brand": "Coles",
+    "type": "Dynamic",
+    "pattern": "Multi",
+    "max_SPL_dB": 130,
+    "self_noise_dB": null,
+    "applications": [
+      "Broadcast",
+      "Podcast",
+      "Drums"
+    ],
+    "frequency_response_Hz": "20-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0209",
+    "model": "AKG e845-89",
+    "brand": "AKG",
+    "type": "Lavalier",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 137,
+    "self_noise_dB": 6.5,
+    "applications": [
+      "Room",
+      "Choir",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "20-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0210",
+    "model": "Shanling TLM103",
+    "brand": "Shanling",
+    "type": "Condenser",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 129,
+    "self_noise_dB": 13.5,
+    "applications": [
+      "Orchestra",
+      "Guitar",
+      "Bass"
+    ],
+    "frequency_response_Hz": "50-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0211",
+    "model": "Electro-Voice M50X",
+    "brand": "Electro-Voice",
+    "type": "Boundary",
+    "pattern": "Multi",
+    "max_SPL_dB": 128,
+    "self_noise_dB": 13.9,
+    "applications": [
+      "Podcast",
+      "Vocals",
+      "Drums"
+    ],
+    "frequency_response_Hz": "20-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0212",
+    "model": "AKG M160",
+    "brand": "AKG",
+    "type": "Lavalier",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 158,
+    "self_noise_dB": 10.0,
+    "applications": [
+      "Dialogue",
+      "Orchestra",
+      "Field"
+    ],
+    "frequency_response_Hz": "40-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0213",
+    "model": "AKG TLM103",
+    "brand": "AKG",
+    "type": "Boundary",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 131,
+    "self_noise_dB": 12.8,
+    "applications": [
+      "Choir",
+      "Orchestra",
+      "Bass"
+    ],
+    "frequency_response_Hz": "50-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0214",
+    "model": "Sennheiser U87",
+    "brand": "Sennheiser",
+    "type": "Shotgun",
+    "pattern": "Multi",
+    "max_SPL_dB": 129,
+    "self_noise_dB": 13.4,
+    "applications": [
+      "Drums",
+      "Dialogue",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "40-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0215",
+    "model": "Telefunken TLM103-14",
+    "brand": "Telefunken",
+    "type": "Condenser",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 131,
+    "self_noise_dB": 10.3,
+    "applications": [
+      "Room",
+      "Broadcast",
+      "Drums"
+    ],
+    "frequency_response_Hz": "60-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0216",
+    "model": "Sennheiser TLM103",
+    "brand": "Sennheiser",
+    "type": "Lavalier",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 140,
+    "self_noise_dB": 14.6,
+    "applications": [
+      "Broadcast",
+      "Dialogue",
+      "Drums"
+    ],
+    "frequency_response_Hz": "20-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0217",
+    "model": "DPA NT1",
+    "brand": "DPA",
+    "type": "Boundary",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 128,
+    "self_noise_dB": 8.7,
+    "applications": [
+      "Guitar",
+      "Drums",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "40-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0218",
+    "model": "Audio-Technica C414 XLII",
+    "brand": "Audio-Technica",
+    "type": "Dynamic",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 136,
+    "self_noise_dB": null,
+    "applications": [
+      "Choir",
+      "Dialogue",
+      "Bass"
+    ],
+    "frequency_response_Hz": "30-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0219",
+    "model": "Sennheiser e935",
+    "brand": "Sennheiser",
+    "type": "Boundary",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 159,
+    "self_noise_dB": 9.8,
+    "applications": [
+      "Podcast",
+      "Broadcast",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "40-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0220",
+    "model": "Rode NT5-26",
+    "brand": "Rode",
+    "type": "Boundary",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 131,
+    "self_noise_dB": 15.6,
+    "applications": [
+      "Dialogue",
+      "Field",
+      "Bass"
+    ],
+    "frequency_response_Hz": "40-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0221",
+    "model": "Beyerdynamic U87-51",
+    "brand": "Beyerdynamic",
+    "type": "Ribbon",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 156,
+    "self_noise_dB": 8.0,
+    "applications": [
+      "Dialogue",
+      "Room",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "60-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0222",
+    "model": "Sony e845",
+    "brand": "Sony",
+    "type": "Ribbon",
+    "pattern": "Multi",
+    "max_SPL_dB": 124,
+    "self_noise_dB": 14.2,
+    "applications": [
+      "Guitar",
+      "Orchestra",
+      "Bass"
+    ],
+    "frequency_response_Hz": "50-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0223",
+    "model": "Electro-Voice e935-49",
+    "brand": "Electro-Voice",
+    "type": "Dynamic",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 158,
+    "self_noise_dB": null,
+    "applications": [
+      "Broadcast",
+      "Room",
+      "Choir"
+    ],
+    "frequency_response_Hz": "50-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0224",
+    "model": "Coles SM58-47",
+    "brand": "Coles",
+    "type": "Shotgun",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 158,
+    "self_noise_dB": 12.4,
+    "applications": [
+      "Bass",
+      "Podcast",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "20-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0225",
+    "model": "DPA NTG3-52",
+    "brand": "DPA",
+    "type": "Ribbon",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 126,
+    "self_noise_dB": 6.1,
+    "applications": [
+      "Room",
+      "Dialogue",
+      "Choir"
+    ],
+    "frequency_response_Hz": "40-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0226",
+    "model": "Telefunken TLM103",
+    "brand": "Telefunken",
+    "type": "Shotgun",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 152,
+    "self_noise_dB": 7.5,
+    "applications": [
+      "Drums",
+      "Orchestra",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "20-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0227",
+    "model": "Sennheiser M160-19",
+    "brand": "Sennheiser",
+    "type": "Ribbon",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 141,
+    "self_noise_dB": 10.6,
+    "applications": [
+      "Field",
+      "Podcast",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "30-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0228",
+    "model": "Telefunken 4011-41",
+    "brand": "Telefunken",
+    "type": "Dynamic",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 122,
+    "self_noise_dB": null,
+    "applications": [
+      "Podcast",
+      "Drums",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "20-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0229",
+    "model": "Coles e935",
+    "brand": "Coles",
+    "type": "Ribbon",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 147,
+    "self_noise_dB": 15.6,
+    "applications": [
+      "Dialogue",
+      "Guitar",
+      "Choir"
+    ],
+    "frequency_response_Hz": "30-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0230",
+    "model": "Beyerdynamic SM58-26",
+    "brand": "Beyerdynamic",
+    "type": "Boundary",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 147,
+    "self_noise_dB": 9.9,
+    "applications": [
+      "Orchestra",
+      "Drums",
+      "Choir"
+    ],
+    "frequency_response_Hz": "30-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0231",
+    "model": "Rode TLM103",
+    "brand": "Rode",
+    "type": "Dynamic",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 151,
+    "self_noise_dB": null,
+    "applications": [
+      "Choir",
+      "Broadcast",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "60-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0232",
+    "model": "Rode TLM103-80",
+    "brand": "Rode",
+    "type": "Condenser",
+    "pattern": "Multi",
+    "max_SPL_dB": 139,
+    "self_noise_dB": 15.2,
+    "applications": [
+      "Dialogue",
+      "Guitar",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "60-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0233",
+    "model": "AKG U87",
+    "brand": "AKG",
+    "type": "Ribbon",
+    "pattern": "Multi",
+    "max_SPL_dB": 129,
+    "self_noise_dB": 11.1,
+    "applications": [
+      "Guitar",
+      "Choir",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "50-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0234",
+    "model": "Neumann KSM44-89",
+    "brand": "Neumann",
+    "type": "Shotgun",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 155,
+    "self_noise_dB": 7.7,
+    "applications": [
+      "Guitar",
+      "Podcast",
+      "Field"
+    ],
+    "frequency_response_Hz": "40-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0235",
+    "model": "Shanling TLM103-63",
+    "brand": "Shanling",
+    "type": "Condenser",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 144,
+    "self_noise_dB": 15.6,
+    "applications": [
+      "Broadcast",
+      "Field",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "60-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0236",
+    "model": "Telefunken e935",
+    "brand": "Telefunken",
+    "type": "Dynamic",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 138,
+    "self_noise_dB": null,
+    "applications": [
+      "Bass",
+      "Room",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "20-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0237",
+    "model": "Blue KSM44",
+    "brand": "Blue",
+    "type": "Boundary",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 152,
+    "self_noise_dB": 7.1,
+    "applications": [
+      "Room",
+      "Podcast",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "20-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0238",
+    "model": "Blue 4011",
+    "brand": "Blue",
+    "type": "Condenser",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 126,
+    "self_noise_dB": 13.4,
+    "applications": [
+      "Vocals",
+      "Field",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "30-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0239",
+    "model": "Shanling M160",
+    "brand": "Shanling",
+    "type": "Dynamic",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 133,
+    "self_noise_dB": null,
+    "applications": [
+      "Choir",
+      "Broadcast",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "60-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0240",
+    "model": "Blue e845-8",
+    "brand": "Blue",
+    "type": "Lavalier",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 154,
+    "self_noise_dB": 8.8,
+    "applications": [
+      "Podcast",
+      "Orchestra",
+      "Choir"
+    ],
+    "frequency_response_Hz": "60-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0241",
+    "model": "Shanling NT1-87",
+    "brand": "Shanling",
+    "type": "Dynamic",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 146,
+    "self_noise_dB": null,
+    "applications": [
+      "Dialogue",
+      "Guitar",
+      "Choir"
+    ],
+    "frequency_response_Hz": "20-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0242",
+    "model": "Neumann 4011",
+    "brand": "Neumann",
+    "type": "Condenser",
+    "pattern": "Multi",
+    "max_SPL_dB": 145,
+    "self_noise_dB": 10.9,
+    "applications": [
+      "Dialogue",
+      "Broadcast",
+      "Choir"
+    ],
+    "frequency_response_Hz": "60-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0243",
+    "model": "Sennheiser NTG3-99",
+    "brand": "Sennheiser",
+    "type": "Dynamic",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 152,
+    "self_noise_dB": null,
+    "applications": [
+      "Field",
+      "Dialogue",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "40-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0244",
+    "model": "Shanling DPA 4017-12",
+    "brand": "Shanling",
+    "type": "Shotgun",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 160,
+    "self_noise_dB": 12.6,
+    "applications": [
+      "Room",
+      "Broadcast",
+      "Bass"
+    ],
+    "frequency_response_Hz": "40-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0245",
+    "model": "Shanling e845",
+    "brand": "Shanling",
+    "type": "Ribbon",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 141,
+    "self_noise_dB": 11.5,
+    "applications": [
+      "Field",
+      "Podcast",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "30-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0246",
+    "model": "Sennheiser NTG3-59",
+    "brand": "Sennheiser",
+    "type": "Dynamic",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 130,
+    "self_noise_dB": null,
+    "applications": [
+      "Vocals",
+      "Broadcast",
+      "Bass"
+    ],
+    "frequency_response_Hz": "50-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0247",
+    "model": "Electro-Voice U87",
+    "brand": "Electro-Voice",
+    "type": "Ribbon",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 143,
+    "self_noise_dB": 8.5,
+    "applications": [
+      "Vocals",
+      "Broadcast",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "40-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0248",
+    "model": "Beyerdynamic NTG3",
+    "brand": "Beyerdynamic",
+    "type": "Dynamic",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 133,
+    "self_noise_dB": null,
+    "applications": [
+      "Guitar",
+      "Choir",
+      "Bass"
+    ],
+    "frequency_response_Hz": "50-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0249",
+    "model": "Shure SM58-16",
+    "brand": "Shure",
+    "type": "Boundary",
+    "pattern": "Multi",
+    "max_SPL_dB": 128,
+    "self_noise_dB": 10.8,
+    "applications": [
+      "Drums",
+      "Dialogue",
+      "Choir"
+    ],
+    "frequency_response_Hz": "30-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0250",
+    "model": "Rode M50X",
+    "brand": "Rode",
+    "type": "Boundary",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 129,
+    "self_noise_dB": 6.7,
+    "applications": [
+      "Choir",
+      "Guitar",
+      "Field"
+    ],
+    "frequency_response_Hz": "60-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0251",
+    "model": "Sony e845-20",
+    "brand": "Sony",
+    "type": "Boundary",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 148,
+    "self_noise_dB": 14.6,
+    "applications": [
+      "Guitar",
+      "Drums",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "20-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0252",
+    "model": "Beyerdynamic TLM103-32",
+    "brand": "Beyerdynamic",
+    "type": "Ribbon",
+    "pattern": "Multi",
+    "max_SPL_dB": 125,
+    "self_noise_dB": 8.5,
+    "applications": [
+      "Choir",
+      "Orchestra",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "60-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0253",
+    "model": "AKG NT1-25",
+    "brand": "AKG",
+    "type": "Shotgun",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 138,
+    "self_noise_dB": 12.5,
+    "applications": [
+      "Broadcast",
+      "Drums",
+      "Bass"
+    ],
+    "frequency_response_Hz": "30-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0254",
+    "model": "Electro-Voice NT5",
+    "brand": "Electro-Voice",
+    "type": "Dynamic",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 140,
+    "self_noise_dB": null,
+    "applications": [
+      "Choir",
+      "Broadcast",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "30-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0255",
+    "model": "Blue KSM44-99",
+    "brand": "Blue",
+    "type": "Dynamic",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 157,
+    "self_noise_dB": null,
+    "applications": [
+      "Orchestra",
+      "Bass",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "20-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0256",
+    "model": "Blue C414 XLII",
+    "brand": "Blue",
+    "type": "Shotgun",
+    "pattern": "Multi",
+    "max_SPL_dB": 152,
+    "self_noise_dB": 13.7,
+    "applications": [
+      "Drums",
+      "Room",
+      "Choir"
+    ],
+    "frequency_response_Hz": "50-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0257",
+    "model": "Audio-Technica SM57",
+    "brand": "Audio-Technica",
+    "type": "Lavalier",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 129,
+    "self_noise_dB": 11.4,
+    "applications": [
+      "Dialogue",
+      "Drums",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "50-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0258",
+    "model": "Sony M160",
+    "brand": "Sony",
+    "type": "Condenser",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 147,
+    "self_noise_dB": 7.2,
+    "applications": [
+      "Vocals",
+      "Orchestra",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "60-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0259",
+    "model": "Shure 4011",
+    "brand": "Shure",
+    "type": "Dynamic",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 151,
+    "self_noise_dB": null,
+    "applications": [
+      "Room",
+      "Orchestra",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "40-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0260",
+    "model": "Neumann 4011-35",
+    "brand": "Neumann",
+    "type": "Shotgun",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 121,
+    "self_noise_dB": 9.4,
+    "applications": [
+      "Room",
+      "Drums",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "50-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0261",
+    "model": "Telefunken KSM44",
+    "brand": "Telefunken",
+    "type": "Dynamic",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 156,
+    "self_noise_dB": null,
+    "applications": [
+      "Guitar",
+      "Orchestra",
+      "Drums"
+    ],
+    "frequency_response_Hz": "30-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0262",
+    "model": "AKG 4011",
+    "brand": "AKG",
+    "type": "Dynamic",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 135,
+    "self_noise_dB": null,
+    "applications": [
+      "Podcast",
+      "Broadcast",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "20-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0263",
+    "model": "Shanling SM58",
+    "brand": "Shanling",
+    "type": "Shotgun",
+    "pattern": "Multi",
+    "max_SPL_dB": 146,
+    "self_noise_dB": 8.2,
+    "applications": [
+      "Podcast",
+      "Orchestra",
+      "Drums"
+    ],
+    "frequency_response_Hz": "30-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0264",
+    "model": "Sennheiser NT1-7",
+    "brand": "Sennheiser",
+    "type": "Condenser",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 153,
+    "self_noise_dB": 15.8,
+    "applications": [
+      "Field",
+      "Orchestra",
+      "Choir"
+    ],
+    "frequency_response_Hz": "50-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0265",
+    "model": "Sennheiser NT1",
+    "brand": "Sennheiser",
+    "type": "Ribbon",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 138,
+    "self_noise_dB": 11.6,
+    "applications": [
+      "Bass",
+      "Field",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "40-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0266",
+    "model": "Blue DPA 4017",
+    "brand": "Blue",
+    "type": "Lavalier",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 129,
+    "self_noise_dB": 6.1,
+    "applications": [
+      "Bass",
+      "Room",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "50-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0267",
+    "model": "Rode SM58-49",
+    "brand": "Rode",
+    "type": "Shotgun",
+    "pattern": "Multi",
+    "max_SPL_dB": 139,
+    "self_noise_dB": 7.0,
+    "applications": [
+      "Broadcast",
+      "Field",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "60-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0268",
+    "model": "Sony U87",
+    "brand": "Sony",
+    "type": "Condenser",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 146,
+    "self_noise_dB": 13.0,
+    "applications": [
+      "Drums",
+      "Choir",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "40-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0269",
+    "model": "Electro-Voice M160",
+    "brand": "Electro-Voice",
+    "type": "Lavalier",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 123,
+    "self_noise_dB": 10.3,
+    "applications": [
+      "Orchestra",
+      "Dialogue",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "30-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0270",
+    "model": "Sony M160-41",
+    "brand": "Sony",
+    "type": "Boundary",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 134,
+    "self_noise_dB": 6.7,
+    "applications": [
+      "Choir",
+      "Drums",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "30-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0271",
+    "model": "Neumann KSM44",
+    "brand": "Neumann",
+    "type": "Boundary",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 154,
+    "self_noise_dB": 9.6,
+    "applications": [
+      "Orchestra",
+      "Field",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "30-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0272",
+    "model": "Sennheiser e935-39",
+    "brand": "Sennheiser",
+    "type": "Shotgun",
+    "pattern": "Multi",
+    "max_SPL_dB": 158,
+    "self_noise_dB": 6.4,
+    "applications": [
+      "Drums",
+      "Bass",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "40-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0273",
+    "model": "Coles SM58-34",
+    "brand": "Coles",
+    "type": "Condenser",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 145,
+    "self_noise_dB": 14.5,
+    "applications": [
+      "Bass",
+      "Drums",
+      "Field"
+    ],
+    "frequency_response_Hz": "60-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0274",
+    "model": "Blue DPA 4017",
+    "brand": "Blue",
+    "type": "Dynamic",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 134,
+    "self_noise_dB": null,
+    "applications": [
+      "Broadcast",
+      "Podcast",
+      "Drums"
+    ],
+    "frequency_response_Hz": "30-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0275",
+    "model": "Shanling SM57",
+    "brand": "Shanling",
+    "type": "Dynamic",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 148,
+    "self_noise_dB": null,
+    "applications": [
+      "Podcast",
+      "Drums",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "30-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0276",
+    "model": "Shure e935-56",
+    "brand": "Shure",
+    "type": "Shotgun",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 151,
+    "self_noise_dB": 6.3,
+    "applications": [
+      "Podcast",
+      "Bass",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "50-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0277",
+    "model": "Audio-Technica KSM44-5",
+    "brand": "Audio-Technica",
+    "type": "Lavalier",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 159,
+    "self_noise_dB": 8.5,
+    "applications": [
+      "Broadcast",
+      "Room",
+      "Field"
+    ],
+    "frequency_response_Hz": "40-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0278",
+    "model": "Sennheiser U87",
+    "brand": "Sennheiser",
+    "type": "Boundary",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 153,
+    "self_noise_dB": 8.5,
+    "applications": [
+      "Broadcast",
+      "Podcast",
+      "Field"
+    ],
+    "frequency_response_Hz": "60-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0279",
+    "model": "Rode M50X",
+    "brand": "Rode",
+    "type": "Ribbon",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 137,
+    "self_noise_dB": 7.8,
+    "applications": [
+      "Bass",
+      "Vocals",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "40-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0280",
+    "model": "Blue KSM44",
+    "brand": "Blue",
+    "type": "Lavalier",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 130,
+    "self_noise_dB": 7.0,
+    "applications": [
+      "Room",
+      "Vocals",
+      "Bass"
+    ],
+    "frequency_response_Hz": "30-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0281",
+    "model": "Rode M50X-23",
+    "brand": "Rode",
+    "type": "Condenser",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 157,
+    "self_noise_dB": 9.2,
+    "applications": [
+      "Vocals",
+      "Podcast",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "40-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0282",
+    "model": "Shanling DPA 4017-64",
+    "brand": "Shanling",
+    "type": "Lavalier",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 131,
+    "self_noise_dB": 10.9,
+    "applications": [
+      "Bass",
+      "Choir",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "20-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0283",
+    "model": "Coles KSM44",
+    "brand": "Coles",
+    "type": "Lavalier",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 128,
+    "self_noise_dB": 9.4,
+    "applications": [
+      "Vocals",
+      "Dialogue",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "30-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0284",
+    "model": "Blue SM57-47",
+    "brand": "Blue",
+    "type": "Dynamic",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 145,
+    "self_noise_dB": null,
+    "applications": [
+      "Podcast",
+      "Orchestra",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "60-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0285",
+    "model": "Neumann 4011-82",
+    "brand": "Neumann",
+    "type": "Boundary",
+    "pattern": "Multi",
+    "max_SPL_dB": 140,
+    "self_noise_dB": 7.7,
+    "applications": [
+      "Podcast",
+      "Bass",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "60-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0286",
+    "model": "Audio-Technica 4011-17",
+    "brand": "Audio-Technica",
+    "type": "Condenser",
+    "pattern": "Multi",
+    "max_SPL_dB": 120,
+    "self_noise_dB": 15.5,
+    "applications": [
+      "Choir",
+      "Vocals",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "60-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0287",
+    "model": "Blue NT5",
+    "brand": "Blue",
+    "type": "Lavalier",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 151,
+    "self_noise_dB": 7.4,
+    "applications": [
+      "Podcast",
+      "Dialogue",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "20-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0288",
+    "model": "Shanling 4011-94",
+    "brand": "Shanling",
+    "type": "Ribbon",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 120,
+    "self_noise_dB": 8.7,
+    "applications": [
+      "Podcast",
+      "Orchestra",
+      "Drums"
+    ],
+    "frequency_response_Hz": "30-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0289",
+    "model": "Shure C414 XLII",
+    "brand": "Shure",
+    "type": "Boundary",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 146,
+    "self_noise_dB": 10.9,
+    "applications": [
+      "Room",
+      "Broadcast",
+      "Drums"
+    ],
+    "frequency_response_Hz": "50-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0290",
+    "model": "Blue M160",
+    "brand": "Blue",
+    "type": "Shotgun",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 130,
+    "self_noise_dB": 10.5,
+    "applications": [
+      "Vocals",
+      "Podcast",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "20-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0291",
+    "model": "Sennheiser TLM103",
+    "brand": "Sennheiser",
+    "type": "Boundary",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 124,
+    "self_noise_dB": 11.5,
+    "applications": [
+      "Choir",
+      "Dialogue",
+      "Field"
+    ],
+    "frequency_response_Hz": "20-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0292",
+    "model": "Beyerdynamic NTG3",
+    "brand": "Beyerdynamic",
+    "type": "Boundary",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 123,
+    "self_noise_dB": 7.0,
+    "applications": [
+      "Broadcast",
+      "Room",
+      "Choir"
+    ],
+    "frequency_response_Hz": "30-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0293",
+    "model": "Electro-Voice U87",
+    "brand": "Electro-Voice",
+    "type": "Dynamic",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 145,
+    "self_noise_dB": null,
+    "applications": [
+      "Field",
+      "Guitar",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "60-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0294",
+    "model": "Shure C414 XLII",
+    "brand": "Shure",
+    "type": "Shotgun",
+    "pattern": "Multi",
+    "max_SPL_dB": 158,
+    "self_noise_dB": 10.8,
+    "applications": [
+      "Bass",
+      "Guitar",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "20-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0295",
+    "model": "Telefunken M160",
+    "brand": "Telefunken",
+    "type": "Boundary",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 151,
+    "self_noise_dB": 14.9,
+    "applications": [
+      "Dialogue",
+      "Room",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "40-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0296",
+    "model": "Rode M50X",
+    "brand": "Rode",
+    "type": "Condenser",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 122,
+    "self_noise_dB": 8.6,
+    "applications": [
+      "Bass",
+      "Orchestra",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "50-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0297",
+    "model": "Blue 4011-11",
+    "brand": "Blue",
+    "type": "Shotgun",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 154,
+    "self_noise_dB": 10.1,
+    "applications": [
+      "Room",
+      "Vocals",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "60-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0298",
+    "model": "Coles NTG3-61",
+    "brand": "Coles",
+    "type": "Lavalier",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 150,
+    "self_noise_dB": 9.0,
+    "applications": [
+      "Room",
+      "Choir",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "50-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0299",
+    "model": "Sennheiser DPA 4017",
+    "brand": "Sennheiser",
+    "type": "Condenser",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 132,
+    "self_noise_dB": 7.3,
+    "applications": [
+      "Dialogue",
+      "Broadcast",
+      "Bass"
+    ],
+    "frequency_response_Hz": "50-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0300",
+    "model": "Shanling NT5",
+    "brand": "Shanling",
+    "type": "Shotgun",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 125,
+    "self_noise_dB": 9.9,
+    "applications": [
+      "Podcast",
+      "Orchestra",
+      "Room"
+    ],
+    "frequency_response_Hz": "50-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0301",
+    "model": "Shanling SM58-80",
+    "brand": "Shanling",
+    "type": "Lavalier",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 146,
+    "self_noise_dB": 7.1,
+    "applications": [
+      "Choir",
+      "Dialogue",
+      "Drums"
+    ],
+    "frequency_response_Hz": "30-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0302",
+    "model": "DPA DPA 4017",
+    "brand": "DPA",
+    "type": "Ribbon",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 142,
+    "self_noise_dB": 14.8,
+    "applications": [
+      "Dialogue",
+      "Field",
+      "Choir"
+    ],
+    "frequency_response_Hz": "40-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0303",
+    "model": "Neumann U87",
+    "brand": "Neumann",
+    "type": "Lavalier",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 145,
+    "self_noise_dB": 6.4,
+    "applications": [
+      "Vocals",
+      "Field",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "40-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0304",
+    "model": "Shure TLM103-39",
+    "brand": "Shure",
+    "type": "Ribbon",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 151,
+    "self_noise_dB": 14.6,
+    "applications": [
+      "Guitar",
+      "Orchestra",
+      "Field"
+    ],
+    "frequency_response_Hz": "20-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0305",
+    "model": "Audio-Technica 4011",
+    "brand": "Audio-Technica",
+    "type": "Shotgun",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 132,
+    "self_noise_dB": 10.4,
+    "applications": [
+      "Room",
+      "Podcast",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "50-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0306",
+    "model": "Sennheiser U87-52",
+    "brand": "Sennheiser",
+    "type": "Condenser",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 156,
+    "self_noise_dB": 6.3,
+    "applications": [
+      "Vocals",
+      "Bass",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "30-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0307",
+    "model": "Shure M50X",
+    "brand": "Shure",
+    "type": "Condenser",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 143,
+    "self_noise_dB": 14.2,
+    "applications": [
+      "Dialogue",
+      "Drums",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "60-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0308",
+    "model": "Rode KSM44",
+    "brand": "Rode",
+    "type": "Condenser",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 157,
+    "self_noise_dB": 11.5,
+    "applications": [
+      "Orchestra",
+      "Drums",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "40-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0309",
+    "model": "Beyerdynamic SM58",
+    "brand": "Beyerdynamic",
+    "type": "Lavalier",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 134,
+    "self_noise_dB": 12.5,
+    "applications": [
+      "Dialogue",
+      "Broadcast",
+      "Room"
+    ],
+    "frequency_response_Hz": "30-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0310",
+    "model": "Shanling DPA 4017-88",
+    "brand": "Shanling",
+    "type": "Dynamic",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 128,
+    "self_noise_dB": null,
+    "applications": [
+      "Vocals",
+      "Bass",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "30-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0311",
+    "model": "Sony 4011-55",
+    "brand": "Sony",
+    "type": "Boundary",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 149,
+    "self_noise_dB": 8.5,
+    "applications": [
+      "Dialogue",
+      "Room",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "50-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0312",
+    "model": "Shure NT1-48",
+    "brand": "Shure",
+    "type": "Lavalier",
+    "pattern": "Multi",
+    "max_SPL_dB": 158,
+    "self_noise_dB": 12.1,
+    "applications": [
+      "Field",
+      "Drums",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "40-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0313",
+    "model": "Electro-Voice TLM103-34",
+    "brand": "Electro-Voice",
+    "type": "Shotgun",
+    "pattern": "Multi",
+    "max_SPL_dB": 139,
+    "self_noise_dB": 7.9,
+    "applications": [
+      "Vocals",
+      "Choir",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "60-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0314",
+    "model": "Electro-Voice e935-84",
+    "brand": "Electro-Voice",
+    "type": "Boundary",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 136,
+    "self_noise_dB": 15.1,
+    "applications": [
+      "Vocals",
+      "Choir",
+      "Bass"
+    ],
+    "frequency_response_Hz": "50-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0315",
+    "model": "Sony 4011",
+    "brand": "Sony",
+    "type": "Lavalier",
+    "pattern": "Multi",
+    "max_SPL_dB": 150,
+    "self_noise_dB": 15.1,
+    "applications": [
+      "Orchestra",
+      "Guitar",
+      "Room"
+    ],
+    "frequency_response_Hz": "40-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0316",
+    "model": "Audio-Technica SM57",
+    "brand": "Audio-Technica",
+    "type": "Shotgun",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 155,
+    "self_noise_dB": 13.6,
+    "applications": [
+      "Dialogue",
+      "Drums",
+      "Bass"
+    ],
+    "frequency_response_Hz": "30-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0317",
+    "model": "AKG 4011-54",
+    "brand": "AKG",
+    "type": "Ribbon",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 136,
+    "self_noise_dB": 11.9,
+    "applications": [
+      "Field",
+      "Vocals",
+      "Drums"
+    ],
+    "frequency_response_Hz": "50-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0318",
+    "model": "AKG NT1",
+    "brand": "AKG",
+    "type": "Shotgun",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 153,
+    "self_noise_dB": 9.0,
+    "applications": [
+      "Guitar",
+      "Bass",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "20-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0319",
+    "model": "DPA M50X-59",
+    "brand": "DPA",
+    "type": "Condenser",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 131,
+    "self_noise_dB": 13.8,
+    "applications": [
+      "Dialogue",
+      "Guitar",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "50-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0320",
+    "model": "Shure KSM44",
+    "brand": "Shure",
+    "type": "Condenser",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 130,
+    "self_noise_dB": 10.9,
+    "applications": [
+      "Choir",
+      "Broadcast",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "20-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0321",
+    "model": "Beyerdynamic KSM44",
+    "brand": "Beyerdynamic",
+    "type": "Dynamic",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 132,
+    "self_noise_dB": null,
+    "applications": [
+      "Podcast",
+      "Room",
+      "Bass"
+    ],
+    "frequency_response_Hz": "40-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0322",
+    "model": "Electro-Voice SM58-32",
+    "brand": "Electro-Voice",
+    "type": "Condenser",
+    "pattern": "Multi",
+    "max_SPL_dB": 142,
+    "self_noise_dB": 9.1,
+    "applications": [
+      "Room",
+      "Choir",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "20-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0323",
+    "model": "Sennheiser M160",
+    "brand": "Sennheiser",
+    "type": "Ribbon",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 153,
+    "self_noise_dB": 12.0,
+    "applications": [
+      "Dialogue",
+      "Guitar",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "40-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0324",
+    "model": "Rode DPA 4017",
+    "brand": "Rode",
+    "type": "Boundary",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 134,
+    "self_noise_dB": 8.2,
+    "applications": [
+      "Vocals",
+      "Choir",
+      "Room"
+    ],
+    "frequency_response_Hz": "30-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0325",
+    "model": "Sennheiser TLM103-5",
+    "brand": "Sennheiser",
+    "type": "Boundary",
+    "pattern": "Multi",
+    "max_SPL_dB": 136,
+    "self_noise_dB": 13.7,
+    "applications": [
+      "Choir",
+      "Vocals",
+      "Drums"
+    ],
+    "frequency_response_Hz": "60-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0326",
+    "model": "Shure 4011",
+    "brand": "Shure",
+    "type": "Boundary",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 127,
+    "self_noise_dB": 11.5,
+    "applications": [
+      "Bass",
+      "Vocals",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "50-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0327",
+    "model": "Electro-Voice SM57-35",
+    "brand": "Electro-Voice",
+    "type": "Lavalier",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 128,
+    "self_noise_dB": 10.2,
+    "applications": [
+      "Choir",
+      "Drums",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "20-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0328",
+    "model": "Blue SM57",
+    "brand": "Blue",
+    "type": "Lavalier",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 136,
+    "self_noise_dB": 14.3,
+    "applications": [
+      "Broadcast",
+      "Orchestra",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "30-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0329",
+    "model": "Coles KSM44-89",
+    "brand": "Coles",
+    "type": "Boundary",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 135,
+    "self_noise_dB": 6.0,
+    "applications": [
+      "Choir",
+      "Field",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "20-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0330",
+    "model": "Blue NT1",
+    "brand": "Blue",
+    "type": "Shotgun",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 136,
+    "self_noise_dB": 12.4,
+    "applications": [
+      "Orchestra",
+      "Field",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "50-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0331",
+    "model": "Shanling e935-38",
+    "brand": "Shanling",
+    "type": "Ribbon",
+    "pattern": "Multi",
+    "max_SPL_dB": 140,
+    "self_noise_dB": 10.3,
+    "applications": [
+      "Vocals",
+      "Dialogue",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "20-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0332",
+    "model": "Rode TLM103-80",
+    "brand": "Rode",
+    "type": "Ribbon",
+    "pattern": "Multi",
+    "max_SPL_dB": 125,
+    "self_noise_dB": 9.7,
+    "applications": [
+      "Drums",
+      "Broadcast",
+      "Choir"
+    ],
+    "frequency_response_Hz": "40-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0333",
+    "model": "Audio-Technica M160",
+    "brand": "Audio-Technica",
+    "type": "Boundary",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 130,
+    "self_noise_dB": 7.1,
+    "applications": [
+      "Drums",
+      "Broadcast",
+      "Field"
+    ],
+    "frequency_response_Hz": "20-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0334",
+    "model": "Neumann NT5",
+    "brand": "Neumann",
+    "type": "Ribbon",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 121,
+    "self_noise_dB": 14.6,
+    "applications": [
+      "Field",
+      "Drums",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "30-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0335",
+    "model": "Shure SM57",
+    "brand": "Shure",
+    "type": "Ribbon",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 153,
+    "self_noise_dB": 13.7,
+    "applications": [
+      "Bass",
+      "Podcast",
+      "Room"
+    ],
+    "frequency_response_Hz": "60-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0336",
+    "model": "Beyerdynamic NTG3-62",
+    "brand": "Beyerdynamic",
+    "type": "Ribbon",
+    "pattern": "Multi",
+    "max_SPL_dB": 144,
+    "self_noise_dB": 7.5,
+    "applications": [
+      "Vocals",
+      "Dialogue",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "60-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0337",
+    "model": "Shanling KSM44-10",
+    "brand": "Shanling",
+    "type": "Boundary",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 135,
+    "self_noise_dB": 9.3,
+    "applications": [
+      "Room",
+      "Bass",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "40-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0338",
+    "model": "Beyerdynamic M160",
+    "brand": "Beyerdynamic",
+    "type": "Boundary",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 156,
+    "self_noise_dB": 10.5,
+    "applications": [
+      "Podcast",
+      "Drums",
+      "Field"
+    ],
+    "frequency_response_Hz": "50-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0339",
+    "model": "Sennheiser C414 XLII",
+    "brand": "Sennheiser",
+    "type": "Lavalier",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 120,
+    "self_noise_dB": 14.3,
+    "applications": [
+      "Dialogue",
+      "Orchestra",
+      "Room"
+    ],
+    "frequency_response_Hz": "60-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0340",
+    "model": "Electro-Voice NTG3",
+    "brand": "Electro-Voice",
+    "type": "Ribbon",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 123,
+    "self_noise_dB": 14.2,
+    "applications": [
+      "Room",
+      "Choir",
+      "Field"
+    ],
+    "frequency_response_Hz": "50-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0341",
+    "model": "Sony KSM44",
+    "brand": "Sony",
+    "type": "Shotgun",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 120,
+    "self_noise_dB": 9.4,
+    "applications": [
+      "Room",
+      "Podcast",
+      "Drums"
+    ],
+    "frequency_response_Hz": "40-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0342",
+    "model": "Neumann KSM44",
+    "brand": "Neumann",
+    "type": "Shotgun",
+    "pattern": "Multi",
+    "max_SPL_dB": 146,
+    "self_noise_dB": 7.1,
+    "applications": [
+      "Bass",
+      "Drums",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "60-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0343",
+    "model": "Telefunken M160-92",
+    "brand": "Telefunken",
+    "type": "Ribbon",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 146,
+    "self_noise_dB": 6.5,
+    "applications": [
+      "Field",
+      "Dialogue",
+      "Room"
+    ],
+    "frequency_response_Hz": "60-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0344",
+    "model": "Telefunken SM58",
+    "brand": "Telefunken",
+    "type": "Dynamic",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 147,
+    "self_noise_dB": null,
+    "applications": [
+      "Room",
+      "Guitar",
+      "Choir"
+    ],
+    "frequency_response_Hz": "60-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0345",
+    "model": "Sennheiser C414 XLII-78",
+    "brand": "Sennheiser",
+    "type": "Ribbon",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 144,
+    "self_noise_dB": 10.2,
+    "applications": [
+      "Orchestra",
+      "Broadcast",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "60-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0346",
+    "model": "Telefunken DPA 4017",
+    "brand": "Telefunken",
+    "type": "Boundary",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 152,
+    "self_noise_dB": 9.0,
+    "applications": [
+      "Room",
+      "Bass",
+      "Choir"
+    ],
+    "frequency_response_Hz": "60-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0347",
+    "model": "DPA 4011",
+    "brand": "DPA",
+    "type": "Ribbon",
+    "pattern": "Multi",
+    "max_SPL_dB": 128,
+    "self_noise_dB": 15.8,
+    "applications": [
+      "Room",
+      "Podcast",
+      "Drums"
+    ],
+    "frequency_response_Hz": "30-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0348",
+    "model": "Coles KSM44",
+    "brand": "Coles",
+    "type": "Shotgun",
+    "pattern": "Multi",
+    "max_SPL_dB": 146,
+    "self_noise_dB": 12.7,
+    "applications": [
+      "Broadcast",
+      "Vocals",
+      "Room"
+    ],
+    "frequency_response_Hz": "60-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0349",
+    "model": "Shure C414 XLII",
+    "brand": "Shure",
+    "type": "Shotgun",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 132,
+    "self_noise_dB": 8.7,
+    "applications": [
+      "Dialogue",
+      "Orchestra",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "30-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0350",
+    "model": "Sony DPA 4017",
+    "brand": "Sony",
+    "type": "Lavalier",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 142,
+    "self_noise_dB": 14.1,
+    "applications": [
+      "Dialogue",
+      "Room",
+      "Bass"
+    ],
+    "frequency_response_Hz": "20-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0351",
+    "model": "AKG NT1-90",
+    "brand": "AKG",
+    "type": "Ribbon",
+    "pattern": "Multi",
+    "max_SPL_dB": 123,
+    "self_noise_dB": 15.3,
+    "applications": [
+      "Dialogue",
+      "Podcast",
+      "Room"
+    ],
+    "frequency_response_Hz": "50-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0352",
+    "model": "Shure 4011",
+    "brand": "Shure",
+    "type": "Lavalier",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 134,
+    "self_noise_dB": 15.1,
+    "applications": [
+      "Room",
+      "Choir",
+      "Bass"
+    ],
+    "frequency_response_Hz": "40-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0353",
+    "model": "Audio-Technica KSM44",
+    "brand": "Audio-Technica",
+    "type": "Shotgun",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 131,
+    "self_noise_dB": 15.6,
+    "applications": [
+      "Broadcast",
+      "Vocals",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "60-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0354",
+    "model": "Coles U87",
+    "brand": "Coles",
+    "type": "Lavalier",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 120,
+    "self_noise_dB": 9.3,
+    "applications": [
+      "Guitar",
+      "Podcast",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "30-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0355",
+    "model": "Telefunken DPA 4017",
+    "brand": "Telefunken",
+    "type": "Ribbon",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 140,
+    "self_noise_dB": 11.3,
+    "applications": [
+      "Drums",
+      "Room",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "30-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0356",
+    "model": "Coles NT1",
+    "brand": "Coles",
+    "type": "Ribbon",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 133,
+    "self_noise_dB": 12.6,
+    "applications": [
+      "Orchestra",
+      "Bass",
+      "Room"
+    ],
+    "frequency_response_Hz": "40-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0357",
+    "model": "Coles M160-84",
+    "brand": "Coles",
+    "type": "Dynamic",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 142,
+    "self_noise_dB": null,
+    "applications": [
+      "Dialogue",
+      "Choir",
+      "Bass"
+    ],
+    "frequency_response_Hz": "50-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0358",
+    "model": "Electro-Voice M50X",
+    "brand": "Electro-Voice",
+    "type": "Dynamic",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 136,
+    "self_noise_dB": null,
+    "applications": [
+      "Vocals",
+      "Room",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "60-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0359",
+    "model": "Telefunken SM58",
+    "brand": "Telefunken",
+    "type": "Shotgun",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 140,
+    "self_noise_dB": 11.1,
+    "applications": [
+      "Room",
+      "Dialogue",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "20-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0360",
+    "model": "AKG NTG3-28",
+    "brand": "AKG",
+    "type": "Shotgun",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 126,
+    "self_noise_dB": 8.1,
+    "applications": [
+      "Dialogue",
+      "Guitar",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "50-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0361",
+    "model": "Sony TLM103",
+    "brand": "Sony",
+    "type": "Dynamic",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 131,
+    "self_noise_dB": null,
+    "applications": [
+      "Drums",
+      "Choir",
+      "Bass"
+    ],
+    "frequency_response_Hz": "40-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0362",
+    "model": "Beyerdynamic C414 XLII",
+    "brand": "Beyerdynamic",
+    "type": "Boundary",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 140,
+    "self_noise_dB": 6.2,
+    "applications": [
+      "Vocals",
+      "Choir",
+      "Drums"
+    ],
+    "frequency_response_Hz": "20-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0363",
+    "model": "Sony M160",
+    "brand": "Sony",
+    "type": "Lavalier",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 138,
+    "self_noise_dB": 13.9,
+    "applications": [
+      "Drums",
+      "Orchestra",
+      "Field"
+    ],
+    "frequency_response_Hz": "40-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0364",
+    "model": "Beyerdynamic M160-61",
+    "brand": "Beyerdynamic",
+    "type": "Condenser",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 134,
+    "self_noise_dB": 7.4,
+    "applications": [
+      "Orchestra",
+      "Guitar",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "50-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0365",
+    "model": "Shure NT1-19",
+    "brand": "Shure",
+    "type": "Dynamic",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 120,
+    "self_noise_dB": null,
+    "applications": [
+      "Broadcast",
+      "Room",
+      "Choir"
+    ],
+    "frequency_response_Hz": "60-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0366",
+    "model": "Audio-Technica e845-93",
+    "brand": "Audio-Technica",
+    "type": "Ribbon",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 146,
+    "self_noise_dB": 15.1,
+    "applications": [
+      "Guitar",
+      "Dialogue",
+      "Bass"
+    ],
+    "frequency_response_Hz": "60-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0367",
+    "model": "AKG SM57",
+    "brand": "AKG",
+    "type": "Lavalier",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 155,
+    "self_noise_dB": 10.6,
+    "applications": [
+      "Orchestra",
+      "Drums",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "60-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0368",
+    "model": "AKG 4011",
+    "brand": "AKG",
+    "type": "Ribbon",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 128,
+    "self_noise_dB": 12.7,
+    "applications": [
+      "Orchestra",
+      "Choir",
+      "Drums"
+    ],
+    "frequency_response_Hz": "30-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0369",
+    "model": "Rode KSM44",
+    "brand": "Rode",
+    "type": "Lavalier",
+    "pattern": "Multi",
+    "max_SPL_dB": 139,
+    "self_noise_dB": 12.9,
+    "applications": [
+      "Choir",
+      "Podcast",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "30-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0370",
+    "model": "Neumann SM58",
+    "brand": "Neumann",
+    "type": "Condenser",
+    "pattern": "Multi",
+    "max_SPL_dB": 147,
+    "self_noise_dB": 8.8,
+    "applications": [
+      "Dialogue",
+      "Podcast",
+      "Field"
+    ],
+    "frequency_response_Hz": "40-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0371",
+    "model": "Telefunken TLM103-63",
+    "brand": "Telefunken",
+    "type": "Lavalier",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 131,
+    "self_noise_dB": 12.5,
+    "applications": [
+      "Guitar",
+      "Room",
+      "Bass"
+    ],
+    "frequency_response_Hz": "20-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0372",
+    "model": "Sony M50X-94",
+    "brand": "Sony",
+    "type": "Dynamic",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 152,
+    "self_noise_dB": null,
+    "applications": [
+      "Choir",
+      "Broadcast",
+      "Bass"
+    ],
+    "frequency_response_Hz": "20-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0373",
+    "model": "Coles U87",
+    "brand": "Coles",
+    "type": "Lavalier",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 129,
+    "self_noise_dB": 9.7,
+    "applications": [
+      "Orchestra",
+      "Guitar",
+      "Field"
+    ],
+    "frequency_response_Hz": "30-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0374",
+    "model": "Beyerdynamic TLM103",
+    "brand": "Beyerdynamic",
+    "type": "Shotgun",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 159,
+    "self_noise_dB": 12.8,
+    "applications": [
+      "Field",
+      "Guitar",
+      "Choir"
+    ],
+    "frequency_response_Hz": "60-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0375",
+    "model": "Sony 4011",
+    "brand": "Sony",
+    "type": "Ribbon",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 134,
+    "self_noise_dB": 13.6,
+    "applications": [
+      "Orchestra",
+      "Podcast",
+      "Bass"
+    ],
+    "frequency_response_Hz": "30-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0376",
+    "model": "Electro-Voice e845",
+    "brand": "Electro-Voice",
+    "type": "Ribbon",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 150,
+    "self_noise_dB": 15.2,
+    "applications": [
+      "Dialogue",
+      "Podcast",
+      "Drums"
+    ],
+    "frequency_response_Hz": "20-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0377",
+    "model": "Shanling 4011",
+    "brand": "Shanling",
+    "type": "Lavalier",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 131,
+    "self_noise_dB": 9.8,
+    "applications": [
+      "Choir",
+      "Drums",
+      "Room"
+    ],
+    "frequency_response_Hz": "50-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0378",
+    "model": "Beyerdynamic M50X",
+    "brand": "Beyerdynamic",
+    "type": "Boundary",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 142,
+    "self_noise_dB": 10.9,
+    "applications": [
+      "Vocals",
+      "Room",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "50-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0379",
+    "model": "Neumann e845",
+    "brand": "Neumann",
+    "type": "Shotgun",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 133,
+    "self_noise_dB": 7.5,
+    "applications": [
+      "Choir",
+      "Drums",
+      "Bass"
+    ],
+    "frequency_response_Hz": "30-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0380",
+    "model": "Blue TLM103-62",
+    "brand": "Blue",
+    "type": "Shotgun",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 150,
+    "self_noise_dB": 8.1,
+    "applications": [
+      "Vocals",
+      "Bass",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "30-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0381",
+    "model": "DPA NT5",
+    "brand": "DPA",
+    "type": "Shotgun",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 122,
+    "self_noise_dB": 14.9,
+    "applications": [
+      "Guitar",
+      "Orchestra",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "30-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0382",
+    "model": "DPA NT5-93",
+    "brand": "DPA",
+    "type": "Shotgun",
+    "pattern": "Multi",
+    "max_SPL_dB": 138,
+    "self_noise_dB": 15.5,
+    "applications": [
+      "Choir",
+      "Field",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "30-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0383",
+    "model": "AKG M160",
+    "brand": "AKG",
+    "type": "Condenser",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 131,
+    "self_noise_dB": 12.2,
+    "applications": [
+      "Guitar",
+      "Podcast",
+      "Field"
+    ],
+    "frequency_response_Hz": "60-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0384",
+    "model": "AKG C414 XLII",
+    "brand": "AKG",
+    "type": "Dynamic",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 132,
+    "self_noise_dB": null,
+    "applications": [
+      "Dialogue",
+      "Broadcast",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "60-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0385",
+    "model": "Neumann KSM44-77",
+    "brand": "Neumann",
+    "type": "Dynamic",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 152,
+    "self_noise_dB": null,
+    "applications": [
+      "Field",
+      "Guitar",
+      "Room"
+    ],
+    "frequency_response_Hz": "20-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0386",
+    "model": "Blue NTG3-67",
+    "brand": "Blue",
+    "type": "Boundary",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 122,
+    "self_noise_dB": 13.0,
+    "applications": [
+      "Field",
+      "Broadcast",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "50-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0387",
+    "model": "Beyerdynamic e935",
+    "brand": "Beyerdynamic",
+    "type": "Condenser",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 138,
+    "self_noise_dB": 12.0,
+    "applications": [
+      "Orchestra",
+      "Bass",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "60-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0388",
+    "model": "DPA NT1",
+    "brand": "DPA",
+    "type": "Dynamic",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 133,
+    "self_noise_dB": null,
+    "applications": [
+      "Podcast",
+      "Drums",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "40-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0389",
+    "model": "Electro-Voice NT5",
+    "brand": "Electro-Voice",
+    "type": "Lavalier",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 156,
+    "self_noise_dB": 9.7,
+    "applications": [
+      "Bass",
+      "Broadcast",
+      "Room"
+    ],
+    "frequency_response_Hz": "40-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0390",
+    "model": "Neumann TLM103",
+    "brand": "Neumann",
+    "type": "Boundary",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 139,
+    "self_noise_dB": 11.8,
+    "applications": [
+      "Dialogue",
+      "Drums",
+      "Bass"
+    ],
+    "frequency_response_Hz": "50-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0391",
+    "model": "Blue 4011-13",
+    "brand": "Blue",
+    "type": "Condenser",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 145,
+    "self_noise_dB": 13.9,
+    "applications": [
+      "Dialogue",
+      "Vocals",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "60-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0392",
+    "model": "Electro-Voice SM58-19",
+    "brand": "Electro-Voice",
+    "type": "Boundary",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 147,
+    "self_noise_dB": 6.9,
+    "applications": [
+      "Podcast",
+      "Drums",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "40-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0393",
+    "model": "Beyerdynamic NT5-37",
+    "brand": "Beyerdynamic",
+    "type": "Shotgun",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 123,
+    "self_noise_dB": 15.5,
+    "applications": [
+      "Field",
+      "Vocals",
+      "Bass"
+    ],
+    "frequency_response_Hz": "30-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0394",
+    "model": "AKG SM58-66",
+    "brand": "AKG",
+    "type": "Lavalier",
+    "pattern": "Multi",
+    "max_SPL_dB": 134,
+    "self_noise_dB": 12.2,
+    "applications": [
+      "Bass",
+      "Vocals",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "20-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0395",
+    "model": "Audio-Technica DPA 4017",
+    "brand": "Audio-Technica",
+    "type": "Shotgun",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 145,
+    "self_noise_dB": 11.9,
+    "applications": [
+      "Drums",
+      "Dialogue",
+      "Room"
+    ],
+    "frequency_response_Hz": "60-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0396",
+    "model": "Sony M160",
+    "brand": "Sony",
+    "type": "Lavalier",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 142,
+    "self_noise_dB": 15.6,
+    "applications": [
+      "Choir",
+      "Bass",
+      "Field"
+    ],
+    "frequency_response_Hz": "40-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0397",
+    "model": "DPA SM58",
+    "brand": "DPA",
+    "type": "Boundary",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 126,
+    "self_noise_dB": 11.6,
+    "applications": [
+      "Podcast",
+      "Drums",
+      "Room"
+    ],
+    "frequency_response_Hz": "60-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0398",
+    "model": "Coles M160-33",
+    "brand": "Coles",
+    "type": "Shotgun",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 144,
+    "self_noise_dB": 11.6,
+    "applications": [
+      "Field",
+      "Dialogue",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "30-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0399",
+    "model": "Sennheiser U87",
+    "brand": "Sennheiser",
+    "type": "Shotgun",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 134,
+    "self_noise_dB": 14.0,
+    "applications": [
+      "Room",
+      "Dialogue",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "50-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0400",
+    "model": "AKG U87",
+    "brand": "AKG",
+    "type": "Shotgun",
+    "pattern": "Multi",
+    "max_SPL_dB": 141,
+    "self_noise_dB": 6.8,
+    "applications": [
+      "Podcast",
+      "Dialogue",
+      "Bass"
+    ],
+    "frequency_response_Hz": "30-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0401",
+    "model": "Neumann 4011-25",
+    "brand": "Neumann",
+    "type": "Boundary",
+    "pattern": "Multi",
+    "max_SPL_dB": 132,
+    "self_noise_dB": 8.3,
+    "applications": [
+      "Bass",
+      "Dialogue",
+      "Choir"
+    ],
+    "frequency_response_Hz": "30-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0402",
+    "model": "Shanling NT5",
+    "brand": "Shanling",
+    "type": "Dynamic",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 125,
+    "self_noise_dB": null,
+    "applications": [
+      "Vocals",
+      "Room",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "50-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0403",
+    "model": "Rode NT5",
+    "brand": "Rode",
+    "type": "Lavalier",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 151,
+    "self_noise_dB": 7.8,
+    "applications": [
+      "Broadcast",
+      "Bass",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "60-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0404",
+    "model": "Coles DPA 4017",
+    "brand": "Coles",
+    "type": "Lavalier",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 152,
+    "self_noise_dB": 9.5,
+    "applications": [
+      "Drums",
+      "Room",
+      "Field"
+    ],
+    "frequency_response_Hz": "30-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0405",
+    "model": "Sony SM58",
+    "brand": "Sony",
+    "type": "Condenser",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 157,
+    "self_noise_dB": 7.0,
+    "applications": [
+      "Orchestra",
+      "Guitar",
+      "Room"
+    ],
+    "frequency_response_Hz": "40-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0406",
+    "model": "AKG U87",
+    "brand": "AKG",
+    "type": "Lavalier",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 143,
+    "self_noise_dB": 7.8,
+    "applications": [
+      "Broadcast",
+      "Podcast",
+      "Choir"
+    ],
+    "frequency_response_Hz": "50-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0407",
+    "model": "Audio-Technica KSM44",
+    "brand": "Audio-Technica",
+    "type": "Condenser",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 134,
+    "self_noise_dB": 14.1,
+    "applications": [
+      "Room",
+      "Broadcast",
+      "Choir"
+    ],
+    "frequency_response_Hz": "40-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0408",
+    "model": "Neumann DPA 4017-20",
+    "brand": "Neumann",
+    "type": "Boundary",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 131,
+    "self_noise_dB": 10.2,
+    "applications": [
+      "Room",
+      "Podcast",
+      "Field"
+    ],
+    "frequency_response_Hz": "30-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0409",
+    "model": "Audio-Technica NT1-7",
+    "brand": "Audio-Technica",
+    "type": "Boundary",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 130,
+    "self_noise_dB": 6.6,
+    "applications": [
+      "Dialogue",
+      "Drums",
+      "Field"
+    ],
+    "frequency_response_Hz": "40-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0410",
+    "model": "Audio-Technica TLM103",
+    "brand": "Audio-Technica",
+    "type": "Lavalier",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 142,
+    "self_noise_dB": 6.2,
+    "applications": [
+      "Dialogue",
+      "Choir",
+      "Bass"
+    ],
+    "frequency_response_Hz": "20-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0411",
+    "model": "Blue U87",
+    "brand": "Blue",
+    "type": "Shotgun",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 151,
+    "self_noise_dB": 13.7,
+    "applications": [
+      "Broadcast",
+      "Choir",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "50-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0412",
+    "model": "Electro-Voice e935-82",
+    "brand": "Electro-Voice",
+    "type": "Ribbon",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 160,
+    "self_noise_dB": 12.1,
+    "applications": [
+      "Drums",
+      "Guitar",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "50-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0413",
+    "model": "Rode TLM103-91",
+    "brand": "Rode",
+    "type": "Ribbon",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 145,
+    "self_noise_dB": 8.7,
+    "applications": [
+      "Choir",
+      "Room",
+      "Field"
+    ],
+    "frequency_response_Hz": "50-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0414",
+    "model": "Neumann e935-17",
+    "brand": "Neumann",
+    "type": "Shotgun",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 136,
+    "self_noise_dB": 15.4,
+    "applications": [
+      "Guitar",
+      "Broadcast",
+      "Drums"
+    ],
+    "frequency_response_Hz": "20-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0415",
+    "model": "Sennheiser M50X-71",
+    "brand": "Sennheiser",
+    "type": "Dynamic",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 145,
+    "self_noise_dB": null,
+    "applications": [
+      "Drums",
+      "Orchestra",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "60-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0416",
+    "model": "Electro-Voice M50X-40",
+    "brand": "Electro-Voice",
+    "type": "Condenser",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 138,
+    "self_noise_dB": 10.4,
+    "applications": [
+      "Room",
+      "Guitar",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "30-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0417",
+    "model": "Electro-Voice TLM103-42",
+    "brand": "Electro-Voice",
+    "type": "Boundary",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 154,
+    "self_noise_dB": 15.3,
+    "applications": [
+      "Guitar",
+      "Room",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "60-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0418",
+    "model": "Electro-Voice 4011-73",
+    "brand": "Electro-Voice",
+    "type": "Boundary",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 160,
+    "self_noise_dB": 12.4,
+    "applications": [
+      "Field",
+      "Room",
+      "Bass"
+    ],
+    "frequency_response_Hz": "40-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0419",
+    "model": "Telefunken U87",
+    "brand": "Telefunken",
+    "type": "Ribbon",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 139,
+    "self_noise_dB": 6.1,
+    "applications": [
+      "Podcast",
+      "Orchestra",
+      "Field"
+    ],
+    "frequency_response_Hz": "60-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0420",
+    "model": "Sony M50X",
+    "brand": "Sony",
+    "type": "Boundary",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 120,
+    "self_noise_dB": 13.7,
+    "applications": [
+      "Bass",
+      "Vocals",
+      "Room"
+    ],
+    "frequency_response_Hz": "40-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0421",
+    "model": "AKG C414 XLII-56",
+    "brand": "AKG",
+    "type": "Boundary",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 130,
+    "self_noise_dB": 13.1,
+    "applications": [
+      "Bass",
+      "Orchestra",
+      "Drums"
+    ],
+    "frequency_response_Hz": "50-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0422",
+    "model": "Electro-Voice e845",
+    "brand": "Electro-Voice",
+    "type": "Lavalier",
+    "pattern": "Multi",
+    "max_SPL_dB": 137,
+    "self_noise_dB": 8.8,
+    "applications": [
+      "Broadcast",
+      "Bass",
+      "Drums"
+    ],
+    "frequency_response_Hz": "60-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0423",
+    "model": "Neumann U87",
+    "brand": "Neumann",
+    "type": "Boundary",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 148,
+    "self_noise_dB": 8.7,
+    "applications": [
+      "Bass",
+      "Podcast",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "60-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0424",
+    "model": "Shure NT1",
+    "brand": "Shure",
+    "type": "Dynamic",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 137,
+    "self_noise_dB": null,
+    "applications": [
+      "Vocals",
+      "Bass",
+      "Drums"
+    ],
+    "frequency_response_Hz": "30-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0425",
+    "model": "Shure KSM44",
+    "brand": "Shure",
+    "type": "Boundary",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 151,
+    "self_noise_dB": 16.0,
+    "applications": [
+      "Podcast",
+      "Drums",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "50-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0426",
+    "model": "Audio-Technica DPA 4017",
+    "brand": "Audio-Technica",
+    "type": "Lavalier",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 131,
+    "self_noise_dB": 7.9,
+    "applications": [
+      "Vocals",
+      "Drums",
+      "Bass"
+    ],
+    "frequency_response_Hz": "40-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0427",
+    "model": "Blue KSM44",
+    "brand": "Blue",
+    "type": "Dynamic",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 149,
+    "self_noise_dB": null,
+    "applications": [
+      "Dialogue",
+      "Bass",
+      "Field"
+    ],
+    "frequency_response_Hz": "20-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0428",
+    "model": "Electro-Voice U87-21",
+    "brand": "Electro-Voice",
+    "type": "Shotgun",
+    "pattern": "Multi",
+    "max_SPL_dB": 122,
+    "self_noise_dB": 13.4,
+    "applications": [
+      "Drums",
+      "Orchestra",
+      "Field"
+    ],
+    "frequency_response_Hz": "60-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0429",
+    "model": "AKG TLM103-86",
+    "brand": "AKG",
+    "type": "Condenser",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 135,
+    "self_noise_dB": 12.3,
+    "applications": [
+      "Guitar",
+      "Orchestra",
+      "Drums"
+    ],
+    "frequency_response_Hz": "40-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0430",
+    "model": "Blue e845",
+    "brand": "Blue",
+    "type": "Dynamic",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 150,
+    "self_noise_dB": null,
+    "applications": [
+      "Podcast",
+      "Drums",
+      "Bass"
+    ],
+    "frequency_response_Hz": "60-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0431",
+    "model": "Telefunken SM57-44",
+    "brand": "Telefunken",
+    "type": "Shotgun",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 123,
+    "self_noise_dB": 9.6,
+    "applications": [
+      "Drums",
+      "Guitar",
+      "Field"
+    ],
+    "frequency_response_Hz": "30-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0432",
+    "model": "Rode NT1-97",
+    "brand": "Rode",
+    "type": "Ribbon",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 132,
+    "self_noise_dB": 6.2,
+    "applications": [
+      "Guitar",
+      "Orchestra",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "50-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0433",
+    "model": "Sony KSM44",
+    "brand": "Sony",
+    "type": "Lavalier",
+    "pattern": "Multi",
+    "max_SPL_dB": 151,
+    "self_noise_dB": 7.9,
+    "applications": [
+      "Podcast",
+      "Dialogue",
+      "Field"
+    ],
+    "frequency_response_Hz": "30-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0434",
+    "model": "Shanling M160",
+    "brand": "Shanling",
+    "type": "Lavalier",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 124,
+    "self_noise_dB": 11.3,
+    "applications": [
+      "Orchestra",
+      "Room",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "50-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0435",
+    "model": "Shure DPA 4017-49",
+    "brand": "Shure",
+    "type": "Shotgun",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 121,
+    "self_noise_dB": 12.2,
+    "applications": [
+      "Bass",
+      "Podcast",
+      "Drums"
+    ],
+    "frequency_response_Hz": "40-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0436",
+    "model": "AKG NT1-99",
+    "brand": "AKG",
+    "type": "Lavalier",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 159,
+    "self_noise_dB": 8.8,
+    "applications": [
+      "Drums",
+      "Dialogue",
+      "Room"
+    ],
+    "frequency_response_Hz": "50-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0437",
+    "model": "Shure M160-23",
+    "brand": "Shure",
+    "type": "Dynamic",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 126,
+    "self_noise_dB": null,
+    "applications": [
+      "Drums",
+      "Vocals",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "50-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0438",
+    "model": "Coles NT5-33",
+    "brand": "Coles",
+    "type": "Dynamic",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 134,
+    "self_noise_dB": null,
+    "applications": [
+      "Vocals",
+      "Bass",
+      "Field"
+    ],
+    "frequency_response_Hz": "60-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0439",
+    "model": "Telefunken DPA 4017-47",
+    "brand": "Telefunken",
+    "type": "Lavalier",
+    "pattern": "Multi",
+    "max_SPL_dB": 146,
+    "self_noise_dB": 14.2,
+    "applications": [
+      "Orchestra",
+      "Room",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "20-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0440",
+    "model": "Shanling U87",
+    "brand": "Shanling",
+    "type": "Condenser",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 126,
+    "self_noise_dB": 7.0,
+    "applications": [
+      "Broadcast",
+      "Bass",
+      "Choir"
+    ],
+    "frequency_response_Hz": "30-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0441",
+    "model": "DPA NTG3-72",
+    "brand": "DPA",
+    "type": "Shotgun",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 146,
+    "self_noise_dB": 13.5,
+    "applications": [
+      "Dialogue",
+      "Field",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "60-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0442",
+    "model": "Neumann DPA 4017",
+    "brand": "Neumann",
+    "type": "Boundary",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 141,
+    "self_noise_dB": 12.6,
+    "applications": [
+      "Field",
+      "Podcast",
+      "Choir"
+    ],
+    "frequency_response_Hz": "60-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0443",
+    "model": "Shanling TLM103",
+    "brand": "Shanling",
+    "type": "Shotgun",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 140,
+    "self_noise_dB": 12.1,
+    "applications": [
+      "Bass",
+      "Broadcast",
+      "Room"
+    ],
+    "frequency_response_Hz": "60-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0444",
+    "model": "Rode KSM44",
+    "brand": "Rode",
+    "type": "Boundary",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 122,
+    "self_noise_dB": 15.8,
+    "applications": [
+      "Room",
+      "Guitar",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "60-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0445",
+    "model": "Audio-Technica e845",
+    "brand": "Audio-Technica",
+    "type": "Ribbon",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 137,
+    "self_noise_dB": 15.2,
+    "applications": [
+      "Choir",
+      "Dialogue",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "60-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0446",
+    "model": "Shure KSM44",
+    "brand": "Shure",
+    "type": "Condenser",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 143,
+    "self_noise_dB": 14.9,
+    "applications": [
+      "Orchestra",
+      "Dialogue",
+      "Drums"
+    ],
+    "frequency_response_Hz": "30-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0447",
+    "model": "DPA M50X",
+    "brand": "DPA",
+    "type": "Dynamic",
+    "pattern": "Multi",
+    "max_SPL_dB": 140,
+    "self_noise_dB": null,
+    "applications": [
+      "Field",
+      "Choir",
+      "Drums"
+    ],
+    "frequency_response_Hz": "50-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0448",
+    "model": "Shure 4011-49",
+    "brand": "Shure",
+    "type": "Dynamic",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 141,
+    "self_noise_dB": null,
+    "applications": [
+      "Broadcast",
+      "Drums",
+      "Bass"
+    ],
+    "frequency_response_Hz": "40-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0449",
+    "model": "Electro-Voice DPA 4017-7",
+    "brand": "Electro-Voice",
+    "type": "Ribbon",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 122,
+    "self_noise_dB": 9.2,
+    "applications": [
+      "Podcast",
+      "Room",
+      "Bass"
+    ],
+    "frequency_response_Hz": "60-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0450",
+    "model": "Shure NTG3-51",
+    "brand": "Shure",
+    "type": "Boundary",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 156,
+    "self_noise_dB": 11.0,
+    "applications": [
+      "Orchestra",
+      "Broadcast",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "30-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0451",
+    "model": "Rode SM57",
+    "brand": "Rode",
+    "type": "Shotgun",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 155,
+    "self_noise_dB": 10.0,
+    "applications": [
+      "Room",
+      "Broadcast",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "20-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0452",
+    "model": "Telefunken NT1",
+    "brand": "Telefunken",
+    "type": "Boundary",
+    "pattern": "Multi",
+    "max_SPL_dB": 156,
+    "self_noise_dB": 8.0,
+    "applications": [
+      "Bass",
+      "Dialogue",
+      "Drums"
+    ],
+    "frequency_response_Hz": "60-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0453",
+    "model": "Blue C414 XLII",
+    "brand": "Blue",
+    "type": "Lavalier",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 127,
+    "self_noise_dB": 12.7,
+    "applications": [
+      "Podcast",
+      "Bass",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "50-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0454",
+    "model": "DPA NTG3",
+    "brand": "DPA",
+    "type": "Ribbon",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 142,
+    "self_noise_dB": 12.2,
+    "applications": [
+      "Guitar",
+      "Field",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "50-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0455",
+    "model": "AKG NTG3",
+    "brand": "AKG",
+    "type": "Shotgun",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 127,
+    "self_noise_dB": 13.4,
+    "applications": [
+      "Guitar",
+      "Orchestra",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "30-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0456",
+    "model": "Sony DPA 4017",
+    "brand": "Sony",
+    "type": "Boundary",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 121,
+    "self_noise_dB": 9.3,
+    "applications": [
+      "Bass",
+      "Room",
+      "Choir"
+    ],
+    "frequency_response_Hz": "60-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0457",
+    "model": "Coles KSM44-19",
+    "brand": "Coles",
+    "type": "Shotgun",
+    "pattern": "Multi",
+    "max_SPL_dB": 121,
+    "self_noise_dB": 9.8,
+    "applications": [
+      "Orchestra",
+      "Guitar",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "60-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0458",
+    "model": "AKG DPA 4017-35",
+    "brand": "AKG",
+    "type": "Dynamic",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 120,
+    "self_noise_dB": null,
+    "applications": [
+      "Dialogue",
+      "Orchestra",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "20-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0459",
+    "model": "Shure U87-84",
+    "brand": "Shure",
+    "type": "Boundary",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 144,
+    "self_noise_dB": 11.1,
+    "applications": [
+      "Field",
+      "Choir",
+      "Room"
+    ],
+    "frequency_response_Hz": "20-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0460",
+    "model": "Neumann e845",
+    "brand": "Neumann",
+    "type": "Boundary",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 121,
+    "self_noise_dB": 6.4,
+    "applications": [
+      "Podcast",
+      "Field",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "60-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0461",
+    "model": "Shure TLM103-46",
+    "brand": "Shure",
+    "type": "Shotgun",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 135,
+    "self_noise_dB": 16.0,
+    "applications": [
+      "Vocals",
+      "Orchestra",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "60-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0462",
+    "model": "Coles U87",
+    "brand": "Coles",
+    "type": "Ribbon",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 128,
+    "self_noise_dB": 6.9,
+    "applications": [
+      "Dialogue",
+      "Choir",
+      "Bass"
+    ],
+    "frequency_response_Hz": "50-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0463",
+    "model": "AKG NT5",
+    "brand": "AKG",
+    "type": "Ribbon",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 141,
+    "self_noise_dB": 10.5,
+    "applications": [
+      "Dialogue",
+      "Guitar",
+      "Room"
+    ],
+    "frequency_response_Hz": "30-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0464",
+    "model": "Shanling e935",
+    "brand": "Shanling",
+    "type": "Shotgun",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 128,
+    "self_noise_dB": 10.3,
+    "applications": [
+      "Guitar",
+      "Podcast",
+      "Drums"
+    ],
+    "frequency_response_Hz": "30-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0465",
+    "model": "Neumann TLM103-19",
+    "brand": "Neumann",
+    "type": "Shotgun",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 140,
+    "self_noise_dB": 14.8,
+    "applications": [
+      "Orchestra",
+      "Field",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "50-20000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0466",
+    "model": "Blue e845",
+    "brand": "Blue",
+    "type": "Condenser",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 159,
+    "self_noise_dB": 12.2,
+    "applications": [
+      "Choir",
+      "Bass",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "60-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0467",
+    "model": "Electro-Voice SM58",
+    "brand": "Electro-Voice",
+    "type": "Shotgun",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 128,
+    "self_noise_dB": 11.0,
+    "applications": [
+      "Dialogue",
+      "Podcast",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "60-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0468",
+    "model": "Telefunken KSM44",
+    "brand": "Telefunken",
+    "type": "Condenser",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 122,
+    "self_noise_dB": 10.1,
+    "applications": [
+      "Broadcast",
+      "Bass",
+      "Choir"
+    ],
+    "frequency_response_Hz": "20-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0469",
+    "model": "Sennheiser e935-57",
+    "brand": "Sennheiser",
+    "type": "Lavalier",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 140,
+    "self_noise_dB": 14.7,
+    "applications": [
+      "Broadcast",
+      "Vocals",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "30-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0470",
+    "model": "Beyerdynamic NT5-74",
+    "brand": "Beyerdynamic",
+    "type": "Lavalier",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 153,
+    "self_noise_dB": 12.4,
+    "applications": [
+      "Drums",
+      "Field",
+      "Choir"
+    ],
+    "frequency_response_Hz": "20-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0471",
+    "model": "AKG NT1",
+    "brand": "AKG",
+    "type": "Shotgun",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 155,
+    "self_noise_dB": 9.9,
+    "applications": [
+      "Orchestra",
+      "Field",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "20-16000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0472",
+    "model": "Blue M160",
+    "brand": "Blue",
+    "type": "Condenser",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 138,
+    "self_noise_dB": 12.1,
+    "applications": [
+      "Guitar",
+      "Field",
+      "Choir"
+    ],
+    "frequency_response_Hz": "20-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0473",
+    "model": "Sony NT1",
+    "brand": "Sony",
+    "type": "Lavalier",
+    "pattern": "Multi",
+    "max_SPL_dB": 154,
+    "self_noise_dB": 7.4,
+    "applications": [
+      "Field",
+      "Vocals",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "50-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0474",
+    "model": "DPA M50X-26",
+    "brand": "DPA",
+    "type": "Boundary",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 136,
+    "self_noise_dB": 9.2,
+    "applications": [
+      "Drums",
+      "Dialogue",
+      "Field"
+    ],
+    "frequency_response_Hz": "30-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0475",
+    "model": "Sennheiser NT1-94",
+    "brand": "Sennheiser",
+    "type": "Lavalier",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 130,
+    "self_noise_dB": 9.8,
+    "applications": [
+      "Guitar",
+      "Podcast",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "50-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0476",
+    "model": "Shanling e935",
+    "brand": "Shanling",
+    "type": "Shotgun",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 146,
+    "self_noise_dB": 9.1,
+    "applications": [
+      "Dialogue",
+      "Guitar",
+      "Drums"
+    ],
+    "frequency_response_Hz": "50-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0477",
+    "model": "AKG SM58-33",
+    "brand": "AKG",
+    "type": "Dynamic",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 151,
+    "self_noise_dB": null,
+    "applications": [
+      "Vocals",
+      "Choir",
+      "Field"
+    ],
+    "frequency_response_Hz": "50-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0478",
+    "model": "AKG NT5-59",
+    "brand": "AKG",
+    "type": "Boundary",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 125,
+    "self_noise_dB": 12.0,
+    "applications": [
+      "Room",
+      "Orchestra",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "20-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0479",
+    "model": "Shure e935",
+    "brand": "Shure",
+    "type": "Shotgun",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 122,
+    "self_noise_dB": 7.5,
+    "applications": [
+      "Choir",
+      "Orchestra",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "20-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0480",
+    "model": "Shure SM57",
+    "brand": "Shure",
+    "type": "Condenser",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 138,
+    "self_noise_dB": 12.1,
+    "applications": [
+      "Room",
+      "Guitar",
+      "Field"
+    ],
+    "frequency_response_Hz": "60-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0481",
+    "model": "Shure SM57-42",
+    "brand": "Shure",
+    "type": "Ribbon",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 124,
+    "self_noise_dB": 13.6,
+    "applications": [
+      "Orchestra",
+      "Field",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "60-15000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0482",
+    "model": "Sony M160",
+    "brand": "Sony",
+    "type": "Lavalier",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 153,
+    "self_noise_dB": 8.1,
+    "applications": [
+      "Vocals",
+      "Drums",
+      "Room"
+    ],
+    "frequency_response_Hz": "30-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0483",
+    "model": "Telefunken 4011-91",
+    "brand": "Telefunken",
+    "type": "Ribbon",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 158,
+    "self_noise_dB": 14.5,
+    "applications": [
+      "Choir",
+      "Dialogue",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "40-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0484",
+    "model": "DPA NT5",
+    "brand": "DPA",
+    "type": "Shotgun",
+    "pattern": "Multi",
+    "max_SPL_dB": 151,
+    "self_noise_dB": 10.9,
+    "applications": [
+      "Bass",
+      "Orchestra",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "30-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0485",
+    "model": "Sennheiser SM58",
+    "brand": "Sennheiser",
+    "type": "Dynamic",
+    "pattern": "Multi",
+    "max_SPL_dB": 133,
+    "self_noise_dB": null,
+    "applications": [
+      "Broadcast",
+      "Vocals",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "60-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0486",
+    "model": "Coles DPA 4017-2",
+    "brand": "Coles",
+    "type": "Shotgun",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 138,
+    "self_noise_dB": 8.5,
+    "applications": [
+      "Orchestra",
+      "Room",
+      "Choir"
+    ],
+    "frequency_response_Hz": "20-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0487",
+    "model": "Blue SM58",
+    "brand": "Blue",
+    "type": "Ribbon",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 145,
+    "self_noise_dB": 13.2,
+    "applications": [
+      "Guitar",
+      "Bass",
+      "Podcast"
+    ],
+    "frequency_response_Hz": "60-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0488",
+    "model": "Electro-Voice KSM44-5",
+    "brand": "Electro-Voice",
+    "type": "Shotgun",
+    "pattern": "Supercardioid",
+    "max_SPL_dB": 150,
+    "self_noise_dB": 7.6,
+    "applications": [
+      "Podcast",
+      "Field",
+      "Broadcast"
+    ],
+    "frequency_response_Hz": "50-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0489",
+    "model": "Shanling NT1",
+    "brand": "Shanling",
+    "type": "Shotgun",
+    "pattern": "Multi",
+    "max_SPL_dB": 140,
+    "self_noise_dB": 11.6,
+    "applications": [
+      "Choir",
+      "Podcast",
+      "Dialogue"
+    ],
+    "frequency_response_Hz": "20-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0490",
+    "model": "Neumann U87-44",
+    "brand": "Neumann",
+    "type": "Boundary",
+    "pattern": "Multi",
+    "max_SPL_dB": 154,
+    "self_noise_dB": 14.4,
+    "applications": [
+      "Broadcast",
+      "Guitar",
+      "Drums"
+    ],
+    "frequency_response_Hz": "60-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0491",
+    "model": "Sony M160",
+    "brand": "Sony",
+    "type": "Dynamic",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 146,
+    "self_noise_dB": null,
+    "applications": [
+      "Bass",
+      "Podcast",
+      "Field"
+    ],
+    "frequency_response_Hz": "20-20000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0492",
+    "model": "AKG NT1",
+    "brand": "AKG",
+    "type": "Dynamic",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 122,
+    "self_noise_dB": null,
+    "applications": [
+      "Field",
+      "Room",
+      "Vocals"
+    ],
+    "frequency_response_Hz": "30-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0493",
+    "model": "Coles e935",
+    "brand": "Coles",
+    "type": "Boundary",
+    "pattern": "Multi",
+    "max_SPL_dB": 153,
+    "self_noise_dB": 9.1,
+    "applications": [
+      "Drums",
+      "Room",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "40-16000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0494",
+    "model": "Sony SM58",
+    "brand": "Sony",
+    "type": "Shotgun",
+    "pattern": "Figure-8",
+    "max_SPL_dB": 127,
+    "self_noise_dB": 6.0,
+    "applications": [
+      "Drums",
+      "Podcast",
+      "Field"
+    ],
+    "frequency_response_Hz": "20-22000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0495",
+    "model": "Sennheiser NT1-96",
+    "brand": "Sennheiser",
+    "type": "Ribbon",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 156,
+    "self_noise_dB": 13.6,
+    "applications": [
+      "Bass",
+      "Dialogue",
+      "Orchestra"
+    ],
+    "frequency_response_Hz": "30-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0496",
+    "model": "Coles TLM103-86",
+    "brand": "Coles",
+    "type": "Dynamic",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 129,
+    "self_noise_dB": null,
+    "applications": [
+      "Drums",
+      "Vocals",
+      "Room"
+    ],
+    "frequency_response_Hz": "30-18000",
+    "proximity_effect": true,
+    "notes": ""
+  },
+  {
+    "id": "mic_0497",
+    "model": "AKG NT1",
+    "brand": "AKG",
+    "type": "Ribbon",
+    "pattern": "Hypercardioid",
+    "max_SPL_dB": 129,
+    "self_noise_dB": 15.4,
+    "applications": [
+      "Bass",
+      "Guitar",
+      "Drums"
+    ],
+    "frequency_response_Hz": "40-22000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0498",
+    "model": "DPA M50X",
+    "brand": "DPA",
+    "type": "Boundary",
+    "pattern": "Cardioid",
+    "max_SPL_dB": 128,
+    "self_noise_dB": 6.3,
+    "applications": [
+      "Broadcast",
+      "Vocals",
+      "Drums"
+    ],
+    "frequency_response_Hz": "20-15000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0499",
+    "model": "Beyerdynamic e935-76",
+    "brand": "Beyerdynamic",
+    "type": "Shotgun",
+    "pattern": "Multi",
+    "max_SPL_dB": 148,
+    "self_noise_dB": 12.2,
+    "applications": [
+      "Bass",
+      "Room",
+      "Drums"
+    ],
+    "frequency_response_Hz": "40-18000",
+    "proximity_effect": false,
+    "notes": ""
+  },
+  {
+    "id": "mic_0500",
+    "model": "DPA e935",
+    "brand": "DPA",
+    "type": "Shotgun",
+    "pattern": "Omnidirectional",
+    "max_SPL_dB": 126,
+    "self_noise_dB": 10.6,
+    "applications": [
+      "Bass",
+      "Dialogue",
+      "Guitar"
+    ],
+    "frequency_response_Hz": "50-20000",
+    "proximity_effect": false,
+    "notes": ""
+  }
+]

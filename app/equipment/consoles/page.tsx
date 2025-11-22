@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import { useAuth } from '@/lib/auth-context';
 import { EquipmentService, Console } from '@/lib/equipment-service';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -17,37 +18,82 @@ import {
 } from '@/components/ui/select';
 
 export default function ConsolesBrowserPage() {
+  const { user } = useAuth();
   const [consoles, setConsoles] = useState<Console[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedManufacturer, setSelectedManufacturer] = useState('');
   const [selectedType, setSelectedType] = useState('');
   const [manufacturers, setManufacturers] = useState<string[]>([]);
   const [types, setTypes] = useState<string[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    setManufacturers(EquipmentService.getManufacturers('consoles'));
-    setTypes(EquipmentService.getTypes('consoles'));
-    loadConsoles();
+    try {
+      setManufacturers(EquipmentService.getManufacturers('consoles'));
+      setTypes(EquipmentService.getTypes('consoles'));
+      setLoading(false);
+    } catch (err: any) {
+      setError(err.message || 'Failed to load equipment data');
+      setLoading(false);
+    }
   }, []);
 
-  useEffect(() => {
-    loadConsoles();
+  const loadConsoles = useCallback(() => {
+    try {
+      const results = EquipmentService.searchEquipment('consoles', {
+        query: searchQuery,
+        manufacturer: selectedManufacturer || undefined,
+        type: selectedType || undefined,
+      });
+      setConsoles(results as Console[]);
+      setError(null);
+    } catch (err: any) {
+      setError(err.message || 'Failed to search equipment');
+      setConsoles([]);
+    }
   }, [searchQuery, selectedManufacturer, selectedType]);
 
-  const loadConsoles = () => {
-    const results = EquipmentService.searchEquipment('consoles', {
-      query: searchQuery,
-      manufacturer: selectedManufacturer || undefined,
-      type: selectedType || undefined,
-    });
-    setConsoles(results as Console[]);
-  };
+  useEffect(() => {
+    loadConsoles();
+  }, [loadConsoles]);
 
   const clearFilters = () => {
     setSearchQuery('');
     setSelectedManufacturer('');
     setSelectedType('');
   };
+
+  if (loading) {
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <div className="flex items-center justify-center min-h-[400px]">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#00E8FF] mx-auto mb-4"></div>
+            <p className="text-white/60">Loading consoles...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <div className="flex items-center justify-center min-h-[400px]">
+          <div className="text-center">
+            <p className="text-red-400 mb-4">{error}</p>
+            <button
+              onClick={() => window.location.reload()}
+              className="text-[#00E8FF] hover:underline"
+            >
+              Try again
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container mx-auto px-4 py-8">

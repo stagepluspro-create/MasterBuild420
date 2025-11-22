@@ -1,0 +1,1302 @@
+[
+  {
+    "id": "con_001",
+    "model": "Avid Ion",
+    "brand": "Avid",
+    "inputs": 64,
+    "outputs": 16,
+    "buses": 8,
+    "network": "Waves",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_002",
+    "model": "Behringer CL3",
+    "brand": "Behringer",
+    "inputs": 64,
+    "outputs": 64,
+    "buses": 32,
+    "network": "None",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_003",
+    "model": "Digico X32-1",
+    "brand": "Digico",
+    "inputs": 96,
+    "outputs": 8,
+    "buses": 32,
+    "network": "MADI",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_004",
+    "model": "Avid CL5",
+    "brand": "Avid",
+    "inputs": 96,
+    "outputs": 64,
+    "buses": 12,
+    "network": "MADI",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_005",
+    "model": "grandMA MA2",
+    "brand": "grandMA",
+    "inputs": 48,
+    "outputs": 8,
+    "buses": 32,
+    "network": "DVS",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_006",
+    "model": "Allen & Heath MA2-1",
+    "brand": "Allen & Heath",
+    "inputs": 32,
+    "outputs": 96,
+    "buses": 48,
+    "network": "AES50",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_007",
+    "model": "Digico CL3",
+    "brand": "Digico",
+    "inputs": 96,
+    "outputs": 32,
+    "buses": 12,
+    "network": "DVS",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_008",
+    "model": "Hog dLive-S5000",
+    "brand": "Hog",
+    "inputs": 160,
+    "outputs": 16,
+    "buses": 12,
+    "network": "AES50",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_009",
+    "model": "Allen & Heath MA3",
+    "brand": "Allen & Heath",
+    "inputs": 48,
+    "outputs": 8,
+    "buses": 12,
+    "network": "AES50",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_010",
+    "model": "ETC CL3",
+    "brand": "ETC",
+    "inputs": 96,
+    "outputs": 8,
+    "buses": 12,
+    "network": "Waves",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_011",
+    "model": "Digico QU-32-2",
+    "brand": "Digico",
+    "inputs": 128,
+    "outputs": 32,
+    "buses": 32,
+    "network": "MADI",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_012",
+    "model": "SSL Hog4",
+    "brand": "SSL",
+    "inputs": 128,
+    "outputs": 48,
+    "buses": 48,
+    "network": "Waves",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_013",
+    "model": "ETC MA2-1",
+    "brand": "ETC",
+    "inputs": 32,
+    "outputs": 16,
+    "buses": 16,
+    "network": "DVS",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_014",
+    "model": "Midas Hog4PC",
+    "brand": "Midas",
+    "inputs": 96,
+    "outputs": 32,
+    "buses": 32,
+    "network": "Waves",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_015",
+    "model": "Allen & Heath dLive-S5000",
+    "brand": "Allen & Heath",
+    "inputs": 160,
+    "outputs": 8,
+    "buses": 64,
+    "network": "MADI",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_016",
+    "model": "Behringer Hog4",
+    "brand": "Behringer",
+    "inputs": 32,
+    "outputs": 16,
+    "buses": 16,
+    "network": "None",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_017",
+    "model": "Avid PM10",
+    "brand": "Avid",
+    "inputs": 128,
+    "outputs": 16,
+    "buses": 24,
+    "network": "Waves",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_018",
+    "model": "SSL PM10",
+    "brand": "SSL",
+    "inputs": 32,
+    "outputs": 16,
+    "buses": 64,
+    "network": "DVS",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_019",
+    "model": "Midas Hog4",
+    "brand": "Midas",
+    "inputs": 32,
+    "outputs": 32,
+    "buses": 8,
+    "network": "AES50",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_020",
+    "model": "ETC CL3",
+    "brand": "ETC",
+    "inputs": 48,
+    "outputs": 8,
+    "buses": 64,
+    "network": "Dante",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_021",
+    "model": "Allen & Heath S6L-24",
+    "brand": "Allen & Heath",
+    "inputs": 48,
+    "outputs": 16,
+    "buses": 16,
+    "network": "MADI",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_022",
+    "model": "grandMA S6L-24",
+    "brand": "grandMA",
+    "inputs": 16,
+    "outputs": 24,
+    "buses": 8,
+    "network": "AES50",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_023",
+    "model": "Avid CL5",
+    "brand": "Avid",
+    "inputs": 48,
+    "outputs": 24,
+    "buses": 8,
+    "network": "AVB",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_024",
+    "model": "grandMA MA3",
+    "brand": "grandMA",
+    "inputs": 96,
+    "outputs": 16,
+    "buses": 16,
+    "network": "MADI",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_025",
+    "model": "Behringer MA2",
+    "brand": "Behringer",
+    "inputs": 64,
+    "outputs": 32,
+    "buses": 16,
+    "network": "AES50",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_026",
+    "model": "Hog MA2",
+    "brand": "Hog",
+    "inputs": 192,
+    "outputs": 96,
+    "buses": 64,
+    "network": "AVB",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_027",
+    "model": "Yamaha PM10-9",
+    "brand": "Yamaha",
+    "inputs": 96,
+    "outputs": 16,
+    "buses": 48,
+    "network": "AES50",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_028",
+    "model": "Behringer CL3",
+    "brand": "Behringer",
+    "inputs": 24,
+    "outputs": 16,
+    "buses": 48,
+    "network": "Waves",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_029",
+    "model": "Hog MA3",
+    "brand": "Hog",
+    "inputs": 48,
+    "outputs": 16,
+    "buses": 48,
+    "network": "MADI",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_030",
+    "model": "Hog S6L-24",
+    "brand": "Hog",
+    "inputs": 64,
+    "outputs": 64,
+    "buses": 24,
+    "network": "None",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_031",
+    "model": "Soundcraft PM10",
+    "brand": "Soundcraft",
+    "inputs": 32,
+    "outputs": 16,
+    "buses": 24,
+    "network": "DVS",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_032",
+    "model": "Avid S6L-24-6",
+    "brand": "Avid",
+    "inputs": 160,
+    "outputs": 64,
+    "buses": 48,
+    "network": "Dante",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_033",
+    "model": "Hog dLive-S5000",
+    "brand": "Hog",
+    "inputs": 192,
+    "outputs": 96,
+    "buses": 8,
+    "network": "AVB",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_034",
+    "model": "Avid PM10-5",
+    "brand": "Avid",
+    "inputs": 16,
+    "outputs": 48,
+    "buses": 8,
+    "network": "None",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_035",
+    "model": "Avolites PM10-8",
+    "brand": "Avolites",
+    "inputs": 192,
+    "outputs": 96,
+    "buses": 32,
+    "network": "Dante",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_036",
+    "model": "Digico S6L-24",
+    "brand": "Digico",
+    "inputs": 128,
+    "outputs": 32,
+    "buses": 32,
+    "network": "AES50",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_037",
+    "model": "ETC MA3",
+    "brand": "ETC",
+    "inputs": 48,
+    "outputs": 48,
+    "buses": 48,
+    "network": "Dante",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_038",
+    "model": "Digico S6L-24",
+    "brand": "Digico",
+    "inputs": 192,
+    "outputs": 24,
+    "buses": 16,
+    "network": "None",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_039",
+    "model": "Avid PM10",
+    "brand": "Avid",
+    "inputs": 24,
+    "outputs": 16,
+    "buses": 12,
+    "network": "Dante",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_040",
+    "model": "Avolites Ion",
+    "brand": "Avolites",
+    "inputs": 32,
+    "outputs": 24,
+    "buses": 12,
+    "network": "AES50",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_041",
+    "model": "Midas Hog4PC-4",
+    "brand": "Midas",
+    "inputs": 192,
+    "outputs": 8,
+    "buses": 8,
+    "network": "Waves",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_042",
+    "model": "Midas X32-6",
+    "brand": "Midas",
+    "inputs": 24,
+    "outputs": 64,
+    "buses": 32,
+    "network": "AES50",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_043",
+    "model": "ETC CL3-5",
+    "brand": "ETC",
+    "inputs": 96,
+    "outputs": 8,
+    "buses": 48,
+    "network": "None",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_044",
+    "model": "Yamaha Hog4PC",
+    "brand": "Yamaha",
+    "inputs": 64,
+    "outputs": 16,
+    "buses": 16,
+    "network": "Dante",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_045",
+    "model": "Midas X32",
+    "brand": "Midas",
+    "inputs": 128,
+    "outputs": 64,
+    "buses": 16,
+    "network": "None",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_046",
+    "model": "Midas X32",
+    "brand": "Midas",
+    "inputs": 160,
+    "outputs": 16,
+    "buses": 16,
+    "network": "AES50",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_047",
+    "model": "Behringer QU-32-7",
+    "brand": "Behringer",
+    "inputs": 32,
+    "outputs": 32,
+    "buses": 12,
+    "network": "Waves",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_048",
+    "model": "Allen & Heath CL5",
+    "brand": "Allen & Heath",
+    "inputs": 160,
+    "outputs": 8,
+    "buses": 24,
+    "network": "AVB",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_049",
+    "model": "ETC Hog4",
+    "brand": "ETC",
+    "inputs": 160,
+    "outputs": 64,
+    "buses": 12,
+    "network": "Waves",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_050",
+    "model": "grandMA Ion",
+    "brand": "grandMA",
+    "inputs": 32,
+    "outputs": 96,
+    "buses": 24,
+    "network": "Waves",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_051",
+    "model": "Avolites MA2",
+    "brand": "Avolites",
+    "inputs": 128,
+    "outputs": 16,
+    "buses": 24,
+    "network": "Waves",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_052",
+    "model": "Hog PM10",
+    "brand": "Hog",
+    "inputs": 16,
+    "outputs": 48,
+    "buses": 8,
+    "network": "MADI",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_053",
+    "model": "grandMA MA2-1",
+    "brand": "grandMA",
+    "inputs": 32,
+    "outputs": 16,
+    "buses": 64,
+    "network": "Dante",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_054",
+    "model": "ETC QU-32",
+    "brand": "ETC",
+    "inputs": 16,
+    "outputs": 96,
+    "buses": 8,
+    "network": "DVS",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_055",
+    "model": "Yamaha PM10",
+    "brand": "Yamaha",
+    "inputs": 32,
+    "outputs": 32,
+    "buses": 64,
+    "network": "DVS",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_056",
+    "model": "ETC Ion",
+    "brand": "ETC",
+    "inputs": 32,
+    "outputs": 16,
+    "buses": 8,
+    "network": "DVS",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_057",
+    "model": "Avid QU-32",
+    "brand": "Avid",
+    "inputs": 16,
+    "outputs": 96,
+    "buses": 8,
+    "network": "Dante",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_058",
+    "model": "Avid MA2",
+    "brand": "Avid",
+    "inputs": 128,
+    "outputs": 16,
+    "buses": 8,
+    "network": "AVB",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_059",
+    "model": "Avolites CL3",
+    "brand": "Avolites",
+    "inputs": 96,
+    "outputs": 64,
+    "buses": 16,
+    "network": "AVB",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_060",
+    "model": "Allen & Heath QU-32-2",
+    "brand": "Allen & Heath",
+    "inputs": 160,
+    "outputs": 16,
+    "buses": 8,
+    "network": "AVB",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_061",
+    "model": "Avid CL5",
+    "brand": "Avid",
+    "inputs": 96,
+    "outputs": 8,
+    "buses": 16,
+    "network": "Dante",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_062",
+    "model": "Behringer Hog4",
+    "brand": "Behringer",
+    "inputs": 192,
+    "outputs": 24,
+    "buses": 32,
+    "network": "AVB",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_063",
+    "model": "Allen & Heath Hog4-5",
+    "brand": "Allen & Heath",
+    "inputs": 64,
+    "outputs": 24,
+    "buses": 8,
+    "network": "AES50",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_064",
+    "model": "Midas CL5-2",
+    "brand": "Midas",
+    "inputs": 16,
+    "outputs": 96,
+    "buses": 12,
+    "network": "None",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_065",
+    "model": "ETC CL5",
+    "brand": "ETC",
+    "inputs": 160,
+    "outputs": 64,
+    "buses": 64,
+    "network": "None",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_066",
+    "model": "Hog MA2",
+    "brand": "Hog",
+    "inputs": 64,
+    "outputs": 16,
+    "buses": 8,
+    "network": "AES50",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_067",
+    "model": "ETC CL3",
+    "brand": "ETC",
+    "inputs": 160,
+    "outputs": 32,
+    "buses": 24,
+    "network": "Waves",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_068",
+    "model": "Behringer QU-32",
+    "brand": "Behringer",
+    "inputs": 48,
+    "outputs": 32,
+    "buses": 24,
+    "network": "DVS",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_069",
+    "model": "Soundcraft S6L-24",
+    "brand": "Soundcraft",
+    "inputs": 192,
+    "outputs": 96,
+    "buses": 12,
+    "network": "MADI",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_070",
+    "model": "Behringer PM10",
+    "brand": "Behringer",
+    "inputs": 48,
+    "outputs": 64,
+    "buses": 8,
+    "network": "AVB",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_071",
+    "model": "grandMA Hog4PC-1",
+    "brand": "grandMA",
+    "inputs": 96,
+    "outputs": 48,
+    "buses": 24,
+    "network": "AVB",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_072",
+    "model": "grandMA CL5",
+    "brand": "grandMA",
+    "inputs": 32,
+    "outputs": 24,
+    "buses": 24,
+    "network": "AVB",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_073",
+    "model": "Allen & Heath Hog4PC",
+    "brand": "Allen & Heath",
+    "inputs": 48,
+    "outputs": 8,
+    "buses": 48,
+    "network": "AVB",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_074",
+    "model": "SSL PM10",
+    "brand": "SSL",
+    "inputs": 16,
+    "outputs": 64,
+    "buses": 24,
+    "network": "AES50",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_075",
+    "model": "SSL MA2",
+    "brand": "SSL",
+    "inputs": 24,
+    "outputs": 32,
+    "buses": 64,
+    "network": "DVS",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_076",
+    "model": "grandMA Hog4",
+    "brand": "grandMA",
+    "inputs": 24,
+    "outputs": 16,
+    "buses": 8,
+    "network": "Dante",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_077",
+    "model": "Allen & Heath Hog4",
+    "brand": "Allen & Heath",
+    "inputs": 160,
+    "outputs": 64,
+    "buses": 12,
+    "network": "Waves",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_078",
+    "model": "SSL Ion",
+    "brand": "SSL",
+    "inputs": 96,
+    "outputs": 32,
+    "buses": 64,
+    "network": "Waves",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_079",
+    "model": "grandMA Ion",
+    "brand": "grandMA",
+    "inputs": 16,
+    "outputs": 64,
+    "buses": 8,
+    "network": "DVS",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_080",
+    "model": "Soundcraft Hog4",
+    "brand": "Soundcraft",
+    "inputs": 128,
+    "outputs": 64,
+    "buses": 24,
+    "network": "DVS",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_081",
+    "model": "Avid X32",
+    "brand": "Avid",
+    "inputs": 48,
+    "outputs": 32,
+    "buses": 12,
+    "network": "AES50",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_082",
+    "model": "Soundcraft CL3-3",
+    "brand": "Soundcraft",
+    "inputs": 48,
+    "outputs": 32,
+    "buses": 32,
+    "network": "Dante",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_083",
+    "model": "Allen & Heath Hog4-9",
+    "brand": "Allen & Heath",
+    "inputs": 24,
+    "outputs": 96,
+    "buses": 48,
+    "network": "MADI",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_084",
+    "model": "Yamaha QU-32",
+    "brand": "Yamaha",
+    "inputs": 128,
+    "outputs": 16,
+    "buses": 8,
+    "network": "None",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_085",
+    "model": "Midas CL3",
+    "brand": "Midas",
+    "inputs": 24,
+    "outputs": 8,
+    "buses": 8,
+    "network": "AES50",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_086",
+    "model": "Yamaha MA3",
+    "brand": "Yamaha",
+    "inputs": 32,
+    "outputs": 48,
+    "buses": 8,
+    "network": "Dante",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_087",
+    "model": "Behringer MA3",
+    "brand": "Behringer",
+    "inputs": 64,
+    "outputs": 16,
+    "buses": 32,
+    "network": "AVB",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_088",
+    "model": "grandMA Hog4PC",
+    "brand": "grandMA",
+    "inputs": 16,
+    "outputs": 48,
+    "buses": 64,
+    "network": "MADI",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_089",
+    "model": "grandMA CL5",
+    "brand": "grandMA",
+    "inputs": 64,
+    "outputs": 8,
+    "buses": 16,
+    "network": "None",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_090",
+    "model": "Allen & Heath S6L-24",
+    "brand": "Allen & Heath",
+    "inputs": 128,
+    "outputs": 64,
+    "buses": 16,
+    "network": "AVB",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_091",
+    "model": "Midas MA2",
+    "brand": "Midas",
+    "inputs": 192,
+    "outputs": 8,
+    "buses": 32,
+    "network": "None",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_092",
+    "model": "grandMA X32",
+    "brand": "grandMA",
+    "inputs": 160,
+    "outputs": 48,
+    "buses": 64,
+    "network": "None",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_093",
+    "model": "Avid Hog4",
+    "brand": "Avid",
+    "inputs": 160,
+    "outputs": 8,
+    "buses": 48,
+    "network": "Dante",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_094",
+    "model": "Avolites Hog4PC-3",
+    "brand": "Avolites",
+    "inputs": 32,
+    "outputs": 48,
+    "buses": 32,
+    "network": "Waves",
+    "sample_rates": [
+      "44.1kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_095",
+    "model": "Midas S6L-24-6",
+    "brand": "Midas",
+    "inputs": 160,
+    "outputs": 96,
+    "buses": 12,
+    "network": "AES50",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_096",
+    "model": "Yamaha X32-7",
+    "brand": "Yamaha",
+    "inputs": 16,
+    "outputs": 64,
+    "buses": 64,
+    "network": "Waves",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_097",
+    "model": "Avolites Hog4PC-2",
+    "brand": "Avolites",
+    "inputs": 32,
+    "outputs": 48,
+    "buses": 48,
+    "network": "MADI",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_098",
+    "model": "grandMA Hog4",
+    "brand": "grandMA",
+    "inputs": 64,
+    "outputs": 48,
+    "buses": 64,
+    "network": "None",
+    "sample_rates": [
+      "48kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_099",
+    "model": "Digico MA2",
+    "brand": "Digico",
+    "inputs": 32,
+    "outputs": 24,
+    "buses": 12,
+    "network": "Dante",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  },
+  {
+    "id": "con_100",
+    "model": "Behringer CL5",
+    "brand": "Behringer",
+    "inputs": 24,
+    "outputs": 16,
+    "buses": 48,
+    "network": "None",
+    "sample_rates": [
+      "96kHz"
+    ],
+    "notes": ""
+  }
+]
