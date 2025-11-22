@@ -1,0 +1,52 @@
+15:41:19.759 Running build in Washington, D.C., USA (East) – iad1
+15:41:19.760 Build machine configuration: 2 cores, 8 GB
+15:41:19.769 Cloning github.com/stagepluspro-create/MasterBuild420 (Branch: main, Commit: 800c80e)
+15:41:19.770 Skipping build cache, deployment was triggered without cache.
+15:41:20.164 Cloning completed: 394.000ms
+15:41:20.249 Found .vercelignore
+15:41:20.252 Removed 0 ignored files defined in .vercelignore
+15:41:20.602 Warning: Detected "engines": { "node": ">=18.0.0" } in your `package.json` that will automatically upgrade when a new major Node.js Version is released. Learn More: http://vercel.link/node-version
+15:41:20.606 Running "vercel build"
+15:41:21.026 Vercel CLI 48.10.5
+15:41:21.417 Warning: Detected "engines": { "node": ">=18.0.0" } in your `package.json` that will automatically upgrade when a new major Node.js Version is released. Learn More: http://vercel.link/node-version
+15:41:21.431 Running "install" command: `npm install`...
+15:41:24.211 npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+15:41:24.880 npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+15:41:25.208 npm warn deprecated glob@7.1.7: Glob versions prior to v9 are no longer supported
+15:41:26.475 npm warn deprecated @humanwhocodes/config-array@0.11.14: Use @eslint/config-array instead
+15:41:26.506 npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+15:41:28.753 npm warn deprecated eslint@8.57.0: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+15:41:35.592 
+15:41:35.593 added 551 packages, and audited 552 packages in 14s
+15:41:35.593 
+15:41:35.593 154 packages are looking for funding
+15:41:35.594   run `npm fund` for details
+15:41:35.594 
+15:41:35.594 found 0 vulnerabilities
+15:41:35.642 Detected Next.js version: 14.2.33
+15:41:35.642 Running "npm run build"
+15:41:35.772 
+15:41:35.773 > nextjs@0.1.0 build
+15:41:35.773 > next build
+15:41:35.773 
+15:41:36.326  ⚠ Invalid next.config.js options detected: 
+15:41:36.326  ⚠     Unrecognized key(s) in object: 'allowedDevOrigins' at "experimental"
+15:41:36.326  ⚠ See more info here: https://nextjs.org/docs/messages/invalid-next-config
+15:41:36.334 Attention: Next.js now collects completely anonymous telemetry regarding usage.
+15:41:36.337 This information is used to shape Next.js' roadmap and prioritize features.
+15:41:36.337 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+15:41:36.337 https://nextjs.org/telemetry
+15:41:36.338 
+15:41:36.395   ▲ Next.js 14.2.33
+15:41:36.396 
+15:41:36.456    Creating an optimized production build ...
+15:41:57.488 Failed to compile.
+15:41:57.489 
+15:41:57.490 ./app/teams/invitations/[token]/page.tsx
+15:41:57.490 Module not found: Can't resolve '@/components/auth-provider'
+15:41:57.490 
+15:41:57.490 https://nextjs.org/docs/messages/module-not-found
+15:41:57.491 
+15:41:57.501 
+15:41:57.502 > Build failed because of webpack errors
+15:41:57.530 Error: Command "npm run build" exited with 1
