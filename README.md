@@ -1,4 +1,4 @@
-# Stage Tech Pro — The Production Toolkit
+# Stage Tech Pro — The Production Toolkit 
 
 A next-generation, all-in-one web platform for live production professionals, providing 35+ specialized tools for audio, lighting, video, planning, networking, and utility workflows.
 
