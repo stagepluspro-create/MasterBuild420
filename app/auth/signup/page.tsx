@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { createClient } from "@/lib/supabase-browser";
+import { signUp } from "@/app/auth/actions/auth-actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -12,8 +11,6 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Mail, ArrowLeft, Lock, CheckCircle2, Crown, Eye, EyeOff } from "lucide-react";
 
 export default function SignUpPage() {
-  const router = useRouter();
-  const supabase = createClient();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -94,23 +91,23 @@ export default function SignUpPage() {
       setLoading(true);
       setError("");
 
-      const { data, error: signUpError } = await supabase.auth.signUp({
-        email,
-        password,
-        options: {
-          emailRedirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/auth/callback`,
-        },
-      });
-
-      if (signUpError) throw signUpError;
-
-      if (data.user) {
-        router.push("/dashboard");
+      const result = await signUp(email, password);
+      
+      if (result.success) {
+        if (result.requiresEmailConfirmation) {
+          setError('');
+          setLoading(false);
+          alert(result.message || 'Please check your email to confirm your account.');
+        } else if (result.redirectTo) {
+          window.location.href = result.redirectTo;
+        }
+      } else if (result.error) {
+        setError(result.error);
+        setLoading(false);
       }
     } catch (err: any) {
       console.error("Sign up error:", err);
       setError(err.message || "Failed to create account. Please try again.");
-    } finally {
       setLoading(false);
     }
   };

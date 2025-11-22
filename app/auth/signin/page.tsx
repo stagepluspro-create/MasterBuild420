@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { createClient } from "@/lib/supabase-browser";
+import { signIn } from "@/app/auth/actions/auth-actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -12,7 +12,6 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Mail, ArrowLeft, Lock, CheckCircle2, Eye, EyeOff } from "lucide-react";
 
 export default function SignInPage() {
-  const router = useRouter();
   const searchParams = useSearchParams();
   const redirect = searchParams.get("redirect");
   
@@ -22,7 +21,6 @@ export default function SignInPage() {
     redirectUrl = redirect;
   }
   
-  const supabase = createClient();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -56,20 +54,17 @@ export default function SignInPage() {
       setLoading(true);
       setError("");
 
-      const { data, error: signInError } = await supabase.auth.signInWithPassword({
-        email,
-        password,
-      });
-
-      if (signInError) throw signInError;
-
-      if (data.user) {
-        router.push(redirectUrl);
+      const result = await signIn(email, password, redirectUrl);
+      
+      if (result.success) {
+        window.location.href = result.redirectTo;
+      } else if (result.error) {
+        setError(result.error);
+        setLoading(false);
       }
     } catch (err: any) {
       console.error("Sign in error:", err);
       setError(err.message || "Invalid email or password. Please try again.");
-    } finally {
       setLoading(false);
     }
   };

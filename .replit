@@ -12,7 +12,7 @@ NEXT_PUBLIC_SUPABASE_URL = "https://rumwwpqlvccpzonouqiq.supabase.co"
 NEXT_PUBLIC_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ1bXd3cHFsdmNjcHpvbm91cWlxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI2MzU2NzYsImV4cCI6MjA3ODIxMTY3Nn0.oZYvcFzBEE0eo8jSMnPwEiJnYgOyNoy863d3rqHM3jY"
 SUPABASE_SERVICE_ROLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ1bXd3cHFsdmNjcHpvbm91cWlxIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MjYzNTY3NiwiZXhwIjoyMDc4MjExNjc2fQ.NZUMwwFsx9Y0luG8DAcDekPYTOzxjdwGf32U2LuusP0"
 SUPABASE_JWT_SECRET = "xHAfbDppvZT8cUfS7IrSIN0fAddy1sDYrMcMtVYfdD//9td1QCogDYM9sGkvj9L93G31SOAixnkU53v55CX1cA=="
-NEXT_PUBLIC_SITE_URL = "https://workspace.replit.dev"
+NEXT_PUBLIC_SITE_URL = "https://135dc828-2c6f-4179-b1ed-18ec228f2984-00-1a1l07fmii5lm.worf.replit.dev"
 
 [workflows]
 runButton = "Project"
