@@ -105,6 +105,33 @@ The workflow "Start application" is configured to run the dev server automatical
 - ✅ Power Calculator - Correct electrical formulas (Single: P=V×I×PF, Three-phase: P=√3×V×I×PF)
 - ✅ SPL Meter - Proper acoustics (RMS, dB conversion, A/C weighting, LEQ measurement)
 
+### Team Collaboration Features Audit & Bug Fixes (November 22, 2025)
+**Comprehensive Team Feature Verification:**
+- ✅ Team creation and management - `/teams` page with list/create functionality
+- ✅ 9-tab team dashboard - Overview, Members, Tools, Activity, API Keys, Integrations, Security, Settings, Billing
+- ✅ 30-member team limit enforcement - Checks `subscription.seats || 30` before invitations
+- ✅ Role-based access control - Owner/Admin/Member/Viewer with permission matrix
+- ✅ Tool sharing - `shared_with_team` presets via tool-shell and preset-manager components
+- ✅ Tools access control - Full access matrix with search, filters, bulk actions
+- ✅ Real-time activity feed - Supabase subscriptions, export to CSV, pagination
+- ✅ API keys manager - Team and user API keys with create/revoke functionality
+- ✅ Members management - Add/remove, role changes, suspend functionality
+
+**Critical Bugs Fixed:**
+1. **Duplicate invitation creation** - Removed redundant `invitationService.createInvitation` call, now uses single `dbService.inviteTeamMember` function
+2. **Missing invitation token route** - Created `/app/teams/invitations/[token]/page.tsx` to handle email invitation links
+3. **Auth redirect not honored** - Updated `/auth/signin` to respect `redirect` query parameter for post-login navigation
+4. **Open redirect vulnerability** - Added redirect validation to only accept same-origin relative paths (prevents security attacks)
+5. **Cleaned up unused code** - Removed obsolete `invitationService.createInvitation` function
+
+**Complete Invitation Flow (Now Working):**
+1. Team owner invites member via email → Creates invitation with token
+2. Invitee receives email with link `/teams/invitations/{token}`
+3. If unauthenticated → Redirects to `/auth/signin?redirect=/teams/invitations/{token}`
+4. After signin → Returns to token page showing invitation details
+5. Accept → Joins team, redirects to team dashboard
+6. Decline → Deletes invitation, redirects to teams page
+
 ## User Preferences
 None documented yet.
 
