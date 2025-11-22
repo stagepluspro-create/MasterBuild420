@@ -88,6 +88,23 @@ The workflow "Start application" is configured to run the dev server automatical
 - **Trial enforcement** - Users get 7-day free trial, must upgrade after expiration to continue accessing tools
 - **Proper redirect flow** - Unauthenticated access redirects to signup, expired trials redirect to pricing
 
+### Critical SSR/Database Fix (November 22, 2025)
+- **Fixed SSR localStorage crash** - All service files (`haze-service`, `dmx-service`, `team-service`, `invitation-service`, `patchlist-service`, `db-service`) were creating Supabase browser client at module scope, causing `ReferenceError: localStorage is not defined` during SSR
+- **Solution implemented** - Refactored all services to use `getSupabase()` helper function that creates client inside function bodies, preventing SSR access to browser APIs
+- **Database operations verified** - All CRUD operations (create, read, update, delete) work correctly in browser context
+- **Production ready** - Application compiles successfully without SSR errors
+
+### Tool Verification Summary
+**Heavy Tools Audited:**
+- ✅ Haze & Atmosphere Simulator - Complete Supabase persistence (venues, machines, vents, fixtures, simulations)
+- ✅ Spectrum Analyzer + RMS Meter - Standard Web Audio API with FFT (512-8192 bins), RMS metering, spectrogram
+- ✅ Multi-Console Translator - Full grandMA2 parser with fixture mapping, DMX addressing, cue conversion
+
+**Calculator Tools - Industry Standards Verified:**
+- ✅ DMX Calculator - DMX512 compliant (1-512 channels, universe validation, MA3/ETC/Chamsys exports)
+- ✅ Power Calculator - Correct electrical formulas (Single: P=V×I×PF, Three-phase: P=√3×V×I×PF)
+- ✅ SPL Meter - Proper acoustics (RMS, dB conversion, A/C weighting, LEQ measurement)
+
 ## User Preferences
 None documented yet.
 
