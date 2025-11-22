@@ -13,48 +13,7 @@ import * as Icons from "lucide-react";
 function DashboardContent() {
   const [q, setQ] = useState("");
   const [cat, setCat] = useState<string>("all");
-  const [requestedTools, setRequestedTools] = useState<Set<string>>(new Set());
   const { user, subscription, isTrialExpired } = useAuth();
-
-  useEffect(() => {
-    const loadRequestedTools = async () => {
-      if (user) {
-        const requests = await Promise.all(
-          tools
-            .filter((t) => t.status === "coming_soon")
-            .map((t) => dbService.hasRequestedTool(user.id, t.id))
-        );
-        const requestedSet = new Set<string>();
-        tools
-          .filter((t) => t.status === "coming_soon")
-          .forEach((t, index) => {
-            if (requests[index]) {
-              requestedSet.add(t.id);
-            }
-          });
-        setRequestedTools(requestedSet);
-      }
-    };
-    loadRequestedTools();
-  }, [user]);
-
-  const handleRequestPriority = async (toolId: string) => {
-    if (!user) return;
-    try {
-      await dbService.createInterestRequest({
-        user_id: user.id,
-        tool_id: toolId,
-      });
-      setRequestedTools((prev) => new Set(prev).add(toolId));
-      await dbService.createAuditLog({
-        user_id: user.id,
-        action: "tool_requested",
-        tool_id: toolId,
-      });
-    } catch (error) {
-      console.error("Failed to request priority:", error);
-    }
-  };
 
   const filtered = useMemo(
     () =>
@@ -105,14 +64,12 @@ function DashboardContent() {
                 All
               </Button>
               {[
-                "universals",
-                "audio",
                 "lighting",
-                "video",
+                "audio",
+                "console",
                 "planning",
-                "networking",
+                "video",
                 "utility",
-                "nice-to-have",
               ].map((c) => (
                 <Button
                   key={c}
@@ -137,30 +94,15 @@ function DashboardContent() {
                   <div className="inline-flex p-2 rounded-lg bg-gradient-to-br from-cyan-500/20 to-violet-500/20">
                     <IconComponent className="w-5 h-5 text-cyan-400" />
                   </div>
-                  <div className="text-sm">
-                    {t.status === "available" ? (
-                      <span className="text-cyan-300 font-medium">Available</span>
-                    ) : (
-                      <span className="text-gray-400">Coming Soon</span>
-                    )}
-                  </div>
+                  <span className="text-xs px-2 py-1 rounded-full bg-cyan-500/20 text-cyan-300 font-medium uppercase tracking-wide">
+                    {t.category}
+                  </span>
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">{t.name}</h3>
                 <p className="text-gray-400 text-sm mb-4">{t.description}</p>
-                {t.status === "available" ? (
-                  <Link href={`/tools/${t.id}`}>
-                    <Button className="w-full">Open Tool</Button>
-                  </Link>
-                ) : (
-                  <Button
-                    variant="outline"
-                    className="w-full"
-                    onClick={() => handleRequestPriority(t.id)}
-                    disabled={requestedTools.has(t.id)}
-                  >
-                    {requestedTools.has(t.id) ? "Requested" : "Request Priority"}
-                  </Button>
-                )}
+                <Link href={`/tools/${t.id}`}>
+                  <Button className="w-full">Open Tool</Button>
+                </Link>
               </div>
             );
           })}

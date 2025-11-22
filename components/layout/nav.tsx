@@ -65,17 +65,20 @@ export function Nav() {
           Stage Tech Pro
         </Link>
         <nav className="flex items-center gap-6">
+          <Link href="/tools" className="text-sm hover:opacity-90">
+            Tools
+          </Link>
           <Link href="/dashboard" className="text-sm hover:opacity-90">
             Dashboard
           </Link>
           <Link href="/teams" className="text-sm hover:opacity-90">
             Teams
           </Link>
-          <Link href="/about" className="text-sm hover:opacity-90">
-            About
+          <Link href="/pricing" className="text-sm hover:opacity-90">
+            Pricing
           </Link>
-          <Link href="/faq" className="text-sm hover:opacity-90">
-            FAQ
+          <Link href="/docs" className="text-sm hover:opacity-90">
+            Docs
           </Link>
 
           {loading && (
