@@ -17,18 +17,6 @@ export default function ToolPage({ params }: { params: { toolId: string } }) {
     notFound();
   }
 
-  if (tool?.status === "coming_soon") {
-    return (
-      <div className="min-h-screen pt-24 pb-12 px-4">
-        <div className="max-w-4xl mx-auto text-center glass-panel p-12">
-          <h1 className="text-3xl font-bold gradient-text mb-4">{tool.name}</h1>
-          <p className="text-xl text-gray-300 mb-8">{tool.description}</p>
-          <p className="text-gray-400">This tool is currently under development.</p>
-        </div>
-      </div>
-    );
-  }
-
   if (!mounted) {
     return (
       <div className="min-h-screen pt-24 pb-12 px-4">

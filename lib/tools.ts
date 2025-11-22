@@ -1,5 +1,5 @@
-export type ToolCategory = "universals" | "audio" | "lighting" | "video" | "planning" | "networking" | "utility" | "nice-to-have";
-export type ToolStatus = "available" | "coming_soon";
+export type ToolCategory = "lighting" | "audio" | "console" | "planning" | "network" | "video" | "utility";
+export type ToolStatus = "available";
 
 export interface ToolConfig {
   id: string;
@@ -23,11 +23,6 @@ export const tools: ToolConfig[] = [
   { id: "show-docs", name: "Show Documents", category: "planning", status: "available", description: "Shared editable documents for cue sheets, schedules, and show notes.", icon: "FileText", path: "/tools/show-docs", features: [], helpText: "Collaborate on production documents." },
   { id: "budget-tracker", name: "Budget Tracker", category: "planning", status: "available", description: "Project budget management with categories, vendors, and status tracking.", icon: "DollarSign", path: "/tools/budget-tracker", features: [], helpText: "Track production costs and expenses." },
   { id: "inventory-tool", name: "Inventory Tool", category: "utility", status: "available", description: "Team gear inventory with check-out system and location tracking.", icon: "Package", path: "/tools/inventory-tool", features: [], helpText: "Manage and track equipment." },
-  { id: "cloud-share", name: "Cloud Share", category: "universals", status: "coming_soon", description: "Google Drive / Dropbox launcher.", icon: "Cloud", path: "/tools/cloud-share", features: [], helpText: "" },
-  { id: "show-notes", name: "Show Notes", category: "universals", status: "coming_soon", description: "Notion / OneNote show files.", icon: "Notebook", path: "/tools/show-notes", features: [], helpText: "" },
-  { id: "scanner", name: "Document Scanner", category: "universals", status: "coming_soon", description: "Capture plots/receipts.", icon: "Scan", path: "/tools/scanner", features: [], helpText: "" },
-  { id: "qr-barcode", name: "QR & Barcode", category: "universals", status: "coming_soon", description: "Scan asset tags and manuals.", icon: "QrCode", path: "/tools/qr-barcode", features: [], helpText: "" },
-  { id: "secure-logins", name: "Secure Logins", category: "universals", status: "coming_soon", description: "Store credentials safely.", icon: "Shield", path: "/tools/secure-logins", features: [], helpText: "" },
   { id: "tone-generator", name: "Tone Generator", category: "audio", status: "available", description: "Professional signal generator with waveforms, noise, and sweep functions.", icon: "Waveform", path: "/tools/tone-generator", features: ["Sine, Square, Triangle, Sawtooth waveforms", "White and Pink noise", "Frequency sweep (linear/log)", "Burst mode", "Real-time waveform visualization", "Channel routing (L/R/Stereo)", "Safety features and auto-stop"], helpText: "Generate test tones for calibration, system alignment, and troubleshooting. Includes safety warnings and volume limiting." },
   { id: "signal-tester", name: "Signal Path Tester", category: "audio", status: "available", description: "Cable continuity testing with pass/fail tracking and notes.", icon: "Cable", path: "/tools/signal-tester", features: [], helpText: "Test signal paths and log results for troubleshooting." },
   {
@@ -130,18 +125,6 @@ export const tools: ToolConfig[] = [
   { id: "teleprompter", name: "Teleprompter", category: "video", status: "available", description: "Scrolling teleprompter with adjustable speed and mirroring.", icon: "Type", path: "/tools/teleprompter", features: [], helpText: "Display scrolling scripts for presentations and video production." },
   { id: "nd-exposure", name: "ND/Exposure Helper", category: "video", status: "available", description: "Calculate exposure with ND filters and stops.", icon: "Aperture", path: "/tools/nd-exposure", features: [], helpText: "Exposure triangle calculator for camera settings and ND filters." },
   { id: "callsheet-builder", name: "Callsheet Builder", category: "planning", status: "available", description: "Professional production callsheets with crew, cast, scenes, and scheduling. Export to PDF and JSON.", icon: "Clipboard", path: "/tools/callsheet-builder", features: ["Crew management with roles and call times", "Cast tracking with characters and wardrobe", "Scene scheduling with locations", "Weather and production notes", "PDF export for distribution", "JSON export for backup", "Preset saving and loading", "Printable formatted callsheets"], helpText: "Create, organize, and distribute professional production callsheets for your team." },
-  { id: "label-maker", name: "Label Maker", category: "planning", status: "coming_soon", description: "Cable/gear labels.", icon: "Tag", path: "/tools/label-maker", features: [], helpText: "" },
-  { id: "ip-scanner", name: "IP Scanner", category: "networking", status: "coming_soon", description: "Discover local devices.", icon: "Network", path: "/tools/ip-scanner", features: [], helpText: "" },
-  { id: "speed-latency", name: "Speed & Latency Test", category: "networking", status: "coming_soon", description: "Ping stability and speed.", icon: "Wifi", path: "/tools/speed-latency", features: [], helpText: "" },
-  { id: "ping-traceroute", name: "Ping & Traceroute", category: "networking", status: "coming_soon", description: "Connectivity diagnostics.", icon: "Activity", path: "/tools/ping-traceroute", features: [], helpText: "" },
-  { id: "router-control", name: "Router Control", category: "networking", status: "coming_soon", description: "Quick Wi-Fi/VLAN toggles.", icon: "Settings", path: "/tools/router-control", features: [], helpText: "" },
-  { id: "level-tool", name: "Level & Inclinometer", category: "utility", status: "coming_soon", description: "Tilt and alignment.", icon: "Move3d", path: "/tools/level-tool", features: [], helpText: "" },
-  { id: "first-aid", name: "First Aid & Safety", category: "utility", status: "coming_soon", description: "Quick procedures.", icon: "HeartPulse", path: "/tools/first-aid", features: [], helpText: "" },
-  { id: "docs-offline", name: "Docs Offline", category: "utility", status: "coming_soon", description: "Offline essential files.", icon: "FileText", path: "/tools/docs-offline", features: [], helpText: "" },
-  { id: "show-timer", name: "Show Timer", category: "nice-to-have", status: "coming_soon", description: "Countdown/timecode.", icon: "Timer", path: "/tools/show-timer", features: [], helpText: "" },
-  { id: "cueing", name: "Cueing Assistant", category: "nice-to-have", status: "coming_soon", description: "Simple cue playback.", icon: "Music2", path: "/tools/cueing", features: [], helpText: "" },
-  { id: "intercom-companion", name: "Intercom Companion", category: "nice-to-have", status: "coming_soon", description: "Unity / Clear-Com link.", icon: "Headphones", path: "/tools/intercom-companion", features: [], helpText: "" },
-  { id: "file-convert", name: "File Converter", category: "nice-to-have", status: "coming_soon", description: "Last-minute video fixes.", icon: "FileCog", path: "/tools/file-convert", features: [], helpText: "" },
   {
     id: "haze-simulator",
     name: "Haze & Atmosphere Simulator",
