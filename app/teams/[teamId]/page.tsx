@@ -229,29 +229,22 @@ function TeamDashboardContent({ params }: { params: { teamId: string } }) {
         return;
       }
 
-      // Create invitation
-      await dbService.inviteTeamMember({
+      // Create invitation in database
+      const member = await dbService.inviteTeamMember({
         team_id: params.teamId,
         email: inviteEmail,
         role: inviteRole,
         invited_by: user.id,
       });
 
+      // Get inviter profile for email
       const { data: inviterProfile } = await supabase
         .from("profiles")
         .select("full_name, email")
         .eq("id", user.id)
         .maybeSingle();
 
-      const token = await invitationService.createInvitation({
-        teamId: params.teamId,
-        teamName: team.name,
-        email: inviteEmail,
-        role: inviteRole,
-        invitedBy: user.id,
-        inviterName: inviterProfile?.full_name || inviterProfile?.email || user.email || "Team member",
-      });
-
+      // Send invitation email using the token from the created invitation
       await invitationService.sendInvitationEmail(
         {
           teamId: params.teamId,
@@ -261,7 +254,7 @@ function TeamDashboardContent({ params }: { params: { teamId: string } }) {
           invitedBy: user.id,
           inviterName: inviterProfile?.full_name || inviterProfile?.email || user.email || "Team member",
         },
-        token
+        member.invitation_token
       );
 
       // Log activity
