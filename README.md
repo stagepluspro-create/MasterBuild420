@@ -68,19 +68,26 @@ NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key_here
 
 4. **Set up Supabase database:**
 
-   a. Create a new Supabase project at https://app.supabase.com
+   a. **IMPORTANT:** Use the existing Supabase instance from `.env`
+      - DO NOT create a new Supabase project
+      - The database is already configured with 51 tables
+      - All migrations have been applied
 
-   b. Apply all migrations from `/supabase/migrations/` in order:
-      - Use Supabase SQL Editor
-      - Or use Supabase CLI: `supabase db push`
+   b. **Verify schema integrity:**
+      ```bash
+      npm install
+      npm run validate-schema
+      ```
+      This will verify:
+      - All 51 required tables exist
+      - All RLS policies are in place
+      - No hashed/corrupted table names
+      - Database functions are present
 
-   c. Verify tables exist:
-      - `profiles`
-      - `subscriptions`
-      - `teams`
-      - `projects`
-      - `presets`
-      - And 20+ more (see migrations folder)
+   c. **If starting fresh** (new Supabase project):
+      - Apply migrations in chronological order from `/supabase/migrations/`
+      - Use Supabase SQL Editor or CLI
+      - Run `npm run validate-schema` after to confirm
 
 5. **Start development server:**
 ```bash
@@ -97,12 +104,13 @@ Visit `http://localhost:3000`
 ## 📦 Build Commands
 
 ```bash
-npm run dev         # Start dev server (port 3000)
-npm run build       # Production build
-npm run start       # Start production server
-npm run lint        # ESLint validation
-npm run typecheck   # TypeScript validation
-npm run clean-port  # Kill stale Next.js processes
+npm run dev              # Start dev server (port 3000)
+npm run build            # Production build
+npm run start            # Start production server
+npm run lint             # ESLint validation
+npm run typecheck        # TypeScript validation
+npm run clean-port       # Kill stale Next.js processes
+npm run validate-schema  # Verify Supabase schema integrity
 ```
 
 ## 🏗 Project Structure
@@ -216,14 +224,45 @@ Both tiers include:
 
 ## 🔧 Database Schema
 
-18 migrations covering:
-- Users, teams, projects
-- Presets with sharing 
-- Team invitations
-- Power plans, DMX fixtures
-- SPL measurements
-- Patch lists with channels
-- Comprehensive RLS policies
+### Current Status
+- **51 tables** with clean, human-readable names
+- **196 RLS policies** protecting all data
+- **2 database functions** for team permissions
+- **NO hashed or corrupted tables**
+- **Single source of truth:** Supabase instance at NEXT_PUBLIC_SUPABASE_URL
+
+### Schema Categories
+
+**Core (4 tables):** profiles, subscriptions, subscription_changes, audit_log
+**Teams (8 tables):** teams, team_members, team_roles, team_api_keys, etc.
+**Projects (4 tables):** projects, project_files, tasks, documents
+**Tools (35+ tables):** DMX calculator, haze simulator, console translator, patch lists, power plans, budget tracker, SPL meter, etc.
+
+### Migrations
+
+All migrations are stored in `/supabase/migrations/` and applied in chronological order:
+
+1. `20251121231229_create_missing_tables_and_fix_rls_policies.sql` - Initial schema
+2. `20251122001941_add_subscription_changes_table.sql` - Audit trail
+3. `20251122013850_add_team_permission_functions.sql` - Helper functions
+4. `20251122015356_fix_team_member_insert_policy.sql` - RLS fix
+5. `20251122030000_schema_documentation.sql` - Schema lock
+
+### Schema Safety
+
+**⚠️ Critical Rules:**
+- DO NOT create new Supabase projects
+- DO NOT duplicate or regenerate tables
+- DO NOT use hashed table names
+- ALWAYS use the existing Supabase instance
+- ALWAYS add new changes via migrations
+- ALWAYS run `npm run validate-schema` before deploying
+
+**✅ Safe Operations:**
+- Adding new migrations for schema changes
+- Updating RLS policies via migrations
+- Creating indexes for performance
+- Adding new tables via migrations
 
 ## 🌐 Deployment to Vercel
 
@@ -234,15 +273,18 @@ Both tiers include:
 npm run build
 npm run lint
 npm run typecheck
+npm run validate-schema
 ```
 
 2. **✅ Confirm environment variables are set:**
    - Check `.env.local` has all required values
    - Never commit `.env.local` to git!
 
-3. **✅ Apply all Supabase migrations:**
-   - Run all SQL files in `/supabase/migrations/` in order
-   - Verify all tables exist in Supabase Dashboard
+3. **✅ Verify Supabase schema:**
+   - Schema validation passes (green checkmarks)
+   - All 51 tables exist
+   - All 196 RLS policies in place
+   - No hashed table names
 
 ### Deploy Steps
 

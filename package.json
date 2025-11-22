@@ -13,7 +13,8 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "clean-port": "pkill -9 -f next-server 2>/dev/null || pkill -9 -f 'node.*next dev' 2>/dev/null || true"
+    "clean-port": "pkill -9 -f next-server 2>/dev/null || pkill -9 -f 'node.*next dev' 2>/dev/null || true",
+    "validate-schema": "tsx scripts/validate-schema.ts"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -72,6 +73,7 @@
   "devDependencies": {
     "@types/node": "^24.10.1",
     "ts-node": "^10.9.2",
+    "tsx": "^4.7.0",
     "typescript": "^5.9.3"
   }
 }

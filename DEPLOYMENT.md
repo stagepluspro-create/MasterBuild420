@@ -2,26 +2,51 @@
 
 This guide walks you through deploying StageTechPro to Vercel with Supabase.
 
+## ⚠️ CRITICAL: Database Lock
+
+**YOUR SUPABASE DATABASE IS LOCKED TO PREVENT CORRUPTION**
+
+- ✅ Use existing Supabase instance at `NEXT_PUBLIC_SUPABASE_URL`
+- ✅ All schema changes via migrations in `/supabase/migrations/`
+- ❌ DO NOT create new Supabase projects
+- ❌ DO NOT regenerate or duplicate tables
+- ❌ DO NOT use hashed table names
+
+Run `npm run validate-schema` before EVERY deployment.
+
 ## Prerequisites
 
 - ✅ GitHub account
 - ✅ Vercel account (free tier is fine)
-- ✅ Supabase project created
+- ✅ **EXISTING** Supabase instance (DO NOT CREATE NEW)
 - ✅ All environment variables ready
 
 ---
 
-## Step 1: Prepare Supabase Database
+## Step 1: Verify Supabase Database
 
-### 1.1 Create Supabase Project
+### 1.1 DO NOT Create New Project
 
-1. Go to https://app.supabase.com
-2. Click "New Project"
-3. Fill in:
-   - **Name:** StageTechPro
-   - **Database Password:** (save this securely!)
-   - **Region:** Choose closest to your users
-4. Wait for project to be ready (~2 minutes)
+**STOP!** Your Supabase database already exists and is configured.
+
+- URL: https://jqcxqblwvlunxshmrmas.supabase.co
+- 51 tables with clean names
+- 196 RLS policies protecting data
+- All migrations applied
+
+### 1.2 Verify Schema Integrity
+
+```bash
+npm run validate-schema
+```
+
+**Expected output:**
+```
+✅ Schema validation PASSED
+   Database is healthy and ready for production
+```
+
+If validation fails, DO NOT DEPLOY. Fix issues first.
 
 ### 1.2 Get API Credentials
 
